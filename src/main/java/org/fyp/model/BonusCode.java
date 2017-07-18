@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "bonuscodes", schema = "shoptrawler", catalog = "")
-public class Bonuscode {
+public class BonusCode {
     private int bonusCodeId;
     private Integer retailerId;
     private Integer userId;
@@ -70,13 +70,13 @@ public class Bonuscode {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Bonuscode bonuscode = (Bonuscode) o;
+        BonusCode bonusCode = (BonusCode) o;
 
-        if (bonusCodeId != bonuscode.bonusCodeId) return false;
-        if (retailerId != null ? !retailerId.equals(bonuscode.retailerId) : bonuscode.retailerId != null) return false;
-        if (userId != null ? !userId.equals(bonuscode.userId) : bonuscode.userId != null) return false;
-        if (datetime != null ? !datetime.equals(bonuscode.datetime) : bonuscode.datetime != null) return false;
-        if (value != null ? !value.equals(bonuscode.value) : bonuscode.value != null) return false;
+        if (bonusCodeId != bonusCode.bonusCodeId) return false;
+        if (retailerId != null ? !retailerId.equals(bonusCode.retailerId) : bonusCode.retailerId != null) return false;
+        if (userId != null ? !userId.equals(bonusCode.userId) : bonusCode.userId != null) return false;
+        if (datetime != null ? !datetime.equals(bonusCode.datetime) : bonusCode.datetime != null) return false;
+        if (value != null ? !value.equals(bonusCode.value) : bonusCode.value != null) return false;
 
         return true;
     }

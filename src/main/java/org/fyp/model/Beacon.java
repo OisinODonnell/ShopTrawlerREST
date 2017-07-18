@@ -11,7 +11,7 @@ public class Beacon {
     private int beaconId;
     private String uuid;
     private Integer major;
-    private Integer Location;
+    private Integer minor;
     private Integer transmitPower;
     private int locationId;
 
@@ -47,12 +47,12 @@ public class Beacon {
 
     @Basic
     @Column(name = "minor")
-    public Integer getLocation() {
-        return Location;
+    public Integer getMinor() {
+        return minor;
     }
 
-    public void setLocation(Integer location) {
-        Location = location;
+    public void setMinor(Integer minor) {
+        this.minor = minor;
     }
 
     @Basic
@@ -86,7 +86,7 @@ public class Beacon {
         if (locationId != beacon.locationId) return false;
         if (uuid != null ? !uuid.equals(beacon.uuid) : beacon.uuid != null) return false;
         if (major != null ? !major.equals(beacon.major) : beacon.major != null) return false;
-        if (Location != null ? !Location.equals(beacon.Location) : beacon.Location != null) return false;
+        if (minor != null ? !minor.equals(beacon.minor) : beacon.minor != null) return false;
         if (transmitPower != null ? !transmitPower.equals(beacon.transmitPower) : beacon.transmitPower != null)
             return false;
 
@@ -98,7 +98,7 @@ public class Beacon {
         int result = beaconId;
         result = 31 * result + (uuid != null ? uuid.hashCode() : 0);
         result = 31 * result + (major != null ? major.hashCode() : 0);
-        result = 31 * result + (Location != null ? Location.hashCode() : 0);
+        result = 31 * result + (minor != null ? minor.hashCode() : 0);
         result = 31 * result + (transmitPower != null ? transmitPower.hashCode() : 0);
         result = 31 * result + locationId;
         return result;

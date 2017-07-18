@@ -8,8 +8,8 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "loyaltyrewards", schema = "shoptrawler", catalog = "")
-@IdClass(LoyaltyrewardPK.class)
-public class Loyaltyreward {
+@IdClass(LoyaltyRewardPK.class)
+public class LoyaltyReward {
     private int loyaltyRewardId;
     private int retailerId;
     private Integer visitTime;
@@ -104,7 +104,7 @@ public class Loyaltyreward {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Loyaltyreward that = (Loyaltyreward) o;
+        LoyaltyReward that = (LoyaltyReward) o;
 
         if (loyaltyRewardId != that.loyaltyRewardId) return false;
         if (retailerId != that.retailerId) return false;

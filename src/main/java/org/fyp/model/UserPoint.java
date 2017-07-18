@@ -7,8 +7,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "userpoints", schema = "shoptrawler", catalog = "")
-@IdClass(UserpointPK.class)
-public class Userpoint {
+@IdClass(UserPointPK.class)
+public class UserPoint {
     private int userId;
     private int retailerId;
     private Integer points;
@@ -48,11 +48,11 @@ public class Userpoint {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Userpoint userpoint = (Userpoint) o;
+        UserPoint userPoint = (UserPoint) o;
 
-        if (userId != userpoint.userId) return false;
-        if (retailerId != userpoint.retailerId) return false;
-        if (points != null ? !points.equals(userpoint.points) : userpoint.points != null) return false;
+        if (userId != userPoint.userId) return false;
+        if (retailerId != userPoint.retailerId) return false;
+        if (points != null ? !points.equals(userPoint.points) : userPoint.points != null) return false;
 
         return true;
     }

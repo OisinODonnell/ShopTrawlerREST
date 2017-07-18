@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by Oisin on 7/18/2017.
  */
-public class LoyaltyrewardPK implements Serializable {
+public class LoyaltyRewardPK implements Serializable {
     private int loyaltyRewardId;
     private int retailerId;
 
@@ -36,7 +36,7 @@ public class LoyaltyrewardPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LoyaltyrewardPK that = (LoyaltyrewardPK) o;
+        LoyaltyRewardPK that = (LoyaltyRewardPK) o;
 
         if (loyaltyRewardId != that.loyaltyRewardId) return false;
         if (retailerId != that.retailerId) return false;

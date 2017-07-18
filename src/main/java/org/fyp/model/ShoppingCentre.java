@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * Created by Oisin on 7/18/2017.
  */
 @Entity
-public class Shoppingcentre {
+public class ShoppingCentre {
     private int shoppingCentreId;
     private String shoppingCentreName;
     private int adminId;
@@ -137,7 +137,7 @@ public class Shoppingcentre {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Shoppingcentre that = (Shoppingcentre) o;
+        ShoppingCentre that = (ShoppingCentre) o;
 
         if (shoppingCentreId != that.shoppingCentreId) return false;
         if (adminId != that.adminId) return false;

@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by Oisin on 7/18/2017.
  */
-public class UserpointPK implements Serializable {
+public class UserPointPK implements Serializable {
     private int userId;
     private int retailerId;
 
@@ -36,7 +36,7 @@ public class UserpointPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserpointPK that = (UserpointPK) o;
+        UserPointPK that = (UserPointPK) o;
 
         if (userId != that.userId) return false;
         if (retailerId != that.retailerId) return false;
