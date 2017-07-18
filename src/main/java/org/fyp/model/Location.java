@@ -1,0 +1,120 @@
+package org.fyp.model;
+
+import javax.persistence.*;
+
+/**
+ * Created by Oisin on 7/18/2017.
+ */
+@Entity
+@Table(name = "locations", schema = "shoptrawler", catalog = "")
+public class Location {
+    private int locationId;
+    private int gpsLatitude;
+    private int gpsLongitude;
+    private int locationInShoppingCentre;
+    private String locationType;
+    private Integer altitude;
+    private Integer shoppingCentreId;
+
+    @Id
+    @Column(name = "locationID")
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    @Basic
+    @Column(name = "gpsLatitude")
+    public int getGpsLatitude() {
+        return gpsLatitude;
+    }
+
+    public void setGpsLatitude(int gpsLatitude) {
+        this.gpsLatitude = gpsLatitude;
+    }
+
+    @Basic
+    @Column(name = "gpsLongitude")
+    public int getGpsLongitude() {
+        return gpsLongitude;
+    }
+
+    public void setGpsLongitude(int gpsLongitude) {
+        this.gpsLongitude = gpsLongitude;
+    }
+
+    @Basic
+    @Column(name = "locationInShoppingCentre")
+    public int getLocationInShoppingCentre() {
+        return locationInShoppingCentre;
+    }
+
+    public void setLocationInShoppingCentre(int locationInShoppingCentre) {
+        this.locationInShoppingCentre = locationInShoppingCentre;
+    }
+
+    @Basic
+    @Column(name = "locationType")
+    public String getLocationType() {
+        return locationType;
+    }
+
+    public void setLocationType(String locationType) {
+        this.locationType = locationType;
+    }
+
+    @Basic
+    @Column(name = "altitude")
+    public Integer getAltitude() {
+        return altitude;
+    }
+
+    public void setAltitude(Integer altitude) {
+        this.altitude = altitude;
+    }
+
+    @Basic
+    @Column(name = "shoppingCentreID")
+    public Integer getShoppingCentreId() {
+        return shoppingCentreId;
+    }
+
+    public void setShoppingCentreId(Integer shoppingCentreId) {
+        this.shoppingCentreId = shoppingCentreId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Location location = (Location) o;
+
+        if (locationId != location.locationId) return false;
+        if (gpsLatitude != location.gpsLatitude) return false;
+        if (gpsLongitude != location.gpsLongitude) return false;
+        if (locationInShoppingCentre != location.locationInShoppingCentre) return false;
+        if (locationType != null ? !locationType.equals(location.locationType) : location.locationType != null)
+            return false;
+        if (altitude != null ? !altitude.equals(location.altitude) : location.altitude != null) return false;
+        if (shoppingCentreId != null ? !shoppingCentreId.equals(location.shoppingCentreId) : location.shoppingCentreId != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = locationId;
+        result = 31 * result + gpsLatitude;
+        result = 31 * result + gpsLongitude;
+        result = 31 * result + locationInShoppingCentre;
+        result = 31 * result + (locationType != null ? locationType.hashCode() : 0);
+        result = 31 * result + (altitude != null ? altitude.hashCode() : 0);
+        result = 31 * result + (shoppingCentreId != null ? shoppingCentreId.hashCode() : 0);
+        return result;
+    }
+}
