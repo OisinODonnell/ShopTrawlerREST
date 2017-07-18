@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "userpoints", schema = "shoptrawler", catalog = "")
@@ -9,6 +10,15 @@ public class UserPoint {
     private int userid;
     private int retailerid;
     private Integer points;
+
+    public UserPoint() {
+    }
+
+    public UserPoint(List<String> attributes) {
+        this.userid = userid;
+        this.retailerid = retailerid;
+        this.points = points;
+    }
 
     @Id
     @Column(name = "userid", nullable = false)

@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "locations", schema = "shoptrawler", catalog = "")
@@ -15,6 +16,21 @@ public class Location {
     private Integer shoppingCentreId;
     private Collection<Beacon> beaconsByLocationId;
     private ShoppingCentre shoppingcentreByShoppingCentreId;
+
+    public Location() {
+    }
+
+    public Location(List<String> attributes) {
+        this.locationId = locationId;
+        this.gpsLatitude = gpsLatitude;
+        this.gpsLongitude = gpsLongitude;
+        this.locationInShoppingCentre = locationInShoppingCentre;
+        this.locationType = locationType;
+        this.altitude = altitude;
+        this.shoppingCentreId = shoppingCentreId;
+        this.beaconsByLocationId = beaconsByLocationId;
+        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
+    }
 
     @Id
     @Column(name = "locationID", nullable = false)

@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "users", schema = "shoptrawler", catalog = "")
@@ -17,6 +18,23 @@ public class User {
     private String gender;
     private Collection<Retailer> retailersByUserId;
     private Collection<ShoppingCentre> shoppingcentresByUserId;
+
+    public User() {
+    }
+
+    public User(List<String> attributes) {
+        this.userId = userId;
+        this.surname = surname;
+        this.firstname = firstname;
+        this.emailAddress = emailAddress;
+        this.type = type;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.yob = yob;
+        this.gender = gender;
+        this.retailersByUserId = retailersByUserId;
+        this.shoppingcentresByUserId = shoppingcentresByUserId;
+    }
 
     @Id
     @Column(name = "userID", nullable = false)

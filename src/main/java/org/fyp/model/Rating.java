@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "ratings", schema = "shoptrawler", catalog = "")
@@ -12,6 +13,17 @@ public class Rating {
     private Timestamp date;
     private String rating;
     private String review;
+
+    public Rating() {
+    }
+
+    public Rating(List<String> attributes) {
+        this.userid = userid;
+        this.retailerid = retailerid;
+        this.date = date;
+        this.rating = rating;
+        this.review = review;
+    }
 
     @Id
     @Column(name = "userid", nullable = false)

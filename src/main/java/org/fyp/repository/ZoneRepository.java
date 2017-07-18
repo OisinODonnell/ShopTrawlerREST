@@ -1,5 +1,6 @@
 package org.fyp.repository;
 
+import org.fyp.model.Zone;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Collection;

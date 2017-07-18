@@ -5,7 +5,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "beacons", schema = "shoptrawler", catalog = "")
-public class Beacon {
+public class Beacon extends BaseEntity {
     private int beaconId;
     private String uuid;
     private Integer major;

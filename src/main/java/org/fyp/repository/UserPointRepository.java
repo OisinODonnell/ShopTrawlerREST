@@ -1,5 +1,6 @@
 package org.fyp.repository;
 
+import org.fyp.model.UserPoint;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;

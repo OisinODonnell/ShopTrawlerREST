@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @IdClass(ContentPK.class)
@@ -13,6 +14,21 @@ public class Content {
     private String page2;
     private String page3;
     private Timestamp startDate;
+
+    public Content() {
+
+    }
+
+    public Content(List<String> attributes) {
+
+        this.retailerid = attributes.get(0); //retailerid;
+        this.contentid = contentid;
+        this.endDate = endDate;
+        this.page1 = page1;
+        this.page2 = page2;
+        this.page3 = page3;
+        this.startDate = startDate;
+    }
 
     @Id
     @Column(name = "retailerid", nullable = false)

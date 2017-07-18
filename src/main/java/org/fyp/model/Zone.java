@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "zones", schema = "shoptrawler", catalog = "")
@@ -13,6 +14,19 @@ public class Zone {
     private Collection<Retailer> retailersByZoneId;
     private Beacon beaconsByBeaconId;
     private Retailer retailersByRetailerId;
+
+    public Zone() {
+    }
+
+    public Zone(List<String> attributes) {
+        this.zoneId = zoneId;
+        this.beaconId = beaconId;
+        this.zoneName = zoneName;
+        this.retailerId = retailerId;
+        this.retailersByZoneId = retailersByZoneId;
+        this.beaconsByBeaconId = beaconsByBeaconId;
+        this.retailersByRetailerId = retailersByRetailerId;
+    }
 
     @Id
     @Column(name = "zoneID", nullable = false)

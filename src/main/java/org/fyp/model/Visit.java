@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "visits", schema = "shoptrawler", catalog = "")
@@ -13,6 +14,18 @@ public class Visit {
     private Integer duration;
     private Timestamp entryTime;
     private Timestamp exitTime;
+
+    public Visit() {
+    }
+
+    public Visit(List<String> attributes) {
+        this.zoneid = zoneid;
+        this.visitid = visitid;
+        this.userid = userid;
+        this.duration = duration;
+        this.entryTime = entryTime;
+        this.exitTime = exitTime;
+    }
 
     @Id
     @Column(name = "zoneid", nullable = false)

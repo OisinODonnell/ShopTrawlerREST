@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "retailers", schema = "shoptrawler", catalog = "")
@@ -27,6 +28,33 @@ public class Retailer {
     private Zone zonesByZoneId;
     private ShoppingCentre shoppingcentreByShoppingCentreId;
     private Collection<Zone> zonesByRetailerId;
+
+    public Retailer() {
+    }
+
+    public Retailer(List<String> attributes) {
+        this.retailerId = retailerId;
+        this.storeName = storeName;
+        this.managerId = managerId;
+        this.phone = phone;
+        this.zoneId = zoneId;
+        this.shoppingCentreId = shoppingCentreId;
+        this.websiteUrl = websiteUrl;
+        this.twitterUrl = twitterUrl;
+        this.facebookUrl = facebookUrl;
+        this.headerBackgroundImage = headerBackgroundImage;
+        this.defaultContentPage1 = defaultContentPage1;
+        this.defaultContentPage2 = defaultContentPage2;
+        this.defaultContentPage3 = defaultContentPage3;
+        this.defaultLoyaltyRewardImage = defaultLoyaltyRewardImage;
+        this.logoImageSmall = logoImageSmall;
+        this.logoImageMedium = logoImageMedium;
+        this.logoImageLarge = logoImageLarge;
+        this.usersByManagerId = usersByManagerId;
+        this.zonesByZoneId = zonesByZoneId;
+        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
+        this.zonesByRetailerId = zonesByRetailerId;
+    }
 
     @Id
     @Column(name = "retailerID", nullable = false)

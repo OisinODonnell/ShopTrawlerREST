@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "loyaltyrewards", schema = "shoptrawler", catalog = "")
@@ -15,6 +16,20 @@ public class LoyaltyReward {
     private Integer rewardTitle;
     private Timestamp startDate;
     private Integer visitTime;
+
+    public LoyaltyReward() {
+    }
+
+    public LoyaltyReward(List<String> attributes) {
+        this.retailerid = retailerid;
+        this.loyaltyRewardid = loyaltyRewardid;
+        this.endDate = endDate;
+        this.pointsPerVisit = pointsPerVisit;
+        this.rewardImage = rewardImage;
+        this.rewardTitle = rewardTitle;
+        this.startDate = startDate;
+        this.visitTime = visitTime;
+    }
 
     @Id
     @Column(name = "retailerid", nullable = false)
