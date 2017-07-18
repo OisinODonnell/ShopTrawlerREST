@@ -2,62 +2,28 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "bonuscodes", schema = "shoptrawler", catalog = "")
 public class BonusCode {
-    private int bonusCodeId;
-    private Integer retailerId;
-    private Integer userId;
+    private int bonusCodeid;
     private Timestamp datetime;
+    private Integer retailerid;
+    private Integer userid;
     private String value;
 
-    public BonusCode() {
-
-    }
-
-    public BonusCode(List<String> attributes) {
-
-
-    }
-
-
     @Id
-    @Column(name = "bonusCodeID")
-    public int getBonusCodeId() {
-        return bonusCodeId;
+    @Column(name = "bonus_codeid", nullable = false)
+    public int getBonusCodeid() {
+        return bonusCodeid;
     }
 
-    public void setBonusCodeId(int bonusCodeId) {
-        this.bonusCodeId = bonusCodeId;
-    }
-
-    @Basic
-    @Column(name = "retailerID")
-    public Integer getRetailerId() {
-        return retailerId;
-    }
-
-    public void setRetailerId(Integer retailerId) {
-        this.retailerId = retailerId;
+    public void setBonusCodeid(int bonusCodeid) {
+        this.bonusCodeid = bonusCodeid;
     }
 
     @Basic
-    @Column(name = "userID")
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    @Basic
-    @Column(name = "datetime")
+    @Column(name = "datetime", nullable = true)
     public Timestamp getDatetime() {
         return datetime;
     }
@@ -67,7 +33,27 @@ public class BonusCode {
     }
 
     @Basic
-    @Column(name = "value")
+    @Column(name = "retailerid", nullable = true)
+    public Integer getRetailerid() {
+        return retailerid;
+    }
+
+    public void setRetailerid(Integer retailerid) {
+        this.retailerid = retailerid;
+    }
+
+    @Basic
+    @Column(name = "userid", nullable = true)
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    @Basic
+    @Column(name = "value", nullable = true, length = 255)
     public String getValue() {
         return value;
     }
@@ -83,10 +69,10 @@ public class BonusCode {
 
         BonusCode bonusCode = (BonusCode) o;
 
-        if (bonusCodeId != bonusCode.bonusCodeId) return false;
-        if (retailerId != null ? !retailerId.equals(bonusCode.retailerId) : bonusCode.retailerId != null) return false;
-        if (userId != null ? !userId.equals(bonusCode.userId) : bonusCode.userId != null) return false;
+        if (bonusCodeid != bonusCode.bonusCodeid) return false;
         if (datetime != null ? !datetime.equals(bonusCode.datetime) : bonusCode.datetime != null) return false;
+        if (retailerid != null ? !retailerid.equals(bonusCode.retailerid) : bonusCode.retailerid != null) return false;
+        if (userid != null ? !userid.equals(bonusCode.userid) : bonusCode.userid != null) return false;
         if (value != null ? !value.equals(bonusCode.value) : bonusCode.value != null) return false;
 
         return true;
@@ -94,10 +80,10 @@ public class BonusCode {
 
     @Override
     public int hashCode() {
-        int result = bonusCodeId;
-        result = 31 * result + (retailerId != null ? retailerId.hashCode() : 0);
-        result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        int result = bonusCodeid;
         result = 31 * result + (datetime != null ? datetime.hashCode() : 0);
+        result = 31 * result + (retailerid != null ? retailerid.hashCode() : 0);
+        result = 31 * result + (userid != null ? userid.hashCode() : 0);
         result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;
     }

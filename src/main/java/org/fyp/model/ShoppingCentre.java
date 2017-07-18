@@ -1,14 +1,8 @@
 package org.fyp.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.List;
+import javax.persistence.*;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 public class ShoppingCentre {
     private int shoppingCentreId;
@@ -22,19 +16,12 @@ public class ShoppingCentre {
     private String logoImageLarge;
     private String phone;
     private String contentPage;
-
-    public ShoppingCentre() {
-
-    }
-
-    public ShoppingCentre(List<String> attributes) {
-
-
-    }
-
+    private Collection<Location> locationsByShoppingCentreId;
+    private Collection<Retailer> retailersByShoppingCentreId;
+    private User usersByAdminId;
 
     @Id
-    @Column(name = "shoppingCentreID")
+    @Column(name = "shoppingCentreID", nullable = false)
     public int getShoppingCentreId() {
         return shoppingCentreId;
     }
@@ -44,7 +31,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "shoppingCentreName")
+    @Column(name = "shoppingCentreName", nullable = true, length = 45)
     public String getShoppingCentreName() {
         return shoppingCentreName;
     }
@@ -54,7 +41,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "adminID")
+    @Column(name = "adminID", nullable = false)
     public int getAdminId() {
         return adminId;
     }
@@ -64,7 +51,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "websiteURL")
+    @Column(name = "websiteURL", nullable = true, length = 45)
     public String getWebsiteUrl() {
         return websiteUrl;
     }
@@ -74,7 +61,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "twitterURL")
+    @Column(name = "twitterURL", nullable = true, length = 45)
     public String getTwitterUrl() {
         return twitterUrl;
     }
@@ -84,7 +71,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "facebookURL")
+    @Column(name = "facebookURL", nullable = true, length = 45)
     public String getFacebookUrl() {
         return facebookUrl;
     }
@@ -94,7 +81,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "logoImageSmall")
+    @Column(name = "logoImageSmall", nullable = true, length = 45)
     public String getLogoImageSmall() {
         return logoImageSmall;
     }
@@ -104,7 +91,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "logoImageMedium")
+    @Column(name = "logoImageMedium", nullable = true, length = 45)
     public String getLogoImageMedium() {
         return logoImageMedium;
     }
@@ -114,7 +101,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "logoImageLarge")
+    @Column(name = "logoImageLarge", nullable = true, length = 45)
     public String getLogoImageLarge() {
         return logoImageLarge;
     }
@@ -124,7 +111,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = true, length = 45)
     public String getPhone() {
         return phone;
     }
@@ -134,7 +121,7 @@ public class ShoppingCentre {
     }
 
     @Basic
-    @Column(name = "contentPage")
+    @Column(name = "contentPage", nullable = true, length = 45)
     public String getContentPage() {
         return contentPage;
     }
@@ -183,5 +170,33 @@ public class ShoppingCentre {
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (contentPage != null ? contentPage.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "shoppingcentreByShoppingCentreId")
+    public Collection<Location> getLocationsByShoppingCentreId() {
+        return locationsByShoppingCentreId;
+    }
+
+    public void setLocationsByShoppingCentreId(Collection<Location> locationsByShoppingCentreId) {
+        this.locationsByShoppingCentreId = locationsByShoppingCentreId;
+    }
+
+    @OneToMany(mappedBy = "shoppingcentreByShoppingCentreId")
+    public Collection<Retailer> getRetailersByShoppingCentreId() {
+        return retailersByShoppingCentreId;
+    }
+
+    public void setRetailersByShoppingCentreId(Collection<Retailer> retailersByShoppingCentreId) {
+        this.retailersByShoppingCentreId = retailersByShoppingCentreId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "adminID", referencedColumnName = "userID", nullable = false)
+    public User getUsersByAdminId() {
+        return usersByAdminId;
+    }
+
+    public void setUsersByAdminId(User usersByAdminId) {
+        this.usersByAdminId = usersByAdminId;
     }
 }

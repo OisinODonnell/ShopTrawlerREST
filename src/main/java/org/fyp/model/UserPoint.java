@@ -1,50 +1,37 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "userpoints", schema = "shoptrawler", catalog = "")
 @IdClass(UserPointPK.class)
 public class UserPoint {
-    private int userId;
-    private int retailerId;
+    private int userid;
+    private int retailerid;
     private Integer points;
 
-    public UserPoint() {
-
+    @Id
+    @Column(name = "userid", nullable = false)
+    public int getUserid() {
+        return userid;
     }
 
-    public UserPoint(List<String> attributes) {
-
-
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     @Id
-    @Column(name = "userID")
-    public int getUserId() {
-        return userId;
+    @Column(name = "retailerid", nullable = false)
+    public int getRetailerid() {
+        return retailerid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    @Id
-    @Column(name = "retailerID")
-    public int getRetailerId() {
-        return retailerId;
-    }
-
-    public void setRetailerId(int retailerId) {
-        this.retailerId = retailerId;
+    public void setRetailerid(int retailerid) {
+        this.retailerid = retailerid;
     }
 
     @Basic
-    @Column(name = "points")
+    @Column(name = "points", nullable = true)
     public Integer getPoints() {
         return points;
     }
@@ -60,8 +47,8 @@ public class UserPoint {
 
         UserPoint userPoint = (UserPoint) o;
 
-        if (userId != userPoint.userId) return false;
-        if (retailerId != userPoint.retailerId) return false;
+        if (userid != userPoint.userid) return false;
+        if (retailerid != userPoint.retailerid) return false;
         if (points != null ? !points.equals(userPoint.points) : userPoint.points != null) return false;
 
         return true;
@@ -69,8 +56,8 @@ public class UserPoint {
 
     @Override
     public int hashCode() {
-        int result = userId;
-        result = 31 * result + retailerId;
+        int result = userid;
+        result = 31 * result + retailerid;
         result = 31 * result + (points != null ? points.hashCode() : 0);
         return result;
     }

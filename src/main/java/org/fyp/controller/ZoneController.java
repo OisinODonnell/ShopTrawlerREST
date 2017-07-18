@@ -15,11 +15,9 @@ import java.util.Collection;
  * Created by oisin on 18/07/2017.
  */
 
-
 @RestController
 @RequestMapping(value = "Zones", method=RequestMethod.GET)
 public class ZoneController extends MainController {
-
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
     public void create(Zone zone)
@@ -28,12 +26,7 @@ public class ZoneController extends MainController {
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<Zone> read() throws JsonProcessingException {
-
-        return zoneRepo.findAll();
-    }
-
-
+    public Collection<Zone> read() throws JsonProcessingException { return zoneRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(Zone zone)
@@ -46,7 +39,5 @@ public class ZoneController extends MainController {
     {
         zoneRepo.delete(zone);
     }
-
-
 
 }

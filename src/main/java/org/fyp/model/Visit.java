@@ -2,63 +2,50 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "visits", schema = "shoptrawler", catalog = "")
 @IdClass(VisitPK.class)
 public class Visit {
-    private int visitId;
-    private int userId;
-    private int zoneId;
+    private int zoneid;
+    private int visitid;
+    private int userid;
     private Integer duration;
     private Timestamp entryTime;
     private Timestamp exitTime;
 
-    public Visit() {
-
+    @Id
+    @Column(name = "zoneid", nullable = false)
+    public int getZoneid() {
+        return zoneid;
     }
 
-    public Visit(List<String> attributes) {
-
-
+    public void setZoneid(int zoneid) {
+        this.zoneid = zoneid;
     }
 
     @Id
-    @Column(name = "visitID")
-    public int getVisitId() {
-        return visitId;
+    @Column(name = "visitid", nullable = false)
+    public int getVisitid() {
+        return visitid;
     }
 
-    public void setVisitId(int visitId) {
-        this.visitId = visitId;
-    }
-
-    @Id
-    @Column(name = "userID")
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setVisitid(int visitid) {
+        this.visitid = visitid;
     }
 
     @Id
-    @Column(name = "zoneID")
-    public int getZoneId() {
-        return zoneId;
+    @Column(name = "userid", nullable = false)
+    public int getUserid() {
+        return userid;
     }
 
-    public void setZoneId(int zoneId) {
-        this.zoneId = zoneId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     @Basic
-    @Column(name = "duration")
+    @Column(name = "duration", nullable = true)
     public Integer getDuration() {
         return duration;
     }
@@ -68,7 +55,7 @@ public class Visit {
     }
 
     @Basic
-    @Column(name = "entryTime")
+    @Column(name = "entry_time", nullable = true)
     public Timestamp getEntryTime() {
         return entryTime;
     }
@@ -78,7 +65,7 @@ public class Visit {
     }
 
     @Basic
-    @Column(name = "exitTime")
+    @Column(name = "exit_time", nullable = true)
     public Timestamp getExitTime() {
         return exitTime;
     }
@@ -94,9 +81,9 @@ public class Visit {
 
         Visit visit = (Visit) o;
 
-        if (visitId != visit.visitId) return false;
-        if (userId != visit.userId) return false;
-        if (zoneId != visit.zoneId) return false;
+        if (zoneid != visit.zoneid) return false;
+        if (visitid != visit.visitid) return false;
+        if (userid != visit.userid) return false;
         if (duration != null ? !duration.equals(visit.duration) : visit.duration != null) return false;
         if (entryTime != null ? !entryTime.equals(visit.entryTime) : visit.entryTime != null) return false;
         if (exitTime != null ? !exitTime.equals(visit.exitTime) : visit.exitTime != null) return false;
@@ -106,9 +93,9 @@ public class Visit {
 
     @Override
     public int hashCode() {
-        int result = visitId;
-        result = 31 * result + userId;
-        result = 31 * result + zoneId;
+        int result = zoneid;
+        result = 31 * result + visitid;
+        result = 31 * result + userid;
         result = 31 * result + (duration != null ? duration.hashCode() : 0);
         result = 31 * result + (entryTime != null ? entryTime.hashCode() : 0);
         result = 31 * result + (exitTime != null ? exitTime.hashCode() : 0);

@@ -1,6 +1,5 @@
 package org.fyp.repository;
 
-import org.fyp.model.BonusCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;

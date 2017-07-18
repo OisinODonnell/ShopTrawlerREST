@@ -4,31 +4,28 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 public class FavouritePK implements Serializable {
-    private int retailerId;
-    private int userId;
+    private int userid;
+    private int retailerid;
 
-    @Column(name = "retailerID")
+    @Column(name = "userid", nullable = false)
     @Id
-    public int getRetailerId() {
-        return retailerId;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setRetailerId(int retailerId) {
-        this.retailerId = retailerId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    @Column(name = "userID")
+    @Column(name = "retailerid", nullable = false)
     @Id
-    public int getUserId() {
-        return userId;
+    public int getRetailerid() {
+        return retailerid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setRetailerid(int retailerid) {
+        this.retailerid = retailerid;
     }
 
     @Override
@@ -38,16 +35,16 @@ public class FavouritePK implements Serializable {
 
         FavouritePK that = (FavouritePK) o;
 
-        if (retailerId != that.retailerId) return false;
-        if (userId != that.userId) return false;
+        if (userid != that.userid) return false;
+        if (retailerid != that.retailerid) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = retailerId;
-        result = 31 * result + userId;
+        int result = userid;
+        result = 31 * result + retailerid;
         return result;
     }
 }

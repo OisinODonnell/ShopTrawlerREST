@@ -1,11 +1,8 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "users", schema = "shoptrawler", catalog = "")
 public class User {
@@ -18,18 +15,11 @@ public class User {
     private String password;
     private Integer yob;
     private String gender;
-
-    public User() {
-
-    }
-
-    public User(List<String> attributes) {
-
-
-    }
+    private Collection<Retailer> retailersByUserId;
+    private Collection<ShoppingCentre> shoppingcentresByUserId;
 
     @Id
-    @Column(name = "userID")
+    @Column(name = "userID", nullable = false)
     public int getUserId() {
         return userId;
     }
@@ -39,7 +29,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "surname")
+    @Column(name = "surname", nullable = true, length = 45)
     public String getSurname() {
         return surname;
     }
@@ -49,7 +39,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "firstname")
+    @Column(name = "firstname", nullable = true, length = 45)
     public String getFirstname() {
         return firstname;
     }
@@ -59,7 +49,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "emailAddress")
+    @Column(name = "emailAddress", nullable = false, length = 45)
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -69,7 +59,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "type")
+    @Column(name = "type", nullable = true)
     public String getType() {
         return type;
     }
@@ -79,7 +69,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "phoneNumber")
+    @Column(name = "phoneNumber", nullable = true, length = 45)
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -89,7 +79,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "password")
+    @Column(name = "password", nullable = true, length = 45)
     public String getPassword() {
         return password;
     }
@@ -99,7 +89,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "YOB")
+    @Column(name = "YOB", nullable = true)
     public Integer getYob() {
         return yob;
     }
@@ -109,7 +99,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "gender")
+    @Column(name = "gender", nullable = true)
     public String getGender() {
         return gender;
     }
@@ -150,5 +140,23 @@ public class User {
         result = 31 * result + (yob != null ? yob.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "usersByManagerId")
+    public Collection<Retailer> getRetailersByUserId() {
+        return retailersByUserId;
+    }
+
+    public void setRetailersByUserId(Collection<Retailer> retailersByUserId) {
+        this.retailersByUserId = retailersByUserId;
+    }
+
+    @OneToMany(mappedBy = "usersByAdminId")
+    public Collection<ShoppingCentre> getShoppingcentresByUserId() {
+        return shoppingcentresByUserId;
+    }
+
+    public void setShoppingcentresByUserId(Collection<ShoppingCentre> shoppingcentresByUserId) {
+        this.shoppingcentresByUserId = shoppingcentresByUserId;
     }
 }

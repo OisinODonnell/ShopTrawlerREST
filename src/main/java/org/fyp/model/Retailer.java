@@ -1,11 +1,8 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "retailers", schema = "shoptrawler", catalog = "")
 public class Retailer {
@@ -26,18 +23,13 @@ public class Retailer {
     private String logoImageSmall;
     private String logoImageMedium;
     private String logoImageLarge;
-
-    public Retailer() {
-
-    }
-
-    public Retailer(List<String> attributes) {
-
-
-    }
+    private User usersByManagerId;
+    private Zone zonesByZoneId;
+    private ShoppingCentre shoppingcentreByShoppingCentreId;
+    private Collection<Zone> zonesByRetailerId;
 
     @Id
-    @Column(name = "retailerID")
+    @Column(name = "retailerID", nullable = false)
     public int getRetailerId() {
         return retailerId;
     }
@@ -47,7 +39,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "storeName")
+    @Column(name = "storeName", nullable = true, length = 45)
     public String getStoreName() {
         return storeName;
     }
@@ -57,7 +49,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "managerID")
+    @Column(name = "managerID", nullable = false)
     public int getManagerId() {
         return managerId;
     }
@@ -67,7 +59,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = true, length = 45)
     public String getPhone() {
         return phone;
     }
@@ -77,7 +69,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "zoneID")
+    @Column(name = "zoneID", nullable = false)
     public int getZoneId() {
         return zoneId;
     }
@@ -87,7 +79,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "shoppingCentreID")
+    @Column(name = "shoppingCentreID", nullable = false)
     public int getShoppingCentreId() {
         return shoppingCentreId;
     }
@@ -97,7 +89,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "websiteURL")
+    @Column(name = "websiteURL", nullable = true, length = 45)
     public String getWebsiteUrl() {
         return websiteUrl;
     }
@@ -107,7 +99,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "twitterURL")
+    @Column(name = "twitterURL", nullable = true, length = 45)
     public String getTwitterUrl() {
         return twitterUrl;
     }
@@ -117,7 +109,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "facebookURL")
+    @Column(name = "facebookURL", nullable = true, length = 45)
     public String getFacebookUrl() {
         return facebookUrl;
     }
@@ -127,7 +119,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "headerBackgroundImage")
+    @Column(name = "headerBackgroundImage", nullable = true, length = 45)
     public String getHeaderBackgroundImage() {
         return headerBackgroundImage;
     }
@@ -137,7 +129,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "defaultContentPage1")
+    @Column(name = "defaultContentPage1", nullable = true, length = 45)
     public String getDefaultContentPage1() {
         return defaultContentPage1;
     }
@@ -147,7 +139,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "defaultContentPage2")
+    @Column(name = "defaultContentPage2", nullable = true, length = 45)
     public String getDefaultContentPage2() {
         return defaultContentPage2;
     }
@@ -157,7 +149,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "defaultContentPage3")
+    @Column(name = "defaultContentPage3", nullable = true, length = 45)
     public String getDefaultContentPage3() {
         return defaultContentPage3;
     }
@@ -167,7 +159,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "defaultLoyaltyRewardImage")
+    @Column(name = "defaultLoyaltyRewardImage", nullable = true, length = 45)
     public String getDefaultLoyaltyRewardImage() {
         return defaultLoyaltyRewardImage;
     }
@@ -177,7 +169,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "logoImageSmall")
+    @Column(name = "logoImageSmall", nullable = true, length = 45)
     public String getLogoImageSmall() {
         return logoImageSmall;
     }
@@ -187,7 +179,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "logoImageMedium")
+    @Column(name = "logoImageMedium", nullable = true, length = 45)
     public String getLogoImageMedium() {
         return logoImageMedium;
     }
@@ -197,7 +189,7 @@ public class Retailer {
     }
 
     @Basic
-    @Column(name = "logoImageLarge")
+    @Column(name = "logoImageLarge", nullable = true, length = 45)
     public String getLogoImageLarge() {
         return logoImageLarge;
     }
@@ -263,5 +255,44 @@ public class Retailer {
         result = 31 * result + (logoImageMedium != null ? logoImageMedium.hashCode() : 0);
         result = 31 * result + (logoImageLarge != null ? logoImageLarge.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "managerID", referencedColumnName = "userID", nullable = false)
+    public User getUsersByManagerId() {
+        return usersByManagerId;
+    }
+
+    public void setUsersByManagerId(User usersByManagerId) {
+        this.usersByManagerId = usersByManagerId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "zoneID", referencedColumnName = "zoneID", nullable = false)
+    public Zone getZonesByZoneId() {
+        return zonesByZoneId;
+    }
+
+    public void setZonesByZoneId(Zone zonesByZoneId) {
+        this.zonesByZoneId = zonesByZoneId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID", nullable = false)
+    public ShoppingCentre getShoppingcentreByShoppingCentreId() {
+        return shoppingcentreByShoppingCentreId;
+    }
+
+    public void setShoppingcentreByShoppingCentreId(ShoppingCentre shoppingcentreByShoppingCentreId) {
+        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
+    }
+
+    @OneToMany(mappedBy = "retailersByRetailerId")
+    public Collection<Zone> getZonesByRetailerId() {
+        return zonesByRetailerId;
+    }
+
+    public void setZonesByRetailerId(Collection<Zone> zonesByRetailerId) {
+        this.zonesByRetailerId = zonesByRetailerId;
     }
 }

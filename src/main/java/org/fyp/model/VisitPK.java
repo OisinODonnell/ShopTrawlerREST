@@ -4,42 +4,39 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 public class VisitPK implements Serializable {
-    private int visitId;
-    private int userId;
-    private int zoneId;
+    private int zoneid;
+    private int visitid;
+    private int userid;
 
-    @Column(name = "visitID")
+    @Column(name = "zoneid", nullable = false)
     @Id
-    public int getVisitId() {
-        return visitId;
+    public int getZoneid() {
+        return zoneid;
     }
 
-    public void setVisitId(int visitId) {
-        this.visitId = visitId;
+    public void setZoneid(int zoneid) {
+        this.zoneid = zoneid;
     }
 
-    @Column(name = "userID")
+    @Column(name = "visitid", nullable = false)
     @Id
-    public int getUserId() {
-        return userId;
+    public int getVisitid() {
+        return visitid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setVisitid(int visitid) {
+        this.visitid = visitid;
     }
 
-    @Column(name = "zoneID")
+    @Column(name = "userid", nullable = false)
     @Id
-    public int getZoneId() {
-        return zoneId;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setZoneId(int zoneId) {
-        this.zoneId = zoneId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     @Override
@@ -49,18 +46,18 @@ public class VisitPK implements Serializable {
 
         VisitPK visitPK = (VisitPK) o;
 
-        if (visitId != visitPK.visitId) return false;
-        if (userId != visitPK.userId) return false;
-        if (zoneId != visitPK.zoneId) return false;
+        if (zoneid != visitPK.zoneid) return false;
+        if (visitid != visitPK.visitid) return false;
+        if (userid != visitPK.userid) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = visitId;
-        result = 31 * result + userId;
-        result = 31 * result + zoneId;
+        int result = zoneid;
+        result = 31 * result + visitid;
+        result = 31 * result + userid;
         return result;
     }
 }

@@ -1,11 +1,8 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "beacons", schema = "shoptrawler", catalog = "")
 public class Beacon {
@@ -15,19 +12,11 @@ public class Beacon {
     private Integer minor;
     private Integer transmitPower;
     private int locationId;
-
-    public Beacon() {
-
-    }
-
-    public Beacon(List<String> attributes) {
-
-
-    }
-
+    private Location locationsByLocationId;
+    private Collection<Zone> zonesByBeaconId;
 
     @Id
-    @Column(name = "beaconID")
+    @Column(name = "beaconID", nullable = false)
     public int getBeaconId() {
         return beaconId;
     }
@@ -37,7 +26,7 @@ public class Beacon {
     }
 
     @Basic
-    @Column(name = "uuid")
+    @Column(name = "uuid", nullable = false, length = 45)
     public String getUuid() {
         return uuid;
     }
@@ -47,7 +36,7 @@ public class Beacon {
     }
 
     @Basic
-    @Column(name = "major")
+    @Column(name = "major", nullable = true)
     public Integer getMajor() {
         return major;
     }
@@ -57,7 +46,7 @@ public class Beacon {
     }
 
     @Basic
-    @Column(name = "minor")
+    @Column(name = "minor", nullable = true)
     public Integer getMinor() {
         return minor;
     }
@@ -67,7 +56,7 @@ public class Beacon {
     }
 
     @Basic
-    @Column(name = "transmitPower")
+    @Column(name = "transmitPower", nullable = true, precision = 0)
     public Integer getTransmitPower() {
         return transmitPower;
     }
@@ -77,7 +66,7 @@ public class Beacon {
     }
 
     @Basic
-    @Column(name = "locationID")
+    @Column(name = "locationID", nullable = false)
     public int getLocationId() {
         return locationId;
     }
@@ -113,5 +102,24 @@ public class Beacon {
         result = 31 * result + (transmitPower != null ? transmitPower.hashCode() : 0);
         result = 31 * result + locationId;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "locationID", referencedColumnName = "locationID", nullable = false)
+    public Location getLocationsByLocationId() {
+        return locationsByLocationId;
+    }
+
+    public void setLocationsByLocationId(Location locationsByLocationId) {
+        this.locationsByLocationId = locationsByLocationId;
+    }
+
+    @OneToMany(mappedBy = "beaconsByBeaconId")
+    public Collection<Zone> getZonesByBeaconId() {
+        return zonesByBeaconId;
+    }
+
+    public void setZonesByBeaconId(Collection<Zone> zonesByBeaconId) {
+        this.zonesByBeaconId = zonesByBeaconId;
     }
 }

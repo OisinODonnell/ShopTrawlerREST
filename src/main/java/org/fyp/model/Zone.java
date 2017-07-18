@@ -1,11 +1,8 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "zones", schema = "shoptrawler", catalog = "")
 public class Zone {
@@ -13,18 +10,12 @@ public class Zone {
     private Integer beaconId;
     private String zoneName;
     private Integer retailerId;
-
-    public Zone() {
-
-    }
-
-    public Zone(List<String> attributes) {
-
-
-    }
+    private Collection<Retailer> retailersByZoneId;
+    private Beacon beaconsByBeaconId;
+    private Retailer retailersByRetailerId;
 
     @Id
-    @Column(name = "zoneID")
+    @Column(name = "zoneID", nullable = false)
     public int getZoneId() {
         return zoneId;
     }
@@ -34,7 +25,7 @@ public class Zone {
     }
 
     @Basic
-    @Column(name = "beaconID")
+    @Column(name = "beaconID", nullable = true)
     public Integer getBeaconId() {
         return beaconId;
     }
@@ -44,7 +35,7 @@ public class Zone {
     }
 
     @Basic
-    @Column(name = "zoneName")
+    @Column(name = "zoneName", nullable = true, length = 45)
     public String getZoneName() {
         return zoneName;
     }
@@ -54,7 +45,7 @@ public class Zone {
     }
 
     @Basic
-    @Column(name = "retailerID")
+    @Column(name = "retailerID", nullable = true)
     public Integer getRetailerId() {
         return retailerId;
     }
@@ -85,5 +76,34 @@ public class Zone {
         result = 31 * result + (zoneName != null ? zoneName.hashCode() : 0);
         result = 31 * result + (retailerId != null ? retailerId.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "zonesByZoneId")
+    public Collection<Retailer> getRetailersByZoneId() {
+        return retailersByZoneId;
+    }
+
+    public void setRetailersByZoneId(Collection<Retailer> retailersByZoneId) {
+        this.retailersByZoneId = retailersByZoneId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "beaconID", referencedColumnName = "beaconID")
+    public Beacon getBeaconsByBeaconId() {
+        return beaconsByBeaconId;
+    }
+
+    public void setBeaconsByBeaconId(Beacon beaconsByBeaconId) {
+        this.beaconsByBeaconId = beaconsByBeaconId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "retailerID", referencedColumnName = "retailerID")
+    public Retailer getRetailersByRetailerId() {
+        return retailersByRetailerId;
+    }
+
+    public void setRetailersByRetailerId(Retailer retailersByRetailerId) {
+        this.retailersByRetailerId = retailersByRetailerId;
     }
 }

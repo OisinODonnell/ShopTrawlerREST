@@ -4,31 +4,28 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 public class LoyaltyRewardPK implements Serializable {
-    private int loyaltyRewardId;
-    private int retailerId;
+    private int retailerid;
+    private int loyaltyRewardid;
 
-    @Column(name = "loyaltyRewardID")
+    @Column(name = "retailerid", nullable = false)
     @Id
-    public int getLoyaltyRewardId() {
-        return loyaltyRewardId;
+    public int getRetailerid() {
+        return retailerid;
     }
 
-    public void setLoyaltyRewardId(int loyaltyRewardId) {
-        this.loyaltyRewardId = loyaltyRewardId;
+    public void setRetailerid(int retailerid) {
+        this.retailerid = retailerid;
     }
 
-    @Column(name = "retailerID")
+    @Column(name = "loyalty_rewardid", nullable = false)
     @Id
-    public int getRetailerId() {
-        return retailerId;
+    public int getLoyaltyRewardid() {
+        return loyaltyRewardid;
     }
 
-    public void setRetailerId(int retailerId) {
-        this.retailerId = retailerId;
+    public void setLoyaltyRewardid(int loyaltyRewardid) {
+        this.loyaltyRewardid = loyaltyRewardid;
     }
 
     @Override
@@ -38,16 +35,16 @@ public class LoyaltyRewardPK implements Serializable {
 
         LoyaltyRewardPK that = (LoyaltyRewardPK) o;
 
-        if (loyaltyRewardId != that.loyaltyRewardId) return false;
-        if (retailerId != that.retailerId) return false;
+        if (retailerid != that.retailerid) return false;
+        if (loyaltyRewardid != that.loyaltyRewardid) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = loyaltyRewardId;
-        result = 31 * result + retailerId;
+        int result = retailerid;
+        result = 31 * result + loyaltyRewardid;
         return result;
     }
 }

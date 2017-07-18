@@ -4,31 +4,28 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 public class ContentPK implements Serializable {
-    private int contentId;
-    private int retailerId;
+    private int retailerid;
+    private int contentid;
 
-    @Column(name = "contentID")
+    @Column(name = "retailerid", nullable = false)
     @Id
-    public int getContentId() {
-        return contentId;
+    public int getRetailerid() {
+        return retailerid;
     }
 
-    public void setContentId(int contentId) {
-        this.contentId = contentId;
+    public void setRetailerid(int retailerid) {
+        this.retailerid = retailerid;
     }
 
-    @Column(name = "retailerID")
+    @Column(name = "contentid", nullable = false)
     @Id
-    public int getRetailerId() {
-        return retailerId;
+    public int getContentid() {
+        return contentid;
     }
 
-    public void setRetailerId(int retailerId) {
-        this.retailerId = retailerId;
+    public void setContentid(int contentid) {
+        this.contentid = contentid;
     }
 
     @Override
@@ -38,16 +35,16 @@ public class ContentPK implements Serializable {
 
         ContentPK contentPK = (ContentPK) o;
 
-        if (contentId != contentPK.contentId) return false;
-        if (retailerId != contentPK.retailerId) return false;
+        if (retailerid != contentPK.retailerid) return false;
+        if (contentid != contentPK.contentid) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = contentId;
-        result = 31 * result + retailerId;
+        int result = retailerid;
+        result = 31 * result + contentid;
         return result;
     }
 }

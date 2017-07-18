@@ -1,6 +1,5 @@
 package org.fyp.repository;
 
-import org.fyp.model.Retailer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;

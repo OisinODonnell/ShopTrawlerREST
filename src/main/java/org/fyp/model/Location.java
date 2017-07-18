@@ -1,11 +1,8 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
-/**
- * Created by Oisin on 7/18/2017.
- */
 @Entity
 @Table(name = "locations", schema = "shoptrawler", catalog = "")
 public class Location {
@@ -16,18 +13,11 @@ public class Location {
     private String locationType;
     private Integer altitude;
     private Integer shoppingCentreId;
-
-    public Location() {
-
-    }
-
-    public Location(List<String> attributes) {
-
-
-    }
+    private Collection<Beacon> beaconsByLocationId;
+    private ShoppingCentre shoppingcentreByShoppingCentreId;
 
     @Id
-    @Column(name = "locationID")
+    @Column(name = "locationID", nullable = false)
     public int getLocationId() {
         return locationId;
     }
@@ -37,7 +27,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "gpsLatitude")
+    @Column(name = "gpsLatitude", nullable = false, precision = 0)
     public int getGpsLatitude() {
         return gpsLatitude;
     }
@@ -47,7 +37,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "gpsLongitude")
+    @Column(name = "gpsLongitude", nullable = false, precision = 0)
     public int getGpsLongitude() {
         return gpsLongitude;
     }
@@ -57,7 +47,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "locationInShoppingCentre")
+    @Column(name = "locationInShoppingCentre", nullable = false)
     public int getLocationInShoppingCentre() {
         return locationInShoppingCentre;
     }
@@ -67,7 +57,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "locationType")
+    @Column(name = "locationType", nullable = true)
     public String getLocationType() {
         return locationType;
     }
@@ -77,7 +67,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "altitude")
+    @Column(name = "altitude", nullable = true, precision = 0)
     public Integer getAltitude() {
         return altitude;
     }
@@ -87,7 +77,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "shoppingCentreID")
+    @Column(name = "shoppingCentreID", nullable = true)
     public Integer getShoppingCentreId() {
         return shoppingCentreId;
     }
@@ -126,5 +116,24 @@ public class Location {
         result = 31 * result + (altitude != null ? altitude.hashCode() : 0);
         result = 31 * result + (shoppingCentreId != null ? shoppingCentreId.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "locationsByLocationId")
+    public Collection<Beacon> getBeaconsByLocationId() {
+        return beaconsByLocationId;
+    }
+
+    public void setBeaconsByLocationId(Collection<Beacon> beaconsByLocationId) {
+        this.beaconsByLocationId = beaconsByLocationId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID")
+    public ShoppingCentre getShoppingcentreByShoppingCentreId() {
+        return shoppingcentreByShoppingCentreId;
+    }
+
+    public void setShoppingcentreByShoppingCentreId(ShoppingCentre shoppingcentreByShoppingCentreId) {
+        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
     }
 }
