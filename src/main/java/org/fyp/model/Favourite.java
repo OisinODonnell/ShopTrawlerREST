@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -11,6 +12,15 @@ import javax.persistence.*;
 public class Favourite {
     private int retailerId;
     private int userId;
+
+    public Favourite() {
+
+    }
+
+    public Favourite(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "retailerID")

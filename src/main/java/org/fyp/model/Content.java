@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -16,6 +17,15 @@ public class Content {
     private Timestamp startDate;
     private Timestamp endDate;
     private int retailerId;
+
+    public Content() {
+
+    }
+
+    public Content(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "contentID")

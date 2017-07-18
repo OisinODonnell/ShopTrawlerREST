@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -12,6 +13,15 @@ public class Zone {
     private Integer beaconId;
     private String zoneName;
     private Integer retailerId;
+
+    public Zone() {
+
+    }
+
+    public Zone(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "zoneID")

@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -15,6 +16,15 @@ public class Rating {
     private String rating;
     private String review;
     private Timestamp date;
+
+    public Rating() {
+
+    }
+
+    public Rating(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "userID")

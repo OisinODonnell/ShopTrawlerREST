@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -15,6 +16,15 @@ public class Location {
     private String locationType;
     private Integer altitude;
     private Integer shoppingCentreId;
+
+    public Location() {
+
+    }
+
+    public Location(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "locationID")

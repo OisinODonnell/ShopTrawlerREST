@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -25,6 +26,15 @@ public class Retailer {
     private String logoImageSmall;
     private String logoImageMedium;
     private String logoImageLarge;
+
+    public Retailer() {
+
+    }
+
+    public Retailer(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "retailerID")

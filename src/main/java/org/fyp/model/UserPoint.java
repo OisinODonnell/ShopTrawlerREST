@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -12,6 +13,15 @@ public class UserPoint {
     private int userId;
     private int retailerId;
     private Integer points;
+
+    public UserPoint() {
+
+    }
+
+    public UserPoint(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "userID")

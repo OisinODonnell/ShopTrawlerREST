@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -16,6 +17,15 @@ public class Visit {
     private Integer duration;
     private Timestamp entryTime;
     private Timestamp exitTime;
+
+    public Visit() {
+
+    }
+
+    public Visit(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "visitID")

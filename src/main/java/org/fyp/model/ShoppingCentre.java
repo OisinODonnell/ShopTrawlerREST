@@ -4,6 +4,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -21,6 +22,16 @@ public class ShoppingCentre {
     private String logoImageLarge;
     private String phone;
     private String contentPage;
+
+    public ShoppingCentre() {
+
+    }
+
+    public ShoppingCentre(List<String> attributes) {
+
+
+    }
+
 
     @Id
     @Column(name = "shoppingCentreID")

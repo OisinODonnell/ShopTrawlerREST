@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -14,6 +15,16 @@ public class Beacon {
     private Integer minor;
     private Integer transmitPower;
     private int locationId;
+
+    public Beacon() {
+
+    }
+
+    public Beacon(List<String> attributes) {
+
+
+    }
+
 
     @Id
     @Column(name = "beaconID")

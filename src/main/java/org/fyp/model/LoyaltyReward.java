@@ -2,6 +2,7 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by Oisin on 7/18/2017.
@@ -18,6 +19,15 @@ public class LoyaltyReward {
     private String rewardImage;
     private Timestamp startDate;
     private Timestamp endDate;
+
+    public LoyaltyReward() {
+
+    }
+
+    public LoyaltyReward(List<String> attributes) {
+
+
+    }
 
     @Id
     @Column(name = "loyaltyRewardID")
