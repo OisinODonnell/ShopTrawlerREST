@@ -20,24 +20,24 @@ import java.util.Collection;
 public class RetailerController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(Retailer cartItem)
+    public void create(Retailer retailer)
     {
-        cartItemRepo.save(cartItem);
+        retailerRepo.save(retailer);
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Retailer> read()
     {
-        return cartItemRepo.findAll();
+        return retailerRepo.findAll();
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Retailer cartItem)
+    public void update(Retailer retailer)
     {
-        cartItemRepo.save(cartItem);
+        retailerRepo.save(retailer);
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Retailer cartItem)     {  cartItemRepo.delete(cartItem);}
+    public void delete(Retailer retailer)     {  retailerRepo.delete(retailer);}
 
 }

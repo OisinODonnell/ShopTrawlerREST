@@ -1,19 +1,19 @@
 package org.fyp.repository;
 
+import org.fyp.model.Visit;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Collection;
+
 
 //@RepositoryRestResource(collectionResourceRel = "visit", path = "Visits")
 @Transactional
 public interface VisitRepository extends JpaRepository<Visit, Integer> {
-    Collection<Visit> findAllByUserId(int userId);
-    Collection<Visit> findAllByZoneId(int zoneId);
-    Collection<Visit> findByZoneIdAndUserId( int zoneId, int userId );
-    Collection<Visit> findByRetailerIdAndUserId( int retailerId, int userId );
-    Visit findByZoneIdAndUserId( int accountId, int stockItemId );
+    Collection<Visit> findAllByUserID(int userID);
+    Collection<Visit> findAllByZoneID(int zoneID);
+    Collection<Visit> findByRetailerIDAndUserID(int retailerID, int userID );
 
-    Integer deleteByVisitId(int visitId);
+    Integer deleteByVisitID(int visitID);
     
 }

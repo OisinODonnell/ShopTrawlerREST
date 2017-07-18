@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import org.fyp.model.User;
 
 //@RepositoryRestResource(collectionResourceRel = "user", path = "Users")
 @Transactional

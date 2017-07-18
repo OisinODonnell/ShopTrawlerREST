@@ -2,8 +2,9 @@ package org.fyp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.transaction.Transactional;
 import java.util.Collection;
+import org.fyp.model.Zone;
+import org.springframework.transaction.annotation.Transactional;
 
 //@RepositoryRestResource(collectionResourceRel = "zone", path = "Zones")
 @Transactional
