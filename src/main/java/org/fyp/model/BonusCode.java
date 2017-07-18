@@ -2,15 +2,29 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.List;
 
 @Entity
-@Table(name = "bonuscodes", schema = "shoptrawler", catalog = "")
-public class BonusCode {
+@Table(name = "bonuscodes", schema = "shoptrawler")
+public class BonusCode extends BaseEntity {
     private int bonusCodeid;
     private Timestamp datetime;
     private Integer retailerid;
     private Integer userid;
-    private String value;
+    private String value; // should this be Int?
+
+
+    public BonusCode() {
+    }
+
+    public BonusCode(List<String> attributes) throws ParseException {
+        this.bonusCodeid    = toInteger( attributes.get(0));
+        this.datetime       = toTimestamp( attributes.get(1));
+        this.retailerid     = toInteger( attributes.get(2));
+        this.userid         = toInteger( attributes.get(3));
+        this.value          = attributes.get(4);
+    }
 
     @Id
     @Column(name = "bonus_codeid", nullable = false)

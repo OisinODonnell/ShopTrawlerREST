@@ -1,10 +1,12 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.text.ParseException;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
-@Table(name = "beacons", schema = "shoptrawler", catalog = "")
+@Table(name = "beacons", schema = "shoptrawler")
 public class Beacon extends BaseEntity {
     private int beaconId;
     private String uuid;
@@ -14,6 +16,18 @@ public class Beacon extends BaseEntity {
     private int locationId;
     private Location locationsByLocationId;
     private Collection<Zone> zonesByBeaconId;
+
+    public Beacon() {
+    }
+
+    public Beacon(List<String> attributes) throws ParseException {
+        this.beaconId               = toInteger(attributes.get(0));
+        this.uuid                   = attributes.get(1);
+        this.major                  = toInteger(attributes.get(2));
+        this.minor                  = toInteger(attributes.get(3));
+        this.transmitPower          = toInteger(attributes.get(4));
+        this.locationId             = toInteger(attributes.get(5));
+    }
 
     @Id
     @Column(name = "beaconID", nullable = false)

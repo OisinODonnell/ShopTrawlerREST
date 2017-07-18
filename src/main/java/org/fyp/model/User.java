@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "users", schema = "shoptrawler", catalog = "")
-public class User {
+@Table(name = "users", schema = "shoptrawler")
+public class User extends BaseEntity {
     private int userId;
     private String surname;
     private String firstname;
@@ -23,17 +23,16 @@ public class User {
     }
 
     public User(List<String> attributes) {
-        this.userId = userId;
-        this.surname = surname;
-        this.firstname = firstname;
-        this.emailAddress = emailAddress;
-        this.type = type;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.yob = yob;
-        this.gender = gender;
-        this.retailersByUserId = retailersByUserId;
-        this.shoppingcentresByUserId = shoppingcentresByUserId;
+        this.userId                     = toInteger( attributes.get(0));
+        this.surname                    = attributes.get(1);
+        this.firstname                  = attributes.get(2);
+        this.emailAddress               = attributes.get(3);
+        this.type                       = attributes.get(4);
+        this.phoneNumber                = attributes.get(5);
+        this.password                   = attributes.get(6);
+        this.yob                        = toInteger( attributes.get(7));
+        this.gender                     = attributes.get(8);
+
     }
 
     @Id

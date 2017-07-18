@@ -2,27 +2,29 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 
 @Entity
-@Table(name = "ratings", schema = "shoptrawler", catalog = "")
+@Table(name = "ratings", schema = "shoptrawler")
 @IdClass(RatingPK.class)
-public class Rating {
+public class Rating extends BaseEntity {
     private int userid;
     private int retailerid;
     private Timestamp date;
-    private String rating;
+    private String rating; // should be Integer ?
     private String review;
 
     public Rating() {
     }
 
-    public Rating(List<String> attributes) {
-        this.userid = userid;
-        this.retailerid = retailerid;
-        this.date = date;
-        this.rating = rating;
-        this.review = review;
+    public Rating(List<String> attributes) throws ParseException {
+        this.userid     = toInteger(attributes.get(0));
+        this.retailerid = toInteger(attributes.get(1));
+        this.date       = toTimestamp(attributes.get(2));
+     //   this.rating     = toInteger(attributes.get(3));
+        this.review     = attributes.get(4);
+
     }
 
     @Id

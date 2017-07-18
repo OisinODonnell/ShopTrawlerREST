@@ -2,11 +2,12 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 
 @Entity
 @IdClass(ContentPK.class)
-public class Content {
+public class Content extends BaseEntity {
     private int retailerid;
     private int contentid;
     private Timestamp endDate;
@@ -19,15 +20,15 @@ public class Content {
 
     }
 
-    public Content(List<String> attributes) {
+    public Content(List<String> attributes) throws ParseException {
 
-        this.retailerid = attributes.get(0); //retailerid;
-        this.contentid = contentid;
-        this.endDate = endDate;
-        this.page1 = page1;
-        this.page2 = page2;
-        this.page3 = page3;
-        this.startDate = startDate;
+        this.retailerid = toInteger( attributes.get(0));
+        this.contentid  = toInteger( attributes.get(1));
+        this.endDate    = toTimestamp(attributes.get(2));
+        this.page1      = attributes.get(3);
+        this.page2      = attributes.get(4);
+        this.page3      = attributes.get(5);
+        this.startDate  = toTimestamp(attributes.get(6));
     }
 
     @Id

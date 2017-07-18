@@ -2,35 +2,36 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
 
 @Entity
-@Table(name = "loyaltyrewards", schema = "shoptrawler", catalog = "")
+@Table(name = "loyaltyrewards", schema = "shoptrawler")
 @IdClass(LoyaltyRewardPK.class)
-public class LoyaltyReward {
+public class LoyaltyReward extends BaseEntity {
     private int retailerid;
     private int loyaltyRewardid;
     private Timestamp endDate;
     private Integer pointsPerVisit;
     private String rewardImage;
-    private Integer rewardTitle;
+    private Integer rewardTitle; // Possible Problem Here!!! ... should this be string?
     private Timestamp startDate;
     private Integer visitTime;
 
     public LoyaltyReward() {
     }
 
-    public LoyaltyReward(List<String> attributes) {
-        this.retailerid = retailerid;
-        this.loyaltyRewardid = loyaltyRewardid;
-        this.endDate = endDate;
-        this.pointsPerVisit = pointsPerVisit;
-        this.rewardImage = rewardImage;
-        this.rewardTitle = rewardTitle;
-        this.startDate = startDate;
-        this.visitTime = visitTime;
-    }
+    public LoyaltyReward(List<String> attributes) throws ParseException {
+        this.retailerid         = toInteger(attributes.get(0));
+        this.loyaltyRewardid    = toInteger(attributes.get(1));
+        this.endDate            = toTimestamp(attributes.get(2));
+        this.pointsPerVisit     = toInteger(attributes.get(3));
+        this.rewardImage        = attributes.get(4);
+        // this.rewardTitle        = attributes.get(5);
+        this.startDate          = toTimestamp(attributes.get(6));
+        this.visitTime          = toInteger(attributes.get(7));
 
+    }
     @Id
     @Column(name = "retailerid", nullable = false)
     public int getRetailerid() {

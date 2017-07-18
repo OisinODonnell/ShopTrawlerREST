@@ -4,9 +4,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "userpoints", schema = "shoptrawler", catalog = "")
+@Table(name = "userpoints", schema = "shoptrawler")
 @IdClass(UserPointPK.class)
-public class UserPoint {
+public class UserPoint extends BaseEntity {
     private int userid;
     private int retailerid;
     private Integer points;
@@ -15,9 +15,9 @@ public class UserPoint {
     }
 
     public UserPoint(List<String> attributes) {
-        this.userid = userid;
-        this.retailerid = retailerid;
-        this.points = points;
+        this.userid         = toInteger( attributes.get(0));
+        this.retailerid     = toInteger( attributes.get(1));
+        this.points         = toInteger( attributes.get(2));
     }
 
     @Id

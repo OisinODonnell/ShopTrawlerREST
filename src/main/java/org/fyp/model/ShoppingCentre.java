@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class ShoppingCentre {
+public class ShoppingCentre extends BaseEntity {
     private int shoppingCentreId;
     private String shoppingCentreName;
     private int adminId;
@@ -25,20 +25,19 @@ public class ShoppingCentre {
     }
 
     public ShoppingCentre(List<String> attributes) {
-        this.shoppingCentreId = shoppingCentreId;
-        this.shoppingCentreName = shoppingCentreName;
-        this.adminId = adminId;
-        this.websiteUrl = websiteUrl;
-        this.twitterUrl = twitterUrl;
-        this.facebookUrl = facebookUrl;
-        this.logoImageSmall = logoImageSmall;
-        this.logoImageMedium = logoImageMedium;
-        this.logoImageLarge = logoImageLarge;
-        this.phone = phone;
-        this.contentPage = contentPage;
-        this.locationsByShoppingCentreId = locationsByShoppingCentreId;
-        this.retailersByShoppingCentreId = retailersByShoppingCentreId;
-        this.usersByAdminId = usersByAdminId;
+
+        this.shoppingCentreId               = toInteger( attributes.get(0));
+        this.shoppingCentreName             = attributes.get(1);
+        this.adminId                        = toInteger( attributes.get(2));
+        this.websiteUrl                     = attributes.get(3);
+        this.twitterUrl                     = attributes.get(4);
+        this.facebookUrl                    = attributes.get(5);
+        this.logoImageSmall                 = attributes.get(6);
+        this.logoImageMedium                = attributes.get(7);
+        this.logoImageLarge                 = attributes.get(8);
+        this.phone                          = attributes.get(9);
+        this.contentPage                    = attributes.get(10);
+
     }
 
     @Id

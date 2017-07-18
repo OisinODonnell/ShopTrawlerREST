@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "retailers", schema = "shoptrawler", catalog = "")
-public class Retailer {
+@Table(name = "retailers", schema = "shoptrawler")
+public class Retailer extends BaseEntity {
     private int retailerId;
     private String storeName;
     private int managerId;
@@ -33,27 +33,23 @@ public class Retailer {
     }
 
     public Retailer(List<String> attributes) {
-        this.retailerId = retailerId;
-        this.storeName = storeName;
-        this.managerId = managerId;
-        this.phone = phone;
-        this.zoneId = zoneId;
-        this.shoppingCentreId = shoppingCentreId;
-        this.websiteUrl = websiteUrl;
-        this.twitterUrl = twitterUrl;
-        this.facebookUrl = facebookUrl;
-        this.headerBackgroundImage = headerBackgroundImage;
-        this.defaultContentPage1 = defaultContentPage1;
-        this.defaultContentPage2 = defaultContentPage2;
-        this.defaultContentPage3 = defaultContentPage3;
-        this.defaultLoyaltyRewardImage = defaultLoyaltyRewardImage;
-        this.logoImageSmall = logoImageSmall;
-        this.logoImageMedium = logoImageMedium;
-        this.logoImageLarge = logoImageLarge;
-        this.usersByManagerId = usersByManagerId;
-        this.zonesByZoneId = zonesByZoneId;
-        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
-        this.zonesByRetailerId = zonesByRetailerId;
+        this.retailerId                         = toInteger( attributes.get(0));
+        this.storeName                          = attributes.get(1);
+        this.managerId                          = toInteger( attributes.get(2));
+        this.phone                              = attributes.get(3);
+        this.zoneId                             = toInteger( attributes.get(4));
+        this.shoppingCentreId                   = toInteger( attributes.get(5));
+        this.websiteUrl                         = attributes.get(6);
+        this.twitterUrl                         = attributes.get(7);
+        this.facebookUrl                        = attributes.get(8);
+        this.headerBackgroundImage              = attributes.get(9);
+        this.defaultContentPage1                = attributes.get(10);
+        this.defaultContentPage2                = attributes.get(11);
+        this.defaultContentPage3                = attributes.get(12);
+        this.defaultLoyaltyRewardImage          = attributes.get(13);
+        this.logoImageSmall                     = attributes.get(14);
+        this.logoImageMedium                    = attributes.get(15);
+        this.logoImageLarge                     = attributes.get(16);
     }
 
     @Id

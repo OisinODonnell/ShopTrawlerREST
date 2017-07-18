@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "locations", schema = "shoptrawler", catalog = "")
-public class Location {
+@Table(name = "locations", schema = "shoptrawler")
+public class Location extends BaseEntity {
     private int locationId;
     private int gpsLatitude;
     private int gpsLongitude;
@@ -21,15 +21,14 @@ public class Location {
     }
 
     public Location(List<String> attributes) {
-        this.locationId = locationId;
-        this.gpsLatitude = gpsLatitude;
-        this.gpsLongitude = gpsLongitude;
-        this.locationInShoppingCentre = locationInShoppingCentre;
-        this.locationType = locationType;
-        this.altitude = altitude;
-        this.shoppingCentreId = shoppingCentreId;
-        this.beaconsByLocationId = beaconsByLocationId;
-        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
+        this.locationId                         = toInteger(attributes.get(0));
+        this.gpsLatitude                        = toInteger(attributes.get(0));
+        this.gpsLongitude                       = toInteger(attributes.get(0));
+        this.locationInShoppingCentre           = toInteger(attributes.get(0));
+        this.locationType                       = attributes.get(4);
+        this.altitude                           = toInteger(attributes.get(0));
+        this.shoppingCentreId                   = toInteger(attributes.get(0));
+
     }
 
     @Id

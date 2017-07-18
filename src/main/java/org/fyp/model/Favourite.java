@@ -1,13 +1,23 @@
 package org.fyp.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "favourites", schema = "shoptrawler", catalog = "")
+@Table(name = "favourites", schema = "shoptrawler")
 @IdClass(FavouritePK.class)
-public class Favourite {
+public class Favourite extends BaseEntity {
     private int userid;
     private int retailerid;
+
+    public Favourite(List<String> attributes) {
+        this.userid     = toInteger(attributes.get(0));
+        this.retailerid = toInteger(attributes.get(1));
+    }
+
+    public Favourite() {
+    }
+
 
     @Id
     @Column(name = "userid", nullable = false)
