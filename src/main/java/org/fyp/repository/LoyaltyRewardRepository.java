@@ -9,7 +9,7 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "loyaltyReward", path = "LoyaltyRewards")
 @Transactional
 public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, Integer> {
-    Collection<LoyaltyReward> findAllByRetailerID(int retailerID);
-    LoyaltyReward findByLoyaltyRewardID(int loyaltyRewardID);
-    Integer deleteByLoyaltyRewardID(int loyaltyRewardID);
+    Collection<LoyaltyReward> findAllByRetailerid(int retailerID);
+    LoyaltyReward findByLoyaltyRewardid(int loyaltyRewardID);
+    Integer deleteByLoyaltyRewardid(int loyaltyRewardID);
 }

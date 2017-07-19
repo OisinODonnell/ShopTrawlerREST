@@ -282,7 +282,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "managerID", referencedColumnName = "userID", nullable = false)
+    @JoinColumn(name = "managerID", referencedColumnName = "userID", nullable = false, insertable = false, updatable = false)
     public User getUsersByManagerId() {
         return usersByManagerId;
     }
@@ -292,7 +292,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "zoneID", referencedColumnName = "zoneID", nullable = false)
+    @JoinColumn(name = "zoneID", referencedColumnName = "zoneID", nullable = false, insertable = false, updatable = false)
     public Zone getZonesByZoneId() {
         return zonesByZoneId;
     }
@@ -302,7 +302,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID", nullable = false)
+    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID", nullable = false, insertable = false, updatable = false)
     public ShoppingCentre getShoppingcentreByShoppingCentreId() {
         return shoppingcentreByShoppingCentreId;
     }

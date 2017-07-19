@@ -8,6 +8,6 @@ import javax.transaction.Transactional;
 //@RepositoryRestResource(collectionResourceRel = "user", path = "Users")
 @Transactional
 public interface UserRepository extends JpaRepository<User, Integer> {
-    User findByUserID(int userID);
-    Integer deleteByUserID(int userID);
+    User findByUserId(int userID);
+    Integer deleteByUserId(int userID);
 }

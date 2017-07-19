@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
-@Table(name = "visits", schema = "shoptrawler", catalog = "")
+@Table(name = "visits", schema = "shoptrawler")
 @IdClass(VisitPK.class)
 public class Visit {
     private int zoneid;

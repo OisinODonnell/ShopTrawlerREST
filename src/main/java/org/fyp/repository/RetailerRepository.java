@@ -8,6 +8,6 @@ import javax.transaction.Transactional;
 //@RepositoryRestResource(collectionResourceRel = "retailer", path = "Retailers")
 @Transactional
 public interface RetailerRepository extends JpaRepository<Retailer, Integer> {
-    Retailer findByRetailerID(Integer retailerID);
-    Integer deleteByRetailerID(Integer retailerID);
+    Retailer findByRetailerId(Integer retailerID);
+    Integer deleteByRetailerId(Integer retailerID);
 }

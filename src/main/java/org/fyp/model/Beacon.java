@@ -119,7 +119,7 @@ public class Beacon extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "locationID", referencedColumnName = "locationID", nullable = false)
+    @JoinColumn(name = "locationID", referencedColumnName = "locationID", nullable = false, insertable = false, updatable = false)
     public Location getLocationsByLocationId() {
         return locationsByLocationId;
     }

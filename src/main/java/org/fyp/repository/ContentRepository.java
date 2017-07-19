@@ -11,10 +11,10 @@ import java.util.Collection;
 @Transactional
 public interface ContentRepository extends JpaRepository<Content, Integer> {
 
-    Content findByContentID(Integer contentID);
-    Collection<Content> findAllByRetailerID(int retailerID);
+    Content findByContentid(Integer contentID);
+    Collection<Content> findAllByRetailerid(int retailerID);
     
 //    Collection<Content> findByTitleLikeIgnoreCase(String titleLike);
 
-    Integer deleteByContentID(int contentID);
+    Integer deleteByContentid(int contentID);
 }

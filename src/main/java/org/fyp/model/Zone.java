@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table(name = "zones", schema = "shoptrawler", catalog = "")
+@Table(name = "zones", schema = "shoptrawler")
 public class Zone {
     private int zoneId;
     private Integer beaconId;
@@ -102,7 +102,7 @@ public class Zone {
     }
 
     @ManyToOne
-    @JoinColumn(name = "beaconID", referencedColumnName = "beaconID")
+    @JoinColumn(name = "beaconID", referencedColumnName = "beaconID", insertable = false, updatable = false)
     public Beacon getBeaconsByBeaconId() {
         return beaconsByBeaconId;
     }
@@ -112,7 +112,7 @@ public class Zone {
     }
 
     @ManyToOne
-    @JoinColumn(name = "retailerID", referencedColumnName = "retailerID")
+    @JoinColumn(name = "retailerID", referencedColumnName = "retailerID", insertable = false, updatable = false)
     public Retailer getRetailersByRetailerId() {
         return retailersByRetailerId;
     }

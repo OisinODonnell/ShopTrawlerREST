@@ -9,8 +9,8 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "rating", path = "Ratings")
 @Transactional
 public interface RatingRepository extends JpaRepository<Rating,Integer> {
-    Collection<Rating> findAllByRetailerID(int retailerID);
-    Rating findByUserID(int userID);
+    Collection<Rating> findAllByRetailerid(int retailerID);
+    Rating findByUserid(int userID);
 
 }
 

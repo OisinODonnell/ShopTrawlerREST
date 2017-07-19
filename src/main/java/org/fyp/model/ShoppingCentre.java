@@ -211,7 +211,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "adminID", referencedColumnName = "userID", nullable = false)
+    @JoinColumn(name = "adminID", referencedColumnName = "userID", nullable = false, insertable = false, updatable = false)
     public User getUsersByAdminId() {
         return usersByAdminId;
     }

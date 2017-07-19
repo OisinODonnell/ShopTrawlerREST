@@ -9,7 +9,7 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "bonusCode", path = "BonusCode")
 @Transactional
 public interface BonusCodeRepository extends JpaRepository<BonusCode, Integer> {
-    Collection<BonusCode> findAllByUserID(int userID);
-    Collection<BonusCode> findAllByRetailerID(int retailerID);
-    BonusCode findByUserIDAndRetailerID(int userID, int retailerID );
+    Collection<BonusCode> findAllByUserid(int userID);
+    Collection<BonusCode> findAllByRetailerid(int retailerID);
+    BonusCode findByUseridAndRetailerid(int userID, int retailerID );
 }

@@ -143,7 +143,7 @@ public class Location extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID")
+    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID", insertable = false, updatable = false)
     public ShoppingCentre getShoppingcentreByShoppingCentreId() {
         return shoppingcentreByShoppingCentreId;
     }
