@@ -14,7 +14,7 @@ public class LoyaltyReward extends BaseEntity {
     private Timestamp endDate;
     private Integer pointsPerVisit;
     private String rewardImage;
-    private Integer rewardTitle; // Possible Problem Here!!! ... should this be string?
+    private String rewardTitle;
     private Timestamp startDate;
     private Integer visitTime;
 
@@ -27,7 +27,7 @@ public class LoyaltyReward extends BaseEntity {
         this.endDate            = toTimestamp(attributes.get(2));
         this.pointsPerVisit     = toInteger(attributes.get(3));
         this.rewardImage        = attributes.get(4);
-        // this.rewardTitle        = attributes.get(5);
+        this.rewardTitle        = attributes.get(5);
         this.startDate          = toTimestamp(attributes.get(6));
         this.visitTime          = toInteger(attributes.get(7));
 
@@ -84,11 +84,11 @@ public class LoyaltyReward extends BaseEntity {
 
     @Basic
     @Column(name = "reward_title", nullable = true)
-    public Integer getRewardTitle() {
+    public String getRewardTitle() {
         return rewardTitle;
     }
 
-    public void setRewardTitle(Integer rewardTitle) {
+    public void setRewardTitle(String rewardTitle) {
         this.rewardTitle = rewardTitle;
     }
 

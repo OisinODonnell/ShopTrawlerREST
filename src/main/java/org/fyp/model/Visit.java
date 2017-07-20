@@ -2,12 +2,15 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.List;
+
+import static jdk.nashorn.internal.runtime.JSType.toInteger;
 
 @Entity
 @Table(name = "visits", schema = "shoptrawler")
 @IdClass(VisitPK.class)
-public class Visit {
+public class Visit extends BaseEntity {
     private int zoneid;
     private int visitid;
     private int userid;
@@ -18,13 +21,13 @@ public class Visit {
     public Visit() {
     }
 
-    public Visit(List<String> attributes) {
-        this.zoneid = zoneid;
-        this.visitid = visitid;
-        this.userid = userid;
-        this.duration = duration;
-        this.entryTime = entryTime;
-        this.exitTime = exitTime;
+    public Visit(List<String> attributes) throws ParseException {
+        this.zoneid = toInteger(attributes.get(0));
+        this.visitid = toInteger(attributes.get(1));
+        this.userid = toInteger(attributes.get(2));
+        this.duration = toInteger(attributes.get(3));
+        this.entryTime = toTimestamp(attributes.get(4));
+        this.exitTime = toTimestamp(attributes.get(5));
     }
 
     @Id

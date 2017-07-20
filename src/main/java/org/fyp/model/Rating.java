@@ -12,7 +12,7 @@ public class Rating extends BaseEntity {
     private int userid;
     private int retailerid;
     private Timestamp date;
-    private String rating; // should be Integer ?
+    private int rating;
     private String review;
 
     public Rating() {
@@ -22,7 +22,7 @@ public class Rating extends BaseEntity {
         this.userid     = toInteger(attributes.get(0));
         this.retailerid = toInteger(attributes.get(1));
         this.date       = toTimestamp(attributes.get(2));
-     //   this.rating     = toInteger(attributes.get(3));
+        this.rating     = toInteger(attributes.get(3));
         this.review     = attributes.get(4);
 
     }
@@ -59,11 +59,11 @@ public class Rating extends BaseEntity {
 
     @Basic
     @Column(name = "rating", nullable = true, length = 255)
-    public String getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
@@ -86,8 +86,8 @@ public class Rating extends BaseEntity {
 
         if (userid != rating1.userid) return false;
         if (retailerid != rating1.retailerid) return false;
+        if (rating != rating1.rating) return false;
         if (date != null ? !date.equals(rating1.date) : rating1.date != null) return false;
-        if (rating != null ? !rating.equals(rating1.rating) : rating1.rating != null) return false;
         if (review != null ? !review.equals(rating1.review) : rating1.review != null) return false;
 
         return true;
@@ -97,8 +97,8 @@ public class Rating extends BaseEntity {
     public int hashCode() {
         int result = userid;
         result = 31 * result + retailerid;
+        result = 31 * result + rating;
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (rating != null ? rating.hashCode() : 0);
         result = 31 * result + (review != null ? review.hashCode() : 0);
         return result;
     }

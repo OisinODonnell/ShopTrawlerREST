@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "zones", schema = "shoptrawler")
-public class Zone {
+public class Zone extends BaseEntity {
     private int zoneId;
     private Integer beaconId;
     private String zoneName;
@@ -19,13 +19,11 @@ public class Zone {
     }
 
     public Zone(List<String> attributes) {
-        this.zoneId = zoneId;
-        this.beaconId = beaconId;
-        this.zoneName = zoneName;
-        this.retailerId = retailerId;
-        this.retailersByZoneId = retailersByZoneId;
-        this.beaconsByBeaconId = beaconsByBeaconId;
-        this.retailersByRetailerId = retailersByRetailerId;
+        this.zoneId             = toInteger(attributes.get(0));
+        this.beaconId           = toInteger(attributes.get(1));
+        this.zoneName           = attributes.get(2);
+        this.retailerId         = toInteger(attributes.get(3));
+
     }
 
     @Id
