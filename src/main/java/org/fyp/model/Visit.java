@@ -15,8 +15,25 @@ public class Visit extends BaseEntity {
     private int visitid;
     private int userid;
     private Integer duration;
+    private int userCreditedForVisit;
     private Timestamp entryTime;
     private Timestamp exitTime;
+
+    public int getUserCreditedForVisit() {
+        return userCreditedForVisit;
+    }
+
+    public void setUserCreditedForVisit(int userCreditedForVisit) {
+        // can only be 0 false, and 1 = true
+        // break if anything else
+        if ((userCreditedForVisit == 0) || (userCreditedForVisit == 1)) {
+            this.userCreditedForVisit = userCreditedForVisit;
+        } else {
+            System.out.println("userCreditedForVisit is not 0 or 1 -> " + userCreditedForVisit);
+        }
+    }
+
+
 
     public Visit() {
     }
