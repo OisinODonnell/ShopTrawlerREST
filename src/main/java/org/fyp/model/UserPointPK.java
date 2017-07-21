@@ -8,7 +8,7 @@ public class UserPointPK implements Serializable {
     private int userid;
     private int retailerid;
 
-    @Column(name = "userid", nullable = false)
+    @Column(name = "userid")
     @Id
     public int getUserid() {
         return userid;
@@ -18,7 +18,7 @@ public class UserPointPK implements Serializable {
         this.userid = userid;
     }
 
-    @Column(name = "retailerid", nullable = false)
+    @Column(name = "retailerid")
     @Id
     public int getRetailerid() {
         return retailerid;

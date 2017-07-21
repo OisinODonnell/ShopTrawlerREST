@@ -6,15 +6,16 @@ import java.text.ParseException;
 import java.util.List;
 
 @Entity
-@IdClass(ContentPK.class)
+@Table(name = "content", schema = "shoptrawler")
 public class Content extends BaseEntity {
-    private int retailerid;
     private int contentid;
     private Timestamp endDate;
     private String page1;
     private String page2;
     private String page3;
+    private int retailerid;
     private Timestamp startDate;
+    private Retailer retailersByRetailerid;
 
     public Content() {
 
@@ -30,19 +31,8 @@ public class Content extends BaseEntity {
         this.page3      = attributes.get(5);
         this.startDate  = toTimestamp(attributes.get(6));
     }
-
     @Id
-    @Column(name = "retailerid", nullable = false)
-    public int getRetailerid() {
-        return retailerid;
-    }
-
-    public void setRetailerid(int retailerid) {
-        this.retailerid = retailerid;
-    }
-
-    @Id
-    @Column(name = "contentid", nullable = false)
+    @Column(name = "contentid")
     public int getContentid() {
         return contentid;
     }
@@ -52,7 +42,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "end_date", nullable = true)
+    @Column(name = "end_date")
     public Timestamp getEndDate() {
         return endDate;
     }
@@ -62,7 +52,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page1", nullable = true, length = 255)
+    @Column(name = "page1")
     public String getPage1() {
         return page1;
     }
@@ -72,7 +62,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page2", nullable = true, length = 255)
+    @Column(name = "page2")
     public String getPage2() {
         return page2;
     }
@@ -82,7 +72,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page3", nullable = true, length = 255)
+    @Column(name = "page3")
     public String getPage3() {
         return page3;
     }
@@ -92,7 +82,17 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "start_date", nullable = true)
+    @Column(name = "retailerid")
+    public int getRetailerid() {
+        return retailerid;
+    }
+
+    public void setRetailerid(int retailerid) {
+        this.retailerid = retailerid;
+    }
+
+    @Basic
+    @Column(name = "start_date")
     public Timestamp getStartDate() {
         return startDate;
     }
@@ -108,8 +108,8 @@ public class Content extends BaseEntity {
 
         Content content = (Content) o;
 
-        if (retailerid != content.retailerid) return false;
         if (contentid != content.contentid) return false;
+        if (retailerid != content.retailerid) return false;
         if (endDate != null ? !endDate.equals(content.endDate) : content.endDate != null) return false;
         if (page1 != null ? !page1.equals(content.page1) : content.page1 != null) return false;
         if (page2 != null ? !page2.equals(content.page2) : content.page2 != null) return false;
@@ -121,13 +121,23 @@ public class Content extends BaseEntity {
 
     @Override
     public int hashCode() {
-        int result = retailerid;
-        result = 31 * result + contentid;
+        int result = contentid;
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (page1 != null ? page1.hashCode() : 0);
         result = 31 * result + (page2 != null ? page2.hashCode() : 0);
         result = 31 * result + (page3 != null ? page3.hashCode() : 0);
+        result = 31 * result + retailerid;
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
+    public Retailer getRetailersByRetailerid() {
+        return retailersByRetailerid;
+    }
+
+    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
+        this.retailersByRetailerid = retailersByRetailerid;
     }
 }

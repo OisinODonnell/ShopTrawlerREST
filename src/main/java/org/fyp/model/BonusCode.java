@@ -12,8 +12,9 @@ public class BonusCode extends BaseEntity {
     private Timestamp datetime;
     private Integer retailerid;
     private Integer userid;
-    private String value; // should this be Int?
-
+    private String value;
+    private Retailer retailersByRetailerid;
+    private User usersByUserid;
 
     public BonusCode() {
     }
@@ -25,9 +26,8 @@ public class BonusCode extends BaseEntity {
         this.userid         = toInteger( attributes.get(3));
         this.value          = attributes.get(4);
     }
-
     @Id
-    @Column(name = "bonus_codeid", nullable = false)
+    @Column(name = "bonus_codeid")
     public int getBonusCodeid() {
         return bonusCodeid;
     }
@@ -37,7 +37,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "datetime", nullable = true)
+    @Column(name = "datetime")
     public Timestamp getDatetime() {
         return datetime;
     }
@@ -47,7 +47,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "retailerid", nullable = true)
+    @Column(name = "retailerid")
     public Integer getRetailerid() {
         return retailerid;
     }
@@ -57,7 +57,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "userid", nullable = true)
+    @Column(name = "userid")
     public Integer getUserid() {
         return userid;
     }
@@ -67,7 +67,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "value", nullable = true, length = 255)
+    @Column(name = "value")
     public String getValue() {
         return value;
     }
@@ -100,5 +100,25 @@ public class BonusCode extends BaseEntity {
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
         result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid",insertable = false, updatable = false)
+    public Retailer getRetailersByRetailerid() {
+        return retailersByRetailerid;
+    }
+
+    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
+        this.retailersByRetailerid = retailersByRetailerid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "userid", referencedColumnName = "userid",insertable = false, updatable = false)
+    public User getUsersByUserid() {
+        return usersByUserid;
+    }
+
+    public void setUsersByUserid(User usersByUserid) {
+        this.usersByUserid = usersByUserid;
     }
 }

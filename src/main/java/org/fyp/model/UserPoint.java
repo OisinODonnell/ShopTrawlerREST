@@ -10,6 +10,8 @@ public class UserPoint extends BaseEntity {
     private int userid;
     private int retailerid;
     private Integer points;
+    private User usersByUserid;
+    private Retailer retailersByRetailerid;
 
     public UserPoint() {
     }
@@ -19,9 +21,8 @@ public class UserPoint extends BaseEntity {
         this.retailerid     = toInteger( attributes.get(1));
         this.points         = toInteger( attributes.get(2));
     }
-
     @Id
-    @Column(name = "userid", nullable = false)
+    @Column(name = "userid")
     public int getUserid() {
         return userid;
     }
@@ -31,7 +32,7 @@ public class UserPoint extends BaseEntity {
     }
 
     @Id
-    @Column(name = "retailerid", nullable = false)
+    @Column(name = "retailerid")
     public int getRetailerid() {
         return retailerid;
     }
@@ -41,7 +42,7 @@ public class UserPoint extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "points", nullable = true)
+    @Column(name = "points")
     public Integer getPoints() {
         return points;
     }
@@ -70,5 +71,25 @@ public class UserPoint extends BaseEntity {
         result = 31 * result + retailerid;
         result = 31 * result + (points != null ? points.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    public User getUsersByUserid() {
+        return usersByUserid;
+    }
+
+    public void setUsersByUserid(User usersByUserid) {
+        this.usersByUserid = usersByUserid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
+    public Retailer getRetailersByRetailerid() {
+        return retailersByRetailerid;
+    }
+
+    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
+        this.retailersByRetailerid = retailersByRetailerid;
     }
 }

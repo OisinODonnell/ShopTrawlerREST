@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 //@RepositoryRestResource(collectionResourceRel = "beacon", path = "Beacons")
 @Transactional
 public interface BeaconRepository extends JpaRepository<Beacon, Integer> {
-    Beacon findByBeaconId(int beaconID);
-    Integer deleteByBeaconId(int beaconID);
+    Beacon findByBeaconid(int beaconID);
+    Integer deleteByBeaconid(int beaconID);
 
 }

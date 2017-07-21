@@ -9,6 +9,8 @@ import java.util.List;
 public class Favourite extends BaseEntity {
     private int userid;
     private int retailerid;
+    private User usersByUserid;
+    private Retailer retailersByRetailerid;
 
     public Favourite(List<String> attributes) {
         this.userid     = toInteger(attributes.get(0));
@@ -17,10 +19,8 @@ public class Favourite extends BaseEntity {
 
     public Favourite() {
     }
-
-
     @Id
-    @Column(name = "userid", nullable = false)
+    @Column(name = "userid")
     public int getUserid() {
         return userid;
     }
@@ -30,7 +30,7 @@ public class Favourite extends BaseEntity {
     }
 
     @Id
-    @Column(name = "retailerid", nullable = false)
+    @Column(name = "retailerid")
     public int getRetailerid() {
         return retailerid;
     }
@@ -57,5 +57,25 @@ public class Favourite extends BaseEntity {
         int result = userid;
         result = 31 * result + retailerid;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    public User getUsersByUserid() {
+        return usersByUserid;
+    }
+
+    public void setUsersByUserid(User usersByUserid) {
+        this.usersByUserid = usersByUserid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
+    public Retailer getRetailersByRetailerid() {
+        return retailersByRetailerid;
+    }
+
+    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
+        this.retailersByRetailerid = retailersByRetailerid;
     }
 }

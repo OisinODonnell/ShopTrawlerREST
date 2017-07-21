@@ -15,6 +15,8 @@
         <class>org.fyp.model.User</class>
         <class>org.fyp.model.Visit</class>
         <class>org.fyp.model.Zone</class>
+        <class>org.fyp.model.Userpoints</class>
+        <class>org.fyp.model.Bonuscode</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/shoptrawler"/>
             <property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>

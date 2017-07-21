@@ -7,63 +7,63 @@ import java.util.List;
 @Entity
 @Table(name = "zones", schema = "shoptrawler")
 public class Zone extends BaseEntity {
-    private int zoneId;
-    private Integer beaconId;
+    private int zoneid;
+    private Integer beaconid;
+    private Integer retailerid;
     private String zoneName;
-    private Integer retailerId;
-    private Collection<Retailer> retailersByZoneId;
-    private Beacon beaconsByBeaconId;
-    private Retailer retailersByRetailerId;
+    private Collection<Retailer> retailersByZoneid;
+    private Collection<Visit> visitsByZoneid;
+    private Beacon beaconsByBeaconid;
+    private Retailer retailersByRetailerid;
 
     public Zone() {
     }
 
     public Zone(List<String> attributes) {
-        this.zoneId             = toInteger(attributes.get(0));
-        this.beaconId           = toInteger(attributes.get(1));
+        this.zoneid             = toInteger(attributes.get(0));
+        this.beaconid           = toInteger(attributes.get(1));
         this.zoneName           = attributes.get(2);
-        this.retailerId         = toInteger(attributes.get(3));
+        this.retailerid         = toInteger(attributes.get(3));
 
     }
-
     @Id
-    @Column(name = "zoneID", nullable = false)
-    public int getZoneId() {
-        return zoneId;
+    @Column(name = "zoneid")
+    public int getZoneid() {
+        return zoneid;
     }
 
-    public void setZoneId(int zoneId) {
-        this.zoneId = zoneId;
-    }
-
-    @Basic
-    @Column(name = "beaconID", nullable = true)
-    public Integer getBeaconId() {
-        return beaconId;
-    }
-
-    public void setBeaconId(Integer beaconId) {
-        this.beaconId = beaconId;
+    public void setZoneid(int zoneid) {
+        this.zoneid = zoneid;
     }
 
     @Basic
-    @Column(name = "zoneName", nullable = true, length = 45)
+    @Column(name = "beaconid")
+    public Integer getBeaconid() {
+        return beaconid;
+    }
+
+    public void setBeaconid(Integer beaconid) {
+        this.beaconid = beaconid;
+    }
+
+    @Basic
+    @Column(name = "retailerid")
+    public Integer getRetailerid() {
+        return retailerid;
+    }
+
+    public void setRetailerid(Integer retailerid) {
+        this.retailerid = retailerid;
+    }
+
+    @Basic
+    @Column(name = "zone_name")
     public String getZoneName() {
         return zoneName;
     }
 
     public void setZoneName(String zoneName) {
         this.zoneName = zoneName;
-    }
-
-    @Basic
-    @Column(name = "retailerID", nullable = true)
-    public Integer getRetailerId() {
-        return retailerId;
-    }
-
-    public void setRetailerId(Integer retailerId) {
-        this.retailerId = retailerId;
     }
 
     @Override
@@ -73,49 +73,58 @@ public class Zone extends BaseEntity {
 
         Zone zone = (Zone) o;
 
-        if (zoneId != zone.zoneId) return false;
-        if (beaconId != null ? !beaconId.equals(zone.beaconId) : zone.beaconId != null) return false;
+        if (zoneid != zone.zoneid) return false;
+        if (beaconid != null ? !beaconid.equals(zone.beaconid) : zone.beaconid != null) return false;
+        if (retailerid != null ? !retailerid.equals(zone.retailerid) : zone.retailerid != null) return false;
         if (zoneName != null ? !zoneName.equals(zone.zoneName) : zone.zoneName != null) return false;
-        if (retailerId != null ? !retailerId.equals(zone.retailerId) : zone.retailerId != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = zoneId;
-        result = 31 * result + (beaconId != null ? beaconId.hashCode() : 0);
+        int result = zoneid;
+        result = 31 * result + (beaconid != null ? beaconid.hashCode() : 0);
+        result = 31 * result + (retailerid != null ? retailerid.hashCode() : 0);
         result = 31 * result + (zoneName != null ? zoneName.hashCode() : 0);
-        result = 31 * result + (retailerId != null ? retailerId.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "zonesByZoneId")
-    public Collection<Retailer> getRetailersByZoneId() {
-        return retailersByZoneId;
+    @OneToMany(mappedBy = "zonesByZoneid")
+    public Collection<Retailer> getRetailersByZoneid() {
+        return retailersByZoneid;
     }
 
-    public void setRetailersByZoneId(Collection<Retailer> retailersByZoneId) {
-        this.retailersByZoneId = retailersByZoneId;
+    public void setRetailersByZoneid(Collection<Retailer> retailersByZoneid) {
+        this.retailersByZoneid = retailersByZoneid;
+    }
+
+    @OneToMany(mappedBy = "zonesByZoneid")
+    public Collection<Visit> getVisitsByZoneid() {
+        return visitsByZoneid;
+    }
+
+    public void setVisitsByZoneid(Collection<Visit> visitsByZoneid) {
+        this.visitsByZoneid = visitsByZoneid;
     }
 
     @ManyToOne
-    @JoinColumn(name = "beaconID", referencedColumnName = "beaconID", insertable = false, updatable = false)
-    public Beacon getBeaconsByBeaconId() {
-        return beaconsByBeaconId;
+    @JoinColumn(name = "beaconid", referencedColumnName = "beaconid",insertable = false, updatable = false)
+    public Beacon getBeaconsByBeaconid() {
+        return beaconsByBeaconid;
     }
 
-    public void setBeaconsByBeaconId(Beacon beaconsByBeaconId) {
-        this.beaconsByBeaconId = beaconsByBeaconId;
+    public void setBeaconsByBeaconid(Beacon beaconsByBeaconid) {
+        this.beaconsByBeaconid = beaconsByBeaconid;
     }
 
     @ManyToOne
-    @JoinColumn(name = "retailerID", referencedColumnName = "retailerID", insertable = false, updatable = false)
-    public Retailer getRetailersByRetailerId() {
-        return retailersByRetailerId;
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid",insertable = false, updatable = false)
+    public Retailer getRetailersByRetailerid() {
+        return retailersByRetailerid;
     }
 
-    public void setRetailersByRetailerId(Retailer retailersByRetailerId) {
-        this.retailersByRetailerId = retailersByRetailerId;
+    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
+        this.retailersByRetailerid = retailersByRetailerid;
     }
 }

@@ -5,35 +5,18 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.List;
 
-import static jdk.nashorn.internal.runtime.JSType.toInteger;
-
 @Entity
 @Table(name = "visits", schema = "shoptrawler")
-@IdClass(VisitPK.class)
 public class Visit extends BaseEntity {
-    private int zoneid;
     private int visitid;
-    private int userid;
     private Integer duration;
-    private int userCreditedForVisit;
     private Timestamp entryTime;
     private Timestamp exitTime;
-
-    public int getUserCreditedForVisit() {
-        return userCreditedForVisit;
-    }
-
-    public void setUserCreditedForVisit(int userCreditedForVisit) {
-        // can only be 0 false, and 1 = true
-        // break if anything else
-        if ((userCreditedForVisit == 0) || (userCreditedForVisit == 1)) {
-            this.userCreditedForVisit = userCreditedForVisit;
-        } else {
-            System.out.println("userCreditedForVisit is not 0 or 1 -> " + userCreditedForVisit);
-        }
-    }
-
-
+    private Integer userCreditedForVisit;
+    private int userid;
+    private int zoneid;
+    private User usersByUserid;
+    private Zone zonesByZoneid;
 
     public Visit() {
     }
@@ -46,19 +29,8 @@ public class Visit extends BaseEntity {
         this.entryTime = toTimestamp(attributes.get(4));
         this.exitTime = toTimestamp(attributes.get(5));
     }
-
     @Id
-    @Column(name = "zoneid", nullable = false)
-    public int getZoneid() {
-        return zoneid;
-    }
-
-    public void setZoneid(int zoneid) {
-        this.zoneid = zoneid;
-    }
-
-    @Id
-    @Column(name = "visitid", nullable = false)
+    @Column(name = "visitid")
     public int getVisitid() {
         return visitid;
     }
@@ -67,18 +39,8 @@ public class Visit extends BaseEntity {
         this.visitid = visitid;
     }
 
-    @Id
-    @Column(name = "userid", nullable = false)
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
     @Basic
-    @Column(name = "duration", nullable = true)
+    @Column(name = "duration")
     public Integer getDuration() {
         return duration;
     }
@@ -88,7 +50,7 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "entry_time", nullable = true)
+    @Column(name = "entry_time")
     public Timestamp getEntryTime() {
         return entryTime;
     }
@@ -98,13 +60,43 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "exit_time", nullable = true)
+    @Column(name = "exit_time")
     public Timestamp getExitTime() {
         return exitTime;
     }
 
     public void setExitTime(Timestamp exitTime) {
         this.exitTime = exitTime;
+    }
+
+    @Basic
+    @Column(name = "user_credited_for_visit")
+    public Integer getUserCreditedForVisit() {
+        return userCreditedForVisit;
+    }
+
+    public void setUserCreditedForVisit(Integer userCreditedForVisit) {
+        this.userCreditedForVisit = userCreditedForVisit;
+    }
+
+    @Basic
+    @Column(name = "userid")
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    @Basic
+    @Column(name = "zoneid")
+    public int getZoneid() {
+        return zoneid;
+    }
+
+    public void setZoneid(int zoneid) {
+        this.zoneid = zoneid;
     }
 
     @Override
@@ -114,24 +106,47 @@ public class Visit extends BaseEntity {
 
         Visit visit = (Visit) o;
 
-        if (zoneid != visit.zoneid) return false;
         if (visitid != visit.visitid) return false;
         if (userid != visit.userid) return false;
+        if (zoneid != visit.zoneid) return false;
         if (duration != null ? !duration.equals(visit.duration) : visit.duration != null) return false;
         if (entryTime != null ? !entryTime.equals(visit.entryTime) : visit.entryTime != null) return false;
         if (exitTime != null ? !exitTime.equals(visit.exitTime) : visit.exitTime != null) return false;
+        if (userCreditedForVisit != null ? !userCreditedForVisit.equals(visit.userCreditedForVisit) : visit.userCreditedForVisit != null)
+            return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = zoneid;
-        result = 31 * result + visitid;
-        result = 31 * result + userid;
+        int result = visitid;
         result = 31 * result + (duration != null ? duration.hashCode() : 0);
         result = 31 * result + (entryTime != null ? entryTime.hashCode() : 0);
         result = 31 * result + (exitTime != null ? exitTime.hashCode() : 0);
+        result = 31 * result + (userCreditedForVisit != null ? userCreditedForVisit.hashCode() : 0);
+        result = 31 * result + userid;
+        result = 31 * result + zoneid;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    public User getUsersByUserid() {
+        return usersByUserid;
+    }
+
+    public void setUsersByUserid(User usersByUserid) {
+        this.usersByUserid = usersByUserid;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "zoneid", referencedColumnName = "zoneid", nullable = false,insertable = false, updatable = false)
+    public Zone getZonesByZoneid() {
+        return zonesByZoneid;
+    }
+
+    public void setZonesByZoneid(Zone zonesByZoneid) {
+        this.zonesByZoneid = zonesByZoneid;
     }
 }

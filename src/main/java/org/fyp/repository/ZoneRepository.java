@@ -11,8 +11,8 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "zone", path = "Zones")
 @Transactional
 public interface ZoneRepository extends JpaRepository<Zone,Integer> {
-    Collection<Zone> findAllByBeaconId(int beaconID);
-    Zone findByZoneId(int zoneID);
-    Integer deleteByZoneId(int zoneID);
+    Collection<Zone> findAllByBeaconid(int beaconID);
+    Zone findByZoneid(int zoneID);
+    Integer deleteByZoneid(int zoneID);
 }
 

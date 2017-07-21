@@ -5,30 +5,31 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
+@Table(name = "shopping_centre", schema = "shoptrawler")
 public class ShoppingCentre extends BaseEntity {
-    private int shoppingCentreId;
-    private String shoppingCentreName;
-    private int adminId;
-    private String websiteUrl;
-    private String twitterUrl;
-    private String facebookUrl;
-    private String logoImageSmall;
-    private String logoImageMedium;
-    private String logoImageLarge;
-    private String phone;
+    private int shoppingCentreid;
+    private int adminid;
     private String contentPage;
-    private Collection<Location> locationsByShoppingCentreId;
-    private Collection<Retailer> retailersByShoppingCentreId;
-    private User usersByAdminId;
+    private String facebookUrl;
+    private String logoImageLarge;
+    private String logoImageMedium;
+    private String logoImageSmall;
+    private String phone;
+    private String shoppingCentreName;
+    private String twitterUrl;
+    private String websiteUrl;
+    private Collection<Location> locationsByShoppingCentreid;
+    private Collection<Retailer> retailersByShoppingCentreid;
+    private User usersByAdminid;
 
     public ShoppingCentre() {
     }
 
     public ShoppingCentre(List<String> attributes) {
 
-        this.shoppingCentreId               = toInteger( attributes.get(0));
+        this.shoppingCentreid               = toInteger( attributes.get(0));
         this.shoppingCentreName             = attributes.get(1);
-        this.adminId                        = toInteger( attributes.get(2));
+        this.adminid                        = toInteger( attributes.get(2));
         this.websiteUrl                     = attributes.get(3);
         this.twitterUrl                     = attributes.get(4);
         this.facebookUrl                    = attributes.get(5);
@@ -41,87 +42,47 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Id
-    @Column(name = "shoppingCentreID", nullable = false)
-    public int getShoppingCentreId() {
-        return shoppingCentreId;
+    @Column(name = "shopping_centreid")
+    public int getShoppingCentreid() {
+        return shoppingCentreid;
     }
 
-    public void setShoppingCentreId(int shoppingCentreId) {
-        this.shoppingCentreId = shoppingCentreId;
-    }
-
-    @Basic
-    @Column(name = "shoppingCentreName", nullable = true, length = 45)
-    public String getShoppingCentreName() {
-        return shoppingCentreName;
-    }
-
-    public void setShoppingCentreName(String shoppingCentreName) {
-        this.shoppingCentreName = shoppingCentreName;
+    public void setShoppingCentreid(int shoppingCentreid) {
+        this.shoppingCentreid = shoppingCentreid;
     }
 
     @Basic
-    @Column(name = "adminID", nullable = false)
-    public int getAdminId() {
-        return adminId;
+    @Column(name = "adminid")
+    public int getAdminid() {
+        return adminid;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
-    }
-
-    @Basic
-    @Column(name = "websiteURL", nullable = true, length = 45)
-    public String getWebsiteUrl() {
-        return websiteUrl;
-    }
-
-    public void setWebsiteUrl(String websiteUrl) {
-        this.websiteUrl = websiteUrl;
+    public void setAdminid(int adminid) {
+        this.adminid = adminid;
     }
 
     @Basic
-    @Column(name = "twitterURL", nullable = true, length = 45)
-    public String getTwitterUrl() {
-        return twitterUrl;
+    @Column(name = "content_page")
+    public String getContentPage() {
+        return contentPage;
     }
 
-    public void setTwitterUrl(String twitterUrl) {
-        this.twitterUrl = twitterUrl;
+    public void setContentPage(String contentPage) {
+        this.contentPage = contentPage;
     }
 
     @Basic
-    @Column(name = "facebookURL", nullable = true, length = 45)
+    @Column(name = "facebookurl")
     public String getFacebookUrl() {
         return facebookUrl;
     }
 
-    public void setFacebookUrl(String facebookUrl) {
-        this.facebookUrl = facebookUrl;
+    public void setFacebookUrl(String facebookurl) {
+        this.facebookUrl = facebookurl;
     }
 
     @Basic
-    @Column(name = "logoImageSmall", nullable = true, length = 45)
-    public String getLogoImageSmall() {
-        return logoImageSmall;
-    }
-
-    public void setLogoImageSmall(String logoImageSmall) {
-        this.logoImageSmall = logoImageSmall;
-    }
-
-    @Basic
-    @Column(name = "logoImageMedium", nullable = true, length = 45)
-    public String getLogoImageMedium() {
-        return logoImageMedium;
-    }
-
-    public void setLogoImageMedium(String logoImageMedium) {
-        this.logoImageMedium = logoImageMedium;
-    }
-
-    @Basic
-    @Column(name = "logoImageLarge", nullable = true, length = 45)
+    @Column(name = "logo_image_large")
     public String getLogoImageLarge() {
         return logoImageLarge;
     }
@@ -131,7 +92,27 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "phone", nullable = true, length = 45)
+    @Column(name = "logo_image_medium")
+    public String getLogoImageMedium() {
+        return logoImageMedium;
+    }
+
+    public void setLogoImageMedium(String logoImageMedium) {
+        this.logoImageMedium = logoImageMedium;
+    }
+
+    @Basic
+    @Column(name = "logo_image_small")
+    public String getLogoImageSmall() {
+        return logoImageSmall;
+    }
+
+    public void setLogoImageSmall(String logoImageSmall) {
+        this.logoImageSmall = logoImageSmall;
+    }
+
+    @Basic
+    @Column(name = "phone")
     public String getPhone() {
         return phone;
     }
@@ -141,13 +122,33 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "contentPage", nullable = true, length = 45)
-    public String getContentPage() {
-        return contentPage;
+    @Column(name = "shopping_centre_name")
+    public String getShoppingCentreName() {
+        return shoppingCentreName;
     }
 
-    public void setContentPage(String contentPage) {
-        this.contentPage = contentPage;
+    public void setShoppingCentreName(String shoppingCentreName) {
+        this.shoppingCentreName = shoppingCentreName;
+    }
+
+    @Basic
+    @Column(name = "twitterurl")
+    public String getTwitterUrl() {
+        return twitterUrl;
+    }
+
+    public void setTwitterUrl(String twitterurl) {
+        this.twitterUrl = twitterurl;
+    }
+
+    @Basic
+    @Column(name = "websiteurl")
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteurl) {
+        this.websiteUrl = websiteurl;
     }
 
     @Override
@@ -157,66 +158,66 @@ public class ShoppingCentre extends BaseEntity {
 
         ShoppingCentre that = (ShoppingCentre) o;
 
-        if (shoppingCentreId != that.shoppingCentreId) return false;
-        if (adminId != that.adminId) return false;
-        if (shoppingCentreName != null ? !shoppingCentreName.equals(that.shoppingCentreName) : that.shoppingCentreName != null)
-            return false;
-        if (websiteUrl != null ? !websiteUrl.equals(that.websiteUrl) : that.websiteUrl != null) return false;
-        if (twitterUrl != null ? !twitterUrl.equals(that.twitterUrl) : that.twitterUrl != null) return false;
+        if (shoppingCentreid != that.shoppingCentreid) return false;
+        if (adminid != that.adminid) return false;
+        if (contentPage != null ? !contentPage.equals(that.contentPage) : that.contentPage != null) return false;
         if (facebookUrl != null ? !facebookUrl.equals(that.facebookUrl) : that.facebookUrl != null) return false;
-        if (logoImageSmall != null ? !logoImageSmall.equals(that.logoImageSmall) : that.logoImageSmall != null)
+        if (logoImageLarge != null ? !logoImageLarge.equals(that.logoImageLarge) : that.logoImageLarge != null)
             return false;
         if (logoImageMedium != null ? !logoImageMedium.equals(that.logoImageMedium) : that.logoImageMedium != null)
             return false;
-        if (logoImageLarge != null ? !logoImageLarge.equals(that.logoImageLarge) : that.logoImageLarge != null)
+        if (logoImageSmall != null ? !logoImageSmall.equals(that.logoImageSmall) : that.logoImageSmall != null)
             return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (contentPage != null ? !contentPage.equals(that.contentPage) : that.contentPage != null) return false;
+        if (shoppingCentreName != null ? !shoppingCentreName.equals(that.shoppingCentreName) : that.shoppingCentreName != null)
+            return false;
+        if (twitterUrl != null ? !twitterUrl.equals(that.twitterUrl) : that.twitterUrl != null) return false;
+        if (websiteUrl != null ? !websiteUrl.equals(that.websiteUrl) : that.websiteUrl != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = shoppingCentreId;
-        result = 31 * result + (shoppingCentreName != null ? shoppingCentreName.hashCode() : 0);
-        result = 31 * result + adminId;
-        result = 31 * result + (websiteUrl != null ? websiteUrl.hashCode() : 0);
-        result = 31 * result + (twitterUrl != null ? twitterUrl.hashCode() : 0);
-        result = 31 * result + (facebookUrl != null ? facebookUrl.hashCode() : 0);
-        result = 31 * result + (logoImageSmall != null ? logoImageSmall.hashCode() : 0);
-        result = 31 * result + (logoImageMedium != null ? logoImageMedium.hashCode() : 0);
-        result = 31 * result + (logoImageLarge != null ? logoImageLarge.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        int result = shoppingCentreid;
+        result = 31 * result + adminid;
         result = 31 * result + (contentPage != null ? contentPage.hashCode() : 0);
+        result = 31 * result + (facebookUrl != null ? facebookUrl.hashCode() : 0);
+        result = 31 * result + (logoImageLarge != null ? logoImageLarge.hashCode() : 0);
+        result = 31 * result + (logoImageMedium != null ? logoImageMedium.hashCode() : 0);
+        result = 31 * result + (logoImageSmall != null ? logoImageSmall.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (shoppingCentreName != null ? shoppingCentreName.hashCode() : 0);
+        result = 31 * result + (twitterUrl != null ? twitterUrl.hashCode() : 0);
+        result = 31 * result + (websiteUrl != null ? websiteUrl.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "shoppingcentreByShoppingCentreId")
-    public Collection<Location> getLocationsByShoppingCentreId() {
-        return locationsByShoppingCentreId;
+    @OneToMany(mappedBy = "shoppingCentreByShoppingCentreid")
+    public Collection<Location> getLocationsByShoppingCentreid() {
+        return locationsByShoppingCentreid;
     }
 
-    public void setLocationsByShoppingCentreId(Collection<Location> locationsByShoppingCentreId) {
-        this.locationsByShoppingCentreId = locationsByShoppingCentreId;
+    public void setLocationsByShoppingCentreid(Collection<Location> locationsByShoppingCentreid) {
+        this.locationsByShoppingCentreid = locationsByShoppingCentreid;
     }
 
-    @OneToMany(mappedBy = "shoppingcentreByShoppingCentreId")
-    public Collection<Retailer> getRetailersByShoppingCentreId() {
-        return retailersByShoppingCentreId;
+    @OneToMany(mappedBy = "shoppingCentreByShoppingCentreid")
+    public Collection<Retailer> getRetailersByShoppingCentreid() {
+        return retailersByShoppingCentreid;
     }
 
-    public void setRetailersByShoppingCentreId(Collection<Retailer> retailersByShoppingCentreId) {
-        this.retailersByShoppingCentreId = retailersByShoppingCentreId;
+    public void setRetailersByShoppingCentreid(Collection<Retailer> retailersByShoppingCentreid) {
+        this.retailersByShoppingCentreid = retailersByShoppingCentreid;
     }
 
     @ManyToOne
-    @JoinColumn(name = "adminID", referencedColumnName = "userID", nullable = false, insertable = false, updatable = false)
-    public User getUsersByAdminId() {
-        return usersByAdminId;
+    @JoinColumn(name = "adminid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    public User getUsersByAdminid() {
+        return usersByAdminid;
     }
 
-    public void setUsersByAdminId(User usersByAdminId) {
-        this.usersByAdminId = usersByAdminId;
+    public void setUsersByAdminid(User usersByAdminid) {
+        this.usersByAdminid = usersByAdminid;
     }
 }

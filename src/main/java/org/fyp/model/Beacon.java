@@ -8,49 +8,48 @@ import java.util.List;
 @Entity
 @Table(name = "beacons", schema = "shoptrawler")
 public class Beacon extends BaseEntity {
-    private int beaconId;
-    private String uuid;
+    private int beaconid;
+    private int locationid;
     private Integer major;
     private Integer minor;
     private Integer transmitPower;
-    private int locationId;
-    private Location locationsByLocationId;
-    private Collection<Zone> zonesByBeaconId;
+    private String uuid;
+    private Location locationsByLocationid;
+    private Collection<Zone> zonesByBeaconid;
 
     public Beacon() {
     }
 
     public Beacon(List<String> attributes) throws ParseException {
-        this.beaconId               = toInteger(attributes.get(0));
+        this.beaconid               = toInteger(attributes.get(0));
         this.uuid                   = attributes.get(1);
         this.major                  = toInteger(attributes.get(2));
         this.minor                  = toInteger(attributes.get(3));
         this.transmitPower          = toInteger(attributes.get(4));
-        this.locationId             = toInteger(attributes.get(5));
+        this.locationid             = toInteger(attributes.get(5));
     }
-
     @Id
-    @Column(name = "beaconID", nullable = false)
-    public int getBeaconId() {
-        return beaconId;
+    @Column(name = "beaconid")
+    public int getBeaconid() {
+        return beaconid;
     }
 
-    public void setBeaconId(int beaconId) {
-        this.beaconId = beaconId;
-    }
-
-    @Basic
-    @Column(name = "uuid", nullable = false, length = 45)
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setBeaconid(int beaconid) {
+        this.beaconid = beaconid;
     }
 
     @Basic
-    @Column(name = "major", nullable = true)
+    @Column(name = "locationid")
+    public int getLocationid() {
+        return locationid;
+    }
+
+    public void setLocationid(int locationid) {
+        this.locationid = locationid;
+    }
+
+    @Basic
+    @Column(name = "major")
     public Integer getMajor() {
         return major;
     }
@@ -60,7 +59,7 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "minor", nullable = true)
+    @Column(name = "minor")
     public Integer getMinor() {
         return minor;
     }
@@ -70,7 +69,7 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "transmitPower", nullable = true, precision = 0)
+    @Column(name = "transmit_power")
     public Integer getTransmitPower() {
         return transmitPower;
     }
@@ -80,13 +79,13 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "locationID", nullable = false)
-    public int getLocationId() {
-        return locationId;
+    @Column(name = "uuid")
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     @Override
@@ -96,44 +95,44 @@ public class Beacon extends BaseEntity {
 
         Beacon beacon = (Beacon) o;
 
-        if (beaconId != beacon.beaconId) return false;
-        if (locationId != beacon.locationId) return false;
-        if (uuid != null ? !uuid.equals(beacon.uuid) : beacon.uuid != null) return false;
+        if (beaconid != beacon.beaconid) return false;
+        if (locationid != beacon.locationid) return false;
         if (major != null ? !major.equals(beacon.major) : beacon.major != null) return false;
         if (minor != null ? !minor.equals(beacon.minor) : beacon.minor != null) return false;
         if (transmitPower != null ? !transmitPower.equals(beacon.transmitPower) : beacon.transmitPower != null)
             return false;
+        if (uuid != null ? !uuid.equals(beacon.uuid) : beacon.uuid != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = beaconId;
-        result = 31 * result + (uuid != null ? uuid.hashCode() : 0);
+        int result = beaconid;
+        result = 31 * result + locationid;
         result = 31 * result + (major != null ? major.hashCode() : 0);
         result = 31 * result + (minor != null ? minor.hashCode() : 0);
         result = 31 * result + (transmitPower != null ? transmitPower.hashCode() : 0);
-        result = 31 * result + locationId;
+        result = 31 * result + (uuid != null ? uuid.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "locationID", referencedColumnName = "locationID", nullable = false, insertable = false, updatable = false)
-    public Location getLocationsByLocationId() {
-        return locationsByLocationId;
+    @JoinColumn(name = "locationid", referencedColumnName = "locationid", nullable = false,insertable = false, updatable = false)
+    public Location getLocationsByLocationid() {
+        return locationsByLocationid;
     }
 
-    public void setLocationsByLocationId(Location locationsByLocationId) {
-        this.locationsByLocationId = locationsByLocationId;
+    public void setLocationsByLocationid(Location locationsByLocationid) {
+        this.locationsByLocationid = locationsByLocationid;
     }
 
-    @OneToMany(mappedBy = "beaconsByBeaconId")
-    public Collection<Zone> getZonesByBeaconId() {
-        return zonesByBeaconId;
+    @OneToMany(mappedBy = "beaconsByBeaconid")
+    public Collection<Zone> getZonesByBeaconid() {
+        return zonesByBeaconid;
     }
 
-    public void setZonesByBeaconId(Collection<Zone> zonesByBeaconId) {
-        this.zonesByBeaconId = zonesByBeaconId;
+    public void setZonesByBeaconid(Collection<Zone> zonesByBeaconid) {
+        this.zonesByBeaconid = zonesByBeaconid;
     }
 }

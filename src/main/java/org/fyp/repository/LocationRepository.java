@@ -10,6 +10,6 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "location", path = "Locations")
 @Transactional
 public interface LocationRepository extends JpaRepository<Location, Integer> {
-    Collection<Location> findAllByShoppingCentreId(int shoppingCentreID);
+    Collection<Location> findAllByShoppingCentreid(int shoppingCentreID);
 
 }

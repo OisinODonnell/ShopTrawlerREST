@@ -4,8 +4,21 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
+    <property name="connection.url">jdbc:mysql://localhost:3306/shoptrawler</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="org.fyp.model.Beacon"/>
+      <mapping class="org.fyp.model.BonusCode"/>
+      <mapping class="org.fyp.model.Content"/>
+      <mapping class="org.fyp.model.Favourite"/>
+      <mapping class="org.fyp.model.Location"/>
+      <mapping class="org.fyp.model.LoyaltyReward"/>
+      <mapping class="org.fyp.model.Rating"/>
+      <mapping class="org.fyp.model.Retailer"/>
+      <mapping class="org.fyp.model.ShoppingCentre"/>
+      <mapping class="org.fyp.model.User"/>
+      <mapping class="org.fyp.model.Visit"/>
+      <mapping class="org.fyp.model.Zone"/>
+      <mapping class="org.fyp.model.UserPoint"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

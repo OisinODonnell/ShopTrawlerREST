@@ -23,25 +23,25 @@ public class BeaconController extends MainController{
 
 
 
-    @RequestMapping(value = "/loadData", method=RequestMethod.GET)
-    public Collection<Beacon> loadTestData() throws Exception {
-
-        loadData(new Beacon()     	, util.BEACONS      );
-        loadData(new BonusCode()    , util.BONUS_CODES       );
-        loadData(new Content()		, util.CONTENT  );
-        loadData(new Favourite()	, util.FAVOURITES);
-        loadData(new Location()   	, util.LOCATIONS    );
-        loadData(new LoyaltyReward(), util.LOYALTY_REWARDS  );
-        loadData(new Rating()       , util.RATINGS         );
-        loadData(new Retailer()   	, util.RETAILERS    );
-        loadData(new ShoppingCentre(), util.SHOPPING_CENTRE          );
-        loadData(new User()    		, util.USERS     );
-        loadData(new UserPoint()    , util.USER_POINTS     );
-        loadData(new Visit()    	, util.VISITS     );
-        loadData(new Zone()    		, util.ZONES     );
-
-        return beaconRepo.findAll();
-    }
+//    @RequestMapping(value = "/loadData", method=RequestMethod.GET)
+//    public Collection<Beacon> loadTestData() throws Exception {
+//
+//        loadData(new Beacon()     	, util.BEACONS      );
+//        loadData(new BonusCode()    , util.BONUS_CODES       );
+//        loadData(new Content()		, util.CONTENT  );
+//        loadData(new Favourite()	, util.FAVOURITES);
+//        loadData(new Location()   	, util.LOCATIONS    );
+//        loadData(new LoyaltyReward(), util.LOYALTY_REWARDS  );
+//        loadData(new Rating()       , util.RATINGS         );
+//        loadData(new Retailer()   	, util.RETAILERS    );
+//        loadData(new ShoppingCentre(), util.SHOPPING_CENTRE          );
+//        loadData(new User()    		, util.USERS     );
+//        loadData(new UserPoint()    , util.USER_POINTS     );
+//        loadData(new Visit()    	, util.VISITS     );
+//        loadData(new Zone()    		, util.ZONES     );
+//
+//        return beaconRepo.findAll();
+//    }
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
     public void create(Beacon beacon)   { beaconRepo.save(beacon);  }
@@ -58,7 +58,7 @@ public class BeaconController extends MainController{
     public Beacon getBeacon(  @PathVariable("beaconId") int beaconId) throws ParseException {
         Beacon beacon = new Beacon();
 
-        beacon = beaconRepo.findByBeaconId( beaconId );
+        beacon = beaconRepo.findByBeaconid( beaconId );
 
         return beacon;
     }

@@ -7,82 +7,41 @@ import java.util.List;
 @Entity
 @Table(name = "locations", schema = "shoptrawler")
 public class Location extends BaseEntity {
-    private int locationId;
+    private int locationid;
+    private Integer altitude;
     private int gpsLatitude;
     private int gpsLongitude;
     private int locationInShoppingCentre;
     private String locationType;
-    private Integer altitude;
-    private Integer shoppingCentreId;
-    private Collection<Beacon> beaconsByLocationId;
-    private ShoppingCentre shoppingcentreByShoppingCentreId;
+    private Integer shoppingCentreid;
+    private Collection<Beacon> beaconsByLocationid;
+    private ShoppingCentre shoppingCentreByShoppingCentreid;
 
     public Location() {
     }
 
     public Location(List<String> attributes) {
-        this.locationId                         = toInteger(attributes.get(0));
+        this.locationid                         = toInteger(attributes.get(0));
         this.gpsLatitude                        = toInteger(attributes.get(0));
         this.gpsLongitude                       = toInteger(attributes.get(0));
         this.locationInShoppingCentre           = toInteger(attributes.get(0));
         this.locationType                       = attributes.get(4);
         this.altitude                           = toInteger(attributes.get(0));
-        this.shoppingCentreId                   = toInteger(attributes.get(0));
+        this.shoppingCentreid                   = toInteger(attributes.get(0));
 
     }
-
     @Id
-    @Column(name = "locationID", nullable = false)
-    public int getLocationId() {
-        return locationId;
+    @Column(name = "locationid")
+    public int getLocationid() {
+        return locationid;
     }
 
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
-    }
-
-    @Basic
-    @Column(name = "gpsLatitude", nullable = false, precision = 0)
-    public int getGpsLatitude() {
-        return gpsLatitude;
-    }
-
-    public void setGpsLatitude(int gpsLatitude) {
-        this.gpsLatitude = gpsLatitude;
+    public void setLocationid(int locationid) {
+        this.locationid = locationid;
     }
 
     @Basic
-    @Column(name = "gpsLongitude", nullable = false, precision = 0)
-    public int getGpsLongitude() {
-        return gpsLongitude;
-    }
-
-    public void setGpsLongitude(int gpsLongitude) {
-        this.gpsLongitude = gpsLongitude;
-    }
-
-    @Basic
-    @Column(name = "locationInShoppingCentre", nullable = false)
-    public int getLocationInShoppingCentre() {
-        return locationInShoppingCentre;
-    }
-
-    public void setLocationInShoppingCentre(int locationInShoppingCentre) {
-        this.locationInShoppingCentre = locationInShoppingCentre;
-    }
-
-    @Basic
-    @Column(name = "locationType", nullable = true)
-    public String getLocationType() {
-        return locationType;
-    }
-
-    public void setLocationType(String locationType) {
-        this.locationType = locationType;
-    }
-
-    @Basic
-    @Column(name = "altitude", nullable = true, precision = 0)
+    @Column(name = "altitude")
     public Integer getAltitude() {
         return altitude;
     }
@@ -92,13 +51,53 @@ public class Location extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "shoppingCentreID", nullable = true)
-    public Integer getShoppingCentreId() {
-        return shoppingCentreId;
+    @Column(name = "gps_latitude")
+    public int getGpsLatitude() {
+        return gpsLatitude;
     }
 
-    public void setShoppingCentreId(Integer shoppingCentreId) {
-        this.shoppingCentreId = shoppingCentreId;
+    public void setGpsLatitude(int gpsLatitude) {
+        this.gpsLatitude = gpsLatitude;
+    }
+
+    @Basic
+    @Column(name = "gps_longitude")
+    public int getGpsLongitude() {
+        return gpsLongitude;
+    }
+
+    public void setGpsLongitude(int gpsLongitude) {
+        this.gpsLongitude = gpsLongitude;
+    }
+
+    @Basic
+    @Column(name = "location_in_shopping_centre")
+    public int getLocationInShoppingCentre() {
+        return locationInShoppingCentre;
+    }
+
+    public void setLocationInShoppingCentre(int locationInShoppingCentre) {
+        this.locationInShoppingCentre = locationInShoppingCentre;
+    }
+
+    @Basic
+    @Column(name = "location_type")
+    public String getLocationType() {
+        return locationType;
+    }
+
+    public void setLocationType(String locationType) {
+        this.locationType = locationType;
+    }
+
+    @Basic
+    @Column(name = "shopping_centreid")
+    public Integer getShoppingCentreid() {
+        return shoppingCentreid;
+    }
+
+    public void setShoppingCentreid(Integer shoppingCentreid) {
+        this.shoppingCentreid = shoppingCentreid;
     }
 
     @Override
@@ -108,14 +107,14 @@ public class Location extends BaseEntity {
 
         Location location = (Location) o;
 
-        if (locationId != location.locationId) return false;
+        if (locationid != location.locationid) return false;
         if (gpsLatitude != location.gpsLatitude) return false;
         if (gpsLongitude != location.gpsLongitude) return false;
         if (locationInShoppingCentre != location.locationInShoppingCentre) return false;
+        if (altitude != null ? !altitude.equals(location.altitude) : location.altitude != null) return false;
         if (locationType != null ? !locationType.equals(location.locationType) : location.locationType != null)
             return false;
-        if (altitude != null ? !altitude.equals(location.altitude) : location.altitude != null) return false;
-        if (shoppingCentreId != null ? !shoppingCentreId.equals(location.shoppingCentreId) : location.shoppingCentreId != null)
+        if (shoppingCentreid != null ? !shoppingCentreid.equals(location.shoppingCentreid) : location.shoppingCentreid != null)
             return false;
 
         return true;
@@ -123,32 +122,32 @@ public class Location extends BaseEntity {
 
     @Override
     public int hashCode() {
-        int result = locationId;
+        int result = locationid;
+        result = 31 * result + (altitude != null ? altitude.hashCode() : 0);
         result = 31 * result + gpsLatitude;
         result = 31 * result + gpsLongitude;
         result = 31 * result + locationInShoppingCentre;
         result = 31 * result + (locationType != null ? locationType.hashCode() : 0);
-        result = 31 * result + (altitude != null ? altitude.hashCode() : 0);
-        result = 31 * result + (shoppingCentreId != null ? shoppingCentreId.hashCode() : 0);
+        result = 31 * result + (shoppingCentreid != null ? shoppingCentreid.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "locationsByLocationId")
-    public Collection<Beacon> getBeaconsByLocationId() {
-        return beaconsByLocationId;
+    @OneToMany(mappedBy = "locationsByLocationid")
+    public Collection<Beacon> getBeaconsByLocationid() {
+        return beaconsByLocationid;
     }
 
-    public void setBeaconsByLocationId(Collection<Beacon> beaconsByLocationId) {
-        this.beaconsByLocationId = beaconsByLocationId;
+    public void setBeaconsByLocationid(Collection<Beacon> beaconsByLocationid) {
+        this.beaconsByLocationid = beaconsByLocationid;
     }
 
     @ManyToOne
-    @JoinColumn(name = "shoppingCentreID", referencedColumnName = "shoppingCentreID", insertable = false, updatable = false)
-    public ShoppingCentre getShoppingcentreByShoppingCentreId() {
-        return shoppingcentreByShoppingCentreId;
+    @JoinColumn(name = "shopping_centreid", referencedColumnName = "shopping_centreid",insertable = false, updatable = false)
+    public ShoppingCentre getShoppingCentreByShoppingCentreid() {
+        return shoppingCentreByShoppingCentreid;
     }
 
-    public void setShoppingcentreByShoppingCentreId(ShoppingCentre shoppingcentreByShoppingCentreId) {
-        this.shoppingcentreByShoppingCentreId = shoppingcentreByShoppingCentreId;
+    public void setShoppingCentreByShoppingCentreid(ShoppingCentre shoppingCentreByShoppingCentreid) {
+        this.shoppingCentreByShoppingCentreid = shoppingCentreByShoppingCentreid;
     }
 }

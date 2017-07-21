@@ -8,6 +8,6 @@ import javax.transaction.Transactional;
 //@RepositoryRestResource(collectionResourceRel = "shoppingCentre", path = "ShoppingCentres")
 @Transactional
 public interface ShoppingCentreRepository extends JpaRepository<ShoppingCentre, Integer> {
-    ShoppingCentre findByShoppingCentreId(Integer shoppingCentreID);
+    ShoppingCentre findByShoppingCentreid(Integer shoppingCentreID);
 
 }
