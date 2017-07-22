@@ -2,7 +2,6 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.List;
 
 @Entity
@@ -10,7 +9,7 @@ import java.util.List;
 @IdClass(RatingPK.class)
 public class Rating extends BaseEntity {
     private int userid;
-    private int retailerid;
+    private Integer retailerid;
     private Timestamp date;
     private Integer rating;
     private String review;
@@ -29,7 +28,7 @@ public class Rating extends BaseEntity {
 
     }
     @Id
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = false)
     public int getUserid() {
         return userid;
     }
@@ -39,12 +38,12 @@ public class Rating extends BaseEntity {
     }
 
     @Id
-    @Column(name = "retailerid")
-    public int getRetailerid() {
+    @Column(name = "retailerid", nullable = false)
+    public Integer getRetailerid() {
         return retailerid;
     }
 
-    public void setRetailerid(int retailerid) {
+    public void setRetailerid(Integer retailerid) {
         this.retailerid = retailerid;
     }
 
@@ -69,7 +68,7 @@ public class Rating extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "review")
+    @Column(name = "review", length = 255)
     public String getReview() {
         return review;
     }

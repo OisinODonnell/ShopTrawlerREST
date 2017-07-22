@@ -58,7 +58,7 @@ public abstract class MainController {
                 case "class org.fyp.model.Beacon":
                     beaconRepo.save(new Beacon(attributes));
                     break;
-                case "class org.fyp.model.BonusPoint":
+                case "class org.fyp.model.BonusCode":
                     bonusCodeRepo.save(new BonusCode(attributes));
                     break;
                 case "class org.fyp.model.Content":
@@ -76,12 +76,12 @@ public abstract class MainController {
                 case "class org.fyp.model.Rating":
                     ratingRepo.save( new Rating(attributes));
                     break;
-//                case "class org.fyp.model.Retailer":
-//                    retailerRepo.save( new Retailer(attributes));
-//                    break;
-//                case "class org.fyp.model.ShoppingCentre":
-//                    shoppingCentreRepo.save( new ShoppingCentre(attributes));
-//                    break;
+                case "class org.fyp.model.Retailer":
+                    retailerRepo.save( new Retailer(attributes));
+                    break;
+                case "class org.fyp.model.ShoppingCentre":
+                    shoppingCentreRepo.save( new ShoppingCentre(attributes));
+                    break;
                 case "class org.fyp.model.User":
                     userRepo.save( new User(attributes));
                     break;

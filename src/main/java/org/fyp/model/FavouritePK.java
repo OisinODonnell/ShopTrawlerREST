@@ -8,7 +8,7 @@ public class FavouritePK implements Serializable {
     private int userid;
     private int retailerid;
 
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = false)
     @Id
     public int getUserid() {
         return userid;
@@ -18,7 +18,7 @@ public class FavouritePK implements Serializable {
         this.userid = userid;
     }
 
-    @Column(name = "retailerid")
+    @Column(name = "retailerid", nullable = false)
     @Id
     public int getRetailerid() {
         return retailerid;

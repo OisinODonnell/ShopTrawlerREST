@@ -1,7 +1,6 @@
 package org.fyp.model;
 
 import javax.persistence.*;
-import java.text.ParseException;
 import java.util.Collection;
 import java.util.List;
 
@@ -9,7 +8,7 @@ import java.util.List;
 @Table(name = "beacons", schema = "shoptrawler")
 public class Beacon extends BaseEntity {
     private int beaconid;
-    private int locationid;
+    private Integer locationid;
     private Integer major;
     private Integer minor;
     private Integer transmitPower;
@@ -29,7 +28,7 @@ public class Beacon extends BaseEntity {
         this.locationid             = toInteger(attributes.get(5));
     }
     @Id
-    @Column(name = "beaconid")
+    @Column(name = "beaconid", nullable = false)
     public int getBeaconid() {
         return beaconid;
     }
@@ -39,17 +38,17 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "locationid")
-    public int getLocationid() {
+    @Column(name = "locationid", nullable = true)
+    public Integer getLocationid() {
         return locationid;
     }
 
-    public void setLocationid(int locationid) {
+    public void setLocationid(Integer locationid) {
         this.locationid = locationid;
     }
 
     @Basic
-    @Column(name = "major")
+    @Column(name = "major", nullable = true)
     public Integer getMajor() {
         return major;
     }
@@ -59,7 +58,7 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "minor")
+    @Column(name = "minor", nullable = true)
     public Integer getMinor() {
         return minor;
     }
@@ -69,7 +68,7 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "transmit_power")
+    @Column(name = "transmit_power", nullable = true)
     public Integer getTransmitPower() {
         return transmitPower;
     }
@@ -79,7 +78,7 @@ public class Beacon extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "uuid")
+    @Column(name = "uuid", nullable = true, length = 255)
     public String getUuid() {
         return uuid;
     }
@@ -96,7 +95,7 @@ public class Beacon extends BaseEntity {
         Beacon beacon = (Beacon) o;
 
         if (beaconid != beacon.beaconid) return false;
-        if (locationid != beacon.locationid) return false;
+        if (locationid != null ? !locationid.equals(beacon.locationid) : beacon.locationid != null) return false;
         if (major != null ? !major.equals(beacon.major) : beacon.major != null) return false;
         if (minor != null ? !minor.equals(beacon.minor) : beacon.minor != null) return false;
         if (transmitPower != null ? !transmitPower.equals(beacon.transmitPower) : beacon.transmitPower != null)
@@ -109,7 +108,7 @@ public class Beacon extends BaseEntity {
     @Override
     public int hashCode() {
         int result = beaconid;
-        result = 31 * result + locationid;
+        result = 31 * result + (locationid != null ? locationid.hashCode() : 0);
         result = 31 * result + (major != null ? major.hashCode() : 0);
         result = 31 * result + (minor != null ? minor.hashCode() : 0);
         result = 31 * result + (transmitPower != null ? transmitPower.hashCode() : 0);
@@ -118,7 +117,7 @@ public class Beacon extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "locationid", referencedColumnName = "locationid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "locationid", referencedColumnName = "locationid",insertable = false, updatable = false)
     public Location getLocationsByLocationid() {
         return locationsByLocationid;
     }

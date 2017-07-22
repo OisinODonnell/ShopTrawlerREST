@@ -40,7 +40,7 @@ public class User extends BaseEntity {
 
     }
     @Id
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = false)
     public int getUserid() {
         return userid;
     }
@@ -50,7 +50,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "email_address")
+    @Column(name = "email_address", nullable = true, length = 255)
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -60,7 +60,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "firstname")
+    @Column(name = "firstname", nullable = true, length = 255)
     public String getFirstname() {
         return firstname;
     }
@@ -70,7 +70,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "gender")
+    @Column(name = "gender", nullable = true, length = 255)
     public String getGender() {
         return gender;
     }
@@ -80,7 +80,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "password")
+    @Column(name = "password", nullable = true, length = 255)
     public String getPassword() {
         return password;
     }
@@ -90,7 +90,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = true, length = 255)
     public String getPhone() {
         return phone;
     }
@@ -100,7 +100,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "surname")
+    @Column(name = "surname", nullable = true, length = 255)
     public String getSurname() {
         return surname;
     }
@@ -110,7 +110,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "type")
+    @Column(name = "type", nullable = true, length = 255)
     public String getType() {
         return type;
     }
@@ -120,7 +120,7 @@ public class User extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "yob")
+    @Column(name = "yob", nullable = true)
     public Integer getYob() {
         return yob;
     }

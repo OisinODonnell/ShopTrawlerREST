@@ -9,12 +9,10 @@ import java.util.List;
 public class Zone extends BaseEntity {
     private int zoneid;
     private Integer beaconid;
-    private Integer retailerid;
     private String zoneName;
     private Collection<Retailer> retailersByZoneid;
     private Collection<Visit> visitsByZoneid;
     private Beacon beaconsByBeaconid;
-    private Retailer retailersByRetailerid;
 
     public Zone() {
     }
@@ -23,11 +21,10 @@ public class Zone extends BaseEntity {
         this.zoneid             = toInteger(attributes.get(0));
         this.beaconid           = toInteger(attributes.get(1));
         this.zoneName           = attributes.get(2);
-        this.retailerid         = toInteger(attributes.get(3));
 
     }
     @Id
-    @Column(name = "zoneid")
+    @Column(name = "zoneid", nullable = false)
     public int getZoneid() {
         return zoneid;
     }
@@ -37,7 +34,7 @@ public class Zone extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "beaconid")
+    @Column(name = "beaconid", nullable = true)
     public Integer getBeaconid() {
         return beaconid;
     }
@@ -47,17 +44,7 @@ public class Zone extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "retailerid")
-    public Integer getRetailerid() {
-        return retailerid;
-    }
-
-    public void setRetailerid(Integer retailerid) {
-        this.retailerid = retailerid;
-    }
-
-    @Basic
-    @Column(name = "zone_name")
+    @Column(name = "zone_name", nullable = true, length = 255)
     public String getZoneName() {
         return zoneName;
     }
@@ -75,7 +62,6 @@ public class Zone extends BaseEntity {
 
         if (zoneid != zone.zoneid) return false;
         if (beaconid != null ? !beaconid.equals(zone.beaconid) : zone.beaconid != null) return false;
-        if (retailerid != null ? !retailerid.equals(zone.retailerid) : zone.retailerid != null) return false;
         if (zoneName != null ? !zoneName.equals(zone.zoneName) : zone.zoneName != null) return false;
 
         return true;
@@ -85,7 +71,6 @@ public class Zone extends BaseEntity {
     public int hashCode() {
         int result = zoneid;
         result = 31 * result + (beaconid != null ? beaconid.hashCode() : 0);
-        result = 31 * result + (retailerid != null ? retailerid.hashCode() : 0);
         result = 31 * result + (zoneName != null ? zoneName.hashCode() : 0);
         return result;
     }
@@ -116,15 +101,5 @@ public class Zone extends BaseEntity {
 
     public void setBeaconsByBeaconid(Beacon beaconsByBeaconid) {
         this.beaconsByBeaconid = beaconsByBeaconid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid",insertable = false, updatable = false)
-    public Retailer getRetailersByRetailerid() {
-        return retailersByRetailerid;
-    }
-
-    public void setRetailersByRetailerid(Retailer retailersByRetailerid) {
-        this.retailersByRetailerid = retailersByRetailerid;
     }
 }

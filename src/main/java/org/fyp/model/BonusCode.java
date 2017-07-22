@@ -2,7 +2,6 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.List;
 
 @Entity
@@ -21,13 +20,13 @@ public class BonusCode extends BaseEntity {
 
     public BonusCode(List<String> attributes)  {
         this.bonusCodeid    = toInteger( attributes.get(0));
-        this.datetime       = toTimestamp( attributes.get(1));
-        this.retailerid     = toInteger( attributes.get(2));
-        this.userid         = toInteger( attributes.get(3));
-        this.value          = attributes.get(4);
+        this.retailerid     = toInteger( attributes.get(1));
+        this.value          = attributes.get(2);
+//        this.userid         = toInteger( attributes.get(3));
+//        this.datetime       = toTimestamp( attributes.get(4));
     }
     @Id
-    @Column(name = "bonus_codeid")
+    @Column(name = "bonus_codeid", nullable = false)
     public int getBonusCodeid() {
         return bonusCodeid;
     }
@@ -37,7 +36,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "datetime")
+    @Column(name = "datetime", nullable = true)
     public Timestamp getDatetime() {
         return datetime;
     }
@@ -47,7 +46,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "retailerid")
+    @Column(name = "retailerid", nullable = true)
     public Integer getRetailerid() {
         return retailerid;
     }
@@ -57,7 +56,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = true)
     public Integer getUserid() {
         return userid;
     }
@@ -67,7 +66,7 @@ public class BonusCode extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "value")
+    @Column(name = "value", nullable = true, length = 255)
     public String getValue() {
         return value;
     }

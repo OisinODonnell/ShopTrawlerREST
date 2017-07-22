@@ -30,11 +30,7 @@ public class LocationController extends MainController {
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Location> read() throws JsonProcessingException {
-
-        return locationRepo.findAll();
-    }
-
-
+        return locationRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(Location location)
@@ -47,9 +43,6 @@ public class LocationController extends MainController {
     {
         locationRepo.delete(location);
     }
-
-
-
 
 
 }

@@ -12,15 +12,14 @@ public class Favourite extends BaseEntity {
     private User usersByUserid;
     private Retailer retailersByRetailerid;
 
+    public Favourite() {
+    }
     public Favourite(List<String> attributes) {
         this.userid     = toInteger(attributes.get(0));
         this.retailerid = toInteger(attributes.get(1));
     }
-
-    public Favourite() {
-    }
     @Id
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = false)
     public int getUserid() {
         return userid;
     }
@@ -30,7 +29,7 @@ public class Favourite extends BaseEntity {
     }
 
     @Id
-    @Column(name = "retailerid")
+    @Column(name = "retailerid", nullable = false)
     public int getRetailerid() {
         return retailerid;
     }

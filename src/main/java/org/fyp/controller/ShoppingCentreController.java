@@ -39,8 +39,4 @@ public class ShoppingCentreController extends MainController {
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
     public void delete(ShoppingCentre shoppingCentre) { shoppingCentreRepo.delete(shoppingCentre);    }
 
-
-
-
-
 }

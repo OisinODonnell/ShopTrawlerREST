@@ -39,6 +39,4 @@ public class FavouriteController extends MainController {
         favouriteRepo.save(favourite);
     }
 
-
-
 }

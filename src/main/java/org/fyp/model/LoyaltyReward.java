@@ -2,7 +2,6 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.List;
 
 @Entity
@@ -11,7 +10,7 @@ public class LoyaltyReward extends BaseEntity {
     private int loyaltyRewardid;
     private Timestamp endDate;
     private Integer pointsPerVisit;
-    private int retailerid;
+    private Integer retailerid;
     private String rewardImage;
     private String rewardTitle;
     private Timestamp startDate;
@@ -32,9 +31,8 @@ public class LoyaltyReward extends BaseEntity {
         this.visitTime          = toInteger(attributes.get(7));
 
     }
-
     @Id
-    @Column(name = "loyalty_rewardid")
+    @Column(name = "loyalty_rewardid", nullable = false)
     public int getLoyaltyRewardid() {
         return loyaltyRewardid;
     }
@@ -44,7 +42,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = true)
     public Timestamp getEndDate() {
         return endDate;
     }
@@ -54,7 +52,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "points_per_visit")
+    @Column(name = "points_per_visit", nullable = true)
     public Integer getPointsPerVisit() {
         return pointsPerVisit;
     }
@@ -64,17 +62,17 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "retailerid")
-    public int getRetailerid() {
+    @Column(name = "retailerid", nullable = true)
+    public Integer getRetailerid() {
         return retailerid;
     }
 
-    public void setRetailerid(int retailerid) {
+    public void setRetailerid(Integer retailerid) {
         this.retailerid = retailerid;
     }
 
     @Basic
-    @Column(name = "reward_image")
+    @Column(name = "reward_image", nullable = true, length = 255)
     public String getRewardImage() {
         return rewardImage;
     }
@@ -84,7 +82,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "reward_title")
+    @Column(name = "reward_title", nullable = true, length = 255)
     public String getRewardTitle() {
         return rewardTitle;
     }
@@ -94,7 +92,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "start_date")
+    @Column(name = "start_date", nullable = true)
     public Timestamp getStartDate() {
         return startDate;
     }
@@ -104,7 +102,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "visit_time")
+    @Column(name = "visit_time", nullable = true)
     public Integer getVisitTime() {
         return visitTime;
     }
@@ -121,10 +119,10 @@ public class LoyaltyReward extends BaseEntity {
         LoyaltyReward that = (LoyaltyReward) o;
 
         if (loyaltyRewardid != that.loyaltyRewardid) return false;
-        if (retailerid != that.retailerid) return false;
         if (endDate != null ? !endDate.equals(that.endDate) : that.endDate != null) return false;
         if (pointsPerVisit != null ? !pointsPerVisit.equals(that.pointsPerVisit) : that.pointsPerVisit != null)
             return false;
+        if (retailerid != null ? !retailerid.equals(that.retailerid) : that.retailerid != null) return false;
         if (rewardImage != null ? !rewardImage.equals(that.rewardImage) : that.rewardImage != null) return false;
         if (rewardTitle != null ? !rewardTitle.equals(that.rewardTitle) : that.rewardTitle != null) return false;
         if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
@@ -138,7 +136,7 @@ public class LoyaltyReward extends BaseEntity {
         int result = loyaltyRewardid;
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (pointsPerVisit != null ? pointsPerVisit.hashCode() : 0);
-        result = 31 * result + retailerid;
+        result = 31 * result + (retailerid != null ? retailerid.hashCode() : 0);
         result = 31 * result + (rewardImage != null ? rewardImage.hashCode() : 0);
         result = 31 * result + (rewardTitle != null ? rewardTitle.hashCode() : 0);
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
@@ -147,7 +145,7 @@ public class LoyaltyReward extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid",insertable = false, updatable = false)
     public Retailer getRetailersByRetailerid() {
         return retailersByRetailerid;
     }

@@ -23,46 +23,38 @@ public class BeaconController extends MainController{
 
 
 
-//    @RequestMapping(value = "/loadData", method=RequestMethod.GET)
-//    public Collection<Beacon> loadTestData() throws Exception {
-//
-//        loadData(new Beacon()     	, util.BEACONS      );
-//        loadData(new BonusCode()    , util.BONUS_CODES       );
-//        loadData(new Content()		, util.CONTENT  );
-//        loadData(new Favourite()	, util.FAVOURITES);
-//        loadData(new Location()   	, util.LOCATIONS    );
-//        loadData(new LoyaltyReward(), util.LOYALTY_REWARDS  );
-//        loadData(new Rating()       , util.RATINGS         );
-//        loadData(new Retailer()   	, util.RETAILERS    );
-//        loadData(new ShoppingCentre(), util.SHOPPING_CENTRE          );
-//        loadData(new User()    		, util.USERS     );
-//        loadData(new UserPoint()    , util.USER_POINTS     );
-//        loadData(new Visit()    	, util.VISITS     );
-//        loadData(new Zone()    		, util.ZONES     );
-//
-//        return beaconRepo.findAll();
-//    }
+    @RequestMapping(value = "/loadData", method=RequestMethod.GET)
+    public Collection<Beacon> loadTestData() throws Exception {
+
+        // The order of import is important to ensure data integrity
+        // load some sample data to facilitate some testing
+
+        loadData(new User()    		 , util.USERS            );
+        loadData(new ShoppingCentre(), util.SHOPPING_CENTRE );
+        loadData(new Location()   	 , util.LOCATIONS        );
+        loadData(new Beacon()     	 , util.BEACONS          );
+        loadData(new Zone()    		 , util.ZONES            );
+        loadData(new Retailer()   	 , util.RETAILERS        );
+        loadData(new Content()		 , util.CONTENT          );
+        loadData(new LoyaltyReward() , util.LOYALTY_REWARDS  );
+        loadData(new BonusCode()     , util.BONUS_CODES      );
+        loadData(new Favourite()	 , util.FAVOURITES       );
+        loadData(new Rating()        , util.RATINGS          );
+        loadData(new UserPoint()     , util.USER_POINTS      );
+        loadData(new Visit()    	 , util.VISITS           );
+
+        return beaconRepo.findAll();
+    }
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
     public void create(Beacon beacon)   { beaconRepo.save(beacon);  }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<Beacon> read()
-    {
-        Collection<Beacon>  beacons = beaconRepo.findAll();
-
-        return beacons;
-    }
+    public Collection<Beacon> read() {   return beaconRepo.findAll();   }
 
     @RequestMapping(value = "/{beaconId}", method = RequestMethod.GET)
     public Beacon getBeacon(  @PathVariable("beaconId") int beaconId) throws ParseException {
-        Beacon beacon = new Beacon();
-
-        beacon = beaconRepo.findByBeaconid( beaconId );
-
-        return beacon;
-    }
-
+        return beaconRepo.findByBeaconid( beaconId );   }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(Beacon beacon)
@@ -72,7 +64,5 @@ public class BeaconController extends MainController{
 
     @RequestMapping(value = "/delete/", method=RequestMethod.GET)
     public void delete(Beacon beacon)     {  beaconRepo.delete(beacon);    }
-
-
 
 }

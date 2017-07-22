@@ -30,9 +30,7 @@ public class LoyaltyRewardController extends MainController {
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<LoyaltyReward> read() throws JsonProcessingException {
-
-        return loyaltyRewardRepo.findAll();
-    }
+        return loyaltyRewardRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(LoyaltyReward loyaltyReward)
@@ -46,5 +44,4 @@ public class LoyaltyRewardController extends MainController {
         loyaltyRewardRepo.delete(loyaltyReward);
     }
 
-    
 }

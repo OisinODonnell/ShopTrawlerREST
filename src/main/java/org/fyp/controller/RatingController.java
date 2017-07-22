@@ -30,9 +30,7 @@ public class RatingController extends MainController {
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Rating> read() throws JsonProcessingException {
-
-        return ratingRepo.findAll();
-    }
+        return ratingRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(Rating rating)

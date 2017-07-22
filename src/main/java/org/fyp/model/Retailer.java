@@ -17,13 +17,13 @@ public class Retailer extends BaseEntity {
     private String logoImageLarge;
     private String logoImageMedium;
     private String logoImageSmall;
-    private int managerid;
+    private Integer managerid;
     private String phone;
-    private int shoppingCentreid;
+    private Integer shoppingCentreid;
     private String storeName;
     private String twitterUrl;
     private String websiteUrl;
-    private int zoneid;
+    private Integer zoneid;
     private Collection<BonusCode> bonuscodesByRetailerid;
     private Collection<Content> contentsByRetailerid;
     private Collection<Favourite> favouritesByRetailerid;
@@ -33,7 +33,6 @@ public class Retailer extends BaseEntity {
     private ShoppingCentre shoppingCentreByShoppingCentreid;
     private Zone zonesByZoneid;
     private Collection<UserPoint> userpointsByRetailerid;
-    private Collection<Zone> zonesByRetailerid;
 
     public Retailer() {
     }
@@ -57,9 +56,8 @@ public class Retailer extends BaseEntity {
         this.logoImageMedium                    = attributes.get(15);
         this.logoImageLarge                     = attributes.get(16);
     }
-    
     @Id
-    @Column(name = "retailerid")
+    @Column(name = "retailerid", nullable = false)
     public int getRetailerid() {
         return retailerid;
     }
@@ -69,7 +67,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "default_content_page1")
+    @Column(name = "default_content_page1", nullable = true, length = 255)
     public String getDefaultContentPage1() {
         return defaultContentPage1;
     }
@@ -79,7 +77,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "default_content_page2")
+    @Column(name = "default_content_page2", nullable = true, length = 255)
     public String getDefaultContentPage2() {
         return defaultContentPage2;
     }
@@ -89,7 +87,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "default_content_page3")
+    @Column(name = "default_content_page3", nullable = true, length = 255)
     public String getDefaultContentPage3() {
         return defaultContentPage3;
     }
@@ -99,7 +97,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "default_loyalty_reward_image")
+    @Column(name = "default_loyalty_reward_image", nullable = true, length = 255)
     public String getDefaultLoyaltyRewardImage() {
         return defaultLoyaltyRewardImage;
     }
@@ -109,7 +107,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "facebookUrl")
+    @Column(name = "facebook_url", nullable = true, length = 255)
     public String getFacebookUrl() {
         return facebookUrl;
     }
@@ -119,7 +117,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "header_background_image")
+    @Column(name = "header_background_image", nullable = true, length = 255)
     public String getHeaderBackgroundImage() {
         return headerBackgroundImage;
     }
@@ -129,7 +127,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "logo_image_large")
+    @Column(name = "logo_image_large", nullable = true, length = 255)
     public String getLogoImageLarge() {
         return logoImageLarge;
     }
@@ -139,7 +137,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "logo_image_medium")
+    @Column(name = "logo_image_medium", nullable = true, length = 255)
     public String getLogoImageMedium() {
         return logoImageMedium;
     }
@@ -149,7 +147,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "logo_image_small")
+    @Column(name = "logo_image_small", nullable = true, length = 255)
     public String getLogoImageSmall() {
         return logoImageSmall;
     }
@@ -159,17 +157,17 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "managerid")
-    public int getManagerid() {
+    @Column(name = "managerid", nullable = true)
+    public Integer getManagerid() {
         return managerid;
     }
 
-    public void setManagerid(int managerid) {
+    public void setManagerid(Integer managerid) {
         this.managerid = managerid;
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = true, length = 255)
     public String getPhone() {
         return phone;
     }
@@ -179,17 +177,17 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "shopping_centreid")
-    public int getShoppingCentreid() {
+    @Column(name = "shopping_centreid", nullable = true)
+    public Integer getShoppingCentreid() {
         return shoppingCentreid;
     }
 
-    public void setShoppingCentreid(int shoppingCentreid) {
+    public void setShoppingCentreid(Integer shoppingCentreid) {
         this.shoppingCentreid = shoppingCentreid;
     }
 
     @Basic
-    @Column(name = "store_name")
+    @Column(name = "store_name", nullable = true, length = 255)
     public String getStoreName() {
         return storeName;
     }
@@ -199,7 +197,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "twitterUrl")
+    @Column(name = "twitter_url", nullable = true, length = 255)
     public String getTwitterUrl() {
         return twitterUrl;
     }
@@ -209,7 +207,7 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "websiteUrl")
+    @Column(name = "website_url", nullable = true, length = 255)
     public String getWebsiteUrl() {
         return websiteUrl;
     }
@@ -219,12 +217,12 @@ public class Retailer extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "zoneid")
-    public int getZoneid() {
+    @Column(name = "zoneid", nullable = true)
+    public Integer getZoneid() {
         return zoneid;
     }
 
-    public void setZoneid(int zoneid) {
+    public void setZoneid(Integer zoneid) {
         this.zoneid = zoneid;
     }
 
@@ -236,9 +234,6 @@ public class Retailer extends BaseEntity {
         Retailer retailer = (Retailer) o;
 
         if (retailerid != retailer.retailerid) return false;
-        if (managerid != retailer.managerid) return false;
-        if (shoppingCentreid != retailer.shoppingCentreid) return false;
-        if (zoneid != retailer.zoneid) return false;
         if (defaultContentPage1 != null ? !defaultContentPage1.equals(retailer.defaultContentPage1) : retailer.defaultContentPage1 != null)
             return false;
         if (defaultContentPage2 != null ? !defaultContentPage2.equals(retailer.defaultContentPage2) : retailer.defaultContentPage2 != null)
@@ -257,10 +252,14 @@ public class Retailer extends BaseEntity {
             return false;
         if (logoImageSmall != null ? !logoImageSmall.equals(retailer.logoImageSmall) : retailer.logoImageSmall != null)
             return false;
+        if (managerid != null ? !managerid.equals(retailer.managerid) : retailer.managerid != null) return false;
         if (phone != null ? !phone.equals(retailer.phone) : retailer.phone != null) return false;
+        if (shoppingCentreid != null ? !shoppingCentreid.equals(retailer.shoppingCentreid) : retailer.shoppingCentreid != null)
+            return false;
         if (storeName != null ? !storeName.equals(retailer.storeName) : retailer.storeName != null) return false;
         if (twitterUrl != null ? !twitterUrl.equals(retailer.twitterUrl) : retailer.twitterUrl != null) return false;
         if (websiteUrl != null ? !websiteUrl.equals(retailer.websiteUrl) : retailer.websiteUrl != null) return false;
+        if (zoneid != null ? !zoneid.equals(retailer.zoneid) : retailer.zoneid != null) return false;
 
         return true;
     }
@@ -277,13 +276,13 @@ public class Retailer extends BaseEntity {
         result = 31 * result + (logoImageLarge != null ? logoImageLarge.hashCode() : 0);
         result = 31 * result + (logoImageMedium != null ? logoImageMedium.hashCode() : 0);
         result = 31 * result + (logoImageSmall != null ? logoImageSmall.hashCode() : 0);
-        result = 31 * result + managerid;
+        result = 31 * result + (managerid != null ? managerid.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + shoppingCentreid;
+        result = 31 * result + (shoppingCentreid != null ? shoppingCentreid.hashCode() : 0);
         result = 31 * result + (storeName != null ? storeName.hashCode() : 0);
         result = 31 * result + (twitterUrl != null ? twitterUrl.hashCode() : 0);
         result = 31 * result + (websiteUrl != null ? websiteUrl.hashCode() : 0);
-        result = 31 * result + zoneid;
+        result = 31 * result + (zoneid != null ? zoneid.hashCode() : 0);
         return result;
     }
 
@@ -333,7 +332,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "managerid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "managerid", referencedColumnName = "userid",insertable = false, updatable = false)
     public User getUsersByManagerid() {
         return usersByManagerid;
     }
@@ -343,7 +342,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "shopping_centreid", referencedColumnName = "shopping_centreid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "shopping_centreid", referencedColumnName = "shopping_centreid",insertable = false, updatable = false)
     public ShoppingCentre getShoppingCentreByShoppingCentreid() {
         return shoppingCentreByShoppingCentreid;
     }
@@ -353,7 +352,7 @@ public class Retailer extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "zoneid", referencedColumnName = "zoneid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "zoneid", referencedColumnName = "zoneid",insertable = false, updatable = false)
     public Zone getZonesByZoneid() {
         return zonesByZoneid;
     }
@@ -369,14 +368,5 @@ public class Retailer extends BaseEntity {
 
     public void setUserpointsByRetailerid(Collection<UserPoint> userpointsByRetailerid) {
         this.userpointsByRetailerid = userpointsByRetailerid;
-    }
-
-    @OneToMany(mappedBy = "retailersByRetailerid")
-    public Collection<Zone> getZonesByRetailerid() {
-        return zonesByRetailerid;
-    }
-
-    public void setZonesByRetailerid(Collection<Zone> zonesByRetailerid) {
-        this.zonesByRetailerid = zonesByRetailerid;
     }
 }

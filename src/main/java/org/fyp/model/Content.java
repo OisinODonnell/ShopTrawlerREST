@@ -2,7 +2,6 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.List;
 
 @Entity
@@ -13,7 +12,7 @@ public class Content extends BaseEntity {
     private String page1;
     private String page2;
     private String page3;
-    private int retailerid;
+    private Integer retailerid;
     private Timestamp startDate;
     private Retailer retailersByRetailerid;
 
@@ -32,7 +31,7 @@ public class Content extends BaseEntity {
         this.startDate  = toTimestamp(attributes.get(6));
     }
     @Id
-    @Column(name = "contentid")
+    @Column(name = "contentid", nullable = false)
     public int getContentid() {
         return contentid;
     }
@@ -42,7 +41,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = true)
     public Timestamp getEndDate() {
         return endDate;
     }
@@ -52,7 +51,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page1")
+    @Column(name = "page1", nullable = true, length = 255)
     public String getPage1() {
         return page1;
     }
@@ -62,7 +61,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page2")
+    @Column(name = "page2", nullable = true, length = 255)
     public String getPage2() {
         return page2;
     }
@@ -72,7 +71,7 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "page3")
+    @Column(name = "page3", nullable = true, length = 255)
     public String getPage3() {
         return page3;
     }
@@ -82,17 +81,17 @@ public class Content extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "retailerid")
-    public int getRetailerid() {
+    @Column(name = "retailerid", nullable = true)
+    public Integer getRetailerid() {
         return retailerid;
     }
 
-    public void setRetailerid(int retailerid) {
+    public void setRetailerid(Integer retailerid) {
         this.retailerid = retailerid;
     }
 
     @Basic
-    @Column(name = "start_date")
+    @Column(name = "start_date", nullable = true)
     public Timestamp getStartDate() {
         return startDate;
     }
@@ -109,11 +108,11 @@ public class Content extends BaseEntity {
         Content content = (Content) o;
 
         if (contentid != content.contentid) return false;
-        if (retailerid != content.retailerid) return false;
         if (endDate != null ? !endDate.equals(content.endDate) : content.endDate != null) return false;
         if (page1 != null ? !page1.equals(content.page1) : content.page1 != null) return false;
         if (page2 != null ? !page2.equals(content.page2) : content.page2 != null) return false;
         if (page3 != null ? !page3.equals(content.page3) : content.page3 != null) return false;
+        if (retailerid != null ? !retailerid.equals(content.retailerid) : content.retailerid != null) return false;
         if (startDate != null ? !startDate.equals(content.startDate) : content.startDate != null) return false;
 
         return true;
@@ -126,13 +125,13 @@ public class Content extends BaseEntity {
         result = 31 * result + (page1 != null ? page1.hashCode() : 0);
         result = 31 * result + (page2 != null ? page2.hashCode() : 0);
         result = 31 * result + (page3 != null ? page3.hashCode() : 0);
-        result = 31 * result + retailerid;
+        result = 31 * result + (retailerid != null ? retailerid.hashCode() : 0);
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "retailerid", referencedColumnName = "retailerid",insertable = false, updatable = false)
     public Retailer getRetailersByRetailerid() {
         return retailersByRetailerid;
     }

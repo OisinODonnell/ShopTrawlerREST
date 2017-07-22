@@ -33,7 +33,4 @@ public class VisitController extends MainController {
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
     public void delete(Visit visit)     {  visitRepo.delete(visit);    }
 
-
-
-
 }

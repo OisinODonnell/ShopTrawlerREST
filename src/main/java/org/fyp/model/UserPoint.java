@@ -8,7 +8,7 @@ import java.util.List;
 @IdClass(UserPointPK.class)
 public class UserPoint extends BaseEntity {
     private int userid;
-    private int retailerid;
+    private Integer retailerid;
     private Integer points;
     private User usersByUserid;
     private Retailer retailersByRetailerid;
@@ -22,7 +22,7 @@ public class UserPoint extends BaseEntity {
         this.points         = toInteger( attributes.get(2));
     }
     @Id
-    @Column(name = "userid")
+    @Column(name = "userid", nullable = false)
     public int getUserid() {
         return userid;
     }
@@ -32,17 +32,17 @@ public class UserPoint extends BaseEntity {
     }
 
     @Id
-    @Column(name = "retailerid")
-    public int getRetailerid() {
+    @Column(name = "retailerid", nullable = false)
+    public Integer getRetailerid() {
         return retailerid;
     }
 
-    public void setRetailerid(int retailerid) {
+    public void setRetailerid(Integer retailerid) {
         this.retailerid = retailerid;
     }
 
     @Basic
-    @Column(name = "points")
+    @Column(name = "points", nullable = true)
     public Integer getPoints() {
         return points;
     }

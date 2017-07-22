@@ -2,7 +2,6 @@ package org.fyp.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.List;
 
 @Entity
@@ -13,8 +12,8 @@ public class Visit extends BaseEntity {
     private Timestamp entryTime;
     private Timestamp exitTime;
     private Integer userCreditedForVisit;
-    private int userid;
-    private int zoneid;
+    private Integer userid;
+    private Integer zoneid;
     private User usersByUserid;
     private Zone zonesByZoneid;
 
@@ -22,15 +21,16 @@ public class Visit extends BaseEntity {
     }
 
     public Visit(List<String> attributes) {
-        this.zoneid = toInteger(attributes.get(0));
-        this.visitid = toInteger(attributes.get(1));
+        this.visitid = toInteger(attributes.get(0));
+        this.zoneid = toInteger(attributes.get(1));
         this.userid = toInteger(attributes.get(2));
         this.duration = toInteger(attributes.get(3));
         this.entryTime = toTimestamp(attributes.get(4));
         this.exitTime = toTimestamp(attributes.get(5));
     }
+
     @Id
-    @Column(name = "visitid")
+    @Column(name = "visitid", nullable = false)
     public int getVisitid() {
         return visitid;
     }
@@ -40,7 +40,7 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "duration")
+    @Column(name = "duration", nullable = true)
     public Integer getDuration() {
         return duration;
     }
@@ -50,7 +50,7 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "entry_time")
+    @Column(name = "entry_time", nullable = true)
     public Timestamp getEntryTime() {
         return entryTime;
     }
@@ -60,7 +60,7 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "exit_time")
+    @Column(name = "exit_time", nullable = true)
     public Timestamp getExitTime() {
         return exitTime;
     }
@@ -70,7 +70,7 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "user_credited_for_visit")
+    @Column(name = "user_credited_for_visit", nullable = true)
     public Integer getUserCreditedForVisit() {
         return userCreditedForVisit;
     }
@@ -80,22 +80,22 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "userid")
-    public int getUserid() {
+    @Column(name = "userid", nullable = true)
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
     @Basic
-    @Column(name = "zoneid")
-    public int getZoneid() {
+    @Column(name = "zoneid", nullable = true)
+    public Integer getZoneid() {
         return zoneid;
     }
 
-    public void setZoneid(int zoneid) {
+    public void setZoneid(Integer zoneid) {
         this.zoneid = zoneid;
     }
 
@@ -107,13 +107,13 @@ public class Visit extends BaseEntity {
         Visit visit = (Visit) o;
 
         if (visitid != visit.visitid) return false;
-        if (userid != visit.userid) return false;
-        if (zoneid != visit.zoneid) return false;
         if (duration != null ? !duration.equals(visit.duration) : visit.duration != null) return false;
         if (entryTime != null ? !entryTime.equals(visit.entryTime) : visit.entryTime != null) return false;
         if (exitTime != null ? !exitTime.equals(visit.exitTime) : visit.exitTime != null) return false;
         if (userCreditedForVisit != null ? !userCreditedForVisit.equals(visit.userCreditedForVisit) : visit.userCreditedForVisit != null)
             return false;
+        if (userid != null ? !userid.equals(visit.userid) : visit.userid != null) return false;
+        if (zoneid != null ? !zoneid.equals(visit.zoneid) : visit.zoneid != null) return false;
 
         return true;
     }
@@ -125,13 +125,13 @@ public class Visit extends BaseEntity {
         result = 31 * result + (entryTime != null ? entryTime.hashCode() : 0);
         result = 31 * result + (exitTime != null ? exitTime.hashCode() : 0);
         result = 31 * result + (userCreditedForVisit != null ? userCreditedForVisit.hashCode() : 0);
-        result = 31 * result + userid;
-        result = 31 * result + zoneid;
+        result = 31 * result + (userid != null ? userid.hashCode() : 0);
+        result = 31 * result + (zoneid != null ? zoneid.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "userid", referencedColumnName = "userid",insertable = false, updatable = false)
     public User getUsersByUserid() {
         return usersByUserid;
     }
@@ -141,7 +141,7 @@ public class Visit extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "zoneid", referencedColumnName = "zoneid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "zoneid", referencedColumnName = "zoneid",insertable = false, updatable = false)
     public Zone getZonesByZoneid() {
         return zonesByZoneid;
     }

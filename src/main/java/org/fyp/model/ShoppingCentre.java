@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "shopping_centre", schema = "shoptrawler")
 public class ShoppingCentre extends BaseEntity {
     private int shoppingCentreid;
-    private int adminid;
+    private Integer adminid;
     private String contentPage;
     private String facebookUrl;
     private String logoImageLarge;
@@ -40,9 +40,8 @@ public class ShoppingCentre extends BaseEntity {
         this.contentPage                    = attributes.get(10);
 
     }
-
     @Id
-    @Column(name = "shopping_centreid")
+    @Column(name = "shopping_centreid", nullable = false)
     public int getShoppingCentreid() {
         return shoppingCentreid;
     }
@@ -52,17 +51,17 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "adminid")
-    public int getAdminid() {
+    @Column(name = "adminid", nullable = true)
+    public Integer getAdminid() {
         return adminid;
     }
 
-    public void setAdminid(int adminid) {
+    public void setAdminid(Integer adminid) {
         this.adminid = adminid;
     }
 
     @Basic
-    @Column(name = "content_page")
+    @Column(name = "content_page", nullable = true, length = 255)
     public String getContentPage() {
         return contentPage;
     }
@@ -72,17 +71,17 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "facebookurl")
+    @Column(name = "facebookUrl", nullable = true, length = 255)
     public String getFacebookUrl() {
         return facebookUrl;
     }
 
-    public void setFacebookUrl(String facebookurl) {
-        this.facebookUrl = facebookurl;
+    public void setFacebookUrl(String facebookUrl) {
+        this.facebookUrl = facebookUrl;
     }
 
     @Basic
-    @Column(name = "logo_image_large")
+    @Column(name = "logo_image_large", nullable = true, length = 255)
     public String getLogoImageLarge() {
         return logoImageLarge;
     }
@@ -92,7 +91,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "logo_image_medium")
+    @Column(name = "logo_image_medium", nullable = true, length = 255)
     public String getLogoImageMedium() {
         return logoImageMedium;
     }
@@ -102,7 +101,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "logo_image_small")
+    @Column(name = "logo_image_small", nullable = true, length = 255)
     public String getLogoImageSmall() {
         return logoImageSmall;
     }
@@ -112,7 +111,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = true, length = 255)
     public String getPhone() {
         return phone;
     }
@@ -122,7 +121,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "shopping_centre_name")
+    @Column(name = "shopping_centre_name", nullable = true, length = 255)
     public String getShoppingCentreName() {
         return shoppingCentreName;
     }
@@ -132,23 +131,23 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "twitterurl")
+    @Column(name = "twitterUrl", nullable = true, length = 255)
     public String getTwitterUrl() {
         return twitterUrl;
     }
 
-    public void setTwitterUrl(String twitterurl) {
-        this.twitterUrl = twitterurl;
+    public void setTwitterUrl(String twitterUrl) {
+        this.twitterUrl = twitterUrl;
     }
 
     @Basic
-    @Column(name = "websiteurl")
+    @Column(name = "websiteUrl", nullable = true, length = 255)
     public String getWebsiteUrl() {
         return websiteUrl;
     }
 
-    public void setWebsiteUrl(String websiteurl) {
-        this.websiteUrl = websiteurl;
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
     }
 
     @Override
@@ -159,7 +158,7 @@ public class ShoppingCentre extends BaseEntity {
         ShoppingCentre that = (ShoppingCentre) o;
 
         if (shoppingCentreid != that.shoppingCentreid) return false;
-        if (adminid != that.adminid) return false;
+        if (adminid != null ? !adminid.equals(that.adminid) : that.adminid != null) return false;
         if (contentPage != null ? !contentPage.equals(that.contentPage) : that.contentPage != null) return false;
         if (facebookUrl != null ? !facebookUrl.equals(that.facebookUrl) : that.facebookUrl != null) return false;
         if (logoImageLarge != null ? !logoImageLarge.equals(that.logoImageLarge) : that.logoImageLarge != null)
@@ -180,7 +179,7 @@ public class ShoppingCentre extends BaseEntity {
     @Override
     public int hashCode() {
         int result = shoppingCentreid;
-        result = 31 * result + adminid;
+        result = 31 * result + (adminid != null ? adminid.hashCode() : 0);
         result = 31 * result + (contentPage != null ? contentPage.hashCode() : 0);
         result = 31 * result + (facebookUrl != null ? facebookUrl.hashCode() : 0);
         result = 31 * result + (logoImageLarge != null ? logoImageLarge.hashCode() : 0);
@@ -212,7 +211,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "adminid", referencedColumnName = "userid", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "adminid", referencedColumnName = "userid",insertable = false, updatable = false)
     public User getUsersByAdminid() {
         return usersByAdminid;
     }
