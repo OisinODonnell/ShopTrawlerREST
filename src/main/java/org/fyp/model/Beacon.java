@@ -20,7 +20,7 @@ public class Beacon extends BaseEntity {
     public Beacon() {
     }
 
-    public Beacon(List<String> attributes) throws ParseException {
+    public Beacon(List<String> attributes)  {
         this.beaconid               = toInteger(attributes.get(0));
         this.uuid                   = attributes.get(1);
         this.major                  = toInteger(attributes.get(2));

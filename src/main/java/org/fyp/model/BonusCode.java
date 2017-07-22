@@ -19,7 +19,7 @@ public class BonusCode extends BaseEntity {
     public BonusCode() {
     }
 
-    public BonusCode(List<String> attributes) throws ParseException {
+    public BonusCode(List<String> attributes)  {
         this.bonusCodeid    = toInteger( attributes.get(0));
         this.datetime       = toTimestamp( attributes.get(1));
         this.retailerid     = toInteger( attributes.get(2));

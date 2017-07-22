@@ -21,7 +21,7 @@ public class Visit extends BaseEntity {
     public Visit() {
     }
 
-    public Visit(List<String> attributes) throws ParseException {
+    public Visit(List<String> attributes) {
         this.zoneid = toInteger(attributes.get(0));
         this.visitid = toInteger(attributes.get(1));
         this.userid = toInteger(attributes.get(2));

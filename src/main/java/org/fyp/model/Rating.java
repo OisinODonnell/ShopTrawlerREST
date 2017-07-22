@@ -20,7 +20,7 @@ public class Rating extends BaseEntity {
     public Rating() {
     }
 
-    public Rating(List<String> attributes) throws ParseException {
+    public Rating(List<String> attributes)  {
         this.userid     = toInteger(attributes.get(0));
         this.retailerid = toInteger(attributes.get(1));
         this.date       = toTimestamp(attributes.get(2));

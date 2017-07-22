@@ -21,7 +21,7 @@ public class LoyaltyReward extends BaseEntity {
     public LoyaltyReward() {
     }
 
-    public LoyaltyReward(List<String> attributes) throws ParseException {
+    public LoyaltyReward(List<String> attributes)  {
         this.retailerid         = toInteger(attributes.get(0));
         this.loyaltyRewardid    = toInteger(attributes.get(1));
         this.endDate            = toTimestamp(attributes.get(2));

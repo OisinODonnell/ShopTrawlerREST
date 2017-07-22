@@ -15,9 +15,13 @@ public abstract class BaseEntity {
      * Conversion methods used when taking data in from a csv file.
      */
 
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+    private Integer valueToInteger = null;
+    private Date parsedDate = new Date();
+    private BigDecimal valueToBigDecimal = null;
+
     public Integer toInteger(String value)
     {
-        Integer valueToInteger = null;
 
         try {
             valueToInteger = Integer.parseInt(value);
@@ -29,7 +33,6 @@ public abstract class BaseEntity {
 
     public BigDecimal toBigDecimal(String value)
     {
-        BigDecimal valueToBigDecimal = null;
 
         try {
             valueToBigDecimal = new BigDecimal(value.replaceAll(",", ""));
@@ -44,9 +47,14 @@ public abstract class BaseEntity {
 
     public Byte toByte(String value) {              return value.getBytes()[0]; }
 
-    public Timestamp toTimestamp(String value) throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm");
-        Date parsedDate = dateFormat.parse(value);
+    public Timestamp toTimestamp(String value)  {
+
+        try {
+            parsedDate = dateFormat.parse(value);
+        } catch (ParseException e) {
+            System.out.println(e);
+        }
+
         return  new Timestamp(parsedDate.getTime());
     }
 }
