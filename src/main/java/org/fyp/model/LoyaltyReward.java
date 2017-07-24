@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -15,6 +18,7 @@ public class LoyaltyReward extends BaseEntity {
     private String rewardTitle;
     private Timestamp startDate;
     private Integer visitTime;
+    @JsonBackReference
     private Retailer retailersByRetailerid;
 
     public LoyaltyReward() {

@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +17,9 @@ public class Location extends BaseEntity {
     private Integer locationInShoppingCentre;
     private String locationType;
     private Integer shoppingCentreid;
+    @JsonBackReference
     private Collection<Beacon> beaconsByLocationid;
+    @JsonManagedReference
     private ShoppingCentre shoppingCentreByShoppingCentreid;
 
     public Location() {

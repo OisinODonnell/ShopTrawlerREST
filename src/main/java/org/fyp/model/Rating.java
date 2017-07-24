@@ -1,5 +1,7 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -13,7 +15,9 @@ public class Rating extends BaseEntity {
     private Timestamp date;
     private Integer rating;
     private String review;
+    @JsonBackReference
     private User usersByUserid;
+    @JsonBackReference
     private Retailer retailersByRetailerid;
 
     public Rating() {

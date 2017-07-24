@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -14,6 +17,7 @@ public class Content extends BaseEntity {
     private String page3;
     private Integer retailerid;
     private Timestamp startDate;
+    @JsonBackReference
     private Retailer retailersByRetailerid;
 
     public Content() {

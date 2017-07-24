@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -10,8 +13,11 @@ public class Zone extends BaseEntity {
     private int zoneid;
     private Integer beaconid;
     private String zoneName;
+    @JsonBackReference
     private Collection<Retailer> retailersByZoneid;
+    @JsonBackReference
     private Collection<Visit> visitsByZoneid;
+    @JsonManagedReference
     private Beacon beaconsByBeaconid;
 
     public Zone() {

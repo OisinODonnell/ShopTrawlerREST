@@ -1,5 +1,9 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -16,12 +20,21 @@ public class User extends BaseEntity {
     private String surname;
     private String type;
     private Integer yob;
+    @JsonManagedReference
     private Collection<BonusCode> bonuscodesByUserid;
+    //@JsonManagedReference
+    @JsonManagedReference
     private Collection<Favourite> favouritesByUserid;
+    @JsonManagedReference
     private Collection<Rating> ratingsByUserid;
+    @JsonBackReference
     private Collection<Retailer> retailersByUserid;
+    @JsonManagedReference
     private Collection<ShoppingCentre> shoppingCentresByUserid;
+    //@JsonManagedReference
+    @JsonManagedReference
     private Collection<UserPoint> userpointsByUserid;
+    @JsonManagedReference
     private Collection<Visit> visitsByUserid;
 
     public User() {

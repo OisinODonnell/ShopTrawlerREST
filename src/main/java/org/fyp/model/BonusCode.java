@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -12,7 +15,9 @@ public class BonusCode extends BaseEntity {
     private Integer retailerid;
     private Integer userid;
     private String value;
+    @JsonBackReference
     private Retailer retailersByRetailerid;
+    @JsonBackReference
     private User usersByUserid;
 
     public BonusCode() {

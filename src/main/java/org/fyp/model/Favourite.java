@@ -1,5 +1,8 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,9 +10,12 @@ import java.util.List;
 @Table(name = "favourites", schema = "shoptrawler")
 @IdClass(FavouritePK.class)
 public class Favourite extends BaseEntity {
+
     private int userid;
     private int retailerid;
+    @JsonBackReference
     private User usersByUserid;
+    @JsonBackReference
     private Retailer retailersByRetailerid;
 
     public Favourite() {

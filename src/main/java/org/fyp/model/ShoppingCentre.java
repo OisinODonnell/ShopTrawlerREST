@@ -1,5 +1,7 @@
 package org.fyp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
@@ -18,8 +20,11 @@ public class ShoppingCentre extends BaseEntity {
     private String shoppingCentreName;
     private String twitterUrl;
     private String websiteUrl;
+    @JsonBackReference
     private Collection<Location> locationsByShoppingCentreid;
+    @JsonBackReference
     private Collection<Retailer> retailersByShoppingCentreid;
+    @JsonBackReference
     private User usersByAdminid;
 
     public ShoppingCentre() {
