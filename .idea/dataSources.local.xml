@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="shoptrawler@localhost" uuid="8c6bd763-b466-4f6a-b34e-06e8107881dc">
+      <database-info product="MySQL" version="5.7.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
+      <introspection-schemas>*:shoptrawler</introspection-schemas>
+    </data-source>
+    <data-source name="persistenceUnit/OpenJPA" uuid="bc9ed26a-a7e5-4c9b-9dcd-d63ee60851b9">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="persistenceUnit/Hibernate" uuid="d851a7a6-525c-49a2-a658-826738a02f41">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="persistenceUnit/EclipseLink" uuid="3754f905-5616-4c49-b3b1-2c919b629f38">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="persistenceUnit/TopLink" uuid="68c65978-6986-47cc-9d3b-3ac2d50beb9f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="@localhost" uuid="479a31f9-3af3-42e0-a24c-92bcbd57991a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="64b89283-92f9-44a1-b254-be4b927c67ae">
+      <database-info product="MySQL" version="5.7.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
+      <introspection-schemas>*:shoptrawler</introspection-schemas>
+    </data-source>
+  </component>
+</project>

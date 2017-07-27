@@ -4,9 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.fyp.model.*;
 import org.fyp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 
+import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 @Controller
 public abstract class MainController {
@@ -39,9 +43,15 @@ public abstract class MainController {
     ZoneRepository zoneRepo;
 
     ObjectMapper mapper = new ObjectMapper();
-
+    HttpStatus httpStatus = HttpStatus.OK;
 
     Util util = new Util(); // singleton
+
+    // response object for building up a response to the user
+    HashMap<String, String> respMap = new HashMap<>();
+
+
+
 
     @SuppressWarnings("unchecked")
     public <E> void loadData(E item, String file) throws Exception {
@@ -96,6 +106,20 @@ public abstract class MainController {
                     break;
             }
 
+    }
+    // Command Pattern
+    public <T> T getRepo(Callable<T> func) throws Exception {
+
+        return func.call();
+    }
+
+    public Timestamp getTimeStamp() {
+        java.util.Date date = new java.util.Date();
+        // omit milliseconds
+        long time = 1000 * (date.getTime()/ 1000);
+        date.setTime(time);
+
+        return new java.sql.Timestamp(date.getTime());
     }
 
 }
