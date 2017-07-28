@@ -30,18 +30,24 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(getPasswordEncoder());
-
     }
 
     // Overriding the implementation of the HTTP security.
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.httpBasic()
+                .and()
+                    .authorizeRequests()
+                    .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
+                    .anyRequest()
+                .authenticated();
+
         http.csrf().disable();
-        http.authorizeRequests()
-                .antMatchers("**").authenticated()
-                .anyRequest().permitAll()
-                .and().formLogin().permitAll(); // you can add in a custom login page here with .loginPage("/loginpage")
+
+//                .antMatchers("**").authenticated()
+//                .anyRequest().permitAll();
+                // .and().formLogin().permitAll(); // you can add in a custom login page here with .loginPage("/loginpage")
                 // formLogin() is SpringSecurity's default login page.
     }
 
@@ -59,29 +65,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         };
     }
 
-
-    /**   @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("oisr").password("oisin").roles("RETAILER").and()
-                .withUser("oisa").password("oisin").roles("ADMIN").and()
-                .withUser("oism").password("oisin").roles("MOBILE");
-    }
-*/
-
-
-
-  /**  @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-                .authorizeRequests()    // Authorise all requests
-                .anyRequest()           // any requests
-                .fullyAuthenticated()
-//                .permitAll()            // Permit all
-                .and().httpBasic();     // Http Basic authentication
-        httpSecurity.csrf().disable(); // disable cross site security ... both apps running from same device
-    }
-    */
 
 }
 

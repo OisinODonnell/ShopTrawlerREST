@@ -9,21 +9,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
-import java.util.Collection;
 import java.util.HashMap;
 
 /**
  * Created by oisin on 30/03/2017.
  */
 @RestController
-@RequestMapping("Login")
+@RequestMapping("/")
 public class LoginController extends MainController {
 
     int status = 0;
     String message = "";
 
 
-    @RequestMapping(value = "/{username}/{password}", method= RequestMethod.GET)
+    @RequestMapping(value = "login/{username}/{password}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> login (@PathVariable("username") String username,
                                                          @PathVariable("password") String password) throws ParseException {
