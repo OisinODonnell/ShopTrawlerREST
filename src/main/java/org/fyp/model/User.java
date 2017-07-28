@@ -37,10 +37,13 @@ public class User extends BaseEntity {
     @JsonManagedReference
     private Collection<Visit> visitsByUserid;
 
+    // This empty constructor is to satify JPA
     public User() {
     }
 
     public User(List<String> attributes) {
+
+
         this.userid                     = toInteger( attributes.get(0));
         this.surname                    = attributes.get(1);
         this.firstname                  = attributes.get(2);
@@ -52,6 +55,20 @@ public class User extends BaseEntity {
         this.gender                     = attributes.get(8);
 
     }
+
+    public User(User user) {
+
+        this.userid = user.getUserid();
+        this.surname = user.getSurname();
+        this.firstname = user.getFirstname();
+        this.emailAddress = user.getEmailAddress();
+        this.type = user.getType();
+        this.phone = user.getPhone();
+        this.password = user.getPassword();
+        this.yob = user.getYob();
+        this.gender = user.getGender();
+    }
+
     @Id
     @Column(name = "userid", nullable = false)
     public int getUserid() {

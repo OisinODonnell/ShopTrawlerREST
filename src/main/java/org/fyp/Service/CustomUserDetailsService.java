@@ -1,5 +1,6 @@
-package org.fyp.config;
+package org.fyp.Service;
 
+import org.fyp.model.CustomUserDetails;
 import org.fyp.model.User;
 import org.fyp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,17 +10,19 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MyUserDetailsService  implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepo;
 
     @Override
-    public UserDetails loadUserByUsername(String emailAddress) {
+    public UserDetails loadUserByUsername(String emailAddress) throws UsernameNotFoundException {
+
         User user = userRepo.findByEmailAddress(emailAddress);
         if (user == null) {
             throw new UsernameNotFoundException(emailAddress);
         }
-        return new MyUserPrincipal(user);
+        return new CustomUserDetails(user);
     }
+
 }
