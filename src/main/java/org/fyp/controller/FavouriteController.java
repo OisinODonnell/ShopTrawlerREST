@@ -15,7 +15,7 @@ import java.util.Collection;
  */
 
 @RestController
-@RequestMapping(value = "/Favourites", method=RequestMethod.GET)
+@RequestMapping(value = {"Favourites","Favourite"}, method=RequestMethod.GET)
 public class FavouriteController extends MainController {
 
 

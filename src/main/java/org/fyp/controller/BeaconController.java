@@ -18,7 +18,7 @@ import java.util.Collection;
  */
 
 @RestController
-@RequestMapping("Beacons")
+@RequestMapping(value = {"Beacons","Beacon"})
 public class BeaconController extends MainController{
 
 

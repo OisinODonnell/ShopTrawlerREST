@@ -18,7 +18,7 @@ import java.util.Collection;
 
 
 @RestController
-@RequestMapping(value = "LoyaltyRewards", method=RequestMethod.GET)
+@RequestMapping(value = {"LoyaltyRewards","LoyaltyReward"}, method=RequestMethod.GET)
 public class LoyaltyRewardController extends MainController {
 
 

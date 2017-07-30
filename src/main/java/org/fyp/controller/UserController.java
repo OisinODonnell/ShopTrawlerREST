@@ -14,7 +14,7 @@ import java.util.Collection;
  */
 
 @RestController
-@RequestMapping(value = "Users", method= RequestMethod.GET)
+@RequestMapping(value = {"Users","User"}, method= RequestMethod.GET)
 public class UserController extends MainController {
 
 
@@ -42,7 +42,10 @@ public class UserController extends MainController {
         userRepo.delete(user);
     }
 
-
-
-
+    // the pathmapping variables are truncated after the '.'
+    // additional regex chars necessary to retrieve the full parameter ':.+'
+    @RequestMapping(value = "/ByEmail/{emailAddress:.+}", method=RequestMethod.GET)
+    public User getUserByEmailAddress(@PathVariable("emailAddress") String emailAddress) {
+        return userRepo.findByEmailAddress(emailAddress);
+    }
 }

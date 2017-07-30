@@ -1,5 +1,10 @@
 package org.fyp.config;
 
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+
 
 import org.fyp.Service.CustomUserDetailsService;
 import org.fyp.repository.UserRepository;
@@ -32,23 +37,23 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(getPasswordEncoder());
     }
 
-    // Overriding the implementation of the HTTP security.
+    //     Overriding the implementation of the HTTP security.
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.httpBasic()
-                .and()
-                    .authorizeRequests()
-                    .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
-                    .anyRequest()
-                .authenticated();
+        http.httpBasic();
+//                .and()
+//                .authorizeRequests()
+//                    .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
+//                .anyRequest()
+//                .authenticated();
 
         http.csrf().disable();
 
 //                .antMatchers("**").authenticated()
 //                .anyRequest().permitAll();
-                // .and().formLogin().permitAll(); // you can add in a custom login page here with .loginPage("/loginpage")
-                // formLogin() is SpringSecurity's default login page.
+        // .and().formLogin().permitAll(); // you can add in a custom login page here with .loginPage("/loginpage")
+        // formLogin() is SpringSecurity's default login page.
     }
 
     private PasswordEncoder getPasswordEncoder() {
@@ -67,4 +72,3 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 }
-

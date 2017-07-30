@@ -1,8 +1,6 @@
 package org.fyp.controller;
 
 import org.fyp.model.User;
-//import org.fyp.model.Session;
-import org.fyp.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,20 +34,18 @@ public class LoginController extends MainController {
         Timestamp startTime = getTimeStamp();
         User user = userRepo.findByEmailAddress(username);
 
-
-
         if (user != null) { // yes user with this username exists
 
             if (user.getPassword().equals(password)) {
 
-                respMap.put( "message"   , user.getType() + " User " + user.getFirstname() + "with id " + user.getUserid() + " is logged in!");
+                respMap.put( "message"   , user.getType() + " User " + user.getFirstname() + " with id " + user.getUserid() + " is logged in!");
                 respMap.put( "userType"  , user.getType() );
 
                 respMap.put( "name"      , user.getFirstname() );
                 respMap.put( "httpStatus", "" + HttpStatus.OK );
                 respMap.put( "startTime" , "" + startTime );
                 respMap.put( "userId" , "" + user.getUserid() );
-                respMap.put( "success" , ""+1);
+                respMap.put( "success" , "" + 1);
 //                Session session = new Session();
 //                session.setuserid(user.getuserid());
 //                session.setDateStart( startTime );
@@ -72,7 +68,6 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-
 
     @RequestMapping(value = "/logout/{userId}/{startTime}", method= RequestMethod.GET)
     @ResponseBody
