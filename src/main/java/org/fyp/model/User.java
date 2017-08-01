@@ -29,7 +29,7 @@ public class User extends BaseEntity {
     private Collection<Rating> ratingsByUserid;
     @JsonBackReference
     private Collection<Retailer> retailersByUserid;
-    @JsonManagedReference
+    @JsonBackReference
     private Collection<ShoppingCentre> shoppingCentresByUserid;
     //@JsonManagedReference
     @JsonManagedReference
@@ -37,7 +37,7 @@ public class User extends BaseEntity {
     @JsonManagedReference
     private Collection<Visit> visitsByUserid;
 
-    // This empty constructor is to satify JPA
+    // This empty constructor is to satisfy JPA
     public User() {
     }
 
