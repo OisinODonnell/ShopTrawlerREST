@@ -40,7 +40,7 @@ public class Retailer extends BaseEntity {
     private Collection<Rating> ratingsByRetailerid;
     @JsonManagedReference
     private User usersByManagerid;
-    @JsonManagedReference
+    @JsonBackReference
     private ShoppingCentre shoppingCentreByShoppingCentreid;
     // Jackson annotation probably needed here.
     @JsonManagedReference

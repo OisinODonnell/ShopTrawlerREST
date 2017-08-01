@@ -21,9 +21,9 @@ public class ShoppingCentre extends BaseEntity {
     private String shoppingCentreName;
     private String twitterUrl;
     private String websiteUrl;
-    @JsonBackReference
+    @JsonManagedReference
     private Collection<Location> locationsByShoppingCentreid;
-    @JsonBackReference
+    @JsonManagedReference
     private Collection<Retailer> retailersByShoppingCentreid;
     @JsonManagedReference
     private User usersByAdminid;

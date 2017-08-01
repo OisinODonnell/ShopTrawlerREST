@@ -19,7 +19,7 @@ public class Visit extends BaseEntity {
     private Integer zoneid;
     @JsonBackReference
     private User usersByUserid;
-    @JsonManagedReference
+    @JsonBackReference
     private Zone zonesByZoneid;
 
     public Visit() {

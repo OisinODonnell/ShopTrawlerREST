@@ -16,9 +16,9 @@ public class Beacon extends BaseEntity {
     private Integer minor;
     private Integer transmitPower;
     private String uuid;
-    @JsonManagedReference
-    private Location locationsByLocationid;
     @JsonBackReference
+    private Location locationsByLocationid;
+    @JsonManagedReference
     private Collection<Zone> zonesByBeaconid;
 
     public Beacon() {

@@ -22,20 +22,19 @@ public class User extends BaseEntity {
     private Integer yob;
     @JsonManagedReference
     private Collection<BonusCode> bonuscodesByUserid;
-    //@JsonManagedReference
     @JsonManagedReference
     private Collection<Favourite> favouritesByUserid;
     @JsonManagedReference
     private Collection<Rating> ratingsByUserid;
+    @JsonManagedReference
+    private Collection<UserPoint> userpointsByUserid;
+    @JsonManagedReference
+    private Collection<Visit> visitsByUserid;
     @JsonBackReference
     private Collection<Retailer> retailersByUserid;
     @JsonBackReference
     private Collection<ShoppingCentre> shoppingCentresByUserid;
     //@JsonManagedReference
-    @JsonManagedReference
-    private Collection<UserPoint> userpointsByUserid;
-    @JsonManagedReference
-    private Collection<Visit> visitsByUserid;
 
     // This empty constructor is to satisfy JPA
     public User() {

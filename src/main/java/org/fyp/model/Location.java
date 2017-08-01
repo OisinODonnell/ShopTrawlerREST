@@ -17,9 +17,9 @@ public class Location extends BaseEntity {
     private Integer locationInShoppingCentre;
     private String locationType;
     private Integer shoppingCentreid;
-    @JsonBackReference
-    private Collection<Beacon> beaconsByLocationid;
     @JsonManagedReference
+    private Collection<Beacon> beaconsByLocationid;
+    @JsonBackReference
     private ShoppingCentre shoppingCentreByShoppingCentreid;
 
     public Location() {

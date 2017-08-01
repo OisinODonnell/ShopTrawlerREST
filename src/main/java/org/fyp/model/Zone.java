@@ -15,9 +15,9 @@ public class Zone extends BaseEntity {
     private String zoneName;
     @JsonBackReference
     private Collection<Retailer> retailersByZoneid;
-    @JsonBackReference
-    private Collection<Visit> visitsByZoneid;
     @JsonManagedReference
+    private Collection<Visit> visitsByZoneid;
+    @JsonBackReference
     private Beacon beaconsByBeaconid;
 
     public Zone() {
