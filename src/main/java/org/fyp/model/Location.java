@@ -14,7 +14,7 @@ public class Location extends BaseEntity {
     private Integer altitude;
     private Integer gpsLatitude;
     private Integer gpsLongitude;
-    private Integer locationInShoppingCentre;
+    private String locationInShoppingCentre;
     private String locationType;
     private Integer shoppingCentreid;
     @JsonManagedReference
@@ -29,7 +29,7 @@ public class Location extends BaseEntity {
         this.locationid                         = toInteger(attributes.get(0));
         this.gpsLatitude                        = toInteger(attributes.get(1));
         this.gpsLongitude                       = toInteger(attributes.get(2));
-        this.locationInShoppingCentre           = toInteger(attributes.get(3));
+        this.locationInShoppingCentre           = attributes.get(3);
         this.locationType                       = attributes.get(4);
         this.altitude                           = toInteger(attributes.get(5));
         this.shoppingCentreid                   = toInteger(attributes.get(6));
@@ -76,11 +76,11 @@ public class Location extends BaseEntity {
 
     @Basic
     @Column(name = "location_in_shopping_centre", nullable = true)
-    public Integer getLocationInShoppingCentre() {
+    public String getLocationInShoppingCentre() {
         return locationInShoppingCentre;
     }
 
-    public void setLocationInShoppingCentre(Integer locationInShoppingCentre) {
+    public void setLocationInShoppingCentre(String locationInShoppingCentre) {
         this.locationInShoppingCentre = locationInShoppingCentre;
     }
 
@@ -117,8 +117,6 @@ public class Location extends BaseEntity {
             return false;
         if (gpsLongitude != null ? !gpsLongitude.equals(location.gpsLongitude) : location.gpsLongitude != null)
             return false;
-        if (locationInShoppingCentre != null ? !locationInShoppingCentre.equals(location.locationInShoppingCentre) : location.locationInShoppingCentre != null)
-            return false;
         if (locationType != null ? !locationType.equals(location.locationType) : location.locationType != null)
             return false;
         if (shoppingCentreid != null ? !shoppingCentreid.equals(location.shoppingCentreid) : location.shoppingCentreid != null)
@@ -133,7 +131,6 @@ public class Location extends BaseEntity {
         result = 31 * result + (altitude != null ? altitude.hashCode() : 0);
         result = 31 * result + (gpsLatitude != null ? gpsLatitude.hashCode() : 0);
         result = 31 * result + (gpsLongitude != null ? gpsLongitude.hashCode() : 0);
-        result = 31 * result + (locationInShoppingCentre != null ? locationInShoppingCentre.hashCode() : 0);
         result = 31 * result + (locationType != null ? locationType.hashCode() : 0);
         result = 31 * result + (shoppingCentreid != null ? shoppingCentreid.hashCode() : 0);
         return result;
