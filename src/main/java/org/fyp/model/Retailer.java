@@ -44,9 +44,12 @@ public class Retailer extends BaseEntity {
     private ShoppingCentre shoppingCentreByShoppingCentreid;
     // Jackson annotation probably needed here.
     @JsonManagedReference
-    private Zone zonesByZoneid;
-    @JsonManagedReference
     private Collection<UserPoint> userpointsByRetailerid;
+
+    @JsonManagedReference
+    private Zone zonesByZoneid;
+
+
 
     public Retailer() {
     }
@@ -365,7 +368,7 @@ public class Retailer extends BaseEntity {
         this.shoppingCentreByShoppingCentreid = shoppingCentreByShoppingCentreid;
     }
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "zoneid", referencedColumnName = "zoneid",insertable = false, updatable = false)
     public Zone getZonesByZoneid() {
         return zonesByZoneid;

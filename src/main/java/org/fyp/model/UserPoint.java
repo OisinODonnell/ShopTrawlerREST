@@ -85,9 +85,7 @@ public class UserPoint extends BaseEntity {
         return usersByUserid;
     }
 
-    public void setUsersByUserid(User usersByUserid) {
-        this.usersByUserid = usersByUserid;
-    }
+    public void setUsersByUserid(User usersByUserid) { this.usersByUserid = usersByUserid; }
 
     @ManyToOne
     @JoinColumn(name = "retailerid", referencedColumnName = "retailerid", nullable = false,insertable = false, updatable = false)
