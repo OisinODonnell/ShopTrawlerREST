@@ -2,23 +2,23 @@ package org.fyp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name = "zones", schema = "shoptrawler")
+//@IdClass(ZonePK.class)
 public class Zone extends BaseEntity {
     /**
      * TODO: Change PK to zoneid + beaconid
      * TODO: Make Zone to Retailer 1:1
      */
     private int zoneid;
-    private Integer beaconid;
+    private int beaconid;
     private String zoneName;
     @JsonBackReference
-    private Collection<Retailer> retailersByZoneid;
+    private Retailer retailersByZoneid;
     @JsonManagedReference
     private Collection<Visit> visitsByZoneid;
     @JsonBackReference
@@ -31,8 +31,8 @@ public class Zone extends BaseEntity {
         this.zoneid             = toInteger(attributes.get(0));
         this.beaconid           = toInteger(attributes.get(1));
         this.zoneName           = attributes.get(2);
-
     }
+
     @Id
     @Column(name = "zoneid", nullable = false)
     public int getZoneid() {
@@ -43,8 +43,8 @@ public class Zone extends BaseEntity {
         this.zoneid = zoneid;
     }
 
-    @Basic
-    @Column(name = "beaconid", nullable = true)
+//    @Id
+    @Column(name = "beaconid", nullable = false)
     public Integer getBeaconid() {
         return beaconid;
     }
@@ -71,7 +71,7 @@ public class Zone extends BaseEntity {
         Zone zone = (Zone) o;
 
         if (zoneid != zone.zoneid) return false;
-        if (beaconid != null ? !beaconid.equals(zone.beaconid) : zone.beaconid != null) return false;
+        if (beaconid != zone.beaconid) return false;
         if (zoneName != null ? !zoneName.equals(zone.zoneName) : zone.zoneName != null) return false;
 
         return true;
@@ -80,17 +80,17 @@ public class Zone extends BaseEntity {
     @Override
     public int hashCode() {
         int result = zoneid;
-        result = 31 * result + (beaconid != null ? beaconid.hashCode() : 0);
+        result = 31 * result + beaconid;
         result = 31 * result + (zoneName != null ? zoneName.hashCode() : 0);
         return result;
     }
 
-    @OneToMany(mappedBy = "zonesByZoneid")
-    public Collection<Retailer> getRetailersByZoneid() {
+    @OneToOne(mappedBy = "zonesByZoneid")
+    public Retailer getRetailersByZoneid() {
         return retailersByZoneid;
     }
 
-    public void setRetailersByZoneid(Collection<Retailer> retailersByZoneid) {
+    public void setRetailersByZoneid(Retailer retailersByZoneid) {
         this.retailersByZoneid = retailersByZoneid;
     }
 
