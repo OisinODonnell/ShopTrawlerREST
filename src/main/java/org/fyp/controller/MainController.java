@@ -1,9 +1,7 @@
 package org.fyp.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.mysql.jdbc.Blob;
-import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
+
 import org.fyp.model.*;
 import org.fyp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;

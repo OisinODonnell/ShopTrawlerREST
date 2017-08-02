@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.google.gson.Gson;
 import org.fyp.model.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,21 +41,6 @@ public class ComplexController extends MainController{
         // return collections
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/UR", method=RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity<HashMap<String,String>> getUsersRetailers()     {
 
-        respMap = new HashMap<>();
-
-        Collection< User > users         = userRepo.findAll();
-        Collection< Retailer > retailers = retailerRepo.findAll();
-
-        Gson gson = new Gson();
-
-        respMap.put ("Users"    , gson.toJson(users)     );
-        respMap.put ("Retailers", gson.toJson(retailers) );
-
-        return new ResponseEntity<>(respMap, httpStatus);
-    }
 
 }

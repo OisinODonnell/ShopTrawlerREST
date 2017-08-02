@@ -20,7 +20,7 @@
       <mapping class="org.fyp.model.Zone"/>
       <mapping class="org.fyp.model.UserPoint"/>
       <mapping class="org.fyp.model.UserPoint"/>
-      <mapping class="org.fyp.model.Images"/>
+      <mapping class="org.fyp.model.Image"/>
     <mapping class="org.fyp.model.Image"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
