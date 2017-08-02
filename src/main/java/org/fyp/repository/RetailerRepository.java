@@ -9,5 +9,6 @@ import javax.transaction.Transactional;
 @Transactional
 public interface RetailerRepository extends JpaRepository<Retailer, Integer> {
     Retailer findByRetailerid(Integer retailerID);
+
     Integer deleteByRetailerid(Integer retailerID);
 }

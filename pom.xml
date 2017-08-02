@@ -72,6 +72,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

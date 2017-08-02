@@ -1,18 +1,28 @@
 package org.fyp.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.mysql.jdbc.Blob;
+import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.fyp.model.*;
 import org.fyp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-@Controller
+@RestController
+@RequestMapping(value = {"Main"}, method= RequestMethod.GET)
 public abstract class MainController {
 
     @Autowired
@@ -39,8 +49,10 @@ public abstract class MainController {
     UserPointRepository userPointRepo;
 	@Autowired
     VisitRepository visitRepo;
-	@Autowired
+    @Autowired
     ZoneRepository zoneRepo;
+    @Autowired
+    ImageRepository imageRepo;
 
     ObjectMapper mapper = new ObjectMapper();
     HttpStatus httpStatus = HttpStatus.OK;
@@ -121,5 +133,31 @@ public abstract class MainController {
 
         return new java.sql.Timestamp(date.getTime());
     }
+
+    public void uploadFile(String path) {
+
+
+        /*
+        filename = <fileid>.png
+        locate and return file
+         */
+
+    }
+
+    public Integer saveFile(String path, String filename) {
+        Integer id = 0;
+        /*
+        upload fils from path/filename.png (only png accepted
+        create entry in imageDb
+        get image id
+        save as <id>.png
+
+         */
+
+        return id;
+    }
+
+
+
 
 }

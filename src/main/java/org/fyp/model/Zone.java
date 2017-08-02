@@ -10,6 +10,10 @@ import java.util.List;
 @Entity
 @Table(name = "zones", schema = "shoptrawler")
 public class Zone extends BaseEntity {
+    /**
+     * TODO: Change PK to zoneid + beaconid
+     * TODO: Make Zone to Retailer 1:1
+     */
     private int zoneid;
     private Integer beaconid;
     private String zoneName;

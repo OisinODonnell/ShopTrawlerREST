@@ -48,4 +48,12 @@ public class UserController extends MainController {
     public User getUserByEmailAddress(@PathVariable("emailAddress") String emailAddress) {
         return userRepo.findByEmailAddress(emailAddress);
     }
+
+    @RequestMapping(value = {"/{id}"}, method=RequestMethod.GET)
+    public User getUserBy(@PathVariable("id") int id)
+    {
+        return userRepo.findByUserid(id);
+    }
+
+
 }

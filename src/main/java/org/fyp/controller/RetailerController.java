@@ -40,4 +40,13 @@ public class RetailerController extends MainController {
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
     public void delete(Retailer retailer)     {  retailerRepo.delete(retailer);}
 
+    @RequestMapping(value = {"/{id}"}, method=RequestMethod.GET)
+    public Retailer getUserBy(@PathVariable("id") int id)
+    {
+        return retailerRepo.findByRetailerid(id);
+    }
+
+
+
+
 }
