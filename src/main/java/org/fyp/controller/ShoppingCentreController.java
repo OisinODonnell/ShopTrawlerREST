@@ -19,9 +19,11 @@ import java.util.Collection;
 public class ShoppingCentreController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(ShoppingCentre shoppingCentre)
+    public Collection<ShoppingCentre> create(ShoppingCentre shoppingCentre)
     {
+
         shoppingCentreRepo.save(shoppingCentre);
+        return shoppingCentreRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -31,12 +33,17 @@ public class ShoppingCentreController extends MainController {
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(ShoppingCentre shoppingCentre)
+    public Collection<ShoppingCentre> update(ShoppingCentre shoppingCentre)
     {
+
         shoppingCentreRepo.save(shoppingCentre);
+        return shoppingCentreRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(ShoppingCentre shoppingCentre) { shoppingCentreRepo.delete(shoppingCentre);    }
+    public Collection<ShoppingCentre> delete(ShoppingCentre shoppingCentre) {
+        shoppingCentreRepo.delete(shoppingCentre);
+        return shoppingCentreRepo.findAll();
+    }
 
 }

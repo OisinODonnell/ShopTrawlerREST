@@ -19,8 +19,10 @@ import java.util.Collection;
 public class FavouriteController extends MainController {
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public void create(Favourite favourite)    {
+    public Collection<Favourite> create(Favourite favourite)    {
+
         favouriteRepo.save(favourite);
+        return favouriteRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -29,13 +31,17 @@ public class FavouriteController extends MainController {
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Favourite favourite)    {
+    public Collection<Favourite> update(Favourite favourite)    {
+
         favouriteRepo.delete(favourite);
+        return favouriteRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Favourite favourite)    {
+    public Collection<Favourite> delete(Favourite favourite)    {
+
         favouriteRepo.save(favourite);
+        return favouriteRepo.findAll();
     }
 
     @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)

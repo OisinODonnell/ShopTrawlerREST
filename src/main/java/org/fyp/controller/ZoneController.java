@@ -19,26 +19,27 @@ import java.util.Collection;
 public class ZoneController extends MainController {
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public void create(Zone zone) {
+    public Collection<Zone> create(Zone zone) {
         zoneRepo.save(zone);
+        return zoneRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method = RequestMethod.GET)
     public Collection<Zone> read() throws JsonProcessingException {
 
-        Collection<Zone> zones = zoneRepo.findAll();
-
-        return zones;
+        return zoneRepo.findAll();
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public void update(Zone zone) {
+    public Collection<Zone> update(Zone zone) {
         zoneRepo.save(zone);
+        return zoneRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public void delete(Zone zone) {
+    public Collection<Zone> delete(Zone zone) {
         zoneRepo.delete(zone);
+        return zoneRepo.findAll();
     }
 
 }

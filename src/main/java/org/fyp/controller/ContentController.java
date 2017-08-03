@@ -18,25 +18,27 @@ import java.util.Collection;
 public class ContentController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(Content content)
-    {
+    public Collection<Content> create(Content content) {
         contentRepo.save(content);
+        return contentRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<Content> read()
-    {
+    public Collection<Content> read() {
         return contentRepo.findAll();
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Content content)
-    {
+    public Collection<Content> update(Content content) {
         contentRepo.save(content);
+        return contentRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Content content)     {  contentRepo.delete(content);    }
+    public Collection<Content> delete(Content content)     {
+        contentRepo.delete(content);
+        return contentRepo.findAll();
+    }
 
     @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
     public Collection<Content> findAllByRetailerId(@PathVariable("id") Integer id) {

@@ -14,19 +14,29 @@ import java.util.Collection;
 public class VisitController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(Visit visit) { visitRepo.save(visit);  }
+    public Collection<Visit>  create(Visit visit) {
+        visitRepo.save(visit);
+        return visitRepo.findAll();
+    }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Visit> read()
     {
+
         return visitRepo.findAll();
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Visit visit) { visitRepo.save(visit); }
+    public Collection<Visit>  update(Visit visit) {
+        visitRepo.save(visit);
+        return visitRepo.findAll();
+    }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Visit visit)     {  visitRepo.delete(visit);    }
+    public Collection<Visit>  delete(Visit visit)     {
+        visitRepo.delete(visit);
+        return visitRepo.findAll();
+    }
 
     @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)
     public Collection<Visit> listByUser(@PathVariable ("id") Integer id)

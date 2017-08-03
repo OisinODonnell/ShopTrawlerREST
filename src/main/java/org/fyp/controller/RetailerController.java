@@ -20,9 +20,11 @@ import java.util.Collection;
 public class RetailerController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(Retailer retailer)
+    public Collection<Retailer> create(Retailer retailer)
     {
+
         retailerRepo.save(retailer);
+        return retailerRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -32,13 +34,18 @@ public class RetailerController extends MainController {
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Retailer retailer)
+    public Collection<Retailer> update(Retailer retailer)
     {
+
         retailerRepo.save(retailer);
+        return retailerRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Retailer retailer)     {  retailerRepo.delete(retailer);}
+    public Collection<Retailer> delete(Retailer retailer)     {
+        retailerRepo.delete(retailer);
+        return retailerRepo.findAll();
+    }
 
     @RequestMapping(value = {"/{id}"}, method=RequestMethod.GET)
     public Retailer getUserBy(@PathVariable("id") int id)

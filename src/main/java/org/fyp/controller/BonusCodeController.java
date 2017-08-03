@@ -17,8 +17,10 @@ import java.util.Collection;
 public class BonusCodeController extends MainController{
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public void create(BonusCode bonusCode)    {
+    public Collection<BonusCode> create(BonusCode bonusCode)    {
+
         bonusCodeRepo.save(bonusCode);
+        return bonusCodeRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -27,13 +29,18 @@ public class BonusCodeController extends MainController{
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(BonusCode bonusCode)    {
+    public Collection<BonusCode> update(BonusCode bonusCode)    {
+
+
         bonusCodeRepo.save(bonusCode);
+        return bonusCodeRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(BonusCode bonusCode)    {
+    public Collection<BonusCode> delete(BonusCode bonusCode)    {
+
         bonusCodeRepo.delete(bonusCode);
+        return bonusCodeRepo.findAll();
     }
 
     @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)

@@ -19,8 +19,10 @@ import java.util.Collection;
 public class UserPointController extends MainController {
 
     @RequestMapping(value = "/create",method=RequestMethod.GET)
-    public void create(UserPoint userPoint)    {
+    public Collection<UserPoint> create(UserPoint userPoint)    {
+
         userPointRepo.save(userPoint);
+        return userPointRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"},method=RequestMethod.GET)
@@ -29,11 +31,16 @@ public class UserPointController extends MainController {
     }
 
     @RequestMapping(value = "/update",method=RequestMethod.GET)
-    public void update(UserPoint userPoint)    { userPointRepo.save(userPoint); }
+    public Collection<UserPoint> update(UserPoint userPoint)    {
+        userPointRepo.save(userPoint);
+        return userPointRepo.findAll();
+    }
 
     @RequestMapping(value = "/delete",method=RequestMethod.GET)
-    public void delete(UserPoint userPoint)    {
+    public Collection<UserPoint> delete(UserPoint userPoint)    {
+
         userPointRepo.delete(userPoint);
+        return userPointRepo.findAll();
     }
 
     @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)

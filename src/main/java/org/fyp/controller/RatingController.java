@@ -23,9 +23,11 @@ public class RatingController extends MainController {
 
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public void create(Rating rating)
+    public Collection<Rating> create(Rating rating)
     {
+
         ratingRepo.save(rating);
+        return ratingRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -33,15 +35,19 @@ public class RatingController extends MainController {
         return ratingRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Rating rating)
+    public Collection<Rating> update(Rating rating)
     {
+
         ratingRepo.save(rating);
+        return ratingRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(Rating rating)
+    public Collection<Rating> delete(Rating rating)
     {
+
         ratingRepo.delete(rating);
+        return ratingRepo.findAll();
     }
 
     @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)

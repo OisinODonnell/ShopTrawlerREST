@@ -47,22 +47,34 @@ public class BeaconController extends MainController{
     }
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public void create(Beacon beacon)   { beaconRepo.save(beacon);  }
+    public Collection<Beacon> create(Beacon beacon)   {
+        beaconRepo.save(beacon);
+        return beaconRepo.findAll();
+    }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<Beacon> read() {   return beaconRepo.findAll();   }
+    public Collection<Beacon> read() {
+        return beaconRepo.findAll();
+    }
 
     @RequestMapping(value = "/{beaconId}", method = RequestMethod.GET)
     public Beacon getBeacon(  @PathVariable("beaconId") int beaconId) throws ParseException {
-        return beaconRepo.findByBeaconid( beaconId );   }
+        return beaconRepo.findByBeaconid( beaconId );
+
+    }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(Beacon beacon)
+    public Collection<Beacon> update(Beacon beacon)
     {
+
         beaconRepo.save(beacon);
+        return beaconRepo.findAll();
     }
 
     @RequestMapping(value = "/delete/", method=RequestMethod.GET)
-    public void delete(Beacon beacon)     {  beaconRepo.delete(beacon);    }
+    public Collection<Beacon> delete(Beacon beacon)     {
+        beaconRepo.delete(beacon);
+        return beaconRepo.findAll();
+    }
 
 }

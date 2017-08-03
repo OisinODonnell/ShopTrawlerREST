@@ -25,9 +25,11 @@ public class LoyaltyRewardController extends MainController {
 
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public void create(LoyaltyReward loyaltyReward)
+    public Collection<LoyaltyReward> create(LoyaltyReward loyaltyReward)
     {
+
         loyaltyRewardRepo.save(loyaltyReward);
+        return loyaltyRewardRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
@@ -35,15 +37,19 @@ public class LoyaltyRewardController extends MainController {
         return loyaltyRewardRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(LoyaltyReward loyaltyReward)
+    public Collection<LoyaltyReward> update(LoyaltyReward loyaltyReward)
     {
+
         loyaltyRewardRepo.save(loyaltyReward);
+        return loyaltyRewardRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(LoyaltyReward loyaltyReward)
+    public Collection<LoyaltyReward> delete(LoyaltyReward loyaltyReward)
     {
+
         loyaltyRewardRepo.delete(loyaltyReward);
+        return loyaltyRewardRepo.findAll();
     }
 
     @RequestMapping(value = "/{id}", method=RequestMethod.GET)
