@@ -3,6 +3,7 @@ package org.fyp.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
 import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * Created by oisin on 18/07/2017.
@@ -44,4 +46,8 @@ public class LoyaltyRewardController extends MainController {
         loyaltyRewardRepo.delete(loyaltyReward);
     }
 
+    @RequestMapping(value = "/{id}", method=RequestMethod.GET)
+    public LoyaltyReward findById(@PathVariable("id") Integer id) {
+        return loyaltyRewardRepo.findByLoyaltyRewardid(id);
+    }
 }

@@ -36,5 +36,10 @@ public class UserPointController extends MainController {
         userPointRepo.delete(userPoint);
     }
 
+    @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
+    public Collection<UserPoint> findAllByRetailerId(@PathVariable("id") Integer id)
+    {
+        return userPointRepo.findAllByRetailerid(id);
+    }
 
 }
