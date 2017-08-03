@@ -44,5 +44,19 @@ public class RatingController extends MainController {
         ratingRepo.delete(rating);
     }
 
+    @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
+    public Collection<Rating> findAllByRetailerId(@PathVariable("id") Integer id) {
+        return ratingRepo.findAllByRetailerid(id); }
+
+    @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)
+    public Collection<Rating> findAllByUserId(@PathVariable("id") Integer id) {
+        return ratingRepo.findAllByUserid(id); }
+
+    @RequestMapping(value = "/UserRetailer/{userid}/{retailerid}", method=RequestMethod.GET)
+    public Rating findAllByUserRetailer(@PathVariable("userid")       Integer userid,
+                                  @PathVariable("retailerid")   Integer retailerid) {
+        return ratingRepo.findByUseridAndRetailerid(userid, retailerid);
+    }
+    
     
 }

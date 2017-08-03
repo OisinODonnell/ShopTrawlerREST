@@ -37,9 +37,10 @@ public class UserPointController extends MainController {
     }
 
     @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
-    public Collection<UserPoint> findAllByRetailerId(@PathVariable("id") Integer id)
-    {
-        return userPointRepo.findAllByRetailerid(id);
-    }
+    public Collection<UserPoint> findAllByRetailerId(@PathVariable("id") Integer id) {
+        return userPointRepo.findAllByRetailerid(id); }
 
+    @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)
+    public Collection<UserPoint> findAllByUserId(@PathVariable("id") Integer id) {
+        return userPointRepo.findAllByUserid(id); }
 }

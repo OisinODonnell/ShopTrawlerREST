@@ -50,4 +50,10 @@ public class LoyaltyRewardController extends MainController {
     public LoyaltyReward findById(@PathVariable("id") Integer id) {
         return loyaltyRewardRepo.findByLoyaltyRewardid(id);
     }
+
+    @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
+    public Collection<LoyaltyReward> findAllByRetailerId(@PathVariable("id") Integer id) {
+        return loyaltyRewardRepo.findAllByRetailerid(id); }
+
+
 }

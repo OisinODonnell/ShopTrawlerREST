@@ -18,7 +18,6 @@ import java.util.Collection;
 @RequestMapping(value = {"Favourites","Favourite"}, method=RequestMethod.GET)
 public class FavouriteController extends MainController {
 
-
     @RequestMapping(value = "/create", method= RequestMethod.GET)
     public void create(Favourite favourite)    {
         favouriteRepo.save(favourite);
@@ -39,4 +38,11 @@ public class FavouriteController extends MainController {
         favouriteRepo.save(favourite);
     }
 
+    @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)
+    public Collection<Favourite> listByUser(@PathVariable ("id") Integer id) {
+        return favouriteRepo.findAllByUserid(id); }
+
+    @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
+    public Collection<Favourite> listByRetailer(@PathVariable ("id") Integer id) {
+        return favouriteRepo.findAllByRetailerid(id); }
 }

@@ -8,6 +8,7 @@ import org.fyp.model.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -19,7 +20,7 @@ public class ComplexController extends MainController{
     // Queries involving more than one entity
     @RequestMapping(value = "/VUR", method=RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<HashMap<String,String>> getVisitsUsersRetailers() throws JsonProcessingException {
+    public ResponseEntity<HashMap<String,String>> getVisitsUsersRetailers2() throws JsonProcessingException {
 
         respMap = new HashMap<>();
 
@@ -43,4 +44,17 @@ public class ComplexController extends MainController{
     }
 
 
+    @RequestMapping(value = "/VisitsByGender/Retailer", method=RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<HashMap<String,String>> getVisitsUsersRetailers() throws JsonProcessingException {
+        Collection<Visit> visits = visitRepo.findAll();
+        Collection<User> users = new ArrayList<>();
+        for (Visit visit: visits) {
+            
+        }
+
+
+
+        return new ResponseEntity<HashMap<String, String>>(respMap, httpStatus);
+    }
 }

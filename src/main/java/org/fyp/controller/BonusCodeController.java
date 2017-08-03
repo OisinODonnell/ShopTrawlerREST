@@ -36,4 +36,16 @@ public class BonusCodeController extends MainController{
         bonusCodeRepo.delete(bonusCode);
     }
 
+    @RequestMapping(value = "/User/{id}", method=RequestMethod.GET)
+    public Collection<BonusCode> listByUser(@PathVariable ("id") Integer id)
+    {
+        return bonusCodeRepo.findAllByUserid(id);
+    }
+
+    @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
+    public Collection<BonusCode> listByRetailer(@PathVariable ("id") Integer id)
+    {
+        return bonusCodeRepo.findAllByRetailerid(id);
+    }
+
 }

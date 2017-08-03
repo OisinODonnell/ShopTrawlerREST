@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 public interface UserRepository extends JpaRepository<User, Integer> {
     User findByUserid(int userID);
     Integer deleteByUserid(int userID);
+    Integer deleteByEmailAddres(String email);
     User findByEmailAddress(String emailAddress);
 
 }

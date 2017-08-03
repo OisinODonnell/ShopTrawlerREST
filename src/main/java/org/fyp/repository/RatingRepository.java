@@ -10,7 +10,8 @@ import java.util.Collection;
 @Transactional
 public interface RatingRepository extends JpaRepository<Rating,Integer> {
     Collection<Rating> findAllByRetailerid(int retailerID);
-    Rating findByUserid(int userID);
+    Collection<Rating> findAllByUserid(int userID);
+    Rating findByUseridAndRetailerid(Integer userID, Integer retailerID);
 
 }
 

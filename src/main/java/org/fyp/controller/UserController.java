@@ -19,14 +19,13 @@ public class UserController extends MainController {
 
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public void create(User user)
-    {
+    public Collection<User> create(User user) {
         userRepo.save(user);
+        return userRepo.findAll();
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<User> read()
-    {
+    public Collection<User> read() {
         return userRepo.findAll();
     }
 
@@ -37,12 +36,24 @@ public class UserController extends MainController {
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public void delete(User user)
-    {
+    public Collection<User> delete(User user) {
         userRepo.delete(user);
+        return userRepo.findAll();
     }
 
-    // the pathmapping variables are truncated after the '.'
+    @RequestMapping(value = "/deleteByEmail/{email}", method=RequestMethod.GET)
+    public Collection<User> delete(@PathVariable ("email") String email) {
+        userRepo.deleteByEmailAddres(email);
+        return userRepo.findAll();
+    }
+
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.GET)
+    public Collection<User> delete(@PathVariable ("id") int id) {
+        userRepo.deleteByUserid(id);
+        return userRepo.findAll();
+    }
+
+    // the pathmapping variables are truncated after the '.', ie 'abc@dd.com' is truncated to 'abc@dd.'
     // additional regex chars necessary to retrieve the full parameter ':.+'
     @RequestMapping(value = "/ByEmail/{emailAddress:.+}", method=RequestMethod.GET)
     public User getUserByEmailAddress(@PathVariable("emailAddress") String emailAddress) {

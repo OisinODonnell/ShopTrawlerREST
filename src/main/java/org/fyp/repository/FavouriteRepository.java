@@ -11,5 +11,5 @@ import java.util.Collection;
 @Transactional
 public interface FavouriteRepository extends JpaRepository<Favourite, Integer> {
     Collection<Favourite> findAllByUserid(int userID);
-
+    Collection<Favourite> findAllByRetailerid(int retailerID);
 }
