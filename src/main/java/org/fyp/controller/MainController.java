@@ -52,7 +52,13 @@ public abstract class MainController {
     @Autowired
     ImageRepository imageRepo;
 
+    // used to convert an object into json.
     ObjectMapper mapper = new ObjectMapper();
+    //Object to JSON in String
+    // eg; String jsonInString = mapper.writeValueAsString(obj);
+
+
+
     HttpStatus httpStatus = HttpStatus.OK;
 
     Util util = new Util(); // singleton
