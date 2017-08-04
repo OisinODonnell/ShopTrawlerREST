@@ -43,7 +43,7 @@ public class UserController extends MainController {
 
     @RequestMapping(value = "/deleteByEmail/{email}", method=RequestMethod.GET)
     public Collection<User> delete(@PathVariable ("email") String email) {
-        userRepo.deleteByEmailAddres(email);
+        userRepo.deleteByEmailAddress(email);
         return userRepo.findAll();
     }
 
