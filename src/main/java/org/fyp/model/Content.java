@@ -24,7 +24,8 @@ public class Content extends BaseEntity {
 
     }
 
-    public Content(List<String> attributes) {
+
+    public Content( List<String> attributes) {
 
         this.retailerid = toInteger( attributes.get(0));
         this.contentid  = toInteger( attributes.get(1));

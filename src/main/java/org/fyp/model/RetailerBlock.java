@@ -1,186 +1,284 @@
 package org.fyp.model;
 
 
+import java.sql.Timestamp;
+import java.util.Collection;
+
 public class RetailerBlock {
 
-    private int retailerid;
-    private String defaultContentPage1;
-    private String defaultContentPage2;
-    private String defaultContentPage3;
-    private String defaultLoyaltyRewardImage;
-    private String facebookUrl;
-    private String headerBackgroundImage;
-    private String logoImageLarge;
-    private String logoImageMedium;
-    private String logoImageSmall;
+    // Retailer
+    private int     retailerid;
+    private String  contentPage1;
+    private String  contentPage2;
+    private String  contentPage3;
+    private String  loyaltyRewardImage;
+    private String  facebookUrl;
+    private String  headerBackgroundImage;
+    private String  logoImage;
     private Integer managerid;
-    private String phone;
+    private String  phone;
     private Integer shoppingCentreid;
-    private String storeName;
-    private String twitterUrl;
-    private String websiteUrl;
+    private String  storeName;
+    private String  twitterUrl;
+    private String  websiteUrl;
     private Integer zoneid;
 
+    // Content vars
+//    private Timestamp cEndDate;
+//    private Timestamp cStartDate;
 
+    // LoyaltyReward vars
+//    private Timestamp lrEndDate;
+    private Integer   lrPointsPerVisit;
+    private String    lrImage;
+    private String    lrTitle;
+//    private Timestamp lrStartDate;
+    private Integer   lrVisitTime;
 
-    public RetailerBlock() {
+    // UserPoint vars
+    private Integer upPoints;
+
+    public RetailerBlock( ) {
     }
 
-    public RetailerBlock(Retailer retailer) {
-        this.retailerid                         = retailer.getRetailerid();
-        this.storeName                          = retailer.getStoreName();
-        this.managerid                          = retailer.getManagerid();
-        this.phone                              = retailer.getPhone();
-        this.zoneid                             = retailer.getZoneid();
-        this.shoppingCentreid                   = retailer.getShoppingCentreid();
-        this.websiteUrl                         = retailer.getWebsiteUrl();
-        this.twitterUrl                         = retailer.getTwitterUrl();
-        this.facebookUrl                        = retailer.getFacebookUrl();
-        this.headerBackgroundImage              = retailer.getHeaderBackgroundImage();
-        this.defaultContentPage1                = retailer.getDefaultContentPage1();
-        this.defaultContentPage2                = retailer.getDefaultContentPage2();
-        this.defaultContentPage3                = retailer.getDefaultContentPage3();
-        this.defaultLoyaltyRewardImage          = retailer.getDefaultLoyaltyRewardImage();
-        this.logoImageSmall                     = retailer.getLogoImageSmall();
-        this.logoImageMedium                    = retailer.getLogoImageMedium();
-        this.logoImageLarge                     = retailer.getLogoImageLarge();
+    public void update( Retailer retailer) {
+        // Retailer
+        this.retailerid            = retailer.getRetailerid();
+        this.storeName             = retailer.getStoreName       ();
+        this.managerid             = retailer.getManagerid();
+        this.phone                 = retailer.getPhone();
+        this.zoneid                = retailer.getZoneid();
+        this.shoppingCentreid      = retailer.getShoppingCentreid();
+        this.websiteUrl            = retailer.getWebsiteUrl();
+        this.twitterUrl            = retailer.getTwitterUrl();
+        this.facebookUrl           = retailer.getFacebookUrl();
+        this.headerBackgroundImage = retailer.getHeaderBackgroundImage();
+        this.contentPage1          = retailer.getDefaultContentPage1      ();
+        this.contentPage2          = retailer.getDefaultContentPage2      ();
+        this.contentPage3          = retailer.getDefaultContentPage3      ();
+        this.loyaltyRewardImage    = retailer.getDefaultLoyaltyRewardImage();
+        this.logoImage             = retailer.getLogoImageSmall();
+
+    }
+
+    public void update(LoyaltyReward loyaltyReward) {
+        if (loyaltyReward != null) {
+//            this.lrEndDate        = loyaltyReward.getEndDate();
+            this.lrPointsPerVisit = loyaltyReward.getPointsPerVisit();
+            this.lrImage          = loyaltyReward.getRewardImage();
+            this.lrTitle          = loyaltyReward.getRewardTitle();
+//            this.lrStartDate      = loyaltyReward.getStartDate();
+            this.lrVisitTime      = loyaltyReward.getVisitTime();
+        }
+    }
+
+    public void update(Content content) {
+        if (content != null) {
+            this.contentPage1 = content.getPage1();
+            this.contentPage2 = content.getPage2();
+            this.contentPage3 = content.getPage3();
+//            this.cEndDate     = content.getEndDate();
+//            this.cStartDate   = content.getStartDate();
+        }
+    }
+
+    public void update(UserPoint up) {
+        if (up != null) {
+            this.upPoints = up.getPoints( );
+        }
     }
 
 
-    public int getRetailerid() {
+
+    public int getRetailerid( ) {
         return retailerid;
     }
 
-    public void setRetailerid(int retailerid) {
+    public void setRetailerid( int retailerid ) {
         this.retailerid = retailerid;
     }
 
-    public String getDefaultContentPage1() {
-        return defaultContentPage1;
+    public String getContentPage1( ) {
+        return contentPage1;
     }
 
-    public void setDefaultContentPage1(String defaultContentPage1) {
-        this.defaultContentPage1 = defaultContentPage1;
+    public void setContentPage1( String contentPage1 ) {
+        this.contentPage1 = contentPage1;
     }
 
-    public String getDefaultContentPage2() {
-        return defaultContentPage2;
+    public String getContentPage2( ) {
+        return contentPage2;
     }
 
-    public void setDefaultContentPage2(String defaultContentPage2) {
-        this.defaultContentPage2 = defaultContentPage2;
+    public void setContentPage2( String contentPage2 ) {
+        this.contentPage2 = contentPage2;
     }
 
-    public String getDefaultContentPage3() {
-        return defaultContentPage3;
+    public String getContentPage3( ) {
+        return contentPage3;
     }
 
-    public void setDefaultContentPage3(String defaultContentPage3) {
-        this.defaultContentPage3 = defaultContentPage3;
+    public void setContentPage3( String contentPage3 ) {
+        this.contentPage3 = contentPage3;
     }
 
-    public String getDefaultLoyaltyRewardImage() {
-        return defaultLoyaltyRewardImage;
+    public String getLoyaltyRewardImage( ) {
+        return loyaltyRewardImage;
     }
 
-    public void setDefaultLoyaltyRewardImage(String defaultLoyaltyRewardImage) {
-        this.defaultLoyaltyRewardImage = defaultLoyaltyRewardImage;
+    public void setLoyaltyRewardImage( String loyaltyRewardImage ) {
+        this.loyaltyRewardImage = loyaltyRewardImage;
     }
 
-    public String getFacebookUrl() {
+    public String getFacebookUrl( ) {
         return facebookUrl;
     }
 
-    public void setFacebookUrl(String facebookUrl) {
+    public void setFacebookUrl( String facebookUrl ) {
         this.facebookUrl = facebookUrl;
     }
 
-    public String getHeaderBackgroundImage() {
+    public String getHeaderBackgroundImage( ) {
         return headerBackgroundImage;
     }
 
-    public void setHeaderBackgroundImage(String headerBackgroundImage) {
+    public void setHeaderBackgroundImage( String headerBackgroundImage ) {
         this.headerBackgroundImage = headerBackgroundImage;
     }
 
-    public String getLogoImageLarge() {
-        return logoImageLarge;
+    public String getLogoImage( ) {
+        return logoImage;
     }
 
-    public void setLogoImageLarge(String logoImageLarge) {
-        this.logoImageLarge = logoImageLarge;
+    public void setLogoImage( String logoImage ) {
+        this.logoImage = logoImage;
     }
 
-    public String getLogoImageMedium() {
-        return logoImageMedium;
-    }
-
-    public void setLogoImageMedium(String logoImageMedium) {
-        this.logoImageMedium = logoImageMedium;
-    }
-
-    public String getLogoImageSmall() {
-        return logoImageSmall;
-    }
-
-    public void setLogoImageSmall(String logoImageSmall) {
-        this.logoImageSmall = logoImageSmall;
-    }
-
-    public Integer getManagerid() {
+    public Integer getManagerid( ) {
         return managerid;
     }
 
-    public void setManagerid(Integer managerid) {
+    public void setManagerid( Integer managerid ) {
         this.managerid = managerid;
     }
 
-    public String getPhone() {
+    public String getPhone( ) {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone( String phone ) {
         this.phone = phone;
     }
 
-    public Integer getShoppingCentreid() {
+    public Integer getShoppingCentreid( ) {
         return shoppingCentreid;
     }
 
-    public void setShoppingCentreid(Integer shoppingCentreid) {
+    public void setShoppingCentreid( Integer shoppingCentreid ) {
         this.shoppingCentreid = shoppingCentreid;
     }
 
-    public String getStoreName() {
+    public String getStoreName( ) {
         return storeName;
     }
 
-    public void setStoreName(String storeName) {
+    public void setStoreName( String storeName ) {
         this.storeName = storeName;
     }
 
-    public String getTwitterUrl() {
+    public String getTwitterUrl( ) {
         return twitterUrl;
     }
 
-    public void setTwitterUrl(String twitterUrl) {
+    public void setTwitterUrl( String twitterUrl ) {
         this.twitterUrl = twitterUrl;
     }
 
-    public String getWebsiteUrl() {
+    public String getWebsiteUrl( ) {
         return websiteUrl;
     }
 
-    public void setWebsiteUrl(String websiteUrl) {
+    public void setWebsiteUrl( String websiteUrl ) {
         this.websiteUrl = websiteUrl;
     }
 
-    public Integer getZoneid() {
+    public Integer getZoneid( ) {
         return zoneid;
     }
 
-    public void setZoneid(Integer zoneid) {
+    public void setZoneid( Integer zoneid ) {
         this.zoneid = zoneid;
     }
 
+//    public Timestamp getcEndDate( ) {
+//        return cEndDate;
+//    }
+//
+//    public void setcEndDate( Timestamp cEndDate ) {
+//        this.cEndDate = cEndDate;
+//    }
+//
+//    public Timestamp getcStartDate( ) {
+//        return cStartDate;
+//    }
+//
+//    public void setcStartDate( Timestamp cStartDate ) {
+//        this.cStartDate = cStartDate;
+//    }
+//
+//    public Timestamp getLrEndDate( ) {
+//        return lrEndDate;
+//    }
+//
+//    public void setLrEndDate( Timestamp lrEndDate ) {
+//        this.lrEndDate = lrEndDate;
+//    }
+
+    public Integer getLrPointsPerVisit( ) {
+        return lrPointsPerVisit;
+    }
+
+    public void setLrPointsPerVisit( Integer lrPointsPerVisit ) {
+        this.lrPointsPerVisit = lrPointsPerVisit;
+    }
+
+    public String getLrImage( ) {
+        return lrImage;
+    }
+
+    public void setLrImage( String lrImage ) {
+        this.lrImage = lrImage;
+    }
+
+    public String getLrTitle( ) {
+        return lrTitle;
+    }
+
+    public void setLrTitle( String lrTitle ) {
+        this.lrTitle = lrTitle;
+    }
+
+//    public Timestamp getLrStartDate( ) {
+//        return lrStartDate;
+//    }
+//
+//    public void setLrStartDate( Timestamp lrStartDate ) {
+//        this.lrStartDate = lrStartDate;
+//    }
+
+    public Integer getLrVisitTime( ) {
+        return lrVisitTime;
+    }
+
+    public void setLrVisitTime( Integer lrVisitTime ) {
+        this.lrVisitTime = lrVisitTime;
+    }
+
+    public Integer getUpPoints( ) {
+        return upPoints;
+    }
+
+    public void setUpPoints( Integer upPoints ) {
+        this.upPoints = upPoints;
+    }
 }

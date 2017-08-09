@@ -4,6 +4,7 @@ import org.fyp.model.LoyaltyReward;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
 import java.util.Collection;
 
 //@RepositoryRestResource(collectionResourceRel = "loyaltyReward", path = "LoyaltyRewards")
@@ -11,5 +12,8 @@ import java.util.Collection;
 public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, Integer> {
     Collection<LoyaltyReward> findAllByRetailerid(int retailerID);
     LoyaltyReward findByLoyaltyRewardid(int loyaltyRewardID);
-    Integer deleteByLoyaltyRewardid(int loyaltyRewardID);
+    LoyaltyReward findByRetailerid(int retailerID);
+    LoyaltyReward findByRetaileridAndStartDateBeforeAndEndDateAfter(int loyaltyRewardID, Timestamp nowStart, Timestamp nowEnd);
+
+
 }

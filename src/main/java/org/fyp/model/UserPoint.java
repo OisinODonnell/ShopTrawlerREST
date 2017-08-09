@@ -11,7 +11,7 @@ import java.util.List;
 @IdClass(UserPointPK.class)
 public class UserPoint extends BaseEntity {
 
-    private int userid;
+    private int     userid;
     private Integer retailerid;
     private Integer points;
     @JsonBackReference
@@ -22,7 +22,9 @@ public class UserPoint extends BaseEntity {
     public UserPoint() {
     }
 
-    public UserPoint(List<String> attributes) {
+
+
+    public UserPoint( List<String> attributes) {
         this.userid         = toInteger( attributes.get(0));
         this.retailerid     = toInteger( attributes.get(1));
         this.points         = toInteger( attributes.get(2));

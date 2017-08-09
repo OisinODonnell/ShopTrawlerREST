@@ -10,21 +10,22 @@ import java.util.List;
 @Entity
 @Table(name = "loyaltyrewards", schema = "shoptrawler")
 public class LoyaltyReward extends BaseEntity {
-    private int loyaltyRewardid;
+    private int       loyaltyRewardid;
     private Timestamp endDate;
-    private Integer pointsPerVisit;
-    private Integer retailerid;
-    private String rewardImage;
-    private String rewardTitle;
+    private Integer   pointsPerVisit;
+    private Integer   retailerid;
+    private String    rewardImage;
+    private String    rewardTitle;
     private Timestamp startDate;
-    private Integer visitTime;
+    private Integer   visitTime;
     @JsonBackReference
-    private Retailer retailersByRetailerid;
+    private Retailer  retailersByRetailerid;
 
-    public LoyaltyReward() {
+    public LoyaltyReward( ) {
     }
 
-    public LoyaltyReward(List<String> attributes)  {
+
+    public LoyaltyReward( List<String> attributes)  {
         this.retailerid         = toInteger(attributes.get(0));
         this.loyaltyRewardid    = toInteger(attributes.get(1));
         this.endDate            = toTimestamp(attributes.get(2));

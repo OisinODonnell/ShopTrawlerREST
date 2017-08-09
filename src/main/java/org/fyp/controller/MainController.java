@@ -2,6 +2,7 @@ package org.fyp.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.google.gson.Gson;
 import org.fyp.model.*;
 import org.fyp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,12 @@ public abstract class MainController {
 
     // used to convert an object into json.
     ObjectMapper mapper = new ObjectMapper();
+
+
+    Gson gson = new Gson();
+
+
+
     //Object to JSON in String
     // eg; String jsonInString = mapper.writeValueAsString(obj);
 
