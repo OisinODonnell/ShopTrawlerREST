@@ -1,4 +1,8 @@
 package org.fyp.controller;
+/**
+ * TODO: Add code to check if the retailer has been approved (active = true.) else reject login.
+ *
+ */
 
 import org.fyp.model.User;
 import org.springframework.http.HttpStatus;
@@ -30,38 +34,41 @@ public class LoginController extends MainController {
         // return success and usertype
 
         respMap = new HashMap<>();
-
+        httpStatus = HttpStatus.OK;
         Timestamp startTime = getTimeStamp();
         User user = userRepo.findByEmailAddress(username);
 
         if (user != null) { // yes user with this username exists
 
             if (user.getPassword().equals(password)) {
+                if (user.getActive() == 1) {
+                    respMap.put("message", user.getType() + " User " + user.getFirstname() + " with id " + user.getUserid() + " is logged in!");
+                    respMap.put("userType", user.getType());
 
-                respMap.put( "message"   , user.getType() + " User " + user.getFirstname() + " with id " + user.getUserid() + " is logged in!");
-                respMap.put( "userType"  , user.getType() );
-
-                respMap.put( "name"      , user.getFirstname() );
-                respMap.put( "httpStatus", "" + HttpStatus.OK );
-                respMap.put( "startTime" , "" + startTime );
-                respMap.put( "userId" , "" + user.getUserid() );
-                respMap.put( "success" , "" + 1);
-
-                httpStatus = HttpStatus.OK;
+                    respMap.put("name", user.getFirstname());
+                    respMap.put("httpStatus", "" + HttpStatus.OK);
+                    respMap.put("startTime", "" + startTime);
+                    respMap.put("userId", "" + user.getUserid());
+                    respMap.put("success", "" + 1);
+                } else {
+                    respMap.put( "message"   , "Account has not been approved .. check with Administrator");
+                    respMap.put( "success" , "0");
+                    message = "Account has not been approved .. check with Administrator";
+                }
 
             } else { // password incorrect
                 respMap.put( "message"   , "Username : [" + username + "] or password : [" + password + "] incorrect");
                 respMap.put( "success" , "0");
                 message = "Username or password incorrect";
-                httpStatus = HttpStatus.OK;
             }
         } else { // username not found
             respMap.put( "message"   , "Username : [" + username + "] or password : [" + password + "] incorrect");
             respMap.put( "success" , ""+0);
             respMap.put("httpStatus", ""+ HttpStatus.OK);
-            httpStatus = HttpStatus.OK;
 
         }
+
+
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
@@ -106,14 +113,14 @@ public class LoginController extends MainController {
                                                                     @PathVariable("userType")     String userType,
                                                                     @PathVariable("phone")        String phone,
                                                                     @PathVariable("retailerid")   String retailerid
-
-    ) throws ParseException {
+                                                                    ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
         // create user
         // save user
         // return successful user creation status
 
+        httpStatus = HttpStatus.OK;
         respMap = new HashMap<>();
 
         User user = userRepo.findByEmailAddress(emailAddress);
@@ -128,7 +135,7 @@ public class LoginController extends MainController {
                 user.setPhone(phone);
                 user.setType(userType);
                 
-                httpStatus = HttpStatus.OK;
+
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
@@ -137,14 +144,11 @@ public class LoginController extends MainController {
                 userRepo.save(user);
 
             } else {
-                httpStatus = HttpStatus.OK;
-
                 respMap.put("message","Password Incorrect: >= 6 and <= 20, at least one number, upper and lowercase character");
                 respMap.put("success","0");
                 respMap.put("httpStatus",""+httpStatus);
             }
         } else {
-            httpStatus = HttpStatus.OK;
 
             respMap.put("message"," - This email address is already in use, please chose another email address");
             respMap.put("success","0");
@@ -170,14 +174,11 @@ public class LoginController extends MainController {
         // return successful user creation status
 
         respMap = new HashMap<>();
-
+        httpStatus = HttpStatus.OK;
         User user = userRepo.findByEmailAddress(emailAddress);
 
         if (user == null) {
             user = new User();
-            String gender = "";
-            int yob = 0;
-            int userid = 0;
 
             if (checkPasswordFormat(password)) {
                 user.setFirstname(firstname);
@@ -186,9 +187,8 @@ public class LoginController extends MainController {
                 user.setPassword(password);
                 user.setType(userType);
                 user.setPhone(phone);
-                user.setActive(false);
-
-                httpStatus = HttpStatus.OK;
+                // administrators are automatically enabled.
+                user.setActive((byte)1);
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
@@ -200,13 +200,11 @@ public class LoginController extends MainController {
                 // update retailer.
 
             } else {
-                httpStatus = HttpStatus.OK;
                 respMap.put("message","Password Incorrect: >= 6 and <= 20, at least one number, upper and lowercase character");
                 respMap.put("success","0");
                 respMap.put("httpStatus",""+httpStatus);
             }
         } else {
-            httpStatus = HttpStatus.OK;
             respMap.put("message"," - This email address is already in use, please chose another email address");
             respMap.put("success","0");
             respMap.put("httpStatus",""+httpStatus);

@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     private String surname;
     private String type;
     private Integer yob;
-    private boolean active;
+    private byte active;
     @JsonManagedReference
     private Collection<BonusCode> bonuscodesByUserid;
     @JsonManagedReference
@@ -52,7 +52,7 @@ public class User extends BaseEntity {
         this.password       = attributes.get(6);
         this.yob            = toInteger( attributes.get(7));
         this.gender         = attributes.get(8);
-        this.active         = false;
+        this.active         = 1;
     }
 
     public User(User user) {
@@ -65,11 +65,11 @@ public class User extends BaseEntity {
         this.password       = user.getPassword();
         this.yob            = user.getYob();
         this.gender         = user.getGender();
-        this.active         = user.isActive();
+        this.active         = user.getActive();
     }
 
     public User(int userid, String emailAddress, String firstname, String gender, String password,
-                String phone, String surname, String type, Integer yob, boolean active) {
+                String phone, String surname, String type, Integer yob, byte active) {
         this.userid = userid;
         this.emailAddress = emailAddress;
         this.firstname = firstname;
@@ -81,6 +81,11 @@ public class User extends BaseEntity {
         this.yob = yob;
         this.active = active;
     }
+
+    public String buildFullname() {
+        return getFirstname() + " " + getSurname();
+    }
+
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "userid", nullable = false)
@@ -172,8 +177,8 @@ public class User extends BaseEntity {
         this.yob = yob;
     }
 
-    public boolean isActive() { return active; }
-    public void setActive(boolean active) { this.active = active; }
+    public byte getActive() { return active; }
+    public void setActive(byte active) { this.active = active; }
 
     @Override
     public boolean equals(Object o) {

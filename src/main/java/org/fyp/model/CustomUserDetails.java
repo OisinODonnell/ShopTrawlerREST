@@ -14,6 +14,7 @@ public class CustomUserDetails extends User implements UserDetails {
         super(user);
     }
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
