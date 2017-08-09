@@ -32,7 +32,7 @@ public class Beacon extends BaseEntity {
         this.transmitPower          = toInteger(attributes.get(4));
         this.locationid             = toInteger(attributes.get(5));
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "beaconid", nullable = false)
     public int getBeaconid() {
         return beaconid;

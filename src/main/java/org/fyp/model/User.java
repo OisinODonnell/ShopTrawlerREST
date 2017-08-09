@@ -20,6 +20,7 @@ public class User extends BaseEntity {
     private String surname;
     private String type;
     private Integer yob;
+    private boolean active;
     @JsonManagedReference
     private Collection<BonusCode> bonuscodesByUserid;
     @JsonManagedReference
@@ -40,35 +41,48 @@ public class User extends BaseEntity {
     public User() {
     }
 
+    // for loading sample test data
     public User(List<String> attributes) {
-
-
-        this.userid                     = toInteger( attributes.get(0));
-        this.surname                    = attributes.get(1);
-        this.firstname                  = attributes.get(2);
-        this.emailAddress               = attributes.get(3);
-        this.type                       = attributes.get(4);
-        this.phone                      = attributes.get(5);
-        this.password                   = attributes.get(6);
-        this.yob                        = toInteger( attributes.get(7));
-        this.gender                     = attributes.get(8);
-
+        this.userid         = toInteger( attributes.get(0));
+        this.surname        = attributes.get(1);
+        this.firstname      = attributes.get(2);
+        this.emailAddress   = attributes.get(3);
+        this.type           = attributes.get(4);
+        this.phone          = attributes.get(5);
+        this.password       = attributes.get(6);
+        this.yob            = toInteger( attributes.get(7));
+        this.gender         = attributes.get(8);
+        this.active         = false;
     }
 
     public User(User user) {
-
-        this.userid = user.getUserid();
-        this.surname = user.getSurname();
-        this.firstname = user.getFirstname();
-        this.emailAddress = user.getEmailAddress();
-        this.type = user.getType();
-        this.phone = user.getPhone();
-        this.password = user.getPassword();
-        this.yob = user.getYob();
-        this.gender = user.getGender();
+        this.userid         = user.getUserid();
+        this.surname        = user.getSurname();
+        this.firstname      = user.getFirstname();
+        this.emailAddress   = user.getEmailAddress();
+        this.type           = user.getType();
+        this.phone          = user.getPhone();
+        this.password       = user.getPassword();
+        this.yob            = user.getYob();
+        this.gender         = user.getGender();
+        this.active         = user.isActive();
     }
 
-    @Id
+    public User(int userid, String emailAddress, String firstname, String gender, String password,
+                String phone, String surname, String type, Integer yob, boolean active) {
+        this.userid = userid;
+        this.emailAddress = emailAddress;
+        this.firstname = firstname;
+        this.gender = gender;
+        this.password = password;
+        this.phone = phone;
+        this.surname = surname;
+        this.type = type;
+        this.yob = yob;
+        this.active = active;
+    }
+
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "userid", nullable = false)
     public int getUserid() {
         return userid;
@@ -157,6 +171,9 @@ public class User extends BaseEntity {
     public void setYob(Integer yob) {
         this.yob = yob;
     }
+
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
 
     @Override
     public boolean equals(Object o) {

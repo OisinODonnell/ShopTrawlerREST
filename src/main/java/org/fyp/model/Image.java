@@ -10,7 +10,7 @@ public class Image {
     private String path;
     private byte[] blob;
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "imageid")
     public int getImageid() {
         return imageid;

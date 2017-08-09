@@ -46,10 +46,7 @@ public class LoginController extends MainController {
                 respMap.put( "startTime" , "" + startTime );
                 respMap.put( "userId" , "" + user.getUserid() );
                 respMap.put( "success" , "" + 1);
-//                Session session = new Session();
-//                session.setuserid(user.getuserid());
-//                session.setDateStart( startTime );
-//                sessionRepo.saveAndFlush(session);
+
                 httpStatus = HttpStatus.OK;
 
             } else { // password incorrect
@@ -99,14 +96,18 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(message, httpStatus);
     }
-    @RequestMapping(value = "/register/{name}/{email}/{password}/{userType}",
+    @RequestMapping(value = "/register/retailer/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}/{retailerid}",
             method= RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<HashMap<String,String>> register (@PathVariable("name") String name,
-                                                            @PathVariable("email")          String email,
-                                                            @PathVariable("password")       String password,
-                                                            @PathVariable("userType")  String userType )
-            throws ParseException {
+    public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
+                                                                    @PathVariable("surname")      String surname,
+                                                                    @PathVariable("emailAddress") String emailAddress,
+                                                                    @PathVariable("password")     String password,
+                                                                    @PathVariable("userType")     String userType,
+                                                                    @PathVariable("phone")        String phone,
+                                                                    @PathVariable("retailerid")   String retailerid
+
+    ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
         // create user
@@ -115,14 +116,16 @@ public class LoginController extends MainController {
 
         respMap = new HashMap<>();
 
-        User user = userRepo.findByEmailAddress(email);
+        User user = userRepo.findByEmailAddress(emailAddress);
 
         if (user == null) {
             user = new User();
             if (checkPasswordFormat(password)) {
-                user.setFirstname(name);
-                user.setEmailAddress(email);
+                user.setFirstname(firstname);
+                user.setSurname(surname);
+                user.setEmailAddress(emailAddress);
                 user.setPassword(password);
+                user.setPhone(phone);
                 user.setType(userType);
                 
                 httpStatus = HttpStatus.OK;
@@ -150,15 +153,17 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/register/{name}/{email}/{password}/{userType}/{phone}/{loyaltyCard}/{addressStreet}/{addressCity}/{addressCountry}/{paymentType}",
+    @RequestMapping(value = "/register/admin/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
                     method= RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<HashMap<String,String>> register (@PathVariable("name")           String name,
-                                                            @PathVariable("email")          String emailAddress,
-                                                            @PathVariable("password")       String password,
-                                                            @PathVariable("userType")       String type,
-                                                            @PathVariable("phone")          String phone  )
-                                    throws ParseException {
+    public ResponseEntity<HashMap<String,String>> registerAdmin (@PathVariable("firstname")      String firstname,
+                                                                 @PathVariable("surname")        String surname,
+                                                                 @PathVariable("emailAddress")   String emailAddress,
+                                                                 @PathVariable("password")       String password,
+                                                                 @PathVariable("userType")       String userType,
+                                                                 @PathVariable("phone")          String phone,
+                                                                 @PathVariable("retailerid")     int retailerid
+                                                                 ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
         // create user
@@ -171,12 +176,18 @@ public class LoginController extends MainController {
 
         if (user == null) {
             user = new User();
+            String gender = "";
+            int yob = 0;
+            int userid = 0;
+
             if (checkPasswordFormat(password)) {
-                user.setFirstname(name);
+                user.setFirstname(firstname);
+                user.setSurname(surname);
                 user.setEmailAddress(emailAddress);
                 user.setPassword(password);
-                user.setType(type);
+                user.setType(userType);
                 user.setPhone(phone);
+                user.setActive(false);
 
                 httpStatus = HttpStatus.OK;
 
@@ -184,6 +195,10 @@ public class LoginController extends MainController {
                 respMap.put("httpStatus",""+httpStatus);
                 respMap.put("success","1");
                 userRepo.save(user);
+
+                // retrieve user, and pick up userid.
+                // with this id go to retailer with retailerid and change userid to this userid.
+                // update retailer.
 
             } else {
                 httpStatus = HttpStatus.OK;

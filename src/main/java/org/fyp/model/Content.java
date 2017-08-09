@@ -34,7 +34,7 @@ public class Content extends BaseEntity {
         this.page3      = attributes.get(5);
         this.startDate  = toTimestamp(attributes.get(6));
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "contentid", nullable = false)
     public int getContentid() {
         return contentid;

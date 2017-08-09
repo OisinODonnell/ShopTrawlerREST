@@ -34,7 +34,7 @@ public class Location extends BaseEntity {
         this.altitude                           = toInteger(attributes.get(5));
         this.shoppingCentreid                   = toInteger(attributes.get(6));
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "locationid", nullable = false)
     public int getLocationid() {
         return locationid;

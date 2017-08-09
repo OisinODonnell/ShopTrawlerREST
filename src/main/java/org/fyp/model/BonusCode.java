@@ -30,7 +30,7 @@ public class BonusCode extends BaseEntity {
 //        this.userid         = toInteger( attributes.get(3));
 //        this.datetime       = toTimestamp( attributes.get(4));
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "bonus_codeid", nullable = false)
     public int getBonusCodeid() {
         return bonusCodeid;

@@ -33,7 +33,7 @@ public class Zone extends BaseEntity {
         this.zoneName           = attributes.get(2);
     }
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "zoneid", nullable = false)
     public int getZoneid() {
         return zoneid;

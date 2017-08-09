@@ -73,7 +73,7 @@ public class Retailer extends BaseEntity {
         this.logoImageMedium                    = attributes.get(15);
         this.logoImageLarge                     = attributes.get(16);
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "retailerid", nullable = false)
     public int getRetailerid() {
         return retailerid;

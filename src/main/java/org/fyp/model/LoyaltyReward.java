@@ -35,7 +35,7 @@ public class LoyaltyReward extends BaseEntity {
         this.visitTime          = toInteger(attributes.get(7));
 
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "loyalty_rewardid", nullable = false)
     public int getLoyaltyRewardid() {
         return loyaltyRewardid;
