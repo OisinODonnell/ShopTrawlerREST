@@ -34,7 +34,7 @@ public class Visit extends BaseEntity {
         this.exitTime = toTimestamp(attributes.get(5));
     }
 
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "visitid", nullable = false)
     public int getVisitid() {
         return visitid;

@@ -66,7 +66,7 @@ public class LoginController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/logout/{userId}/{startTime}", method= RequestMethod.GET)
+    @RequestMapping(value = "/Login/logout/{userId}/{startTime}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity logout (@PathVariable("userId") Integer userId,
                                   @PathVariable("startTime") Timestamp startTime) throws ParseException {
@@ -96,7 +96,7 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(message, httpStatus);
     }
-    @RequestMapping(value = "/register/retailer/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}/{retailerid}",
+    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}/{retailerid}",
             method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
@@ -153,7 +153,7 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/register/admin/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
+    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
                     method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerAdmin (@PathVariable("firstname")      String firstname,
@@ -161,8 +161,7 @@ public class LoginController extends MainController {
                                                                  @PathVariable("emailAddress")   String emailAddress,
                                                                  @PathVariable("password")       String password,
                                                                  @PathVariable("userType")       String userType,
-                                                                 @PathVariable("phone")          String phone,
-                                                                 @PathVariable("retailerid")     int retailerid
+                                                                 @PathVariable("phone")          String phone
                                                                  ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
@@ -228,7 +227,7 @@ public class LoginController extends MainController {
 
         String regex = "^((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])).{6,20}";
 
-        return password.matches(regex);
+        return true; // password.matches(regex);
     }
 
 }

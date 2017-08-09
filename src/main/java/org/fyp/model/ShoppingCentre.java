@@ -46,7 +46,7 @@ public class ShoppingCentre extends BaseEntity {
         this.contentPage                    = attributes.get(10);
 
     }
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "shopping_centreid", nullable = false)
     public int getShoppingCentreid() {
         return shoppingCentreid;
@@ -77,7 +77,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "facebookUrl", nullable = true, length = 255)
+    @Column(name = "facebook_url", nullable = true, length = 255)
     public String getFacebookUrl() {
         return facebookUrl;
     }
@@ -137,7 +137,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "twitterUrl", nullable = true, length = 255)
+    @Column(name = "twitter_url", nullable = true, length = 255)
     public String getTwitterUrl() {
         return twitterUrl;
     }
@@ -147,7 +147,7 @@ public class ShoppingCentre extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "websiteUrl", nullable = true, length = 255)
+    @Column(name = "website_url", nullable = true, length = 255)
     public String getWebsiteUrl() {
         return websiteUrl;
     }
