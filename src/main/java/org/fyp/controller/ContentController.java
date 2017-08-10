@@ -14,7 +14,7 @@ import java.util.Collection;
  * Created by oisin on 18/07/2017.
  */
 @RestController
-@RequestMapping(value = "Contents", method= RequestMethod.GET)
+@RequestMapping(value = {"Content","Contents"}, method= RequestMethod.GET)
 public class ContentController extends MainController {
 
     @RequestMapping(value = "/create", method=RequestMethod.GET)
@@ -42,6 +42,8 @@ public class ContentController extends MainController {
 
     @RequestMapping(value = "/Retailer/{id}", method=RequestMethod.GET)
     public Collection<Content> findAllByRetailerId(@PathVariable("id") Integer id) {
-        return contentRepo.findAllByRetailerid(id); }
+        Collection<Content> contents = contentRepo.findAllByRetailerid(id);
+        return contents; // contentRepo.findAllByRetailerid(id);
+    }
 
 }

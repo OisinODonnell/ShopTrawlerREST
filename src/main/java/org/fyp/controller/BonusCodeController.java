@@ -13,7 +13,7 @@ import java.util.Collection;
  * Created by oisin on 02/04/2017.
  */
 @RestController
-@RequestMapping(value = "BonusCodes", method=RequestMethod.GET)
+@RequestMapping(value = {"BonusCode","BonusCodes"}, method=RequestMethod.GET)
 public class BonusCodeController extends MainController{
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
