@@ -23,9 +23,7 @@ public class LocationController extends MainController {
 
 
     @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public Collection<Location> create(Location location)
-    {
-
+    public Collection<Location> create(Location location) {
         locationRepo.save(location);
         return locationRepo.findAll();
     }
@@ -35,17 +33,13 @@ public class LocationController extends MainController {
         return locationRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<Location> update(Location location)
-    {
-
+    public Collection<Location> update(Location location) {
         locationRepo.save(location);
         return locationRepo.findAll();
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public Collection<Location> delete(Location location)
-    {
-
+    public Collection<Location> delete(Location location) {
         locationRepo.delete(location);
         return locationRepo.findAll();
     }
