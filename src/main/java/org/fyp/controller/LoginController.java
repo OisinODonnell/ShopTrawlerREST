@@ -157,15 +157,15 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
+    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{password}/{userType}/{phone}/{emailAddress:.+}",
                     method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerAdmin (@PathVariable("firstname")      String firstname,
                                                                  @PathVariable("surname")        String surname,
-                                                                 @PathVariable("emailAddress")   String emailAddress,
                                                                  @PathVariable("password")       String password,
                                                                  @PathVariable("userType")       String userType,
-                                                                 @PathVariable("phone")          String phone
+                                                                 @PathVariable("phone")          String phone,
+                                                                 @PathVariable("emailAddress")   String emailAddress
                                                                  ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
