@@ -603,7 +603,7 @@
       <workItem from="1501783117843" duration="7145000" />
       <workItem from="1501866980700" duration="3461000" />
       <workItem from="1502264664648" duration="15222000" />
-      <workItem from="1502353671682" duration="680000" />
+      <workItem from="1502353671682" duration="748000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -710,11 +710,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502354195679</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Saving a registration caused some problems.&#10;&#10;email addresses cause problems for pathvariables in a rest ewndpoint.&#10;&#10;unless the emailaddress is placed at the end of a list of path variables, it will appear as 'NaN'. Additionally, if the regex characters ':.+' are not included, part of the email address is chopped after the first period in the address (@gmail.com becomes @gmail). See example of a Rest endpoint which now works. &#10;&#10;@RequestMapping(value = &quot;/register/Retailer/{firstname}/{surname}/{password}/{userType}/{phone}/{retailerid}/{gender}/{yob}/{emailAddress:.+}&quot;,">
+      <created>1502354363225</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1502354363225</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166992000" />
+    <option name="totallyTimeSpent" value="167060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
