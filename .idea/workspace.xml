@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
+    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="Updates for Adding Records.&#10;&#10;Updated LoginController, changed the fielkd names to the user entity.&#10;&#10;@GeneratedValue(strategy=GenerationType.AUTO)  added to all entities, except M:M relations.&#10;&#10;Updated /Login/Register to include additional attributes.&#10;&#10;Commented out password check for testing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/fyp/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/org/fyp/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -564,7 +563,7 @@
       <workItem from="1501866980700" duration="3461000" />
       <workItem from="1502264664648" duration="15261000" />
       <workItem from="1502351603114" duration="401000" />
-      <workItem from="1502352142046" duration="641000" />
+      <workItem from="1502352142046" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -650,11 +649,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502296283314</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Updates for Adding Records.&#10;&#10;Updated LoginController, changed the fielkd names to the user entity.&#10;&#10;@GeneratedValue(strategy=GenerationType.AUTO)  added to all entities, except M:M relations.&#10;&#10;Updated /Login/Register to include additional attributes.&#10;&#10;Commented out password check for testing">
+      <created>1502352812493</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1502352812493</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158624000" />
+    <option name="totallyTimeSpent" value="158711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
