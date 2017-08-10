@@ -1,7 +1,7 @@
 package org.fyp.controller;
 /**
- * TODO: Add code to check if the retailer has been approved (active = true.) else reject login.
- *
+ * TODO: Add code to check if the retailer has been approved (active = true.) else reject login. done
+ * TODO: Add code to verify email address is correct format
  */
 
 import org.fyp.model.User;
@@ -17,14 +17,14 @@ import java.util.HashMap;
  * Created by oisin on 30/03/2017.
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping(value = {"Login","login"})
 public class LoginController extends MainController {
 
     int status = 0;
     String message = "";
 
 
-    @RequestMapping(value = "login/{username}/{password}", method= RequestMethod.GET)
+    @RequestMapping(value = "/{username}/{password}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> login (@PathVariable("username") String username,
                                                          @PathVariable("password") String password) throws ParseException {
@@ -73,7 +73,7 @@ public class LoginController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/Login/logout/{userId}/{startTime}", method= RequestMethod.GET)
+    @RequestMapping(value = "/logout/{userId}/{startTime}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity logout (@PathVariable("userId") Integer userId,
                                   @PathVariable("startTime") Timestamp startTime) throws ParseException {
@@ -103,7 +103,7 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(message, httpStatus);
     }
-    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}/{retailerid}",
+    @RequestMapping(value = "/register/Retailer/{firstname}/{surname}/{password}/{userType}/{phone}/{retailerid}/{gender}/{yob}/{emailAddress:.+}",
             method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
@@ -112,7 +112,9 @@ public class LoginController extends MainController {
                                                                     @PathVariable("password")     String password,
                                                                     @PathVariable("userType")     String userType,
                                                                     @PathVariable("phone")        String phone,
-                                                                    @PathVariable("retailerid")   String retailerid
+                                                                    @PathVariable("gender")       String gender,
+                                                                    @PathVariable("yob")          int yob,
+                                                                    @PathVariable("retailerid")   int retailerid
                                                                     ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
@@ -133,9 +135,9 @@ public class LoginController extends MainController {
                 user.setEmailAddress(emailAddress);
                 user.setPassword(password);
                 user.setPhone(phone);
+                user.setGender(gender);
+                user.setYob(yob);
                 user.setType(userType);
-                
-
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
@@ -157,15 +159,17 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
+    @RequestMapping(value = "/register/Admin/{firstname}/{surname}/{password}/{userType}/{phone}/{gender}/{yob}/{emailAddress:.+}",
                     method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerAdmin (@PathVariable("firstname")      String firstname,
                                                                  @PathVariable("surname")        String surname,
-                                                                 @PathVariable("emailAddress")   String emailAddress,
                                                                  @PathVariable("password")       String password,
                                                                  @PathVariable("userType")       String userType,
-                                                                 @PathVariable("phone")          String phone
+                                                                 @PathVariable("phone")          String phone,
+                                                                 @PathVariable("gender")         String gender,
+                                                                 @PathVariable("yob")            int yob,
+                                                                 @PathVariable("emailAddress")   String emailAddress
                                                                  ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
@@ -187,6 +191,8 @@ public class LoginController extends MainController {
                 user.setPassword(password);
                 user.setType(userType);
                 user.setPhone(phone);
+                user.setGender(gender);
+                user.setYob(yob);
                 // administrators are automatically enabled.
                 user.setActive((byte)1);
 

@@ -86,7 +86,7 @@ public class UserController extends MainController {
             }
 
         } else {
-            respMap.put("message","User does not exist in database");
+            respMap.put("message","User with this email [" + email + "] does not exist in database");
             respMap.put("success","0");
             // return user does not exist in db
         }
@@ -102,7 +102,7 @@ public class UserController extends MainController {
             respMap.put("success","1");
         } else {
             // return failure
-            respMap.put("message","User could not be deleted");
+            respMap.put("message","User with this id [" + id + "] could not be deleted");
             respMap.put("success","0");
         }
 

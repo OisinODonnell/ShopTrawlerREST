@@ -15,7 +15,7 @@ import java.util.Collection;
  */
 
 @RestController
-@RequestMapping(value = {"UserPoints","UserPoints"}, method=RequestMethod.GET)
+@RequestMapping(value = {"UserPoint","UserPoints"}, method=RequestMethod.GET)
 public class UserPointController extends MainController {
 
     @RequestMapping(value = "/create",method=RequestMethod.GET)
