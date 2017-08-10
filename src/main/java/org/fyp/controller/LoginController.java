@@ -17,14 +17,14 @@ import java.util.HashMap;
  * Created by oisin on 30/03/2017.
  */
 @RestController
-@RequestMapping("/Login")
+@RequestMapping("/")
 public class LoginController extends MainController {
 
     int status = 0;
     String message = "";
 
 
-    @RequestMapping(value = "{username}/{password}", method= RequestMethod.GET)
+    @RequestMapping(value = "login/{username}/{password}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> login (@PathVariable("username") String username,
                                                          @PathVariable("password") String password) throws ParseException {
@@ -73,7 +73,7 @@ public class LoginController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/logout/{userId}/{startTime}", method= RequestMethod.GET)
+    @RequestMapping(value = "/Login/logout/{userId}/{startTime}", method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity logout (@PathVariable("userId") Integer userId,
                                   @PathVariable("startTime") Timestamp startTime) throws ParseException {
@@ -103,18 +103,16 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(message, httpStatus);
     }
-    @RequestMapping(value = "/register/Retailer/{firstname}/{surname}/{password}/{userType}/{phone}/{retailerid}/{gender}/{yob}/{emailAddress:.+}",
+    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}/{retailerid}",
             method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
                                                                     @PathVariable("surname")      String surname,
+                                                                    @PathVariable("emailAddress") String emailAddress,
                                                                     @PathVariable("password")     String password,
                                                                     @PathVariable("userType")     String userType,
                                                                     @PathVariable("phone")        String phone,
-                                                                    @PathVariable("retailerid")   int retailerid,
-                                                                    @PathVariable("emailAddress") String emailAddress,
-                                                                    @PathVariable("gender")       String gender,
-                                                                    @PathVariable("yob")          int yob
+                                                                    @PathVariable("retailerid")   String retailerid
                                                                     ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
@@ -136,8 +134,8 @@ public class LoginController extends MainController {
                 user.setPassword(password);
                 user.setPhone(phone);
                 user.setType(userType);
-                user.setGender(gender);
-                user.setYob(yob);
+                
+
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
@@ -159,7 +157,7 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-    @RequestMapping(value = "/register/Admin/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
+    @RequestMapping(value = "/Login/register/{firstname}/{surname}/{emailAddress}/{password}/{userType}/{phone}",
                     method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerAdmin (@PathVariable("firstname")      String firstname,
@@ -211,8 +209,10 @@ public class LoginController extends MainController {
             respMap.put("success","0");
             respMap.put("httpStatus",""+httpStatus);
         }
+
         return new ResponseEntity<>(respMap, httpStatus);
     }
+
     private boolean checkPasswordFormat(String password) {
 
         //  ^            #   match from start
@@ -227,4 +227,5 @@ public class LoginController extends MainController {
 
         return true; // password.matches(regex);
     }
+
 }
