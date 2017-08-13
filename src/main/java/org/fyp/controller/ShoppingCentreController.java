@@ -1,6 +1,7 @@
 package org.fyp.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.sun.deploy.net.HttpResponse;
 import org.fyp.model.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.method.P;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.server.PathParam;
 import java.text.ParseException;
 import java.util.Collection;
 
@@ -34,22 +36,24 @@ public class ShoppingCentreController extends MainController {
     }
 
     @RequestMapping(value = "/update/{id}", method={RequestMethod.PUT})
-    public void update( @RequestBody ShoppingCentre shoppingCentre, @PathVariable("id") int id, HttpServletResponse httpResponse)
+    public void update(@RequestBody ShoppingCentre shoppingCentre, @PathParam("id") int id  )
     {
 
 //        ShoppingCentre updatedSC = shoppingCentreRepo.save(shoppingCentre);
-        if(!shoppingCentreRepo.exists(id)){
-            httpResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        }
-        else{
+//        if(!shoppingCentreRepo.exists(shoppingCentre.getShoppingCentreid())){
+//            httpResponse.setStatus(HttpStatus.NOT_FOUND.value());
+//        }
+//        else{
+
             shoppingCentreRepo.save(shoppingCentre);
-            httpResponse.setStatus(HttpStatus.NO_CONTENT.value());
-        }
+
+//            httpResponse.setStatus(HttpStatus.NO_CONTENT.value());
+//        }
 
 //        return updatedSC;
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.GET)
+    @RequestMapping(value = "/delete", method=RequestMethod.PUT)
     public Collection<ShoppingCentre> delete(ShoppingCentre shoppingCentre) {
         shoppingCentreRepo.delete(shoppingCentre);
         return shoppingCentreRepo.findAll();
