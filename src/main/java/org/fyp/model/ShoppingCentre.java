@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,11 +22,11 @@ public class ShoppingCentre extends BaseEntity {
     private String shoppingCentreName;
     private String twitterUrl;
     private String websiteUrl;
-    @JsonManagedReference
+    @JsonIgnore // @JsonManagedReference
     private Collection<Location> locationsByShoppingCentreid;
-    @JsonManagedReference
+    @JsonIgnore // @JsonManagedReference
     private Collection<Retailer> retailersByShoppingCentreid;
-    @JsonManagedReference
+    @JsonIgnore  // @JsonManagedReference
     private User usersByAdminid;
 
     public ShoppingCentre() {

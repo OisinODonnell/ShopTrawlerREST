@@ -35,6 +35,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Autowired
         public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+            auth.inMemoryAuthentication().withUser("jd@dd.ie").password("111111").roles("ADMIN");
             auth.inMemoryAuthentication().withUser("bill").password("abc123").roles("ADMIN");
             auth.inMemoryAuthentication().withUser("tom").password("abc123").roles("USER");
         }
@@ -43,10 +44,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         protected void configure(HttpSecurity http) throws Exception {
 
             http.csrf().disable()
+                .cors().disable()
                 .authorizeRequests()
-                .antMatchers("/user/**").hasRole("ADMIN")
-                .and().httpBasic().realmName(REALM).authenticationEntryPoint(getBasicAuthEntryPoint())
-                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//We don't need session.
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+//                .and().httpBasic().authenticationEntryPoint(getBasicAuthEntryPoint())
+//                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//We don't need session.
         }
 
         @Bean
@@ -59,7 +61,22 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         public void configure(WebSecurity web) throws Exception {
             web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
         }
+
+    private PasswordEncoder getPasswordEncoder() {
+        return new PasswordEncoder() {
+            @Override
+            public String encode(CharSequence charSequence) {
+                return charSequence.toString();
+            }
+
+            @Override
+            public boolean matches(CharSequence charSequence, String s) {
+                return true;
+            }
+        };
     }
+
+}
 
 //    @Autowired
 //    private CustomUserDetailsService userDetailsService;
@@ -93,19 +110,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //        // formLogin() is SpringSecurity's default login page.
 //    }
 //
-//    private PasswordEncoder getPasswordEncoder() {
-//        return new PasswordEncoder() {
-//            @Override
-//            public String encode(CharSequence charSequence) {
-//                return charSequence.toString();
-//            }
-//
-//            @Override
-//            public boolean matches(CharSequence charSequence, String s) {
-//                return true;
-//            }
-//        };
-//    }
+
 
 
 //}

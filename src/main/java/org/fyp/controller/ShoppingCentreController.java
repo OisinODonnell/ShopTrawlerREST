@@ -36,7 +36,7 @@ public class ShoppingCentreController extends MainController {
     }
 
     @RequestMapping(value = "/update/{id}", method={RequestMethod.PUT})
-    public void update(@RequestBody ShoppingCentre shoppingCentre, @PathParam("id") int id  )
+    public void update(@RequestBody ShoppingCentre shoppingCentre, @PathParam("id") Integer id  )
     {
 
 //        ShoppingCentre updatedSC = shoppingCentreRepo.save(shoppingCentre);
