@@ -15,8 +15,5 @@ public interface ContentRepository extends JpaRepository<Content, Integer> {
     Content findByContentid(Integer contentID);
     Collection<Content> findAllByRetailerid(int retailerID);
     Content findByRetaileridAndStartDateBeforeAndEndDateAfter( int retailerid, Timestamp nowStart, Timestamp nowEnd);
-    
-//    Collection<Content> findByTitleLikeIgnoreCase(String titleLike);
-
     Integer deleteByContentid(int contentID);
 }

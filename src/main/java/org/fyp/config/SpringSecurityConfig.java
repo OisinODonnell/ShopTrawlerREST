@@ -47,8 +47,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
-//                .and().httpBasic().authenticationEntryPoint(getBasicAuthEntryPoint())
-//                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//We don't need session.
         }
 
         @Bean
@@ -77,40 +75,3 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
-
-//    @Autowired
-//    private CustomUserDetailsService userDetailsService;
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//        auth.userDetailsService(userDetailsService)
-//                .passwordEncoder(getPasswordEncoder());
-//    }
-//
-//    //     Overriding the implementation of the HTTP security.
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//
-//        http
-//            .antMatcher("**")
-//            .httpBasic();
-//
-//    //                .and()
-//
-//    //                .authorizeRequests()
-//    //                    .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
-//    //                .authenticated();
-//
-//        http.csrf().disable();
-//
-////                .antMatchers("**").authenticated()
-////                .anyRequest().permitAll();
-//        // .and().formLogin().permitAll(); // you can add in a custom login page here with .loginPage("/loginpage")
-//        // formLogin() is SpringSecurity's default login page.
-//    }
-//
-
-
-
-//}
