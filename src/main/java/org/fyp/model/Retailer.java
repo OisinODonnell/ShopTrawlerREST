@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -28,25 +29,34 @@ public class Retailer extends BaseEntity {
     private String websiteUrl;
     private Integer zoneid;
 
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Collection<BonusCode> bonuscodesByRetailerid;
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Collection<Content> contentsByRetailerid;
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Collection<Favourite> favouritesByRetailerid;
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Collection<LoyaltyReward> loyaltyrewardsByRetailerid;
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Collection<Rating> ratingsByRetailerid;
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private User usersByManagerid;
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonIgnore
     private ShoppingCentre shoppingCentreByShoppingCentreid;
     // Jackson annotation probably needed here.
-    @JsonManagedReference
+    @JsonIgnore
+//    @JsonManagedReference
     private Collection<UserPoint> userpointsByRetailerid;
 
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonIgnore
     private Zone zonesByZoneid;
 
 
