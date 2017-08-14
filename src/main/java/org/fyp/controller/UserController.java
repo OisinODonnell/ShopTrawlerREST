@@ -2,12 +2,9 @@ package org.fyp.controller;
 
 import org.fyp.model.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
+import javax.websocket.server.PathParam;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -20,25 +17,26 @@ import java.util.HashMap;
 public class UserController extends MainController {
 
 
-    @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public Collection<User> create(User user) {
+    @RequestMapping(value = "/create", method=RequestMethod.POST)
+    public Collection<User> create(@RequestBody User user) {
         userRepo.save(user);
         return userRepo.findAll();
     }
+
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<User> read() {
         return userRepo.findAll();
     }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public void update(User user)
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public void update(@RequestBody User user)
     {
         userRepo.save(user);
     }
 
     @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public ResponseEntity<HashMap<String,String>> delete(User user) {
+    public ResponseEntity<HashMap<String,String>> delete(@RequestBody User user) {
 
         respMap.put("httpStatus",""+httpStatus);
         // check if user exists
@@ -68,7 +66,7 @@ public class UserController extends MainController {
         return  new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/deleteByEmail/{email:.+}", method=RequestMethod.GET)
+    @RequestMapping(value = "/deleteByEmail/{email:.+}", method=RequestMethod.DELETE)
     public ResponseEntity<HashMap<String,String>> delete(@PathVariable ("email") String email) {
 
         if (userRepo.findByEmailAddress(email) != null) {
@@ -93,7 +91,13 @@ public class UserController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/delete/{id}", method=RequestMethod.GET)
+    @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
+    public Collection<User> forApproval() {
+        return userRepo.findAllByApproved(False);
+    }
+
+
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
     public ResponseEntity<HashMap<String,String>> delete(@PathVariable ("id") int id) {
 
         if( userRepo.deleteByUserid(id) > 0) {
@@ -128,7 +132,7 @@ public class UserController extends MainController {
     {
         User user = userRepo.findByUserid(id);
         if (user != null) {
-            user.setActive((byte)1);
+            user.setApproved( (byte)1);
             respMap.put("message","User:" + user.buildFullname() + " is activated");
             respMap.put("success","1");
         } else {
@@ -139,6 +143,15 @@ public class UserController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
-
+    @RequestMapping(value = "/approve", method=RequestMethod.PUT)
+    public Collection<User> approve(@RequestBody User user)
+    {
+        userRepo.save(user);
+        return userRepo.findAll();
+    }
+    @RequestMapping(value = "/update/{id}", method={RequestMethod.PUT})
+    public void update( @RequestBody User user, @PathParam( "id") Integer id  ) {
+        userRepo.save(user);
+    }
 
 }

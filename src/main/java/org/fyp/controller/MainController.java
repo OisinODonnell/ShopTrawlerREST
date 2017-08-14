@@ -55,15 +55,10 @@ public abstract class MainController {
 
     // used to convert an object into json.
     ObjectMapper mapper = new ObjectMapper();
-
-
-    Gson gson = new Gson();
-
-
-
     //Object to JSON in String
     // eg; String jsonInString = mapper.writeValueAsString(obj);
 
+    Gson gson = new Gson();
 
 
     HttpStatus httpStatus = HttpStatus.OK;
@@ -73,7 +68,9 @@ public abstract class MainController {
     // response object for building up a response to the user
     HashMap<String, String> respMap = new HashMap<>();
 
-
+    // used when setting byte values in entities
+    final byte True = 1;
+    final byte False = 0;
 
 
     @SuppressWarnings("unchecked")

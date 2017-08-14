@@ -41,7 +41,7 @@ public class LoginController extends MainController {
         if (user != null) { // yes user with this username exists
 
             if (user.getPassword().equals(password)) {
-                if (user.getActive() == 1) {
+                if ( user.getApproved() == 1) {
                     respMap.put("message", user.getType() + " User " + user.getFirstname() + " with id " + user.getUserid() + " is logged in!");
                     respMap.put("userType", user.getType());
 
@@ -194,7 +194,7 @@ public class LoginController extends MainController {
                 user.setGender(gender);
                 user.setYob(yob);
                 // administrators are automatically enabled.
-                user.setActive((byte)1);
+                user.setApproved( (byte)1);
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);

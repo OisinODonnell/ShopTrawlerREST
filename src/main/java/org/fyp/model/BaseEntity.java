@@ -20,6 +20,10 @@ public abstract class BaseEntity {
     private Date parsedDate = new Date();
     private BigDecimal valueToBigDecimal = null;
 
+    // used when setting byte values in entities
+    final byte True = 1;
+    final byte False = 0;
+
     public Integer toInteger(String value)
     {
 

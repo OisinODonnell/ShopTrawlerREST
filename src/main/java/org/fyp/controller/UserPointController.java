@@ -2,10 +2,7 @@ package org.fyp.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -18,8 +15,8 @@ import java.util.Collection;
 @RequestMapping(value = {"UserPoint","UserPoints"}, method=RequestMethod.GET)
 public class UserPointController extends MainController {
 
-    @RequestMapping(value = "/create",method=RequestMethod.GET)
-    public Collection<UserPoint> create(UserPoint userPoint)    {
+    @RequestMapping(value = "/create",method=RequestMethod.POST)
+    public Collection<UserPoint> create(@RequestBody UserPoint userPoint)    {
 
         userPointRepo.save(userPoint);
         return userPointRepo.findAll();
@@ -30,14 +27,14 @@ public class UserPointController extends MainController {
         return userPointRepo.findAll();
     }
 
-    @RequestMapping(value = "/update",method=RequestMethod.GET)
-    public Collection<UserPoint> update(UserPoint userPoint)    {
+    @RequestMapping(value = "/update",method=RequestMethod.PUT)
+    public Collection<UserPoint> update(@RequestBody UserPoint userPoint)    {
         userPointRepo.save(userPoint);
         return userPointRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete",method=RequestMethod.GET)
-    public Collection<UserPoint> delete(UserPoint userPoint)    {
+    @RequestMapping(value = "/delete",method=RequestMethod.DELETE)
+    public Collection<UserPoint> delete(@RequestBody UserPoint userPoint)    {
 
         userPointRepo.delete(userPoint);
         return userPointRepo.findAll();

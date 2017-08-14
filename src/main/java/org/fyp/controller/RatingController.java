@@ -3,10 +3,7 @@ package org.fyp.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -22,8 +19,8 @@ import java.util.Collection;
 public class RatingController extends MainController {
 
 
-    @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public Collection<Rating> create(Rating rating)
+    @RequestMapping(value = "/create", method= RequestMethod.POST)
+    public Collection<Rating> create(@RequestBody Rating rating)
     {
 
         ratingRepo.save(rating);
@@ -34,16 +31,16 @@ public class RatingController extends MainController {
     public Collection<Rating> read() throws JsonProcessingException {
         return ratingRepo.findAll(); }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<Rating> update(Rating rating)
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public Collection<Rating> update(@RequestBody Rating rating)
     {
 
         ratingRepo.save(rating);
         return ratingRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public Collection<Rating> delete(Rating rating)
+    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
+    public Collection<Rating> delete(@RequestBody Rating rating)
     {
 
         ratingRepo.delete(rating);

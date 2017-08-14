@@ -2,10 +2,7 @@ package org.fyp.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -18,8 +15,8 @@ import java.util.Collection;
 @RequestMapping(value = {"Favourites","Favourite"}, method=RequestMethod.GET)
 public class FavouriteController extends MainController {
 
-    @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public Collection<Favourite> create(Favourite favourite)    {
+    @RequestMapping(value = "/create", method= RequestMethod.POST)
+    public Collection<Favourite> create(@RequestBody Favourite favourite)    {
 
         favouriteRepo.save(favourite);
         return favouriteRepo.findAll();
@@ -30,15 +27,15 @@ public class FavouriteController extends MainController {
         return favouriteRepo.findAll();
     }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<Favourite> update(Favourite favourite)    {
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public Collection<Favourite> update(@RequestBody Favourite favourite)    {
 
         favouriteRepo.delete(favourite);
         return favouriteRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public Collection<Favourite> delete(Favourite favourite)    {
+    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
+    public Collection<Favourite> delete(@RequestBody Favourite favourite)    {
 
         favouriteRepo.save(favourite);
         return favouriteRepo.findAll();

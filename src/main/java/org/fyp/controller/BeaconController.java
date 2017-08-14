@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -46,8 +43,8 @@ public class BeaconController extends MainController{
         return beaconRepo.findAll();
     }
 
-    @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public Collection<Beacon> create(Beacon beacon)   {
+    @RequestMapping(value = "/create", method= RequestMethod.POST)
+    public Collection<Beacon> create(@RequestBody Beacon beacon)   {
         beaconRepo.save(beacon);
         return beaconRepo.findAll();
     }
@@ -63,16 +60,16 @@ public class BeaconController extends MainController{
 
     }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<Beacon> update(Beacon beacon)
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public Collection<Beacon> update(@RequestBody Beacon beacon)
     {
 
         beaconRepo.save(beacon);
         return beaconRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete/", method=RequestMethod.GET)
-    public Collection<Beacon> delete(Beacon beacon)     {
+    @RequestMapping(value = "/delete/", method=RequestMethod.DELETE)
+    public Collection<Beacon> delete(@RequestBody Beacon beacon)     {
         beaconRepo.delete(beacon);
         return beaconRepo.findAll();
     }

@@ -1,6 +1,7 @@
 package org.fyp.repository;
 
 import org.fyp.model.Content;
+import org.fyp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
@@ -16,4 +17,5 @@ public interface ContentRepository extends JpaRepository<Content, Integer> {
     Collection<Content> findAllByRetailerid(int retailerID);
     Content findByRetaileridAndStartDateBeforeAndEndDateAfter( int retailerid, Timestamp nowStart, Timestamp nowEnd);
     Integer deleteByContentid(int contentID);
+    Collection<Content> findAllByApproved( byte state);
 }

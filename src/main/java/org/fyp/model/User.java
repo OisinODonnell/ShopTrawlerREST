@@ -11,29 +11,29 @@ import java.util.List;
 @Entity
 @Table(name = "users", schema = "shoptrawler")
 public class User extends BaseEntity {
-    private int userid;
-    private String emailAddress;
-    private String firstname;
-    private String gender;
-    private String password;
-    private String phone;
-    private String surname;
-    private String type;
-    private Integer yob;
-    private byte active;
-    @JsonManagedReference
-    private Collection<BonusCode> bonuscodesByUserid;
-    @JsonManagedReference
-    private Collection<Favourite> favouritesByUserid;
-    @JsonManagedReference
-    private Collection<Rating> ratingsByUserid;
-    @JsonManagedReference
-    private Collection<UserPoint> userpointsByUserid;
-    @JsonManagedReference
-    private Collection<Visit> visitsByUserid;
-    @JsonBackReference
-    private Collection<Retailer> retailersByUserid;
-    @JsonBackReference
+    private int                        userid;
+    private String                     emailAddress;
+    private String                     firstname;
+    private String                     gender;
+    private String                     password;
+    private String                     phone;
+    private String                     surname;
+    private String                     type;
+    private Integer                    yob;
+    private byte                       approved;
+    @JsonIgnore
+    private Collection<BonusCode>      bonuscodesByUserid;
+    @JsonIgnore
+    private Collection<Favourite>      favouritesByUserid;
+    @JsonIgnore
+    private Collection<Rating>         ratingsByUserid;
+    @JsonIgnore
+    private Collection<UserPoint>      userpointsByUserid;
+    @JsonIgnore
+    private Collection<Visit>          visitsByUserid;
+    @JsonIgnore
+    private Collection<Retailer>       retailersByUserid;
+    @JsonIgnore
     private Collection<ShoppingCentre> shoppingCentresByUserid;
     //@JsonManagedReference
 
@@ -52,7 +52,7 @@ public class User extends BaseEntity {
         this.password       = attributes.get(6);
         this.yob            = toInteger( attributes.get(7));
         this.gender         = attributes.get(8);
-        this.active         = 1;
+        this.approved = 1;
     }
 
     public User(User user) {
@@ -65,7 +65,7 @@ public class User extends BaseEntity {
         this.password       = user.getPassword();
         this.yob            = user.getYob();
         this.gender         = user.getGender();
-        this.active         = user.getActive();
+        this.approved       = user.getApproved();
     }
 
     public User(int userid, String emailAddress, String firstname, String gender, String password,
@@ -79,7 +79,7 @@ public class User extends BaseEntity {
         this.surname = surname;
         this.type = type;
         this.yob = yob;
-        this.active = active;
+        this.approved = active;
     }
 
     public String buildFullname() {
@@ -177,8 +177,8 @@ public class User extends BaseEntity {
         this.yob = yob;
     }
 
-    public byte getActive() { return active; }
-    public void setActive(byte active) { this.active = active; }
+    public byte getApproved() { return approved; }
+    public void setApproved( byte active) { this.approved = active; }
 
     @Override
     public boolean equals(Object o) {

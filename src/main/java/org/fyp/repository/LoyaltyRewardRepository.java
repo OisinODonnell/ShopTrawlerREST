@@ -1,6 +1,7 @@
 package org.fyp.repository;
 
 import org.fyp.model.LoyaltyReward;
+import org.fyp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
@@ -14,6 +15,7 @@ public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, In
     LoyaltyReward findByLoyaltyRewardid(int loyaltyRewardID);
     LoyaltyReward findByRetailerid(int retailerID);
     LoyaltyReward findByRetaileridAndStartDateBeforeAndEndDateAfter(int loyaltyRewardID, Timestamp nowStart, Timestamp nowEnd);
+    Collection<LoyaltyReward> findAllByApproved( byte state);
 
 
 }

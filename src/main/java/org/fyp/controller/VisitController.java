@@ -13,8 +13,8 @@ import java.util.Collection;
 @RequestMapping(value = {"Visits","Visit"}, method= RequestMethod.GET)
 public class VisitController extends MainController {
 
-    @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public Collection<Visit>  create(Visit visit) {
+    @RequestMapping(value = "/create", method=RequestMethod.POST)
+    public Collection<Visit>  create(@RequestBody Visit visit) {
         visitRepo.save(visit);
         return visitRepo.findAll();
     }
@@ -26,14 +26,14 @@ public class VisitController extends MainController {
         return visitRepo.findAll();
     }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<Visit>  update(Visit visit) {
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public Collection<Visit>  update(@RequestBody Visit visit) {
         visitRepo.save(visit);
         return visitRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public Collection<Visit>  delete(Visit visit)     {
+    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
+    public Collection<Visit>  delete(@RequestBody Visit visit)     {
         visitRepo.delete(visit);
         return visitRepo.findAll();
     }

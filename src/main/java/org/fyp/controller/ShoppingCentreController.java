@@ -21,8 +21,8 @@ import java.util.Collection;
 @RequestMapping(value = {"ShoppingCentres","ShoppingCentre"}, method= RequestMethod.GET)
 public class ShoppingCentreController extends MainController {
 
-    @RequestMapping(value = "/create", method=RequestMethod.GET)
-    public Collection<ShoppingCentre> create(ShoppingCentre shoppingCentre)
+    @RequestMapping(value = "/create", method=RequestMethod.POST)
+    public Collection<ShoppingCentre> create(@RequestBody ShoppingCentre shoppingCentre)
     {
 
         shoppingCentreRepo.save(shoppingCentre);
@@ -53,8 +53,8 @@ public class ShoppingCentreController extends MainController {
 //        return updatedSC;
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.PUT)
-    public Collection<ShoppingCentre> delete(ShoppingCentre shoppingCentre) {
+    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
+    public Collection<ShoppingCentre> delete(@RequestBody ShoppingCentre shoppingCentre) {
         shoppingCentreRepo.delete(shoppingCentre);
         return shoppingCentreRepo.findAll();
     }

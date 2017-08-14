@@ -17,6 +17,7 @@ public class Content extends BaseEntity {
     private String page3;
     private Integer retailerid;
     private Timestamp startDate;
+    private byte approved;
     @JsonBackReference
     private Retailer retailersByRetailerid;
 
@@ -34,6 +35,7 @@ public class Content extends BaseEntity {
         this.page2      = attributes.get(4);
         this.page3      = attributes.get(5);
         this.startDate  = toTimestamp(attributes.get(6));
+        this.approved           = 1;
     }
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "contentid", nullable = false)
@@ -103,6 +105,14 @@ public class Content extends BaseEntity {
 
     public void setStartDate(Timestamp startDate) {
         this.startDate = startDate;
+    }
+
+    public byte getApproved( ) {
+        return approved;
+    }
+
+    public void setApproved( byte approved ) {
+        this.approved = approved;
     }
 
     @Override

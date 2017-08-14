@@ -1,10 +1,7 @@
 package org.fyp.controller;
 
 import org.fyp.model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -16,8 +13,8 @@ import java.util.Collection;
 @RequestMapping(value = {"BonusCode","BonusCodes"}, method=RequestMethod.GET)
 public class BonusCodeController extends MainController{
 
-    @RequestMapping(value = "/create", method= RequestMethod.GET)
-    public Collection<BonusCode> create(BonusCode bonusCode)    {
+    @RequestMapping(value = "/create", method= RequestMethod.POST)
+    public Collection<BonusCode> create(@RequestBody BonusCode bonusCode)    {
 
         bonusCodeRepo.save(bonusCode);
         return bonusCodeRepo.findAll();
@@ -28,16 +25,16 @@ public class BonusCodeController extends MainController{
         return bonusCodeRepo.findAll();
     }
 
-    @RequestMapping(value = "/update", method=RequestMethod.GET)
-    public Collection<BonusCode> update(BonusCode bonusCode)    {
+    @RequestMapping(value = "/update", method=RequestMethod.PUT)
+    public Collection<BonusCode> update(@RequestBody BonusCode bonusCode)    {
 
 
         bonusCodeRepo.save(bonusCode);
         return bonusCodeRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.GET)
-    public Collection<BonusCode> delete(BonusCode bonusCode)    {
+    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
+    public Collection<BonusCode> delete(@RequestBody BonusCode bonusCode)    {
 
         bonusCodeRepo.delete(bonusCode);
         return bonusCodeRepo.findAll();

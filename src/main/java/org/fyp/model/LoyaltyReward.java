@@ -18,6 +18,8 @@ public class LoyaltyReward extends BaseEntity {
     private String    rewardTitle;
     private Timestamp startDate;
     private Integer   visitTime;
+    private byte      approved;
+
     @JsonBackReference
     private Retailer  retailersByRetailerid;
 
@@ -34,6 +36,7 @@ public class LoyaltyReward extends BaseEntity {
         this.rewardTitle        = attributes.get(5);
         this.startDate          = toTimestamp(attributes.get(6));
         this.visitTime          = toInteger(attributes.get(7));
+        this.approved           = 1;
 
     }
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -114,6 +117,14 @@ public class LoyaltyReward extends BaseEntity {
 
     public void setVisitTime(Integer visitTime) {
         this.visitTime = visitTime;
+    }
+
+    public byte getApproved( ) {
+        return approved;
+    }
+
+    public void setApproved( byte approved ) {
+        this.approved = approved;
     }
 
     @Override
