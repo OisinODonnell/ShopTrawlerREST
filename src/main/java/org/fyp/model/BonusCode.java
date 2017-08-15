@@ -14,7 +14,7 @@ public class BonusCode extends BaseEntity {
     private Timestamp datetime;
     private Integer retailerid;
     private Integer userid;
-    private String value;
+    private Integer value;
     @JsonBackReference
     private Retailer retailersByRetailerid;
     @JsonBackReference
@@ -22,11 +22,15 @@ public class BonusCode extends BaseEntity {
 
     public BonusCode() {
     }
+    public BonusCode(Integer value, Integer retailerid) {
+        this.retailerid = retailerid;
+        this.value = value;
+    }
 
     public BonusCode(List<String> attributes)  {
         this.bonusCodeid    = toInteger( attributes.get(0));
         this.retailerid     = toInteger( attributes.get(1));
-        this.value          = attributes.get(2);
+        this.value          = toInteger(attributes.get(2));
 //        this.userid         = toInteger( attributes.get(3));
 //        this.datetime       = toTimestamp( attributes.get(4));
     }
@@ -72,11 +76,11 @@ public class BonusCode extends BaseEntity {
 
     @Basic
     @Column(name = "value", nullable = true, length = 255)
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 
