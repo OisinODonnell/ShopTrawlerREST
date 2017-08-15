@@ -12,5 +12,5 @@ import java.util.Collection;
 public interface FavouriteRepository extends JpaRepository<Favourite, Integer> {
     Collection<Favourite> findAllByUserid(int userID);
     Collection<Favourite> findAllByRetailerid(int retailerID);
-    Integer deleteByFavouriteid(int favouriteID);
+    Integer deleteByUseridAndRetailerid(Integer userID, Integer retailerID);
 }
