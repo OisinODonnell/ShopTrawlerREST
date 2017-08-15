@@ -68,9 +68,9 @@ public class BeaconController extends MainController{
         return beaconRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete/", method=RequestMethod.DELETE)
-    public Collection<Beacon> delete(@RequestBody Beacon beacon)     {
-        beaconRepo.delete(beacon);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<Beacon> delete(@PathVariable ("id") Integer id)    {
+        beaconRepo.deleteByBeaconid(id);
         return beaconRepo.findAll();
     }
 

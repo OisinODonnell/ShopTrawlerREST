@@ -37,9 +37,10 @@ public class ContentController extends MainController {
         return contentRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<Content> delete(@RequestBody Content content)     {
-        contentRepo.delete(content);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<Content> delete(@PathVariable("id") Integer id)    {
+
+        contentRepo.deleteByContentid(id);
         return contentRepo.findAll();
     }
 

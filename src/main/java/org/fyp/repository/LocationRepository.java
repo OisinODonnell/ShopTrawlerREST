@@ -11,5 +11,6 @@ import java.util.Collection;
 @Transactional
 public interface LocationRepository extends JpaRepository<Location, Integer> {
     Collection<Location> findAllByShoppingCentreid(int shoppingCentreID);
+    Integer deleteByLocationid(int locationID);
 
 }

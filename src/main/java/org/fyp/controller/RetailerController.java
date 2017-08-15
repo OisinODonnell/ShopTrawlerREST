@@ -37,7 +37,7 @@ public class RetailerController extends MainController {
     }
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
-    public Collection<Retailer> delete(@PathVariable Integer id)     {
+    public Collection<Retailer> delete(@PathVariable ("id") Integer id)     {
         retailerRepo.deleteByRetailerid(id);
         return retailerRepo.findAll();
     }

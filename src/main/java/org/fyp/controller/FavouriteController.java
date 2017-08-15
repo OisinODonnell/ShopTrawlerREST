@@ -34,10 +34,9 @@ public class FavouriteController extends MainController {
         return favouriteRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<Favourite> delete(@RequestBody Favourite favourite)    {
-
-        favouriteRepo.save(favourite);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<Favourite> delete(@PathVariable("id") Integer id)    {
+        favouriteRepo.deleteByFavouriteid(id);
         return favouriteRepo.findAll();
     }
 

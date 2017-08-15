@@ -12,17 +12,13 @@ import java.util.Collection;
  * Created by oisin on 18/07/2017.
  */
 
-
-
 @RestController
 @RequestMapping(value = {"Ratings","Rating"}, method=RequestMethod.GET)
 public class RatingController extends MainController {
 
 
     @RequestMapping(value = "/create", method= RequestMethod.POST)
-    public Collection<Rating> create(@RequestBody Rating rating)
-    {
-
+    public Collection<Rating> create(@RequestBody Rating rating) {
         ratingRepo.save(rating);
         return ratingRepo.findAll();
     }
@@ -32,18 +28,15 @@ public class RatingController extends MainController {
         return ratingRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
-    public Collection<Rating> update(@RequestBody Rating rating)
-    {
-
+    public Collection<Rating> update(@RequestBody Rating rating) {
         ratingRepo.save(rating);
         return ratingRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<Rating> delete(@RequestBody Rating rating)
-    {
-
-        ratingRepo.delete(rating);
+    @RequestMapping(value = "/delete/{userid}/{retailerid}", method=RequestMethod.DELETE)
+    public Collection<Rating> delete(@PathVariable ("userid") Integer userid,
+                                     @PathVariable ("retailerid") Integer retailerid)     {
+        ratingRepo.deleteByUseridAndRetailerid(userid, retailerid);
         return ratingRepo.findAll();
     }
 

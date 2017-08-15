@@ -13,5 +13,6 @@ public interface UserPointRepository extends JpaRepository<UserPoint, Integer> {
     Collection<UserPoint> findAllByRetailerid(int retailerID);
     Collection<UserPoint> findAllByUserid(int userID);
     UserPoint findByRetaileridAndUserid( int retailerID, int userID );
+    Integer deleteByUseridAndRetailerid(Integer userID, Integer retailerID);
 
 }

@@ -47,11 +47,9 @@ public class LoyaltyRewardController extends MainController {
         return loyaltyRewardRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<LoyaltyReward> delete(@RequestBody LoyaltyReward loyaltyReward)
-    {
-
-        loyaltyRewardRepo.delete(loyaltyReward);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<LoyaltyReward> delete(@PathVariable ("id") Integer id)     {
+        loyaltyRewardRepo.deleteByLoyaltyRewardid(id);
         return loyaltyRewardRepo.findAll();
     }
 

@@ -33,10 +33,10 @@ public class BonusCodeController extends MainController{
         return bonusCodeRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<BonusCode> delete(@RequestBody BonusCode bonusCode)    {
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<BonusCode> delete(@PathVariable("id") Integer id)    {
 
-        bonusCodeRepo.delete(bonusCode);
+        bonusCodeRepo.deleteByBonusCodeid(id);
         return bonusCodeRepo.findAll();
     }
 

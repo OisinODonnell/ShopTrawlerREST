@@ -52,10 +52,9 @@ public class ShoppingCentreController extends MainController {
 
 //        return updatedSC;
     }
-
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<ShoppingCentre> delete(@RequestBody ShoppingCentre shoppingCentre) {
-        shoppingCentreRepo.delete(shoppingCentre);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<ShoppingCentre> delete(@PathVariable("id") Integer id)    {
+        shoppingCentreRepo.deleteByShoppingCentreid(id);
         return shoppingCentreRepo.findAll();
     }
 

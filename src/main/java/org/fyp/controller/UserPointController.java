@@ -33,10 +33,10 @@ public class UserPointController extends MainController {
         return userPointRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete",method=RequestMethod.DELETE)
-    public Collection<UserPoint> delete(@RequestBody UserPoint userPoint)    {
-
-        userPointRepo.delete(userPoint);
+    @RequestMapping(value = "/delete/{userid}/{retailerid", method=RequestMethod.DELETE)
+    public Collection<UserPoint> delete(@PathVariable("userid") Integer userid,
+                                        @PathVariable("retailerid") Integer retailerid)    {
+        userPointRepo.deleteByUseridAndRetailerid(userid, retailerid);
         return userPointRepo.findAll();
     }
 

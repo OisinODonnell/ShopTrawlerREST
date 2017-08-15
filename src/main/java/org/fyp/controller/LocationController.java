@@ -35,9 +35,9 @@ public class LocationController extends MainController {
         return locationRepo.findAll();
     }
 
-    @RequestMapping(value = "/delete", method=RequestMethod.DELETE)
-    public Collection<Location> delete(@RequestBody Location location) {
-        locationRepo.delete(location);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<Location> delete(@PathVariable("id") Integer id)    {
+        locationRepo.deleteByLocationid(id);
         return locationRepo.findAll();
     }
 }

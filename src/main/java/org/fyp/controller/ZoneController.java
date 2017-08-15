@@ -23,7 +23,6 @@ public class ZoneController extends MainController {
 
     @RequestMapping(value = {"", "/", "/read"}, method = RequestMethod.GET)
     public Collection<Zone> read() throws JsonProcessingException {
-
         return zoneRepo.findAll();
     }
 
@@ -32,10 +31,9 @@ public class ZoneController extends MainController {
         zoneRepo.save(zone);
         return zoneRepo.findAll();
     }
-
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public Collection<Zone> delete(@RequestBody Zone zone) {
-        zoneRepo.delete(zone);
+    @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
+    public Collection<Zone> delete(@PathVariable ("id") Integer id)     {
+        zoneRepo.deleteByZoneid(id);
         return zoneRepo.findAll();
     }
 

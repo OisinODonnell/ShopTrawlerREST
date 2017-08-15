@@ -16,6 +16,7 @@ public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, In
     LoyaltyReward findByRetailerid(int retailerID);
     LoyaltyReward findByRetaileridAndStartDateBeforeAndEndDateAfter(int loyaltyRewardID, Timestamp nowStart, Timestamp nowEnd);
     Collection<LoyaltyReward> findAllByApproved( byte state);
+    Integer deleteByLoyaltyRewardid(int loyaltyRewardID);
 
 
 }
