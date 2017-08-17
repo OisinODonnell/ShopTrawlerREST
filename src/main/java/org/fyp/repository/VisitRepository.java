@@ -14,7 +14,7 @@ import java.util.Collection;
 public interface VisitRepository extends JpaRepository<Visit, Integer> {
     Collection<Visit> findAllByUserid(int userID);
     Collection<Visit> findAllByZoneid(int zoneID);
-    Integer countAllBetweenDateAndDate(Timestamp startDate, Timestamp endDate);
+    Collection<Visit> findByEntryTimeBetween(Timestamp start, Timestamp end);
     Integer deleteByVisitid(int visitID);
     
 }

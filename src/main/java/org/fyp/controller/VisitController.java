@@ -156,7 +156,8 @@ public class VisitController extends MainController {
             long      endTime   = startTime + period;
             Timestamp startDate = new Timestamp(startTime);
             Timestamp endDate   = new Timestamp(endTime  );
-            count               = visitRepo.countAllBetweenDateAndDate(startDate, endDate);
+            Collection<Visit> visits = visitRepo.findByEntryTimeBetween(startDate, endDate);
+            count = visits.size();
             VisitCount vc       = new VisitCount(startDate, id, name, duration, count);
             visitCounts.add(vc);
             startTime = endTime;

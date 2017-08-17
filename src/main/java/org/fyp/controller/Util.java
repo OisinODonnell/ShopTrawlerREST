@@ -16,7 +16,7 @@ import java.util.Random;
  */
 public class Util {
 
-    final String BASE_PATH      = "src/main/resources/static/";
+    private final String BASE_PATH      = "src/main/resources/static/";
     final String BEACONS        = BASE_PATH + "beacons.csv";
     final String BONUS_CODES     = BASE_PATH + "bonuscodes.csv";
     final String CONTENT        = BASE_PATH + "content.csv";

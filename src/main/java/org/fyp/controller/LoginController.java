@@ -108,13 +108,13 @@ public class LoginController extends MainController {
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
                                                                     @PathVariable("surname")      String surname,
-                                                                    @PathVariable("emailAddress") String emailAddress,
                                                                     @PathVariable("password")     String password,
                                                                     @PathVariable("userType")     String userType,
                                                                     @PathVariable("phone")        String phone,
+                                                                    @PathVariable("retailerid")   int retailerid,
                                                                     @PathVariable("gender")       String gender,
                                                                     @PathVariable("yob")          int yob,
-                                                                    @PathVariable("retailerid")   int retailerid
+                                                                    @PathVariable("emailAddress") String emailAddress
                                                                     ) throws ParseException {
         // Check email is unique
         // check password conforms to correct format
@@ -138,6 +138,8 @@ public class LoginController extends MainController {
                 user.setGender(gender);
                 user.setYob(yob);
                 user.setType(userType);
+
+                // TODO: updated retailer with new manager details (retailerid)
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);

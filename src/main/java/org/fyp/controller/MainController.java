@@ -24,34 +24,21 @@ import java.util.concurrent.Callable;
 @RequestMapping(value = {"Main"}, method= RequestMethod.GET)
 public abstract class MainController {
 
-    @Autowired
-    BeaconRepository beaconRepo;
-    @Autowired
-    BonusCodeRepository bonusCodeRepo;
-    @Autowired
-    ContentRepository contentRepo;
-    @Autowired
-    FavouriteRepository favouriteRepo;
-    @Autowired
-    LocationRepository locationRepo;
-    @Autowired
-    LoyaltyRewardRepository loyaltyRewardRepo;
-    @Autowired
-    RatingRepository ratingRepo;
-    @Autowired
-    RetailerRepository retailerRepo;
-    @Autowired
-    ShoppingCentreRepository shoppingCentreRepo;
-    @Autowired
-    UserRepository userRepo;
-	@Autowired
-    UserPointRepository userPointRepo;
-	@Autowired
-    VisitRepository visitRepo;
-    @Autowired
-    ZoneRepository zoneRepo;
-    @Autowired
-    ImageRepository imageRepo;
+    // setup references to the repositores used by all the controllers
+    @Autowired    BeaconRepository          beaconRepo;
+    @Autowired    BonusCodeRepository       bonusCodeRepo;
+    @Autowired    ContentRepository         contentRepo;
+    @Autowired    FavouriteRepository       favouriteRepo;
+    @Autowired    LocationRepository        locationRepo;
+    @Autowired    LoyaltyRewardRepository   loyaltyRewardRepo;
+    @Autowired    RatingRepository          ratingRepo;
+    @Autowired    RetailerRepository        retailerRepo;
+    @Autowired    ShoppingCentreRepository  shoppingCentreRepo;
+    @Autowired    UserRepository            userRepo;
+	@Autowired    UserPointRepository       userPointRepo;
+	@Autowired    VisitRepository           visitRepo;
+    @Autowired    ZoneRepository            zoneRepo;
+    @Autowired    ImageRepository           imageRepo;
 
     // used to convert an object into json.
     ObjectMapper mapper = new ObjectMapper();
@@ -71,6 +58,11 @@ public abstract class MainController {
     // used when setting byte values in entities
     final byte True = 1;
     final byte False = 0;
+
+
+    /*
+    Using Generics to determine what type of opbects to create
+     */
 
 
     @SuppressWarnings("unchecked")

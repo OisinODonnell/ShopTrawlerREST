@@ -57,7 +57,7 @@ public class BonusCodeController extends MainController{
 
         // only create codes if the remaining codes unused is less than 5.
 
-        int count = bonusCodeRepo.countAllBRetaileridAndUseridNull( id );
+        int count = bonusCodeRepo.countAllByRetaileridAndUseridNull( id );
 
         if (count < lowerLimit) {
             // ok create new codes

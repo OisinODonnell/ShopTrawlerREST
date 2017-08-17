@@ -14,7 +14,6 @@ public class Visit extends BaseEntity {
     private Integer duration;
     private Timestamp entryTime;
     private Timestamp exitTime;
-    private Integer userCreditedForVisit;
     private Integer userid;
     private Integer zoneid;
     @JsonBackReference
@@ -75,16 +74,6 @@ public class Visit extends BaseEntity {
     }
 
     @Basic
-    @Column(name = "user_credited_for_visit", nullable = true)
-    public Integer getUserCreditedForVisit() {
-        return userCreditedForVisit;
-    }
-
-    public void setUserCreditedForVisit(Integer userCreditedForVisit) {
-        this.userCreditedForVisit = userCreditedForVisit;
-    }
-
-    @Basic
     @Column(name = "userid", nullable = true)
     public Integer getUserid() {
         return userid;
@@ -115,8 +104,6 @@ public class Visit extends BaseEntity {
         if (duration != null ? !duration.equals(visit.duration) : visit.duration != null) return false;
         if (entryTime != null ? !entryTime.equals(visit.entryTime) : visit.entryTime != null) return false;
         if (exitTime != null ? !exitTime.equals(visit.exitTime) : visit.exitTime != null) return false;
-        if (userCreditedForVisit != null ? !userCreditedForVisit.equals(visit.userCreditedForVisit) : visit.userCreditedForVisit != null)
-            return false;
         if (userid != null ? !userid.equals(visit.userid) : visit.userid != null) return false;
         if (zoneid != null ? !zoneid.equals(visit.zoneid) : visit.zoneid != null) return false;
 
@@ -129,7 +116,6 @@ public class Visit extends BaseEntity {
         result = 31 * result + (duration != null ? duration.hashCode() : 0);
         result = 31 * result + (entryTime != null ? entryTime.hashCode() : 0);
         result = 31 * result + (exitTime != null ? exitTime.hashCode() : 0);
-        result = 31 * result + (userCreditedForVisit != null ? userCreditedForVisit.hashCode() : 0);
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
         result = 31 * result + (zoneid != null ? zoneid.hashCode() : 0);
         return result;

@@ -14,5 +14,5 @@ public interface BonusCodeRepository extends JpaRepository<BonusCode, Integer> {
     Collection<BonusCode> findAllByRetaileridAndUserid(int retailerID, int userID);
     BonusCode findByUseridAndRetailerid(int userID, int retailerID );
     Integer deleteByBonusCodeid(int bonusCodeID);
-    Integer countAllBRetaileridAndUseridNull(Integer retailerID);
+    Integer countAllByRetaileridAndUseridNull(Integer retailerID);
 }
