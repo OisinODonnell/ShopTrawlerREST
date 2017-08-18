@@ -13,7 +13,6 @@ import java.util.Collection;
 public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, Integer> {
     Collection<LoyaltyReward> findAllByRetailerid(int retailerID);
     LoyaltyReward findByLoyaltyRewardid(int loyaltyRewardID);
-    LoyaltyReward findByRetailerid(int retailerID);
     LoyaltyReward findByRetaileridAndStartDateBeforeAndEndDateAfter(int loyaltyRewardID, Timestamp nowStart, Timestamp nowEnd);
     Collection<LoyaltyReward> findAllByApproved( boolean state);
     Integer deleteByLoyaltyRewardid(int loyaltyRewardID);

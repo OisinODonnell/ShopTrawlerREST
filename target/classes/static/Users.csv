@@ -1,16 +1,15 @@
-userId,surname,firstname,emailAddress,type,phoneNumber,password,Integer yob,gender
-1,Joe,Dundrum,jd@dd.ie,Administrator,01 299 1700,111111,1980,Male
-2,Joe,Clarke,jc@dd.ie,Retailer,01 296 3097,222222,1970,Male
-3,Joe,Argos,ja@dd.ie,Retailer,01 207 9220,222222,1965,Male
-4,Jane,Specsavers,js@dd.ie,Retailer,01 215 6000,222222,1985,Female
-5,Arch,Fereday,afereday0@ftc.gov,Mobile,351-(715)140-0397,333333,2000,Female
-6,Nappy,Jeffry,njeffry1@cloudflare.com,Mobile,48-(240)519-9459,333333,1990,Male
-7,Dottie,Yushkin,dyushkin2@nyu.edu,Mobile,63-(404)343-0241,333333,1995,Male
-8,Addison,Osorio,aosorio3@google.ca,Mobile,58-(944)823-2911,333333,2001,Female
-9,Alvin,Berger,aberger4@auda.org.au,Mobile,55-(326)194-4872,333333,1985,Female
-10,Avram,Llewellin,allewellin5@merriam-webster.com,Mobile,33-(124)475-5100,333333,1960,Female
-11,Moe,Shama,mshama6@slate.com,Mobile,48-(280)142-4010,333333,1999,Female
-12,Evania,Mc Giffin,emcgiffin7@army.mil,Mobile,7-(986)976-9184,333333,1988,Male
-13,Concettina,Mapledorum,cmapledorum8@businessinsider.com,Mobile,420-(236)256-8915,333333,1991,Male
-14,Melly,Loidl,mloidl9@networksolutions.com,Mobile,46-(608)289-1216,333333,1993,Male
-
+userId,surname,firstname,emailAddress,type,phoneNumber,password,Integer yob,gender,approved
+1,Joe,Dundrum,jd@dd.ie,Administrator,01 299 1700,111111,1980,Male,TRUE
+2,Joe,Clarke,jc@dd.ie,Retailer,01 296 3097,222222,1970,Male,FALSE
+3,Joe,Argos,ja@dd.ie,Retailer,01 207 9220,222222,1965,Male,FALSE
+4,Jane,Specsavers,js@dd.ie,Retailer,01 215 6000,222222,1985,Female,TRUE
+5,Arch,Fereday,afereday0@ftc.gov,Mobile,351-(715)140-0397,333333,2000,Female,TRUE
+6,Nappy,Jeffry,njeffry1@cloudflare.com,Mobile,48-(240)519-9459,333333,1990,Male,TRUE
+7,Dottie,Yushkin,dyushkin2@nyu.edu,Mobile,63-(404)343-0241,333333,1995,Male,TRUE
+8,Addison,Osorio,aosorio3@google.ca,Mobile,58-(944)823-2911,333333,2001,Female,TRUE
+9,Alvin,Berger,aberger4@auda.org.au,Mobile,55-(326)194-4872,333333,1985,Female,TRUE
+10,Avram,Llewellin,allewellin5@merriam-webster.com,Mobile,33-(124)475-5100,333333,1960,Female,TRUE
+11,Moe,Shama,mshama6@slate.com,Mobile,48-(280)142-4010,333333,1999,Female,TRUE
+12,Evania,Mc Giffin,emcgiffin7@army.mil,Mobile,7-(986)976-9184,333333,1988,Male,TRUE
+13,Concettina,Mapledorum,cmapledorum8@businessinsider.com,Mobile,420-(236)256-8915,333333,1991,Male,TRUE
+14,Melly,Loidl,mloidl9@networksolutions.com,Mobile,46-(608)289-1216,333333,1993,Male,TRUE

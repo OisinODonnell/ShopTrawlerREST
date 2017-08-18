@@ -1,5 +1,4 @@
-retailerid,contentid,endDate,page1,page2,page3,startDate
-1,1,2017-01-01 00:00,page1,page2,page3,2018-01-01 00:00
-2,2,2017-01-01 00:00,page1,page2,page3,2018-01-01 00:00
-3,3,2017-01-01 00:00,page1,page2,page3,2018-01-01 00:00
-
+retailerid,contentid,endDate,page1,page2,page3,startDate,approved
+1,1,2017-06-17 12:43,page1,page2,page3,2017-03-19 12:43,TRUE
+2,2,2017-04-20 09:26,page1,page2,page3,2017-01-20 09:26,FALSE
+3,3,2017-10-16 08:25,page1,page2,page3,2017-07-18 08:25,FALSE

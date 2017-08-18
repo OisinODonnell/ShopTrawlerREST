@@ -91,12 +91,6 @@ public class UserController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
-    @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
-    public Collection<User> forApproval() {
-        return userRepo.findAllByApproved(false);
-    }
-
-
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
     public ResponseEntity<HashMap<String,String>> delete(@PathVariable ("id") int id) {
 
@@ -126,7 +120,6 @@ public class UserController extends MainController {
         return userRepo.findByUserid(id);
     }
 
-
     @RequestMapping(value = {"/activate/{id}"}, method=RequestMethod.GET)
     public ResponseEntity<HashMap<String,String>> activateUser(@PathVariable("id") int id)
     {
@@ -143,12 +136,16 @@ public class UserController extends MainController {
 
         return new ResponseEntity<>(respMap, httpStatus);
     }
+
+    @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
+    public Collection<User> forApproval() {
+        return userRepo.findAllByApproved(false);  }
+
     @RequestMapping(value = "/approve", method=RequestMethod.PUT)
-    public Collection<User> approve(@RequestBody User user)
-    {
+    public Collection<User> approve(@RequestBody User user) {
         userRepo.save(user);
-        return userRepo.findAll();
-    }
+        return userRepo.findAll(); }
+
     @RequestMapping(value = "/update/{id}", method={RequestMethod.PUT})
     public void update( @RequestBody User user, @PathParam( "id") Integer id  ) {
         userRepo.save(user);

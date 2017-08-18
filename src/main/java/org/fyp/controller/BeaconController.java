@@ -18,8 +18,6 @@ import java.util.Collection;
 @RequestMapping(value = {"Beacons","Beacon"})
 public class BeaconController extends MainController{
 
-
-
     @RequestMapping(value = "/loadData", method=RequestMethod.GET)
     public Collection<Beacon> loadTestData() throws Exception {
 
@@ -46,8 +44,7 @@ public class BeaconController extends MainController{
     @RequestMapping(value = "/create", method= RequestMethod.POST)
     public Collection<Beacon> create(@RequestBody Beacon beacon)   {
         beaconRepo.save(beacon);
-        return beaconRepo.findAll();
-    }
+        return beaconRepo.findAll(); }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Beacon> read() {
@@ -56,22 +53,16 @@ public class BeaconController extends MainController{
 
     @RequestMapping(value = "/{beaconId}", method = RequestMethod.GET)
     public Beacon getBeacon(  @PathVariable("beaconId") int beaconId) throws ParseException {
-        return beaconRepo.findByBeaconid( beaconId );
-
-    }
+        return beaconRepo.findByBeaconid( beaconId ); }
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
-    public Collection<Beacon> update(@RequestBody Beacon beacon)
-    {
-
+    public Collection<Beacon> update(@RequestBody Beacon beacon) {
         beaconRepo.save(beacon);
-        return beaconRepo.findAll();
-    }
+        return beaconRepo.findAll(); }
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
     public Collection<Beacon> delete(@PathVariable ("id") Integer id)    {
         beaconRepo.deleteByBeaconid(id);
-        return beaconRepo.findAll();
-    }
+        return beaconRepo.findAll(); }
 
 }

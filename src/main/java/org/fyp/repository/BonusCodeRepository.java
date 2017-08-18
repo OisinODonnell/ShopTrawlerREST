@@ -11,8 +11,8 @@ import java.util.Collection;
 public interface BonusCodeRepository extends JpaRepository<BonusCode, Integer> {
     Collection<BonusCode> findAllByUserid(int userID);
     Collection<BonusCode> findAllByRetailerid(int retailerID);
-    Collection<BonusCode> findAllByRetaileridAndUserid(int retailerID, int userID);
     BonusCode findByUseridAndRetailerid(int userID, int retailerID );
     Integer deleteByBonusCodeid(int bonusCodeID);
+    // count where the userid field is empty (bonus codes not used yet)
     Integer countAllByRetaileridAndUseridNull(Integer retailerID);
 }
