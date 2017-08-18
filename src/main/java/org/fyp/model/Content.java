@@ -10,16 +10,16 @@ import java.util.List;
 @Entity
 @Table(name = "content", schema = "shoptrawler")
 public class Content extends BaseEntity {
-    private int contentid;
+    private int       contentid;
     private Timestamp endDate;
-    private String page1;
-    private String page2;
-    private String page3;
-    private Integer retailerid;
+    private String    page1;
+    private String    page2;
+    private String    page3;
+    private Integer   retailerid;
     private Timestamp startDate;
-    private byte approved;
+    private boolean   approved;
     @JsonBackReference
-    private Retailer retailersByRetailerid;
+    private Retailer  retailersByRetailerid;
 
     public Content() {
 
@@ -35,7 +35,7 @@ public class Content extends BaseEntity {
         this.page2      = attributes.get(4);
         this.page3      = attributes.get(5);
         this.startDate  = toTimestamp(attributes.get(6));
-        this.approved           = 1;
+        this.approved   = toBoolean(attributes.get(7));
     }
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "contentid", nullable = false)
@@ -107,11 +107,11 @@ public class Content extends BaseEntity {
         this.startDate = startDate;
     }
 
-    public byte getApproved( ) {
+    public boolean getApproved( ) {
         return approved;
     }
 
-    public void setApproved( byte approved ) {
+    public void setApproved( boolean approved ) {
         this.approved = approved;
     }
 

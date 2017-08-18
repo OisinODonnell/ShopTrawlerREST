@@ -17,7 +17,7 @@ public class ContentController extends MainController {
 
     @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
     public Collection<Content> forApproval() {
-        return contentRepo.findAllByApproved(False);
+        return contentRepo.findAllByApproved(false);
     }
 
     @RequestMapping(value = "/create", method=RequestMethod.POST)

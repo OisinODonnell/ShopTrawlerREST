@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     private String                     surname;
     private String                     type;
     private Integer                    yob;
-    private byte                       approved;
+    private boolean                    approved;
     @JsonIgnore
     private Collection<BonusCode>      bonuscodesByUserid;
     @JsonIgnore
@@ -52,7 +52,7 @@ public class User extends BaseEntity {
         this.password       = attributes.get(6);
         this.yob            = toInteger( attributes.get(7));
         this.gender         = attributes.get(8);
-        this.approved = 1;
+        this.approved       = toBoolean(attributes.get(9));
     }
 
     public User(User user) {
@@ -69,7 +69,7 @@ public class User extends BaseEntity {
     }
 
     public User(int userid, String emailAddress, String firstname, String gender, String password,
-                String phone, String surname, String type, Integer yob, byte active) {
+                String phone, String surname, String type, Integer yob, boolean active) {
         this.userid = userid;
         this.emailAddress = emailAddress;
         this.firstname = firstname;
@@ -177,8 +177,8 @@ public class User extends BaseEntity {
         this.yob = yob;
     }
 
-    public byte getApproved() { return approved; }
-    public void setApproved( byte active) { this.approved = active; }
+    public boolean getApproved() { return approved; }
+    public void setApproved( boolean active) { this.approved = active; }
 
     @Override
     public boolean equals(Object o) {

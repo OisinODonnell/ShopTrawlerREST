@@ -24,7 +24,7 @@ public class LoyaltyRewardController extends MainController {
 
     @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
     public Collection<LoyaltyReward> forApproval() {
-        return loyaltyRewardRepo.findAllByApproved(False);
+        return loyaltyRewardRepo.findAllByApproved(false);
     }
 
     @RequestMapping(value = "/create", method= RequestMethod.POST)

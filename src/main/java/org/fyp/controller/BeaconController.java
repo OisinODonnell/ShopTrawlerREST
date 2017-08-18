@@ -33,12 +33,12 @@ public class BeaconController extends MainController{
         loadData(new Zone()    		 , util.ZONES            );
         loadData(new Retailer()   	 , util.RETAILERS        );
         loadData(new Content()		 , util.CONTENT          );
+        loadData(new Visit()    	 , util.VISITS           );
+        loadData(new UserPoint()     , util.USER_POINTS      );
+        loadData(new Favourite()	 , util.FAVOURITES       );
         loadData(new LoyaltyReward() , util.LOYALTY_REWARDS  );
         loadData(new BonusCode()     , util.BONUS_CODES      );
-        loadData(new Favourite()	 , util.FAVOURITES       );
         loadData(new Rating()        , util.RATINGS          );
-        loadData(new UserPoint()     , util.USER_POINTS      );
-        loadData(new Visit()    	 , util.VISITS           );
 
         return beaconRepo.findAll();
     }

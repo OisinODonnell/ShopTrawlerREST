@@ -14,6 +14,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Integer deleteByUserid(int userID);
     Integer deleteByEmailAddress(String email);
     User findByEmailAddress(String emailAddress);
-    Collection<User> findAllByApproved(byte state);
+    Collection<User> findAllByApproved(boolean state);
 
 }

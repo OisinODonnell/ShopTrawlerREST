@@ -93,7 +93,7 @@ public class UserController extends MainController {
 
     @RequestMapping(value = "/ForApproval", method=RequestMethod.GET)
     public Collection<User> forApproval() {
-        return userRepo.findAllByApproved(False);
+        return userRepo.findAllByApproved(false);
     }
 
 
@@ -132,7 +132,7 @@ public class UserController extends MainController {
     {
         User user = userRepo.findByUserid(id);
         if (user != null) {
-            user.setApproved( (byte)1);
+            user.setApproved(true);
             respMap.put("message","User:" + user.buildFullname() + " is activated");
             respMap.put("success","1");
         } else {

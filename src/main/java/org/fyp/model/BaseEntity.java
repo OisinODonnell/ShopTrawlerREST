@@ -49,7 +49,17 @@ public abstract class BaseEntity {
 
     public byte[] toByteArray(String value) {       return  value.getBytes(); }
 
-    public Byte toByte(String value) {              return value.getBytes()[0]; }
+    public boolean toBoolean(String value) {
+
+            return ( value.equals( "true" ) ) || ( value.equals( "1" ) || (value.equals("TRUE")) );
+    }
+
+
+    public Byte toByte(String value) {
+
+        int number = Integer.parseInt(value);
+        return value.getBytes()[0];
+    }
 
     public Timestamp toTimestamp(String value)  {
 
