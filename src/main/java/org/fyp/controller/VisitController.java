@@ -4,11 +4,8 @@ import org.fyp.model.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.sql.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 /**
@@ -26,13 +23,16 @@ import java.util.List;
 public class VisitController extends MainController {
 
     // time constants
-    long oneDay   = 100          * 60 * 60 * 24;
-    long oneWeek  = oneDay       *  7;
-    long weeks12  = oneWeek      * 12;
-    long days12   = oneDay       * 12;
-    long oneMonth = oneWeek * 52 / 12;
-    long year     = oneWeek      * 52;
+    final long ONE_DAY   = 100 * 60 * 60 * 24 * 10;
+    final long ONE_WEEK  = ONE_DAY  *  7;
+    final long WEEKS_12  = ONE_WEEK * 12 ;
+    final long DAYS_12   = ONE_DAY  * 12 ;
+    final long ONE_MONTH = ONE_WEEK * 52 / 12;
+    final long YEAR      = ONE_WEEK * 52 ;
 
+    final int DAY   = 1;
+    final int WEEK  = 2;
+    final int MONTH = 3;
 
     @RequestMapping(value = "/create", method=RequestMethod.POST)
     public Collection<Visit>  create(@RequestBody Visit visit) {
@@ -101,69 +101,74 @@ public class VisitController extends MainController {
 
 
 
-    public void countByRetailerByLast12Months(int id) {
+    @RequestMapping(value = "/Report/Admin/Day", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportAdminDay() {
+        return getRetailerCounts( retailerRepo.findAll(), getStartTime(DAY), ONE_DAY); }
+    @RequestMapping(value = "/Report/Admin/Week", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportAdminWeek() {
+        return getRetailerCounts( retailerRepo.findAll(), getStartTime(WEEK), ONE_WEEK); }
+    @RequestMapping(value = "/Report/Admin/Month", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportAdminMonth() {
+        return getRetailerCounts( retailerRepo.findAll(), getStartTime(MONTH), ONE_MONTH); }
 
-        Retailer retailer        = retailerRepo.findByRetailerid(id);
-        int      duration        = 3;
-        long     timeNow         = System.currentTimeMillis();
-        long     twelveMonthsAgo = timeNow - year;
-        long     startTime       = twelveMonthsAgo;
-
-        List<VisitCount> visitCounts = getCounts(id,retailer.getStoreName(), startTime, duration );
 
 
+
+    public Collection<VisitChart> getRetailerCounts(Collection<Retailer> retailers, long startTimeOfAnalysis,  long timeSpan) {
+
+        long                   endTime     = 0;
+        String                 formatOut   = "dd-MMM-yyyy";
+        Calendar               calendar    = Calendar.getInstance();
+        SimpleDateFormat       formatter   = new SimpleDateFormat(formatOut);
+        Collection<VisitChart> visitCharts = new ArrayList<>();
+        long                   startTime   = startTimeOfAnalysis;
+
+        for ( Retailer retailer: retailers ) {
+
+            VisitChart vChart     = new VisitChart();
+
+            vChart.setStoreName( retailer.getStoreName() );
+            vChart.setRetailerid( retailer.getRetailerid() );
+            endTime = startTime;
+
+            for (int period = 0 ; period < 12 ; period++) {
+                endTime += timeSpan;
+
+                int count = visitRepo.countByZoneidAndEntryTimeBetween( retailer.getRetailerid(), new Timestamp( startTime ), new Timestamp( endTime ) );
+                calendar.setTimeInMillis(startTime);
+                String startDateStr = formatter.format(calendar.getTime());
+
+                vChart.add(count, startDateStr );
+                startTime = endTime;
+
+            }
+            startTime = startTimeOfAnalysis;
+            visitCharts.add(vChart);
+        }
+        return visitCharts;
     }
-    public void countByRetailerByLast12Weeks(int id) {
 
-        // WeekOf / Retailer / visits;
-        Retailer         retailer       = retailerRepo.findByRetailerid(id);
-        int              duration       = 2;
-        long             timeNow        = System.currentTimeMillis();
-        long             TwelveWeeksAgo = timeNow - weeks12;
-        long             startTime      = TwelveWeeksAgo;
+    @RequestMapping(value = "/Report/Retailer/Day/{id}", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportRetailerDay(@PathVariable("id") int id) {
+        return getRetailerCounts( retailerRepo.findAllByRetailerid(id), getStartTime(DAY), ONE_DAY); }
+    @RequestMapping(value = "/Report/Retailer/Week/{id}", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportRetailerWeek(@PathVariable("id") int id) {
+        return getRetailerCounts( retailerRepo.findAllByRetailerid(id), getStartTime(WEEK), ONE_WEEK); }
+    @RequestMapping(value = "/Report/Retailer/Month/{id}", method=RequestMethod.GET)
+    public Collection<VisitChart> visitReportRetailerMonth(@PathVariable("id") int id) {
+        return getRetailerCounts( retailerRepo.findAllByRetailerid(id), getStartTime(MONTH), ONE_MONTH); }
 
-        List<VisitCount> visitCounts = getCounts(id,retailer.getStoreName(), startTime, duration );
-
-    }
-    public void countByRetailerByLast12Days(int id) {
-        Retailer         retailer       = retailerRepo.findByRetailerid(id);
-        int              duration       = 1;
-        long             timeNow        = System.currentTimeMillis();
-        long             TwelveDaysAgo  = timeNow - (oneDay * 12);
-        long             startTime      = TwelveDaysAgo;
-
-        List<VisitCount> visitCounts = getCounts(id,retailer.getStoreName(), startTime, duration );
-
-
-    }
-
-    private List<VisitCount> getCounts(int id, String name, long startTime, int duration) {
-
-        List<VisitCount> visitCounts = new ArrayList<>();
-        long period = 0;
-        int count = 0;
+    public Long getStartTime(int duration) {
+        long timeNow   = System.currentTimeMillis();
+        long start ;
 
         if (duration == 1)  // 1 = day, 2 = week, 3 = month
-            period = oneDay;
+            start = DAYS_12;
         else if (duration == 2)
-            period = oneWeek;
+            start = WEEKS_12;
         else
-            period = oneMonth;
+            start = YEAR;
 
-
-        for (int i = 0; i < 12; i++) {
-
-            long      endTime   = startTime + period;
-            Timestamp startDate = new Timestamp(startTime);
-            Timestamp endDate   = new Timestamp(endTime  );
-            Collection<Visit> visits = visitRepo.findByEntryTimeBetween(startDate, endDate);
-            count = visits.size();
-            VisitCount vc       = new VisitCount(startDate, id, name, duration, count);
-            visitCounts.add(vc);
-            startTime = endTime;
-        }
-        return visitCounts;
+        return timeNow - start;
     }
-
-
 }
