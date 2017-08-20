@@ -111,6 +111,13 @@ public class VisitController extends MainController {
     public Collection<VisitChart> visitReportAdminMonth() {
         return getRetailerCounts( retailerRepo.findAll(), getStartTime(MONTH), ONE_MONTH); }
 
+    public Collection<VisitChart> getRetailerCounts(Retailer retailer, long startTimeOfAnalysis,  long timeSpan) {
+
+        Collection<Retailer> retailers = new ArrayList<>(  );
+        retailers.add( retailer );
+
+        return getRetailerCounts( retailerRepo.findAll(), getStartTime(DAY), ONE_DAY);
+    }
 
 
 
