@@ -2,10 +2,14 @@ package org.fyp.controller;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import javafx.scene.chart.Chart;
 import org.fyp.model.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 
 /**
@@ -53,6 +57,44 @@ public class RatingController extends MainController {
                                   @PathVariable("retailerid")   Integer retailerid) {
         return ratingRepo.findByUseridAndRetailerid(userid, retailerid);
     }
+
+
+//    public Collection<RatingChart> getRatingCounts( Collection<Retailer> retailers, long startTimeOfAnalysis, long timeSpan) {
+//
+//        long                   endTime     = 0;
+//        String                 formatOut   = "dd-MMM-yyyy";
+//        Calendar               calendar    = Calendar.getInstance();
+//        SimpleDateFormat       formatter   = new SimpleDateFormat( formatOut);
+//        Collection<VisitChart> visitCharts = new ArrayList<>();
+//
+//        long                   startTime   = startTimeOfAnalysis;
+//
+//        for ( Retailer retailer: retailers ) {
+//
+//            VisitChart vChart     = new VisitChart();
+//
+//            vChart.setStoreName( retailer.getStoreName() );
+//            vChart.setRetailerid( retailer.getRetailerid() );
+//            endTime = startTime;
+//
+//            for (int period = 0 ; period < 12 ; period++) {
+//                endTime += timeSpan;
+//
+//                int count = ratingRepo.countByZoneidAndEntryTimeBetween( retailer.getRetailerid(), new Timestamp( startTime ), new Timestamp( endTime ) );
+//                calendar.setTimeInMillis(startTime);
+//                String startDateStr = formatter.format(calendar.getTime());
+//
+//                vChart.add(count, startDateStr );
+//                startTime = endTime;
+//
+//            }
+//            startTime = startTimeOfAnalysis;
+//            visitCharts.add(vChart);
+//        }
+//        return ratingCharts;
+//    }
+
+
     
     
 }

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_9_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_9_RELEASE.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VisitController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VisitController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+            <state relative-caret-position="1190">
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="155" selection-end-column="5" />
               <folding>
                 <element signature="docComment;class#VisitController#0" expanded="false" />
                 <element signature="e#389#404#0" expanded="false" />
@@ -57,6 +59,101 @@
                 <element signature="method#visitReportAdminMonth#0;class#VisitController#0" expanded="false" />
                 <element signature="method#getRetailerCounts#0;class#VisitController#0" expanded="false" />
                 <element signature="method#getStartTime#0;class#VisitController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RatingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="51" column="59" lean-forward="false" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+              <folding>
+                <marker date="1503230787256" expanded="true" signature="1468:1513" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoptrawlerrestApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/ShoptrawlerrestApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpringSecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/config/SpringSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Beacon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserPoint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="541">
+              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1321">
+              <caret line="224" column="46" lean-forward="true" selection-start-line="224" selection-start-column="46" selection-end-line="224" selection-end-column="46" />
+              <folding>
+                <element signature="docComment;class#LoginController#0" expanded="false" />
+                <element signature="e#499#514#0" expanded="false" />
+                <element signature="e#664#740#0" expanded="false" />
+                <element signature="e#991#1015#0" expanded="false" />
+                <element signature="e#2920#3002#0" expanded="false" />
+                <element signature="method#logout#0;class#LoginController#0" expanded="false" />
+                <element signature="e#3209#3238#0" expanded="false" />
+                <element signature="e#3433#3510#0" expanded="false" />
+                <element signature="e#4164#4346#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,7 +182,7 @@
       <file leaf-file-name="VisitCount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="340">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,7 +194,7 @@
       <file leaf-file-name="VisitChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="374">
               <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -173,7 +270,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerBlockController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Zone.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Image.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Location.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/CustomUserDetails.java" />
@@ -188,7 +284,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/LocationRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LocationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/RatingRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/ShoppingCentreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/ShoppingCentreRepository.java" />
@@ -203,9 +298,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Visit.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Content.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/BaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/UserRepository.java" />
@@ -221,6 +314,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/VisitCount.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/User.java" />
       </list>
     </option>
   </component>
@@ -238,10 +335,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="178" />
-    <option name="y" value="15" />
-    <option name="width" value="1787" />
-    <option name="height" value="1342" />
+    <option name="x" value="103" />
+    <option name="y" value="89" />
+    <option name="width" value="1299" />
+    <option name="height" value="967" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -261,6 +358,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,6 +391,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fyp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fyp" type="462c0819:PsiDirectoryNode" />
+              <item name="ShoptrawlerrestApplication" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -310,14 +434,36 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomUserDetailsService" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,9 +476,9 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="JPA.DatabaseSchemaImportDialog" value="8c6bd763-b466-4f6a-b34e-06e8107881dc" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rest-samples-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -516,7 +662,17 @@
       <workItem from="1502713783845" duration="5288000" />
       <workItem from="1502959683241" duration="9316000" />
       <workItem from="1503046923955" duration="19712000" />
-      <workItem from="1503132658569" duration="4182000" />
+      <workItem from="1503132658569" duration="4273000" />
+      <workItem from="1503193670426" duration="14000" />
+      <workItem from="1503224229393" duration="2636000" />
+      <workItem from="1503235546759" duration="536000" />
+      <workItem from="1503236296618" duration="585000" />
+      <workItem from="1503236900105" duration="58000" />
+      <workItem from="1503236974915" duration="140000" />
+      <workItem from="1503237128529" duration="372000" />
+      <workItem from="1503239397924" duration="1173000" />
+      <workItem from="1503240606966" duration="825000" />
+      <workItem from="1503243005871" duration="7823000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -672,11 +828,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503111828393</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="VisitCounts updated">
+      <created>1503193630093</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1503193630093</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271966000" />
+    <option name="totallyTimeSpent" value="286219000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,7 +851,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="178" y="15" width="1787" height="1342" extended-state="0" />
+    <frame x="103" y="89" width="1299" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -700,7 +863,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0821133" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3706234" sideWeight="0.49770904" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.057788946" sideWeight="0.49770904" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32425532" sideWeight="0.48854524" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -712,7 +875,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328877" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28126872" sideWeight="0.46041414" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18144928" sideWeight="0.5395859" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2950687" sideWeight="0.5395859" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -824,7 +987,8 @@
     <MESSAGE value="csv files added to git" />
     <MESSAGE value="BonusCode MOdel and controller updfated to cater for requests for additional codes from the retailer" />
     <MESSAGE value="Visit Reports added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visit Reports added" />
+    <MESSAGE value="VisitCounts updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="VisitCounts updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,11 +1005,17 @@
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/fyp/model/User.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="117" />
+      <option name="time" value="118" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -866,38 +1036,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LocationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ShoppingCentreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/UserPointController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
-          <folding>
-            <marker date="1502810691573" expanded="true" signature="1378:1426" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ZoneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -909,9 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-          <folding>
-            <marker date="1502810691542" expanded="true" signature="1386:1434" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,17 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="36" column="50" lean-forward="false" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-          <folding>
-            <marker date="1502810691557" expanded="true" signature="1345:1390" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,16 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/config/SpringSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="method#getPasswordEncoder#0;class#SpringSecurityConfig#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,29 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="198" column="41" lean-forward="false" selection-start-line="198" selection-start-column="41" selection-end-line="198" selection-end-column="41" />
-          <folding>
-            <element signature="docComment;class#LoginController#0" expanded="false" />
-            <element signature="e#499#514#0" expanded="false" />
-            <element signature="e#664#740#0" expanded="false" />
-            <element signature="e#991#1015#0" expanded="false" />
-            <element signature="e#2920#3002#0" expanded="false" />
-            <element signature="method#logout#0;class#LoginController#0" expanded="false" />
-            <element signature="e#3209#3238#0" expanded="false" />
-            <element signature="e#3433#3510#0" expanded="false" />
-            <element signature="e#4164#4346#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.15/tomcat-embed-core-8.5.15-sources.jar!/org/apache/catalina/core/ApplicationFilterChain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
           <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3094">
           <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,9 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1071,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="113" column="36" lean-forward="false" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,15 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="61" column="52" lean-forward="false" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,17 +1173,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ContentController#0" expanded="false" />
-            <element signature="e#310#325#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#632#633#0" expanded="false" />
-            <element signature="method#create#0;class#ContentController#0" expanded="false" />
-            <element signature="method#update#0;class#ContentController#0" expanded="false" />
-            <element signature="method#delete#0;class#ContentController#0" expanded="false" />
-            <element signature="method#findAllByRetailerId#0;class#ContentController#0" expanded="false" />
-            <marker date="1503003217378" expanded="false" signature="1414:1460" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1113,16 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#LoyaltyRewardController#0" expanded="false" />
-            <element signature="e#388#403#0" expanded="false" />
-            <element signature="e#675#676#0" expanded="false" />
-            <element signature="e#740#741#0" expanded="false" />
-            <element signature="method#read#0;class#LoyaltyRewardController#0" expanded="false" />
-            <element signature="method#findById#0;class#LoyaltyRewardController#0" expanded="false" />
-            <element signature="method#findAllByRetailerId#0;class#LoyaltyRewardController#0" expanded="false" />
-            <marker date="1503003244253" expanded="false" signature="1662:1715" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,17 +1187,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#UserController#0" expanded="false" />
-            <element signature="e#293#308#0" expanded="false" />
-            <element signature="method#create#0;class#UserController#0" expanded="false" />
-            <element signature="method#delete#0;class#UserController#0" expanded="false" />
-            <element signature="e#1148#1171#0" expanded="false" />
-            <element signature="method#delete#1;class#UserController#0" expanded="false" />
-            <element signature="method#delete#2;class#UserController#0" expanded="false" />
-            <element signature="method#getUserByEmailAddress#0;class#UserController#0" expanded="false" />
-            <element signature="method#activateUser#0;class#UserController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,7 +1194,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1208,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="11" column="63" lean-forward="false" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,7 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="76" lean-forward="false" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,7 +1222,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,7 +1229,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1196,7 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,7 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1228,7 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,7 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,9 +1278,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1503047441863" expanded="true" signature="2665:2706" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,30 +1289,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/org.fyp.controller.VisitController">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>org.fyp.controller.VisitController</OriginalElement>
-          <nodes>
-            <node x="" y="">org.fyp.controller.VisitController</node>
-            <node x="" y="">org.fyp.controller.MainController</node>
-            <node x="" y="">org.springframework.web.bind.annotation.RequestMapping</node>
-            <node x="" y="">org.springframework.web.bind.annotation.RestController</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="154.0" y="100.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
+    <entry file="uml://JAVA/org.fyp.controller.VisitController" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="374">
           <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1291,7 +1302,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="340">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1319,14 +1330,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1439">
           <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+        <state relative-caret-position="1190">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="155" selection-end-column="5" />
           <folding>
             <element signature="docComment;class#VisitController#0" expanded="false" />
             <element signature="e#389#404#0" expanded="false" />
@@ -1341,6 +1351,85 @@
             <element signature="method#getRetailerCounts#0;class#VisitController#0" expanded="false" />
             <element signature="method#getStartTime#0;class#VisitController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="51" column="59" lean-forward="false" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+          <folding>
+            <marker date="1503230787256" expanded="true" signature="1468:1513" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1321">
+          <caret line="224" column="46" lean-forward="true" selection-start-line="224" selection-start-column="46" selection-end-line="224" selection-end-column="46" />
+          <folding>
+            <element signature="docComment;class#LoginController#0" expanded="false" />
+            <element signature="e#499#514#0" expanded="false" />
+            <element signature="e#664#740#0" expanded="false" />
+            <element signature="e#991#1015#0" expanded="false" />
+            <element signature="e#2920#3002#0" expanded="false" />
+            <element signature="method#logout#0;class#LoginController#0" expanded="false" />
+            <element signature="e#3209#3238#0" expanded="false" />
+            <element signature="e#3433#3510#0" expanded="false" />
+            <element signature="e#4164#4346#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/ShoptrawlerrestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/config/SpringSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

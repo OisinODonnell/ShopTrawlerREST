@@ -221,6 +221,62 @@ public class LoginController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
+    @RequestMapping(value = "/register/Mobile/{firstname}/{surname}/{password}/{phone}/{gender}/{yob}/{emailAddress:.+}",
+                    method= RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<HashMap<String,String>> registerMobile (@PathVariable("firstname")      String firstname,
+                                                                  @PathVariable("surname")        String surname,
+                                                                  @PathVariable("password")       String password,
+                                                                  @PathVariable("phone")          String phone,
+                                                                  @PathVariable("gender")         String gender,
+                                                                  @PathVariable("yob")            int yob,
+                                                                  @PathVariable("emailAddress")   String emailAddress
+    ) throws ParseException {
+        // Check email is unique
+        // check password conforms to correct format
+        // create user
+        // save user
+        // return successful user creation status
+
+        respMap = new HashMap<>();
+        httpStatus = HttpStatus.OK;
+        User user = userRepo.findByEmailAddress(emailAddress);
+
+        if (user == null) {
+            user = new User();
+
+            if (checkPasswordFormat(password)) {
+                user.setFirstname(firstname);
+                user.setSurname(surname);
+                user.setEmailAddress(emailAddress);
+                user.setPassword(password);
+                user.setType("Mobile");
+                user.setPhone(phone);
+                user.setGender(gender);
+                user.setYob(yob);
+                // administrators and Mobile users are automatically enabled.
+                user.setApproved( true );
+
+                respMap.put("message","User created successfully");
+                respMap.put("httpStatus",""+httpStatus);
+                respMap.put("success","1");
+                userRepo.save(user);
+
+            } else {
+                respMap.put("message","Password Incorrect: >= 6 and <= 20, at least one number, upper and lowercase character");
+                respMap.put("success","0");
+                respMap.put("httpStatus",""+httpStatus);
+            }
+        } else {
+            respMap.put("message"," - This email address is already in use, please chose another email address");
+            respMap.put("success","0");
+            respMap.put("httpStatus",""+httpStatus);
+        }
+
+        return new ResponseEntity<>(respMap, httpStatus);
+    }
+
+
     private boolean checkPasswordFormat(String password) {
 
         //  ^            #   match from start
