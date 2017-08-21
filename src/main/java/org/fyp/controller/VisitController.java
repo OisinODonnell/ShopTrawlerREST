@@ -41,11 +41,7 @@ public class VisitController extends MainController {
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
-    public Collection<Visit> read()
-    {
-
-        return visitRepo.findAll();
-    }
+    public Collection<Visit> read() { return visitRepo.findAll(); }
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
     public Collection<Visit>  update(@RequestBody Visit visit) {
@@ -72,34 +68,10 @@ public class VisitController extends MainController {
     }
 
 
-    /*
-    TODO: These two need addition work, determine exactly what should be returned.
-    eg Male : qty, Femail Qty
-    < 15 : qty
-    16 - 20 : qty
-    21 - 25 : qty etc
-     */
-
-
-//    @RequestMapping(value = "/User/Age", method=RequestMethod.GET)
-//    public Collection<Visit> listByAge(@PathVariable ("id") Integer id)
-//    {
-//        return visitRepo.findAllByAge(id);
-//    }
-//
-//    @RequestMapping(value = "/User/Gender", method=RequestMethod.GET)
-//    public Collection<Visit> listByGender()
-//    {
-//        return visitRepo.findAllByGender();
-//    }
-
-
     /**
-     * 1. Admin create a count of visitors to each retailer each m onth for the past 12 months
+     * 1. Admin create a count of visitors to each retailer each month for the past 12 months
      * 2. Retailer : Create a Monthly count for past 12 months, past 12weeks, past 12 days
      */
-
-
 
     @RequestMapping(value = "/Report/Admin/Day", method=RequestMethod.GET)
     public Collection<VisitChart> visitReportAdminDay() {
@@ -110,6 +82,187 @@ public class VisitController extends MainController {
     @RequestMapping(value = "/Report/Admin/Month", method=RequestMethod.GET)
     public Collection<VisitChart> visitReportAdminMonth() {
         return getRetailerCounts( retailerRepo.findAll(), getStartTime(MONTH), ONE_MONTH); }
+
+    @RequestMapping(value = "/Report/Gender/Admin", method=RequestMethod.GET)
+    public Collection<GenderCount> getVisitsByRetailerAndGender() {
+        Collection<GenderCount> genderCounts = new ArrayList<>();
+        Collection<Retailer> retailers = retailerRepo.findAll();
+
+        for (Retailer retailer : retailers) {
+
+            GenderCount gc = getVisitsByRetailerAndGender(retailer.getRetailerid());
+            genderCounts.add(gc);
+        }
+        return genderCounts;
+    }
+    @RequestMapping(value = "/Report/Gender/Retailer/{id}", method=RequestMethod.GET)
+    public GenderCount getVisitsByRetailerAndGender(@PathVariable("id") Integer id) {
+
+        Retailer retailer = retailerRepo.findByRetailerid(id);
+        GenderCount genderCount = new GenderCount();
+        Collection<Visit> visits = visitRepo.findAllByZoneid(retailer.getRetailerid());
+        genderCount.setRetailerid(retailer.getRetailerid());
+        genderCount.setStoreName(retailer.getStoreName());
+
+        int males = 0;
+        int females = 0;
+
+        for (Visit visit : visits) {
+            User user = userRepo.findByUserid(visit.getUserid());
+            if (user.getGender().equals("Male")) {
+                males ++;
+            } else {
+                females ++;
+            }
+        }
+        genderCount.setFemaleCount( females);
+        genderCount.setMaleCount( males);
+
+        return genderCount;
+    }
+
+
+
+
+
+    @RequestMapping(value = "/Report/Age/Admin", method=RequestMethod.GET)
+    public Collection<AgeCount> getVisitsByAge() {
+
+        Collection<AgeCount> ageCounts = new ArrayList<>();
+        for (Retailer retailer : retailerRepo.findAll()) {
+            ageCounts.add( getVisitsByAgeRetailer(retailer.getRetailerid()) );
+        }
+        return ageCounts;
+    }
+
+    /**
+     *
+     * @param id
+     * @return age counts by age bracket and gender
+     */
+    @RequestMapping(value = "/Report/Age/Retailer/{id}", method=RequestMethod.GET)
+    public AgeCount getVisitsByAgeRetailer(@PathVariable("id") int id) {
+        Collection<Visit> visits = visitRepo.findAllByZoneid(id);
+        AgeCount ageCount = new AgeCount();
+        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+        String[] labels = {"0-20","21-30","31-40","41-50","51-60","61-70","71-80",">80"};
+        ageCount.setLabels(labels);
+        Retailer retailer = retailerRepo.findByRetailerid(id);
+        ageCount.setRetailerid(id);
+        List<Integer> counts = new ArrayList<>();
+        List<Integer> females = new ArrayList<>();
+        List<Integer> males = new ArrayList<>();
+        ageCount.setStoreName(retailer.getStoreName());
+
+        // initilise count collector arrarys
+        for (int i = 0; i< 8;i++) {
+            counts.add(0);
+            females.add(0);
+            males.add(0);
+        }
+
+        // init temp count holders
+        int count = 0;
+        int genderCount = 0;
+
+        for (Visit visit : visits) {
+            User user = userRepo.findByUserid(visit.getUserid());
+            int userYob = user.getYob();
+            String gender = user.getGender();
+
+            int age = thisYear - userYob;
+            if ( age > 80 ) {
+                count = counts.get(7) + 1;
+                counts.set(7,count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(7) + 1;
+                    males.set(7,genderCount);
+                } else {
+                    genderCount = females.get(7) + 1;
+                    females.set(7,genderCount);
+                }
+
+            } else if (age > 70) {
+                count = counts.get(6) + 1;
+                counts.set(6, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(6) + 1;
+                    males.set(6,genderCount);
+                } else {
+                    genderCount = females.get(6) + 1;
+                    females.set(6,genderCount);
+                }
+            } else if (age > 60) {
+                count = counts.get(5) + 1;
+                counts.set(5, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(5) + 1;
+                    males.set(5,genderCount);
+                } else {
+                    genderCount = females.get(5) + 1;
+                    females.set(5,genderCount);
+                }
+            } else if (age > 50) {
+                count = counts.get(4) + 1;
+                counts.set(4, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(4) + 1;
+                    males.set(4,genderCount);
+                } else {
+                    genderCount = females.get(4) + 1;
+                    females.set(4,genderCount);
+                }
+            } else if (age > 40) {
+                count = counts.get(3) + 1;
+                counts.set(3, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(3) + 1;
+                    males.set(3,genderCount);
+                } else {
+                    genderCount = females.get(3) + 1;
+                    females.set(3,genderCount);
+                }
+            } else if (age > 30) {
+                count = counts.get(2) + 1;
+                counts.set(2, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(2) + 1;
+                    males.set(2,genderCount);
+                } else {
+                    genderCount = females.get(2) + 1;
+                    females.set(2,genderCount);
+                }
+            } else if (age > 20) {
+                count = counts.get(1) + 1;
+                counts.set(1, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(1) + 1;
+                    males.set(1,genderCount);
+                } else {
+                    genderCount = females.get(1) + 1;
+                    females.set(1,genderCount);
+                }
+            } else { // must bve < 20
+                count = counts.get(0) + 1;
+                counts.set(0, count);
+                if (user.getGender().equals("Male")) {
+                    genderCount = males.get(0) + 1;
+                    males.set(0,genderCount);
+                } else {
+                    genderCount = females.get(0) + 1;
+                    females.set(0,genderCount);
+                }
+            }
+
+        }
+        ageCount.setCounts(counts);
+        ageCount.setFemaleCounts(females);
+        ageCount.setMaleCounts(males);
+
+        return ageCount;
+    }
+
+
 
     public Collection<VisitChart> getRetailerCounts(Retailer retailer, long startTimeOfAnalysis,  long timeSpan) {
 
@@ -178,4 +331,16 @@ public class VisitController extends MainController {
 
         return timeNow - start;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
