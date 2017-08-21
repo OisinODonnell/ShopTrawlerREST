@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerAgeCount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/AgeCount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/GenderCount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/RatingCount.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Users.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Users.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Visits.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Visits.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/Users.csv" afterPath="$PROJECT_DIR$/target/classes/static/Users.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/Visits.csv" afterPath="$PROJECT_DIR$/target/classes/static/Visits.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerAgeCount.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
@@ -353,8 +344,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-23" />
-    <option name="y" value="16" />
+    <option name="x" value="392" />
+    <option name="y" value="78" />
     <option name="width" value="1297" />
     <option name="height" value="1353" />
   </component>
@@ -678,7 +669,7 @@
       <workItem from="1503239397924" duration="1173000" />
       <workItem from="1503240606966" duration="825000" />
       <workItem from="1503243005871" duration="7823000" />
-      <workItem from="1503304737778" duration="21822000" />
+      <workItem from="1503304737778" duration="23059000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -841,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503193630093</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Additional REports added;&#10;Visit reports by Gender&#10;Visit Reports by Age profile&#10;Rating reports">
+      <created>1503330517936</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1503330517936</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308041000" />
+    <option name="totallyTimeSpent" value="309278000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +855,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-23" y="16" width="1297" height="1353" extended-state="0" />
+    <frame x="392" y="78" width="1297" height="1353" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -958,7 +956,8 @@
     <MESSAGE value="BonusCode MOdel and controller updfated to cater for requests for additional codes from the retailer" />
     <MESSAGE value="Visit Reports added" />
     <MESSAGE value="VisitCounts updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="VisitCounts updated" />
+    <MESSAGE value="Additional REports added;&#10;Visit reports by Gender&#10;Visit Reports by Age profile&#10;Rating reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additional REports added;&#10;Visit reports by Gender&#10;Visit Reports by Age profile&#10;Rating reports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1205,8 +1204,8 @@
         <state relative-caret-position="51">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="false" />
+            <element signature="e#313#314#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1254,7 +1253,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerAgeCount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#615#616#0" expanded="true" />
