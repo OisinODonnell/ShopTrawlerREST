@@ -1,25 +1,25 @@
 package org.fyp.controller;
 
-import org.fyp.model.AgeCount;
+import org.fyp.model.AgeChart;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class RetailerAgeCount {
-    int retailerid;
-    String storeName;
-    Collection<AgeCount> ageCounts;
+    int                  retailerid;
+    String               storeName;
+    Collection<AgeChart> ageCharts;
 
     public RetailerAgeCount() {
         this.retailerid = 0;
         this.storeName = "";
-        this.ageCounts = new ArrayList<>();
+        this.ageCharts = new ArrayList<>();
     }
 
-    public RetailerAgeCount(int retailerid, String storeName, Collection<AgeCount> ageCounts) {
+    public RetailerAgeCount(int retailerid, String storeName, Collection<AgeChart> ageCharts ) {
         this.retailerid = retailerid;
         this.storeName = storeName;
-        this.ageCounts = ageCounts;
+        this.ageCharts = ageCharts;
     }
 
     public int getRetailerid() {
@@ -38,11 +38,11 @@ public class RetailerAgeCount {
         this.storeName = storeName;
     }
 
-    public Collection<AgeCount> getAgeCounts() {
-        return ageCounts;
+    public Collection<AgeChart> getAgeCharts() {
+        return ageCharts;
     }
 
-    public void setAgeCounts(Collection<AgeCount> ageCounts) {
-        this.ageCounts = ageCounts;
+    public void setAgeCharts( Collection<AgeChart> ageCharts ) {
+        this.ageCharts = ageCharts;
     }
 }

@@ -1,21 +1,31 @@
 package org.fyp.model;
 
-public class RatingCount {
+public class RatingChart {
 
     private Integer retailerid;
     private String storeName;
     private Float rating;
+    private String[] xLabels;
 
-    public RatingCount() {
+    public RatingChart() {
         retailerid = 0;
         storeName = "";
         rating = null;
+        this.xLabels = new String[1];
     }
 
-    public RatingCount(Integer retailerid, String storeName, Float rating) {
+    public RatingChart( Integer retailerid, String storeName, Float rating) {
         this.retailerid = retailerid;
         this.storeName = storeName;
         this.rating = rating;
+    }
+
+    public String[] getxLabels( ) {
+        return xLabels;
+    }
+
+    public void setxLabels( String[] xLabels ) {
+        this.xLabels = xLabels;
     }
 
     public Integer getRetailerid() {

@@ -84,25 +84,25 @@ public class VisitController extends MainController {
         return getRetailerCounts( retailerRepo.findAll(), getStartTime(MONTH), ONE_MONTH); }
 
     @RequestMapping(value = "/Report/Gender/Admin", method=RequestMethod.GET)
-    public Collection<GenderCount> getVisitsByRetailerAndGender() {
-        Collection<GenderCount> genderCounts = new ArrayList<>();
-        Collection<Retailer> retailers = retailerRepo.findAll();
+    public Collection<GenderChart> getVisitsByRetailerAndGender() {
+        Collection<GenderChart> genderCharts = new ArrayList<>();
+        Collection<Retailer>    retailers    = retailerRepo.findAll();
 
         for (Retailer retailer : retailers) {
 
-            GenderCount gc = getVisitsByRetailerAndGender(retailer.getRetailerid());
-            genderCounts.add(gc);
+            GenderChart gc = getVisitsByRetailerAndGender( retailer.getRetailerid());
+            genderCharts.add( gc);
         }
-        return genderCounts;
+        return genderCharts;
     }
     @RequestMapping(value = "/Report/Gender/Retailer/{id}", method=RequestMethod.GET)
-    public GenderCount getVisitsByRetailerAndGender(@PathVariable("id") Integer id) {
+    public GenderChart getVisitsByRetailerAndGender( @PathVariable( "id") Integer id) {
 
-        Retailer retailer = retailerRepo.findByRetailerid(id);
-        GenderCount genderCount = new GenderCount();
-        Collection<Visit> visits = visitRepo.findAllByZoneid(retailer.getRetailerid());
-        genderCount.setRetailerid(retailer.getRetailerid());
-        genderCount.setStoreName(retailer.getStoreName());
+        Retailer          retailer    = retailerRepo.findByRetailerid(id);
+        GenderChart       genderChart = new GenderChart();
+        Collection<Visit> visits      = visitRepo.findAllByZoneid(retailer.getRetailerid());
+        genderChart.setRetailerid( retailer.getRetailerid());
+        genderChart.setStoreName( retailer.getStoreName());
 
         int males = 0;
         int females = 0;
@@ -115,10 +115,10 @@ public class VisitController extends MainController {
                 females ++;
             }
         }
-        genderCount.setFemaleCount( females);
-        genderCount.setMaleCount( males);
+        genderChart.setFemaleCount( females);
+        genderChart.setMaleCount( males);
 
-        return genderCount;
+        return genderChart;
     }
 
 
@@ -126,13 +126,13 @@ public class VisitController extends MainController {
 
 
     @RequestMapping(value = "/Report/Age/Admin", method=RequestMethod.GET)
-    public Collection<AgeCount> getVisitsByAge() {
+    public Collection<AgeChart> getVisitsByAge() {
 
-        Collection<AgeCount> ageCounts = new ArrayList<>();
+        Collection<AgeChart> ageCharts = new ArrayList<>();
         for (Retailer retailer : retailerRepo.findAll()) {
-            ageCounts.add( getVisitsByAgeRetailer(retailer.getRetailerid()) );
+            ageCharts.add( getVisitsByAgeRetailer( retailer.getRetailerid()) );
         }
-        return ageCounts;
+        return ageCharts;
     }
 
     /**
@@ -141,18 +141,17 @@ public class VisitController extends MainController {
      * @return age counts by age bracket and gender
      */
     @RequestMapping(value = "/Report/Age/Retailer/{id}", method=RequestMethod.GET)
-    public AgeCount getVisitsByAgeRetailer(@PathVariable("id") int id) {
-        Collection<Visit> visits = visitRepo.findAllByZoneid(id);
-        AgeCount ageCount = new AgeCount();
-        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-        String[] labels = {"0-20","21-30","31-40","41-50","51-60","61-70","71-80",">80"};
-        ageCount.setLabels(labels);
+    public AgeChart getVisitsByAgeRetailer( @PathVariable( "id") int id) {
+        Collection<Visit> visits   = visitRepo.findAllByZoneid(id);
+        AgeChart          ageChart = new AgeChart();
+        int               thisYear = Calendar.getInstance().get(Calendar.YEAR);
+
         Retailer retailer = retailerRepo.findByRetailerid(id);
-        ageCount.setRetailerid(id);
+        ageChart.setRetailerid( id);
         List<Integer> counts = new ArrayList<>();
         List<Integer> females = new ArrayList<>();
         List<Integer> males = new ArrayList<>();
-        ageCount.setStoreName(retailer.getStoreName());
+        ageChart.setStoreName( retailer.getStoreName());
 
         // initilise count collector arrarys
         for (int i = 0; i< 8;i++) {
@@ -255,11 +254,11 @@ public class VisitController extends MainController {
             }
 
         }
-        ageCount.setCounts(counts);
-        ageCount.setFemaleCounts(females);
-        ageCount.setMaleCounts(males);
+        ageChart.setCounts( counts);
+        ageChart.setFemaleCounts( females);
+        ageChart.setMaleCounts( males);
 
-        return ageCount;
+        return ageChart;
     }
 
 

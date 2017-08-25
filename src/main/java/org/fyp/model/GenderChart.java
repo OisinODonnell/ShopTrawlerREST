@@ -1,24 +1,27 @@
 package org.fyp.model;
 
-public class GenderCount {
+public class GenderChart {
 
     private int retailerid;
     private String storeName;
     private int maleCount;
     private int femaleCount;
+    private String[] xLabels;
 
-    public GenderCount() {
+    public GenderChart() {
         retailerid  = 0;
         storeName = "";
         maleCount = 0;
         femaleCount = 0;
+        xLabels = new String[2];
     }
 
-    public GenderCount(int retailerid, String storeName, int startYear, int endYear, int maleCount, int femaleCount) {
+    public GenderChart( int retailerid, String storeName, int startYear, int endYear, int maleCount, int femaleCount) {
         this.retailerid = retailerid;
         this.storeName = storeName;
         this.maleCount = maleCount;
         this.femaleCount = femaleCount;
+        this.xLabels = new String[]{"Male", "Female"};
     }
 
     public int getRetailerid() {
@@ -53,4 +56,11 @@ public class GenderCount {
         this.femaleCount = femaleCount;
     }
 
+    public String[] getxLabels( ) {
+        return xLabels;
+    }
+
+    public void setxLabels( String[] xLabels ) {
+        this.xLabels = xLabels;
+    }
 }

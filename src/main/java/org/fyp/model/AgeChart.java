@@ -3,32 +3,34 @@ package org.fyp.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgeCount {
+public class AgeChart {
 
-    private int retailerid;
-    private String storeName;
+    private int           retailerid;
+    private String        storeName;
     private List<Integer> counts;
-    private String[]  labels;
+    private String[]      xLabels;
     private List<Integer> maleCounts;
     private List<Integer> femaleCounts;
 
 
-    public AgeCount() {
+    public AgeChart() {
         this.retailerid = 0;
         this.storeName = "";
         this.counts = new ArrayList<>();
-        this.labels = new String[8];
+        this.xLabels = new String[8];
         this.maleCounts = new ArrayList<>();
         this.femaleCounts = new ArrayList<>();
+        this.xLabels = new String[]{ "0-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", ">80" };
     }
 
-    public AgeCount(int retailerid, String storeName, List<Integer> counts, String[] labels, List<Integer> maleCounts, List<Integer> femaleCounts) {
+    public AgeChart( int retailerid, String storeName, List<Integer> counts, String[] xLabels, List<Integer> maleCounts, List<Integer> femaleCounts) {
         this.retailerid = retailerid;
         this.storeName = storeName;
         this.counts = counts;
-        this.labels = labels;
+        this.xLabels = xLabels;
         this.maleCounts = maleCounts;
         this.femaleCounts = femaleCounts;
+        this.xLabels = new String[]{ "0-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", ">80" };
     }
 
     public int getRetailerid() {
@@ -55,12 +57,12 @@ public class AgeCount {
         this.counts = counts;
     }
 
-    public String[] getLabels() {
-        return labels;
+    public String[] getxLabels() {
+        return xLabels;
     }
 
-    public void setLabels(String[] labels) {
-        this.labels = labels;
+    public void setxLabels( String[] xLabels ) {
+        this.xLabels = xLabels;
     }
 
     public List<Integer> getMaleCounts() {
