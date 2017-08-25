@@ -13,7 +13,7 @@ public class GenderChart {
         storeName = "";
         maleCount = 0;
         femaleCount = 0;
-        xLabels = new String[2];
+        this.xLabels = new String[]{"Male", "Female"};
     }
 
     public GenderChart( int retailerid, String storeName, int startYear, int endYear, int maleCount, int femaleCount) {
