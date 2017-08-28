@@ -74,10 +74,13 @@ public class BonusCodeController extends MainController{
             respMap.put("success", "" + 1);
             respMap.put("message", "10 additional Bonus Codes Created");
 
-        } else { // codes could not be created
+        } else { // codes could not be created ... but return those which are still valid
+            Collection<BonusCode>  bonusCodes = bonusCodeRepo.findAllByRetailerid(id);
+            String jsonBonusCodes = mapper.writeValueAsString(bonusCodes);
+            respMap.put("data", jsonBonusCodes);
             respMap.put("httpStatus", "" + HttpStatus.OK);
             respMap.put("success", "" + 0);
-            respMap.put("message", "5 codes still available, no additional codes created");
+            respMap.put("message", count + " codes still available, no additional codes created");
         }
         return new ResponseEntity<>( respMap, httpStatus);
     }
