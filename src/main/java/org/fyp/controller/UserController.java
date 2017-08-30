@@ -16,11 +16,15 @@ import java.util.*;
 public class UserController extends MainController {
 
 
-    @RequestMapping(value = "/create", method=RequestMethod.POST)
-    public Collection<User> create(@RequestBody User user) {
-        userRepo.save(user);
-        return userRepo.findAll();
-    }
+    /**
+     * The method was commented out, as this is not the route to creating a new user.
+     * @return
+     */
+//    @RequestMapping(value = "/create", method=RequestMethod.POST)
+//    public Collection<User> create(@RequestBody User user) {
+//        userRepo.save(user);
+//        return userRepo.findAll();
+//    }
 
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)

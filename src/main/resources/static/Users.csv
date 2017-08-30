@@ -2,7 +2,7 @@ userid,surname,firstname,emailAddress,type,phone,password,yob,gender,approved
 1,Joe,Dundrum,jd@dd.ie,Administrator,01 299 1700,111111,1980,Male,TRUE
 2,Joe,Clarke,jc@dd.ie,Retailer,01 296 3097,222222,1970,Male,FALSE
 3,Joe,Argos,ja@dd.ie,Retailer,01 207 9220,222222,1965,Male,FALSE
-4,Jane,Specsavers,js@dd.ie,Retailer,01 215 6000,222222,1985,Female,TRUE
+4,Jane,Movies,js@dd.ie,Retailer,01 215 6000,2,1985,Female,TRUE
 5,Arch,Fereday,afereday0@ftc.gov,Mobile,351-(715)140-0397,333333,2000,Female,TRUE
 6,Nappy,Jeffry,njeffry1@cloudflare.com,Mobile,48-(240)519-9459,333333,1990,Male,TRUE
 7,Dottie,Yushkin,dyushkin2@nyu.edu,Mobile,63-(404)343-0241,333333,1995,Male,TRUE

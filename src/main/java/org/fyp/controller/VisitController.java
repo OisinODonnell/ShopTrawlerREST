@@ -121,10 +121,6 @@ public class VisitController extends MainController {
         return genderChart;
     }
 
-
-
-
-
     @RequestMapping(value = "/Report/Age/Admin", method=RequestMethod.GET)
     public Collection<AgeChart> getVisitsByAge() {
 
@@ -272,8 +268,19 @@ public class VisitController extends MainController {
     }
 
 
-
-    public Collection<VisitChart> getRetailerCounts(Collection<Retailer> retailers, long startTimeOfAnalysis,  long timeSpan) {
+    /**
+     * This is the main data collector for counting visits
+     * for each retailer, determine the start and end of first period,
+     * count all the data found between these two endpoints,
+     * add to array.
+     * @param retailers
+     * @param startTimeOfAnalysis
+     * @param timeSpan
+     * @return
+     */
+    public Collection<VisitChart> getRetailerCounts(Collection<Retailer> retailers,
+                                                    long startTimeOfAnalysis,
+                                                    long timeSpan) {
 
         long                   endTime     = 0;
         String                 formatOut   = "dd-MMM-yyyy";
@@ -286,9 +293,17 @@ public class VisitController extends MainController {
 
             VisitChart vChart     = new VisitChart();
 
+            // pickup the storeName from the retailerid and add to visit chart
             vChart.setStoreName( retailer.getStoreName() );
             vChart.setRetailerid( retailer.getRetailerid() );
             endTime = startTime;
+
+            /**
+             * timespan = 1Day / Week or Month
+             * count the data between two time points
+             * add the details to the chart
+             * next period.
+             */
 
             for (int period = 0 ; period < 12 ; period++) {
                 endTime += timeSpan;
@@ -299,7 +314,6 @@ public class VisitController extends MainController {
 
                 vChart.add(count, startDateStr );
                 startTime = endTime;
-
             }
             startTime = startTimeOfAnalysis;
             visitCharts.add(vChart);
@@ -317,13 +331,18 @@ public class VisitController extends MainController {
     public Collection<VisitChart> visitReportRetailerMonth(@PathVariable("id") int id) {
         return getRetailerCounts( retailerRepo.findAllByRetailerid(id), getStartTime(MONTH), ONE_MONTH); }
 
-    public Long getStartTime(int duration) {
+    /**
+     * @param period
+     * @return determine the start date of the analysis based on whether its a Day Week or Month
+     * period passed in
+     */
+    public Long getStartTime(int period) {
         long timeNow   = System.currentTimeMillis();
         long start ;
 
-        if (duration == 1)  // 1 = day, 2 = week, 3 = month
+        if (period == 1)  // 1 = day, 2 = week, 3 = month
             start = DAYS_12;
-        else if (duration == 2)
+        else if (period == 2)
             start = WEEKS_12;
         else
             start = YEAR;
