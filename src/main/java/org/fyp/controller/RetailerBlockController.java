@@ -32,11 +32,14 @@ public class RetailerBlockController extends MainController {
             LoyaltyReward loyaltyReward = loyaltyRewardRepo.findByRetaileridAndStartDateBeforeAndEndDateAfter( retailerid, currentTime, currentTime );
             UserPoint     userPoints    = userPointRepo.findByRetaileridAndUserid( userid, retailerid );
 
+            User user = userRepo.findByUserid(userid);
+
             // create new RetailerBlock
             rb.update( retailer );
             rb.update( content );
             rb.update( loyaltyReward );
             rb.update( userPoints );
+            rb.update( user );
         } else {
             rb = null;
         }
@@ -44,3 +47,4 @@ public class RetailerBlockController extends MainController {
         return rb;
     }
 }
+

@@ -1,9 +1,6 @@
 package org.fyp.model;
 
 
-import java.sql.Timestamp;
-import java.util.Collection;
-
 public class RetailerBlock {
 
     // Retailer
@@ -16,27 +13,26 @@ public class RetailerBlock {
     private String  headerBackgroundImage;
     private String  logoImage;
     private Integer managerid;
+//    private String  storeManagersName;
     private String  phone;
     private Integer shoppingCentreid;
+//    private String  shoppingCentreName;
     private String  storeName;
     private String  twitterUrl;
     private String  websiteUrl;
     private Integer zoneid;
-
-    // Content vars
-//    private Timestamp cEndDate;
-//    private Timestamp cStartDate;
+//    private Integer userid;
+    private String  usersFirstname;
+    private String  usersSurname;
 
     // LoyaltyReward vars
-//    private Timestamp lrEndDate;
     private Integer   lrPointsPerVisit;
     private String    lrImage;
     private String    lrTitle;
-//    private Timestamp lrStartDate;
     private Integer   lrVisitTime;
 
     // UserPoint vars
-    private Integer upPoints;
+    private Integer userPoints;
 
     public RetailerBlock( ) {
     }
@@ -58,16 +54,13 @@ public class RetailerBlock {
         this.contentPage3          = retailer.getDefaultContentPage3      ();
         this.loyaltyRewardImage    = retailer.getDefaultLoyaltyRewardImage();
         this.logoImage             = retailer.getLogoImageSmall();
-
     }
 
     public void update(LoyaltyReward loyaltyReward) {
         if (loyaltyReward != null) {
-//            this.lrEndDate        = loyaltyReward.getEndDate();
             this.lrPointsPerVisit = loyaltyReward.getPointsPerVisit();
             this.lrImage          = loyaltyReward.getRewardImage();
             this.lrTitle          = loyaltyReward.getRewardTitle();
-//            this.lrStartDate      = loyaltyReward.getStartDate();
             this.lrVisitTime      = loyaltyReward.getVisitTime();
         }
     }
@@ -77,18 +70,20 @@ public class RetailerBlock {
             this.contentPage1 = content.getPage1();
             this.contentPage2 = content.getPage2();
             this.contentPage3 = content.getPage3();
-//            this.cEndDate     = content.getEndDate();
-//            this.cStartDate   = content.getStartDate();
         }
     }
 
-    public void update(UserPoint up) {
-        if (up != null) {
-            this.upPoints = up.getPoints( );
+    public void update(UserPoint userPoint) {
+        if (userPoint != null) {
+            this.userPoints = userPoint.getPoints( );
         }
     }
 
 
+    public void update(User user) {
+        this.usersFirstname = user.getFirstname();
+        this.usersSurname = user.getSurname();
+    }
 
     public int getRetailerid( ) {
         return retailerid;
@@ -210,30 +205,6 @@ public class RetailerBlock {
         this.zoneid = zoneid;
     }
 
-//    public Timestamp getcEndDate( ) {
-//        return cEndDate;
-//    }
-//
-//    public void setcEndDate( Timestamp cEndDate ) {
-//        this.cEndDate = cEndDate;
-//    }
-//
-//    public Timestamp getcStartDate( ) {
-//        return cStartDate;
-//    }
-//
-//    public void setcStartDate( Timestamp cStartDate ) {
-//        this.cStartDate = cStartDate;
-//    }
-//
-//    public Timestamp getLrEndDate( ) {
-//        return lrEndDate;
-//    }
-//
-//    public void setLrEndDate( Timestamp lrEndDate ) {
-//        this.lrEndDate = lrEndDate;
-//    }
-
     public Integer getLrPointsPerVisit( ) {
         return lrPointsPerVisit;
     }
@@ -258,14 +229,6 @@ public class RetailerBlock {
         this.lrTitle = lrTitle;
     }
 
-//    public Timestamp getLrStartDate( ) {
-//        return lrStartDate;
-//    }
-//
-//    public void setLrStartDate( Timestamp lrStartDate ) {
-//        this.lrStartDate = lrStartDate;
-//    }
-
     public Integer getLrVisitTime( ) {
         return lrVisitTime;
     }
@@ -274,11 +237,27 @@ public class RetailerBlock {
         this.lrVisitTime = lrVisitTime;
     }
 
-    public Integer getUpPoints( ) {
-        return upPoints;
+    public Integer getUserPoints( ) {
+        return userPoints;
     }
 
-    public void setUpPoints( Integer upPoints ) {
-        this.upPoints = upPoints;
+    public void setUserPoints(Integer userPoints) {
+        this.userPoints = userPoints;
+    }
+
+    public String getUsersFirstname() {
+        return usersFirstname;
+    }
+
+    public void setUsersFirstname(String usersFirstname) {
+        this.usersFirstname = usersFirstname;
+    }
+
+    public String getUsersSurname() {
+        return usersSurname;
+    }
+
+    public void setUsersSurname(String usersSurname) {
+        this.usersSurname = usersSurname;
     }
 }
