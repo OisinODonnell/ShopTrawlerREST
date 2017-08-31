@@ -26,7 +26,6 @@ public class LoyaltyReward extends BaseEntity {
     public LoyaltyReward( ) {
     }
 
-
     public LoyaltyReward( List<String> attributes)  {
         this.retailerid         = toInteger(attributes.get(0));
         this.loyaltyRewardid    = toInteger(attributes.get(1));
@@ -37,7 +36,6 @@ public class LoyaltyReward extends BaseEntity {
         this.startDate          = toTimestamp(attributes.get(6));
         this.visitTime          = toInteger(attributes.get(7));
         this.approved           = toBoolean(attributes.get(8));
-
     }
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "loyalty_rewardid", nullable = false)

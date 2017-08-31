@@ -3,6 +3,16 @@ package org.fyp.model;
 
 public class RetailerBlock {
 
+    // A problem occurred during late testing which meant null values for these fields were returned
+    // if a loyalty reward scheme was not created for a given date.
+    // rather than change the retailer/loyalty reward entities and associated jpa and mysql issues,
+    // they were set here nor now
+    private final int pointsPerVisit = 10;
+    private final String rewardImage = "Reward Image";
+    private final String rewardTitle = "Reward Title";
+    private final int visitTime = 10;
+
+
     // Retailer
     private int     retailerid;
     private String  contentPage1;
@@ -56,12 +66,17 @@ public class RetailerBlock {
         this.logoImage             = retailer.getLogoImageSmall();
     }
 
-    public void update(LoyaltyReward loyaltyReward) {
+    public void update( LoyaltyReward loyaltyReward ) {
         if (loyaltyReward != null) {
             this.lrPointsPerVisit = loyaltyReward.getPointsPerVisit();
             this.lrImage          = loyaltyReward.getRewardImage();
             this.lrTitle          = loyaltyReward.getRewardTitle();
             this.lrVisitTime      = loyaltyReward.getVisitTime();
+        } else { // set hard coded defaults
+            this.lrPointsPerVisit = pointsPerVisit;
+            this.lrImage          = rewardImage;
+            this.lrTitle          = rewardTitle;
+            this.lrVisitTime      = visitTime;
         }
     }
 
@@ -76,6 +91,8 @@ public class RetailerBlock {
     public void update(UserPoint userPoint) {
         if (userPoint != null) {
             this.userPoints = userPoint.getPoints( );
+        } else { // default to zero if null
+            this.userPoints = 0;
         }
     }
 

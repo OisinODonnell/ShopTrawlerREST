@@ -22,7 +22,7 @@ public class Retailer extends BaseEntity {
     private String logoImageMedium;
     private String logoImageSmall;
     private Integer managerid;
-    private String phone;
+    private String  phone;
     private Integer shoppingCentreid;
     private String storeName;
     private String twitterUrl;

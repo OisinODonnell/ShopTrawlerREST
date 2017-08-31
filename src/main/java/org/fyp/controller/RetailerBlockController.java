@@ -6,7 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 
 @RestController
@@ -30,9 +32,9 @@ public class RetailerBlockController extends MainController {
             // only grab the extra content if retailer exists
             Content       content       = contentRepo.findByRetaileridAndStartDateBeforeAndEndDateAfter( retailerid, currentTime, currentTime );
             LoyaltyReward loyaltyReward = loyaltyRewardRepo.findByRetaileridAndStartDateBeforeAndEndDateAfter( retailerid, currentTime, currentTime );
-            UserPoint     userPoints    = userPointRepo.findByRetaileridAndUserid( userid, retailerid );
+            UserPoint     userPoints    = userPointRepo.findByRetaileridAndUserid( retailerid, userid );
+            User          user          = userRepo.findByUserid(userid);
 
-            User user = userRepo.findByUserid(userid);
 
             // create new RetailerBlock
             rb.update( retailer );
