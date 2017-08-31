@@ -4,18 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" line="74" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="RetailerBlock updated to correct naming of userPoints and add users firstname and surname.&#10;Incorrect start and end date.&#10;Default loyalty reward content returned if an in date loyalty reward cannot be found.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/c10345787.xml" />
+    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerBlockController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerBlockController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/User_Points.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/User_Points.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/Loyalty_Rewards.csv" afterPath="$PROJECT_DIR$/target/classes/static/Loyalty_Rewards.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/User_Points.csv" afterPath="$PROJECT_DIR$/target/classes/static/User_Points.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Retailers.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Retailers.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -166,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RetailerBlock.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RetailerBlock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="572">
+              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="e#7389#7390#0" expanded="true" />
                 <element signature="e#7426#7427#0" expanded="true" />
@@ -181,6 +172,16 @@
                 <element signature="e#7668#7669#0" expanded="true" />
                 <element signature="e#7716#7717#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Retailers.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/Retailers.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -361,7 +362,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/RatingRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/ShoppingCentreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/ShoppingCentreRepository.java" />
@@ -412,6 +412,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerBlockController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/Retailers.csv" />
       </list>
     </option>
   </component>
@@ -429,7 +430,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="87" />
+    <option name="x" value="394" />
+    <option name="y" value="52" />
     <option name="width" value="1847" />
     <option name="height" value="1167" />
   </component>
@@ -1096,11 +1098,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504171652612</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="RetailerBlock updated to correct naming of userPoints and add users firstname and surname.&#10;Incorrect start and end date.&#10;Default loyalty reward content returned if an in date loyalty reward cannot be found.&#10;userPoits set to 0 if null retrieve from rest.">
+      <created>1504180100825</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1504180100825</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346187000" />
+    <option name="totallyTimeSpent" value="347551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1112,7 +1121,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="87" y="0" width="1847" height="1167" extended-state="0" />
+    <frame x="394" y="52" width="1847" height="1167" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1243,7 +1252,8 @@
     <MESSAGE value="AWS started" />
     <MESSAGE value="GenerateBonusCode return values corrected." />
     <MESSAGE value="RetailerBlock updated to correct naming of userPoints and add users firstname and surname." />
-    <option name="LAST_COMMIT_MESSAGE" value="RetailerBlock updated to correct naming of userPoints and add users firstname and surname." />
+    <MESSAGE value="RetailerBlock updated to correct naming of userPoints and add users firstname and surname.&#10;Incorrect start and end date.&#10;Default loyalty reward content returned if an in date loyalty reward cannot be found.&#10;userPoits set to 0 if null retrieve from rest." />
+    <option name="LAST_COMMIT_MESSAGE" value="RetailerBlock updated to correct naming of userPoints and add users firstname and surname.&#10;Incorrect start and end date.&#10;Default loyalty reward content returned if an in date loyalty reward cannot be found.&#10;userPoits set to 0 if null retrieve from rest." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1281,13 +1291,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ContentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/RatingRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1682,8 +1685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/RetailerBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state relative-caret-position="572">
+          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding>
             <element signature="e#7389#7390#0" expanded="true" />
             <element signature="e#7426#7427#0" expanded="true" />
@@ -1694,6 +1697,14 @@
             <element signature="e#7668#7669#0" expanded="true" />
             <element signature="e#7716#7717#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Retailers.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
