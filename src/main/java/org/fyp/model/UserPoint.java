@@ -29,6 +29,16 @@ public class UserPoint extends BaseEntity {
         this.retailerid     = toInteger( attributes.get(1));
         this.points         = toInteger( attributes.get(2));
     }
+
+    public void add(int points) {
+        this.points += points;
+        if (points > 1000) {
+            // do something
+        }
+    }
+
+
+
     @Id
     @Column(name = "userid", nullable = false)
     public int getUserid() {

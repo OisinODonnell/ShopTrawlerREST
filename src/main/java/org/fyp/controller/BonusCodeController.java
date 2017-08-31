@@ -30,7 +30,19 @@ public class BonusCodeController extends MainController{
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
     public Collection<BonusCode> update(@RequestBody BonusCode bonusCode)    {
-        bonusCodeRepo.save(bonusCode);
+        /**
+         * locate bonuscode, and set the userid and date and save
+         * update user points
+         */
+        UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bonusCode.getRetailerid(), bonusCode.getUserid());
+        BonusCode bc = bonusCodeRepo.findByBonusCodeid(bonusCode.getBonusCodeid());
+        int bonus = bc.getValue();
+        bc.setUserid(bonusCode.getUserid());
+        bc.setDatetime(bonusCode.getDatetime());
+        userPoints.add(bonus);
+
+
+        bonusCodeRepo.save(bc);
         return bonusCodeRepo.findAll();
     }
 

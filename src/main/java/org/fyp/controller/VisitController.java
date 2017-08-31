@@ -34,10 +34,63 @@ public class VisitController extends MainController {
     final int WEEK  = 2;
     final int MONTH = 3;
 
+    private final int pointsPerVisit = 10;
+    private final String rewardImage = "Reward Image";
+    private final String rewardTitle = "Reward Title";
+    private final int visitTime = 10;
+
     @RequestMapping(value = "/create", method=RequestMethod.POST)
     public Collection<Visit>  create(@RequestBody Visit visit) {
         visitRepo.save(visit);
         return visitRepo.findAll();
+    }
+
+    @RequestMapping(value = "/add", method=RequestMethod.POST)
+    public Collection<Visit>  add(@RequestBody Visit visit) {
+
+        int retailerid = visit.getZoneid();
+
+        // get duration of visit
+        Timestamp enter = visit.getEntryTime();
+        Timestamp exit = visit.getExitTime();
+        long diff = exit.getTime() - enter.getTime();
+        int duration = (int) (diff / (60 * 1000));
+        visit.setDuration(duration);
+        visitRepo.save(visit);
+
+        // add visit points if appropriate
+
+        int visitTime = getVisitTime(visit);
+        int points = getPointsPerVisit(visit);
+        if (duration >= visitTime) {
+            UserPoint up = userPointRepo.findByRetaileridAndUserid(visit.getZoneid(), visit.getUserid());
+            up.add(points);
+            userPointRepo.save(up);
+        }
+
+        return visitRepo.findAll();
+    }
+
+    private int getPointsPerVisit(Visit visit) {
+        Timestamp currentTime = new Timestamp( System.currentTimeMillis( ) );
+        LoyaltyReward loyaltyReward = loyaltyRewardRepo.findByRetaileridAndStartDateBeforeAndEndDateAfter(visit.getZoneid(),currentTime, currentTime );
+
+        if (loyaltyReward != null) {
+            return loyaltyReward.getPointsPerVisit();
+        } else {
+            return 10;
+        }
+    }
+
+    private int getVisitTime(Visit visit) {
+        Timestamp currentTime = new Timestamp( System.currentTimeMillis( ) );
+        LoyaltyReward loyaltyReward = loyaltyRewardRepo.findByRetaileridAndStartDateBeforeAndEndDateAfter(visit.getZoneid(),currentTime, currentTime );
+
+        if (loyaltyReward != null) {
+            return loyaltyReward.getVisitTime();
+        } else {
+            return 10;
+        }
     }
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)

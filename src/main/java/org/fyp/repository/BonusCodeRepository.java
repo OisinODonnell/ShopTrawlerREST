@@ -15,4 +15,5 @@ public interface BonusCodeRepository extends JpaRepository<BonusCode, Integer> {
     Integer deleteByBonusCodeid(int bonusCodeID);
     // count where the userid field is empty (bonus codes not used yet)
     Integer countAllByRetaileridAndUseridNull(Integer retailerID);
+    BonusCode findByBonusCodeid(Integer bonusCodeID);
 }

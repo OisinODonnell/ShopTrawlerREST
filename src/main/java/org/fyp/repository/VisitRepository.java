@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.Collection;
 
-
 //@RepositoryRestResource(collectionResourceRel = "visit", path = "Visits")
 @Transactional
 public interface VisitRepository extends JpaRepository<Visit, Integer> {
