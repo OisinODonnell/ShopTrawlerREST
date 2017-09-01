@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Content.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Content.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Users.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Users.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/Retailers.csv" afterPath="$PROJECT_DIR$/target/classes/static/Retailers.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+              <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -94,11 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Content.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Content.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/Content.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/Users.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -269,6 +279,7 @@
       <find>gender</find>
       <find>VisitChart</find>
       <find>loyaltyRewardRepo.findByRet</find>
+      <find>fered</find>
     </findStrings>
     <replaceStrings>
       <replace>Url</replace>
@@ -372,10 +383,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
-    <option name="y" value="42" />
+    <option name="x" value="336" />
+    <option name="y" value="86" />
     <option name="width" value="1847" />
-    <option name="height" value="1167" />
+    <option name="height" value="1151" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -726,7 +737,7 @@
       <workItem from="1503910205232" duration="8342000" />
       <workItem from="1503996133661" duration="4241000" />
       <workItem from="1504084020618" duration="2813000" />
-      <workItem from="1504252641084" duration="3351000" />
+      <workItem from="1504252641084" duration="4548000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -966,11 +977,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504195234011</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Updated Loyaltyreward and content aws entries">
+      <created>1504276303337</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1504276303337</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356969000" />
+    <option name="totallyTimeSpent" value="358166000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -982,7 +1000,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="202" y="42" width="1847" height="1167" extended-state="0" />
+    <frame x="336" y="86" width="1847" height="1151" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -994,7 +1012,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0821133" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.414611" sideWeight="0.6541057" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42100194" sideWeight="0.6541057" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.48854524" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1064,7 +1082,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Could not get mySql to create a 1:1 relationship.&#10;Even though the relationship could be created in the ERD , Synchronising the ERD with the DB and then reverse engineering back into an ERD , this would still show a 1:M relationship. I found a workaround ... setting the Many attribute to unique enfgorced the 1:1 relationship required (not ideal), however, when the auto genetration of entities with jpa was performed , the relationships were OneToMant and ManyToOne respectively. The database will not allow the many side, I must make sure the code side takes care of this also, otherwise ugly java errors will result.&#10;&#10;Fixed a number of problems attempting to load sample test data into REST. Most self inflicted&#10;&#10;Data was loaded via CSV files.&#10;csv related&#10;- Incorrect number of columns&#10;- Incorrect order of columns&#10;- Too many FK entries for entries in parent table.&#10;- Dates in wrong format, format changed to ciustom format 'YYYY-MM-DD HH:MM'&#10;&#10;Rest related;&#10;- Rest would fail if FK were defined as int instead of Integer. &#10;- Yet the PK must be defined as int." />
     <MESSAGE value=" updated" />
     <MESSAGE value="Json back and managed references swapped between Users and ShoppingCentres to all ShoppingCentre object to pick up Users (= administrator) when the object to retrieved from rest." />
     <MESSAGE value="json back referenced changed to reflect how the applications will retrieve data.&#10;angular entities changed to reflect this also." />
@@ -1089,7 +1106,8 @@
     <MESSAGE value="RetailerBlock updated to correct naming of userPoints and add users firstname and surname.&#10;Incorrect start and end date.&#10;Default loyalty reward content returned if an in date loyalty reward cannot be found.&#10;userPoits set to 0 if null retrieve from rest." />
     <MESSAGE value="retailers.csv updated to include sample content which can be accessed directly from AWS." />
     <MESSAGE value="Two processes added to control the addition of points for the user.&#10;&#10;BonusCode ... code added to tie a userid to a generated bonuscode and hence add the associated points to the users userPoints&#10;Visit ... code added to reward a user for each visit if the visit is over a prespecified time.&#10; in this case the visit is added to the db.&#10; UserPoints are updated for the user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Two processes added to control the addition of points for the user.&#10;&#10;BonusCode ... code added to tie a userid to a generated bonuscode and hence add the associated points to the users userPoints&#10;Visit ... code added to reward a user for each visit if the visit is over a prespecified time.&#10; in this case the visit is added to the db.&#10; UserPoints are updated for the user." />
+    <MESSAGE value="Updated Loyaltyreward and content aws entries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Loyaltyreward and content aws entries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1299,13 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Users.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="81" lean-forward="false" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/Beacons.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1492,7 +1503,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1515,8 +1526,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/Content.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Users.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding />
         </state>
       </provider>
