@@ -1,4 +1,4 @@
 retailerid,contentid,endDate,page1,page2,page3,startDate,approved
-1,1,2017-06-17 12:43,page1,page2,page3,2017-03-19 12:43,TRUE
-2,2,2017-04-20 09:26,page1,page2,page3,2017-01-20 09:26,FALSE
-3,3,2017-10-16 08:25,page1,page2,page3,2017-07-18 08:25,FALSE
+1,1,17/06/2017 12:43,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C1-Page1-baby-driver-poster2.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C1-Page2-vue_recliner.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C1-Page3-dunkirk_promotional.jpg,19/03/2017 12:43,TRUE
+2,2,20/04/2017 09:26,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C2-Page1.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C2-Page2.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C2-Page3.jpg,20/01/2017 09:26,FALSE
+3,3,16/10/2017 08:25,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C3-Page1.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C3-Page2.jpg,https://s3-eu-west-1.amazonaws.com/shoptrawler/Content/C3-Page3.jpg,18/07/2017 08:25,FALSE
