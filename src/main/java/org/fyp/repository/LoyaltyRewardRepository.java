@@ -19,6 +19,9 @@ public interface LoyaltyRewardRepository extends JpaRepository<LoyaltyReward, In
     Collection<LoyaltyReward> findAllByApproved( boolean state);
     Integer deleteByLoyaltyRewardid(int loyaltyRewardID);
     List<LoyaltyReward> findAll();
-
-
+    Collection<LoyaltyReward> findByRetailerid(int retailerID);
+    // check date ranges
+    List<LoyaltyReward> findByRetaileridAndStartDateBetween(int retailerID, Timestamp startDate, Timestamp endDate);
+    List<LoyaltyReward> findByRetaileridAndEndDateBetween(int retailerID, Timestamp startDate, Timestamp endDate);
+    List<LoyaltyReward> findByRetaileridAndStartDateLessThanEqualAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndEndDateGreaterThanEqual(int retailerID, Timestamp startDate1, Timestamp endDate1, Timestamp startDate2, Timestamp endDate2);
 }

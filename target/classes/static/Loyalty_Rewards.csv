@@ -1,4 +1,4 @@
 loyaltyRewardid,retailerid,endDate,pointsPerVisit,rewardImage,rewardTitle,startDate,visitTime,approved
-1,1,2017-12-19 07:35,20,https://upload.wikimedia.org/wikipedia/commons/1/15/C_%26_J_Clarks_International_company_logo.png,DwellReward,2017-08-17 07:35,20,TRUE
-2,2,2017-12-04 02:14,20,https://upload.wikimedia.org/wikipedia/en/2/20/Argos_Logo.png,DwellReward,2017-06-02 02:14,20,FALSE
-3,3,2017-12-13 04:46,5,http://www.magicmum.com/wp-content/uploads/2014/03/moviesatdundrum.jpg,DwellReward,2017-08-11 04:46,80,FALSE
+1,1,2017-10-19 07:35,20,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR1-LoyaltyReward.jpg,DwellReward,2017-08-20 07:35,20,TRUE
+2,2,2017-10-20 02:14,20,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR2-LoyaltyReward.jpg,DwellReward,2017-06-20 02:14,20,FALSE
+3,3,2017-10-22 04:46,5,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR3-LoyaltyReward.jpg,DwellReward,2017-08-20 04:46,80,FALSE
