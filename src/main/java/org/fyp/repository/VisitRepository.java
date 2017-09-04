@@ -11,10 +11,10 @@ import java.util.Collection;
 //@RepositoryRestResource(collectionResourceRel = "visit", path = "Visits")
 @Transactional
 public interface VisitRepository extends JpaRepository<Visit, Integer> {
-    Collection<Visit> findAllByUserid(int userID);
-    Collection<Visit> findAllByZoneid(int zoneID);
+    Collection<Visit> findAllByUserid(Integer userID);
+    Collection<Visit> findAllByZoneid(Integer zoneID);
     Collection<Visit> findByEntryTimeBetween(Timestamp start, Timestamp end);
-    Integer countByZoneidAndEntryTimeBetween(int zoneID, Timestamp startTime, Timestamp endTime);
+    Integer countByZoneidAndEntryTimeBetween(Integer zoneID, Timestamp startTime, Timestamp endTime);
     Integer countByEntryTimeIsBetween(Timestamp startTime, Timestamp endTime);
     Collection<Visit>findAllByEntryTimeIsBetween (Timestamp startTime, Timestamp endTime);
     Integer countAllByEntryTimeIsBetween(Timestamp startTime, Timestamp endTime);

@@ -40,13 +40,14 @@ public class VisitController extends MainController {
     private final int visitTime = 10;
 
     @RequestMapping(value = "/create", method=RequestMethod.POST)
-    public Collection<Visit>  create(@RequestBody Visit visit) {
+    public Visit  create(@RequestBody Visit visit) {
+
         visitRepo.save(visit);
-        return visitRepo.findAll();
+        return visit;
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public Collection<Visit>  add(@RequestBody Visit visit) {
+    public Visit  add(@RequestBody Visit visit) {
 
         int retailerid = visit.getZoneid();
 
@@ -58,7 +59,7 @@ public class VisitController extends MainController {
         visit.setDuration(duration);
         visitRepo.save(visit);
 
-        // add visit points if appropriate
+        // add visit points based on the content of the loyalty reward policy/scheme
 
         int visitTime = getVisitTime(visit);
         int points = getPointsPerVisit(visit);
@@ -68,7 +69,7 @@ public class VisitController extends MainController {
             userPointRepo.save(up);
         }
 
-        return visitRepo.findAll();
+        return visit;
     }
 
     private int getPointsPerVisit(Visit visit) {
@@ -78,6 +79,7 @@ public class VisitController extends MainController {
         if (loyaltyReward != null) {
             return loyaltyReward.getPointsPerVisit();
         } else {
+            // same defaults used in RetailerBlock
             return 10;
         }
     }
@@ -89,6 +91,7 @@ public class VisitController extends MainController {
         if (loyaltyReward != null) {
             return loyaltyReward.getVisitTime();
         } else {
+            // same defaults used in RetailerBlock
             return 10;
         }
     }

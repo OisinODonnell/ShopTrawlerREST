@@ -29,6 +29,8 @@ public class Retailer extends BaseEntity {
     private String websiteUrl;
     private Integer zoneid;
 
+
+
 //    @JsonManagedReference
     @JsonIgnore
     private Collection<BonusCode> bonuscodesByRetailerid;
