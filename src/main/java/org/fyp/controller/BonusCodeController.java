@@ -29,27 +29,62 @@ public class BonusCodeController extends MainController{
     }
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
-    public Collection<BonusCode> update(@RequestBody BonusCode bonusCode)    {
+    public ResponseEntity<HashMap<String,String>> update(@RequestBody BonusCode bonusCode) throws JsonProcessingException {
         /**
          * locate bonuscode, and set the userid and date and save
          * update user points
          */
         UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bonusCode.getRetailerid(), bonusCode.getUserid());
         BonusCode bc = bonusCodeRepo.findByBonusCodeid(bonusCode.getBonusCodeid());
+        int userid = bc.getUserid();
+        User user = userRepo.findByUserid(userid);
+
+        String fullname = user.getFirstname() + " " + user.getSurname();
+
         if (bc == null) { // bonus code does not exist
+            respMap.put( "message", "This BonusCode [ " +  bc.getBonusCodeid()+" ] does not exist in Database" );
+            respMap.put( "success", "1" );
+            respMap.put( "httpStatus", "" + httpStatus );
 
         } else if (bc.getUserid() != null) { // code already used
+            respMap.put( "message", "This BonusCode [ " + bc.getBonusCodeid() +  " ] has already been claimed by User : [ "+ fullname + " ] on [ " + bonusCode.getDatetime() + " ]" );
 
+            respMap.put( "message", "Code is already used by " );
+            respMap.put( "success", "1" );
+            respMap.put( "httpStatus", "" + httpStatus );
 
-        } else { // code styate valid
+        } else { // code state valid
+            // get value from bonuscode
+            // update bc with userid
+            // update bc with date/time code was used
+            // update users points and bonuscode details.
+
             int bonus = bc.getValue();
             bc.setUserid(bonusCode.getUserid());
             bc.setDatetime(bonusCode.getDatetime());
             userPoints.add(bonus);
             bonusCodeRepo.save(bc);
+            userPointRepo.save(userPoints);
+
+            // return updated  userPoints for this user
+            // return bonuscode with user and date applied to the code
+            // convert objects to bonuscode and userpoints objects to json and add to respmap
+
+            String jsonBonusCode = mapper.writeValueAsString(bc);
+            String jsonUserPoint = mapper.writeValueAsString(userPoints);
+
+            respMap.put("BonusCode",jsonBonusCode);
+            respMap.put("UserPoint",jsonUserPoint);
+
+            respMap.put( "message", "Content record already exists covering all or part of this period" );
+            respMap.put( "success", "0" );
+            respMap.put( "httpStatus", "" + httpStatus );
+
         }
 
-        return bonusCodeRepo.findAll();
+        bonusCodeRepo.findAll();
+
+        return new ResponseEntity<>(respMap, httpStatus);
     }
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
