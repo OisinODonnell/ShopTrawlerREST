@@ -50,7 +50,8 @@ public class BonusCodeController extends MainController{
             respMap.put( "httpStatus", "" + httpStatus );
 
         } else if (bc.getUserid() != null) { // code already used
-            respMap.put( "message", "This BonusCode [ " + bc.getBonusCodeid() +  " ] has already been claimed by User : [ "+ fullname + " ] on [ " + bonusCode.getDatetime() + " ]" );
+            String message = "This BonusCode [ " + bc.getBonusCodeid() +  " ] has already been claimed by User : [ " +   fullname + " ] on [ " + bonusCode.getDatetime() + " ]";
+            respMap.put( "message",  message);
 
             respMap.put( "message", "Code is already used by " );
             respMap.put( "success", "1" );
@@ -79,7 +80,7 @@ public class BonusCodeController extends MainController{
             respMap.put("BonusCode",jsonBonusCode);
             respMap.put("UserPoint",jsonUserPoint);
 
-            respMap.put( "message", "Content record already exists covering all or part of this period" );
+            respMap.put( "message", "Bonus Code accepted and UserPoints updated" );
             respMap.put( "success", "0" );
             respMap.put( "httpStatus", "" + httpStatus );
         }
