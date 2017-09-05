@@ -39,7 +39,7 @@ public class BonusCodeController extends MainController{
 
 
         UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bc.getRetailerid(), bonusCode.getUserid());
-        int userid = bc.getUserid();
+        int userid = bonusCode.getUserid();
         User user = userRepo.findByUserid(userid);
 
         String fullname = user.getFirstname() + " " + user.getSurname();

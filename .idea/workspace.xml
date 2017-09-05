@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BonusCodeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
-              <caret line="41" column="36" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+              <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -1061,11 +1061,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504636356165</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Bonuscode Null pointwer fixed">
+      <created>1504636673832</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1504636673832</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395944000" />
+    <option name="totallyTimeSpent" value="396480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,7 +1189,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ComplexController updated" />
     <MESSAGE value="All entities updated to include &#10;a) retrieval by id.&#10;b) returning updated collection back to caller, to refresh their screen, after , create/updatre and/or delete." />
     <MESSAGE value="Updates for Adding Records.&#10;&#10;Updated LoginController, changed the fielkd names to the user entity.&#10;&#10;@GeneratedValue(strategy=GenerationType.AUTO)  added to all entities, except M:M relations." />
     <MESSAGE value="Updates for Adding Records.&#10;&#10;Updated LoginController, changed the fielkd names to the user entity.&#10;&#10;@GeneratedValue(strategy=GenerationType.AUTO)  added to all entities, except M:M relations.&#10;&#10;Updated /Login/Register to include additional attributes." />
@@ -1207,7 +1213,8 @@
     <MESSAGE value="Date validation added for LoyaltyReward and Content" />
     <MESSAGE value="BonusCode addition logic added" />
     <MESSAGE value="JsonIgnore added to bonuscode entity." />
-    <option name="LAST_COMMIT_MESSAGE" value="JsonIgnore added to bonuscode entity." />
+    <MESSAGE value="Bonuscode Null pointwer fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bonuscode Null pointwer fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1612,7 +1619,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BonusCodeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
-          <caret line="41" column="36" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
           <folding />
         </state>
       </provider>
