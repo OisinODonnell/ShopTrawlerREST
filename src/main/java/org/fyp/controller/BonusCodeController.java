@@ -79,7 +79,6 @@ public class BonusCodeController extends MainController{
             respMap.put( "message", "Content record already exists covering all or part of this period" );
             respMap.put( "success", "0" );
             respMap.put( "httpStatus", "" + httpStatus );
-
         }
 
         bonusCodeRepo.findAll();
