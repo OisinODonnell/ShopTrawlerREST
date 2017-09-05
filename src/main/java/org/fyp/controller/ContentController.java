@@ -47,8 +47,10 @@ public class ContentController extends MainController {
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
     public Collection<Content> update(@RequestBody Content content) {
+
+        int retailerid = content.getRetailerid();
         contentRepo.save(content);
-        return contentRepo.findAll();
+        return contentRepo.findByRetailerid(retailerid);
     }
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)

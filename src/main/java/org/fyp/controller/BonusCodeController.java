@@ -36,13 +36,19 @@ public class BonusCodeController extends MainController{
          */
         UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bonusCode.getRetailerid(), bonusCode.getUserid());
         BonusCode bc = bonusCodeRepo.findByBonusCodeid(bonusCode.getBonusCodeid());
-        int bonus = bc.getValue();
-        bc.setUserid(bonusCode.getUserid());
-        bc.setDatetime(bonusCode.getDatetime());
-        userPoints.add(bonus);
+        if (bc == null) { // bonus code does not exist
+
+        } else if (bc.getUserid() != null) { // code already used
 
 
-        bonusCodeRepo.save(bc);
+        } else { // code styate valid
+            int bonus = bc.getValue();
+            bc.setUserid(bonusCode.getUserid());
+            bc.setDatetime(bonusCode.getDatetime());
+            userPoints.add(bonus);
+            bonusCodeRepo.save(bc);
+        }
+
         return bonusCodeRepo.findAll();
     }
 
