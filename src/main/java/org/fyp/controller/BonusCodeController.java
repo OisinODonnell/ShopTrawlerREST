@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -16,6 +17,8 @@ import java.util.HashMap;
 @RestController
 @RequestMapping(value = {"BonusCode","BonusCodes"}, method=RequestMethod.GET)
 public class BonusCodeController extends MainController{
+
+    int       lowerLimit =   20;
 
     @RequestMapping(value = "/create", method= RequestMethod.POST)
     public Collection<BonusCode> create(@RequestBody BonusCode bonusCode)    {
@@ -113,39 +116,62 @@ public class BonusCodeController extends MainController{
     public Collection<BonusCode> listByRetailer(@PathVariable ("id") Integer id) {
         return bonusCodeRepo.findAllByRetailerid(id);
     }
-    @RequestMapping(value = "/Generate/{id}", method=RequestMethod.GET)
-    public ResponseEntity<HashMap<String,String>> generateCodes(@PathVariable ("id") Integer id) throws JsonProcessingException {
-        int       value      = 250;
-        int       lowerLimit =   10;
-        BonusCode bc         = new BonusCode();
 
-        // only create codes if the remaining codes unused is less than 5.
 
-        int count = bonusCodeRepo.countAllByRetaileridAndUseridNull( id );
+    @RequestMapping(value = "/Generate/{value}/{id}", method=RequestMethod.PUT)
+    public ResponseEntity<HashMap<String,String>> generateCodes250( @PathVariable ("value") Integer value,
+                                                                    @PathVariable ("id") Integer id) throws JsonProcessingException {
 
-        if (count < lowerLimit) {
-            // ok create new codes
-            for ( int i = 0; i < 10; i++ ) {
-                // create new code
-                bc = new BonusCode( value, id );
-                // and persist to db.
-                bonusCodeRepo.save( bc );
+        Collection<BonusCode>  bonusCodes = new ArrayList<>();
+
+        if (value == 250 || value == 500) {
+
+            int count = bonusCodeRepo.countAllByRetaileridAndUseridNullAndValue( id, value );
+
+            if ( count < lowerLimit ) {
+                bonusCodes = generateCodes( value, id );
+                String jsonBonusCodes = mapper.writeValueAsString( bonusCodes );
+                respMap.put( "data", jsonBonusCodes );
+                respMap.put( "success", "" + 1 );
+                respMap.put( "message", "10 additional [ " + value + " ] Point Bonus Codes Created" );
+
+            } else { // codes could not be created ... but return those which are still valid
+                bonusCodes = bonusCodeRepo.findAllByRetailerid( id );
+                String jsonBonusCodes = mapper.writeValueAsString( bonusCodes );
+                respMap.put( "data", jsonBonusCodes );
+                respMap.put( "success", "" + 0 );
+                respMap.put( "message", "[ " + count + " ] codes still available, no additional codes created" );
             }
-            Collection<BonusCode>  bonusCodes = bonusCodeRepo.findAllByRetailerid(id);
-            String jsonBonusCodes = mapper.writeValueAsString(bonusCodes);
-            respMap.put("data", jsonBonusCodes);
-            respMap.put("httpStatus", "" + HttpStatus.OK);
-            respMap.put("success", "" + 1);
-            respMap.put("message", "10 additional Bonus Codes Created");
-
-        } else { // codes could not be created ... but return those which are still valid
-            Collection<BonusCode>  bonusCodes = bonusCodeRepo.findAllByRetailerid(id);
-            String jsonBonusCodes = mapper.writeValueAsString(bonusCodes);
-            respMap.put("data", jsonBonusCodes);
-            respMap.put("httpStatus", "" + HttpStatus.OK);
-            respMap.put("success", "" + 0);
-            respMap.put("message", count + " codes still available, no additional codes created");
+        } else {
+            bonusCodes = bonusCodeRepo.findAllByRetailerid( id );
+            String jsonBonusCodes = mapper.writeValueAsString( bonusCodes );
+            respMap.put( "data", jsonBonusCodes );
+            respMap.put( "success", "" + 0 );
+            respMap.put( "message", "Incorrect Value of Bonus Code passed ... must be 250 or 500" );
         }
+        respMap.put("httpStatus", "" + HttpStatus.OK);
+
         return new ResponseEntity<>( respMap, httpStatus);
     }
+
+
+    public Collection<BonusCode> generateCodes(int value, int id) {
+
+        BonusCode bc = new BonusCode();
+
+        for ( int i = 0; i < 10; i++ ) {
+            // create new code
+            bc = new BonusCode( value, id );
+            // and persist to db.
+            bonusCodeRepo.save( bc );
+        }
+
+        return bonusCodeRepo.findAllByRetailerid( id );
+    }
+
+
+
+
+
+
 }
