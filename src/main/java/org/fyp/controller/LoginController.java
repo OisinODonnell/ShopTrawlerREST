@@ -139,7 +139,7 @@ public class LoginController extends MainController {
                 user.setYob(yob);
                 user.setType(userType);
 
-                // TODO: updated retailer with new manager details (retailerid)
+                // TODO: update retailer with new manager details (retailerid)
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);

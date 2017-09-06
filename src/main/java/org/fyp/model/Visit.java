@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -13,7 +14,9 @@ import java.util.List;
 public class Visit extends BaseEntity {
     private int visitid;
     private Integer duration;
+//    @JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm")
     private Timestamp entryTime;
+//    @JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm")
     private Timestamp exitTime;
     private Integer userid;
     private Integer zoneid;

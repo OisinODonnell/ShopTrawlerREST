@@ -37,32 +37,40 @@ public class BonusCodeController extends MainController{
 
         BonusCode bc = bonusCodeRepo.findByBonusCodeid(bonusCode.getBonusCodeid());
 
-
-        UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bc.getRetailerid(), bonusCode.getUserid());
         int userid = bonusCode.getUserid();
         User user = userRepo.findByUserid(userid);
 
-        String fullname = user.getFirstname() + " " + user.getSurname();
+
 
         if (bc == null) { // bonus code does not exist
-            respMap.put( "message", "This BonusCode [ " +  bc.getBonusCodeid()+" ] does not exist in Database" );
+
+            respMap.put( "message", "Invalid Bonus Code" );
             respMap.put( "success", "1" );
             respMap.put( "httpStatus", "" + httpStatus );
 
         } else if (bc.getUserid() != null) { // code already used
-            String message = "This BonusCode [ " + bc.getBonusCodeid() +  " ] has already been claimed by User : [ " +   fullname + " ] on [ " + bonusCode.getDatetime() + " ]";
-            respMap.put( "message",  message);
 
-            respMap.put( "message", "Code is already used by " );
-            respMap.put( "success", "1" );
-            respMap.put( "httpStatus", "" + httpStatus );
+            String fullname = user.getFirstname() + " " + user.getSurname();
+            String message = "Bonus Code already used";
+            respMap.put("message", message);
+            respMap.put("success", "1");
+            respMap.put("httpStatus", "" + httpStatus);
+
+        } else if (bc.getRetailerid() != bonusCode.getRetailerid()) { // retailer ids dont match
+
+            String message = "Invalid Bonus Code";
+            respMap.put("message", message);
+            respMap.put("success", "1");
+            respMap.put("httpStatus", "" + httpStatus);
 
         } else { // code state valid
+
             // get value from bonuscode
             // update bc with userid
             // update bc with date/time code was used
             // update users points and bonuscode details.
 
+            UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bc.getRetailerid(), bonusCode.getUserid());
             int bonus = bc.getValue();
             bc.setUserid(bonusCode.getUserid());
             bc.setDatetime(bonusCode.getDatetime());
