@@ -27,6 +27,7 @@ public class Util {
     final String RETAILERS    	= BASE_PATH + "retailers.csv";
     final String SHOPPING_CENTRE = BASE_PATH + "shoppingCentre.csv";
     final String USERS      	= BASE_PATH + "users.csv";
+    final String USERS2      	= BASE_PATH + "users2.csv";
     final String USER_POINTS    = BASE_PATH + "user_points.csv";
     final String VISITS      	= BASE_PATH + "visits.csv";
     final String ZONES      	= BASE_PATH + "zones.csv";

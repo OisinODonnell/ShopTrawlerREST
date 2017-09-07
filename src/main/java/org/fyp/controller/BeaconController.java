@@ -41,6 +41,29 @@ public class BeaconController extends MainController{
         return beaconRepo.findAll();
     }
 
+    @RequestMapping(value = "/loadData2", method=RequestMethod.GET)
+    public Collection<Beacon> loadTestData2() throws Exception {
+
+        // The order of import is important to ensure data integrity
+        // load some sample data to facilitate some testing
+
+        loadData(new User()    		 , util.USERS2        );
+        loadData(new ShoppingCentre(), util.SHOPPING_CENTRE  );
+        loadData(new Location()   	 , util.LOCATIONS        );
+        loadData(new Beacon()     	 , util.BEACONS          );
+        loadData(new Zone()    		 , util.ZONES            );
+//        loadData(new Retailer()      , util.RETAILERS      );
+//        loadData(new Content()	   , util.CONTENT        );
+//        loadData(new Visit()    	   , util.VISITS         );
+//        loadData(new UserPoint()     , util.USER_POINTS    );
+//        loadData(new Favourite()	   , util.FAVOURITES     );
+//        loadData(new LoyaltyReward() , util.LOYALTY_REWARDS);
+//        loadData(new BonusCode()     , util.BONUS_CODES    );
+//        loadData(new Rating()        , util.RATINGS        );
+
+        return beaconRepo.findAll();
+    }
+
     @RequestMapping(value = "/create", method= RequestMethod.POST)
     public Collection<Beacon> create(@RequestBody Beacon beacon)   {
         beaconRepo.save(beacon);
