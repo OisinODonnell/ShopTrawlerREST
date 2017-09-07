@@ -18,16 +18,17 @@ public class Util {
 
     private final String BASE_PATH      = "src/main/resources/static/";
     final String BEACONS        = BASE_PATH + "beacons.csv";
-    final String BONUS_CODES     = BASE_PATH + "bonuscodes.csv";
+    final String BONUS_CODES    = BASE_PATH + "bonuscodes.csv";
     final String CONTENT        = BASE_PATH + "content.csv";
     final String FAVOURITES     = BASE_PATH + "favourites.csv";
     final String LOCATIONS      = BASE_PATH + "locations.csv";
     final String LOYALTY_REWARDS= BASE_PATH + "loyalty_rewards.csv";
     final String RATINGS      	= BASE_PATH + "ratings.csv";
     final String RETAILERS    	= BASE_PATH + "retailers.csv";
-    final String SHOPPING_CENTRE = BASE_PATH + "shoppingCentre.csv";
+    final String RETAILERS2    	= BASE_PATH + "retailers2.csv"; // one retailer default info
+    final String SHOPPING_CENTRE= BASE_PATH + "shoppingCentre.csv";
     final String USERS      	= BASE_PATH + "users.csv";
-    final String USERS2      	= BASE_PATH + "users2.csv";
+    final String USERS2      	= BASE_PATH + "users2.csv"; // one admin user
     final String USER_POINTS    = BASE_PATH + "user_points.csv";
     final String VISITS      	= BASE_PATH + "visits.csv";
     final String ZONES      	= BASE_PATH + "zones.csv";

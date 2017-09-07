@@ -154,6 +154,23 @@ public class UserController extends MainController {
         userRepo.save(user);
     }
 
+    @RequestMapping(value = "/NotManagers", method=RequestMethod.GET)
+    public Collection<User> notManagers() {
 
+        // find from the list of users if any are yet to be assigned a s store managers
+
+        List<User> users       = userRepo.findAllByType( "Retailer" );
+        List<User> notManagers = new ArrayList<>( );
+
+        for ( User user : users ) {
+            Retailer retailer = retailerRepo.findByManagerid( user.getUserid( ) );
+            if ( retailer == null )
+                notManagers.add( user );
+
+        }
+
+
+        return notManagers;
+    }
 
 }

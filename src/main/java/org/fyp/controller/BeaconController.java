@@ -47,12 +47,12 @@ public class BeaconController extends MainController{
         // The order of import is important to ensure data integrity
         // load some sample data to facilitate some testing
 
-        loadData(new User()    		 , util.USERS2        );
+        loadData(new User()    		 , util.USERS2           );
         loadData(new ShoppingCentre(), util.SHOPPING_CENTRE  );
         loadData(new Location()   	 , util.LOCATIONS        );
         loadData(new Beacon()     	 , util.BEACONS          );
         loadData(new Zone()    		 , util.ZONES            );
-//        loadData(new Retailer()      , util.RETAILERS      );
+//        loadData(new Retailer()      , util.RETAILERS2      );
 //        loadData(new Content()	   , util.CONTENT        );
 //        loadData(new Visit()    	   , util.VISITS         );
 //        loadData(new UserPoint()     , util.USER_POINTS    );

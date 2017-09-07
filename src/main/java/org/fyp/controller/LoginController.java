@@ -103,7 +103,7 @@ public class LoginController extends MainController {
 
         return new ResponseEntity<>(message, httpStatus);
     }
-    @RequestMapping(value = "/register/Retailer/{firstname}/{surname}/{password}/{userType}/{phone}/{retailerid}/{gender}/{yob}/{emailAddress:.+}",
+    @RequestMapping(value = "/register/Retailer/{firstname}/{surname}/{password}/{userType}/{phone}/{gender}/{yob}/{emailAddress:.+}",
             method= RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<HashMap<String,String>> registerRetailer (@PathVariable("firstname")    String firstname,
@@ -111,7 +111,7 @@ public class LoginController extends MainController {
                                                                     @PathVariable("password")     String password,
                                                                     @PathVariable("userType")     String userType,
                                                                     @PathVariable("phone")        String phone,
-                                                                    @PathVariable("retailerid")   int retailerid,
+//                                                                    @PathVariable("retailerid")   int retailerid,
                                                                     @PathVariable("gender")       String gender,
                                                                     @PathVariable("yob")          int yob,
                                                                     @PathVariable("emailAddress") String emailAddress

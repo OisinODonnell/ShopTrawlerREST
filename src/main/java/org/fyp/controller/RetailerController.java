@@ -19,7 +19,6 @@ public class RetailerController extends MainController {
     @RequestMapping(value = "/create", method=RequestMethod.POST)
     public Collection<Retailer> create(@RequestBody Retailer retailer)
     {
-
         retailerRepo.save(retailer);
         return retailerRepo.findAll();
     }

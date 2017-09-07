@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 
 //@RepositoryRestResource(collectionResourceRel = "user", path = "Users")
 @Transactional
@@ -15,5 +16,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Integer deleteByEmailAddress(String email);
     User findByEmailAddress(String emailAddress);
     Collection<User> findAllByApproved(boolean state);
-
+    List<User> findAllByType(String type);
 }
