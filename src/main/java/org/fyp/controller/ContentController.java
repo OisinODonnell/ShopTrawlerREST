@@ -100,7 +100,7 @@ public class ContentController extends MainController {
         List<Content> ends   = contentRepo.findByRetaileridAndEndDateBetween( retailerid, startDate, endDate);
         List<Content> mixed  = contentRepo.findByRetaileridAndStartDateLessThanEqualAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndEndDateGreaterThanEqual(retailerid, startDate, endDate, startDate, endDate);
 
-        Timestamp newStart = null;
+        Timestamp newStart = startDate;
         if (starts.size() > 0 ) {
             newStart = starts.get(0).getEndDate();
         }

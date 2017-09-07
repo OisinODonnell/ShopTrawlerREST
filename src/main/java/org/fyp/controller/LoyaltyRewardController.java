@@ -119,7 +119,7 @@ public class LoyaltyRewardController extends MainController {
         List<LoyaltyReward> ends   = loyaltyRewardRepo.findByRetaileridAndEndDateBetween(retailerid, startDate, endDate);
         List<LoyaltyReward> mixed  =  loyaltyRewardRepo.findByRetaileridAndStartDateLessThanEqualAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndEndDateGreaterThanEqual(retailerid, startDate, endDate, startDate, endDate);
 
-        Timestamp newStart = null;
+        Timestamp newStart = startDate;
         if (starts.size() > 0 ) {
             newStart = starts.get(0).getEndDate();
         }
