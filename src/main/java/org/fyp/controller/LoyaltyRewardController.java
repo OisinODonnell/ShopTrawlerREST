@@ -111,7 +111,7 @@ public class LoyaltyRewardController extends MainController {
     @RequestMapping(value = "/CheckDates", method=RequestMethod.PUT)
     public ResponseEntity checkDates(@RequestBody LoyaltyReward loyaltyReward) {
 
-        Timestamp startDate = loyaltyReward.getStartDate();
+         Timestamp startDate = loyaltyReward.getStartDate();
         Timestamp endDate  = loyaltyReward.getEndDate();
         int retailerid =  loyaltyReward.getRetailerid();
 
