@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/UserPointController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/UserPointController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -238,21 +237,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeaconController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BeaconController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
-              <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+              <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserPointController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserPointController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/UserPointController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1334">
-              <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+            <state relative-caret-position="1059">
+              <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -440,9 +439,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="187" />
-    <option name="y" value="76" />
-    <option name="width" value="1934" />
+    <option name="x" value="53" />
+    <option name="y" value="88" />
+    <option name="width" value="2473" />
     <option name="height" value="1151" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -1195,11 +1194,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504827076128</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="UserPoint updated to accept reset from client/retailer&#10;new endpoint added">
+      <created>1504869132615</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1504869132615</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420434000" />
+    <option name="totallyTimeSpent" value="423658000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1319,7 +1325,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Not sure if I changed anything" />
     <MESSAGE value="Updated Retailer change backreferences to ignore" />
     <MESSAGE value="Updated delete in each model to use delete/{id}" />
     <MESSAGE value="csv files added to git" />
@@ -1344,7 +1349,8 @@
     <MESSAGE value="Beacon data updated with UUID and TxPower" />
     <MESSAGE value="minimal Database setup for testing" />
     <MESSAGE value="User Updated &#10;endpoint added to retrive retaile users not yet managers" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Updated &#10;endpoint added to retrive retaile users not yet managers" />
+    <MESSAGE value="UserPoint updated to accept reset from client/retailer&#10;new endpoint added" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserPoint updated to accept reset from client/retailer&#10;new endpoint added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1771,14 +1777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/BonusCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-492">
@@ -1797,8 +1795,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/UserPointController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+        <state relative-caret-position="1059">
+          <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
           <folding />
         </state>
       </provider>

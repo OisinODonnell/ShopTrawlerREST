@@ -57,6 +57,14 @@ public class UserPointController extends MainController {
         UserPoint up = userPointRepo.findByRetaileridAndUserid(userPoint.getRetailerid(), userPoint.getUserid());
         respMap = new HashMap<>();
 
+
+        /**
+         * This endpoint is activated on the mobile client but triggered by the retailer on the client phone
+         * The retailer provides a reward to the user, and thus resets their points accordingly
+         * The userPoints are reduced by 1000.;
+         */
+
+
         if (up != null) {
             if (up.getPoints() >= 1000) {
 
