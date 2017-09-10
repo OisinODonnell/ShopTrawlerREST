@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/ContentController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/ContentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/Content.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/Content.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,142 +44,141 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VisitController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#VisitController#0" expanded="false" />
-                <element signature="e#389#404#0" expanded="false" />
-                <element signature="method#create#0;class#VisitController#0" expanded="false" />
-                <element signature="method#read#0;class#VisitController#0" expanded="false" />
-                <element signature="method#update#0;class#VisitController#0" expanded="false" />
-                <element signature="method#delete#0;class#VisitController#0" expanded="false" />
-                <element signature="docComment;method#visitReportAdminDay#0;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportAdminDay#0;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportAdminWeek#0;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportAdminMonth#0;class#VisitController#0" expanded="false" />
-                <element signature="method#getVisitsByRetailerAndGender#0;class#VisitController#0" expanded="false" />
-                <element signature="method#getVisitsByRetailerAndGender#1;class#VisitController#0" expanded="false" />
-                <element signature="method#getVisitsByAge#0;class#VisitController#0" expanded="false" />
-                <element signature="docComment;method#getVisitsByAgeRetailer#0;class#VisitController#0" expanded="false" />
-                <element signature="method#getVisitsByAgeRetailer#0;class#VisitController#0" expanded="false" />
-                <element signature="method#getRetailerCounts#0;class#VisitController#0" expanded="false" />
-                <element signature="docComment;method#getRetailerCounts#1;class#VisitController#0" expanded="false" />
-                <element signature="method#getRetailerCounts#1;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportRetailerDay#0;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportRetailerWeek#0;class#VisitController#0" expanded="false" />
-                <element signature="method#visitReportRetailerMonth#0;class#VisitController#0" expanded="false" />
-                <element signature="docComment;method#getStartTime#0;class#VisitController#0" expanded="false" />
-                <element signature="method#getStartTime#0;class#VisitController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ContentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="74" column="5" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#ContentController#0" expanded="false" />
-                <element signature="e#321#336#0" expanded="false" />
-                <element signature="docComment;method#forApproval#0;class#ContentController#0" expanded="false" />
-                <element signature="method#delete#0;class#ContentController#0" expanded="false" />
-                <element signature="method#findAllByRetailerId#0;class#ContentController#0" expanded="false" />
-                <element signature="method#approve#0;class#ContentController#0" expanded="false" />
-                <element signature="method#checkDates#0;class#ContentController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoyaltyRewardController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-              <folding>
-                <element signature="method#checkDates#0;class#LoyaltyRewardController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoyaltyReward.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoyaltyRewardRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RetailerController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RetailerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="-171">
+              <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
               <folding>
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1721#1722#0" expanded="true" />
+                <element signature="e#2257#2258#0" expanded="true" />
+                <element signature="e#2313#2314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java">
+      <file leaf-file-name="ShoppingCentre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/ShoppingCentre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="61" lean-forward="false" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+            <state relative-caret-position="255">
+              <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Content.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Content.java">
+      <file leaf-file-name="Retailer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
-              <caret line="137" column="58" lean-forward="false" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+            <state relative-caret-position="271">
+              <caret line="269" column="31" lean-forward="true" selection-start-line="269" selection-start-column="31" selection-end-line="269" selection-end-column="31" />
               <folding>
-                <element signature="method#saveFile#0;class#MainController#0" expanded="false" />
-                <element signature="method#addDate#0;class#MainController#0" expanded="false" />
+                <marker date="1505062865623" expanded="false" signature="4168:4179" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4197:4203" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="4250:4261" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4290:4296" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="4426:4437" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4464:4470" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="4538:4549" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4596:4602" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="4732:4743" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4770:4776" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="4844:4855" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="4902:4908" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5038:5049" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5076:5082" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5150:5161" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5208:5214" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5357:5368" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5401:5407" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5676:5687" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5706:5712" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5764:5775" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5806:5812" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="5946:5957" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="5986:5992" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6252:6263" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6285:6291" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6349:6360" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6397:6403" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6525:6536" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6559:6565" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6625:6636" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6675:6681" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6801:6812" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6834:6840" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="6898:6909" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="6946:6952" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7047:7058" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7075:7081" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7130:7141" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7168:7174" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7274:7285" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7298:7304" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7344:7355" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7374:7380" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7490:7501" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7525:7531" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7594:7605" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7646:7652" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7761:7772" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7789:7795" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7843:7854" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="7881:7887" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="7998:8009" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="8027:8033" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="8123:8129" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="8240:8251" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="8269:8275" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="8365:8371" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="8460:8471" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="8485:8491" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="8534:8545" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="8566:8572" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="12755:12766" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="12796:12802" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="13070:13081" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="13109:13115" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="13377:13388" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="13418:13424" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="13704:13715" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="13749:13755" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="14041:14052" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="14079:14085" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="14390:14401" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="14425:14431" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="14491:14502" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="14543:14549" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="14755:14766" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="14806:14812" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="15158:15169" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="15190:15196" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="15250:15261" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="15296:15302" ph=" }" />
+                <marker date="1505062865623" expanded="false" signature="15415:15426" ph=" { " />
+                <marker date="1505062865623" expanded="false" signature="15456:15462" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/UserController.java">
+      <file leaf-file-name="ImageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2601">
-              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="method#getImage#0;class#ImageController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoptrawlerrestApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/ShoptrawlerrestApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -201,7 +195,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setEmail(</find>
       <find>getEmail(</find>
       <find>name</find>
       <find>userdetailsservice</find>
@@ -231,6 +224,7 @@
       <find>formatter</find>
       <find>content</find>
       <find>simple</find>
+      <find>;</find>
     </findStrings>
     <replaceStrings>
       <replace>Url</replace>
@@ -254,6 +248,7 @@
       <replace>content</replace>
       <replace>-59</replace>
       <replace>loyaltyReward</replace>
+      <replace>= ;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\c10345787\Desktop\IdeaProjects\ShopTrawlerREST\src</dir>
@@ -271,7 +266,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/FavouriteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/BaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java" />
@@ -300,7 +294,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/Content.csv" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/VisitRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Visit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/BonusCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/BonusCodeController.java" />
@@ -321,6 +314,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
       </list>
     </option>
@@ -339,8 +334,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="210" />
-    <option name="y" value="85" />
+    <option name="x" value="56" />
+    <option name="y" value="122" />
     <option name="width" value="1932" />
     <option name="height" value="1165" />
   </component>
@@ -396,7 +391,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="fyp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fyp" type="462c0819:PsiDirectoryNode" />
+              <item name="ShoptrawlerrestApplication" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
@@ -405,14 +409,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
@@ -659,7 +655,7 @@
       <workItem from="1504806198164" duration="14551000" />
       <workItem from="1504960250991" duration="13375000" />
       <workItem from="1504986977664" duration="137000" />
-      <workItem from="1505031634406" duration="2541000" />
+      <workItem from="1505031634406" duration="10797000" />
     </task>
     <task id="LOCAL-00001" summary="BaseEntity.toTimestamp() updated to include a try / catch block hence eliminating the need for a 'throws ParseException' everywhere it is used.">
       <created>1500722057027</created>
@@ -997,11 +993,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504869132615</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints">
+      <created>1505053447063</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1505053447063</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="440928000" />
+    <option name="totallyTimeSpent" value="449184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1013,7 +1016,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="210" y="85" width="1932" height="1165" extended-state="0" />
+    <frame x="56" y="122" width="1932" height="1165" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27309236" sideWeight="0.3628205" order="5" side_tool="true" content_ui="tabs" />
@@ -1024,7 +1028,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0821133" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35915494" sideWeight="0.6371795" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35915494" sideWeight="0.6371795" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.48854524" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1094,7 +1098,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Retailer change backreferences to ignore" />
     <MESSAGE value="Updated delete in each model to use delete/{id}" />
     <MESSAGE value="csv files added to git" />
     <MESSAGE value="BonusCode MOdel and controller updfated to cater for requests for additional codes from the retailer" />
@@ -1119,7 +1122,8 @@
     <MESSAGE value="minimal Database setup for testing" />
     <MESSAGE value="User Updated &#10;endpoint added to retrive retaile users not yet managers" />
     <MESSAGE value="UserPoint updated to accept reset from client/retailer&#10;new endpoint added" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserPoint updated to accept reset from client/retailer&#10;new endpoint added" />
+    <MESSAGE value="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1136,11 +1140,23 @@
           <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="153" />
+      <option name="time" value="159" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1157,126 +1173,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitUserRetailer.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Ratings.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RatingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="90" column="42" lean-forward="false" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/RatingChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/AgeChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="107" lean-forward="false" selection-start-line="32" selection-start-column="107" selection-end-line="32" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/GenderChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/User_Points.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/BonusCodeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerAgeCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerBlockController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/UserPointRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/VisitRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Content.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/BaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1312,7 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/Retailers.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1345,13 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5049">
-          <caret line="383" column="83" lean-forward="false" selection-start-line="383" selection-start-column="83" selection-end-line="383" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -1457,7 +1345,7 @@
         <state relative-caret-position="1071">
           <caret line="74" column="5" lean-forward="false" selection-start-line="40" selection-start-column="3" selection-end-line="74" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#ContentController#0" expanded="false" />
             <element signature="e#321#336#0" expanded="false" />
             <element signature="docComment;method#forApproval#0;class#ContentController#0" expanded="false" />
@@ -1495,7 +1383,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
+        <state relative-caret-position="0">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#VisitController#0" expanded="false" />
@@ -1543,13 +1431,260 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="method#getImage#0;class#ImageController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/ShoptrawlerrestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="737" column="0" lean-forward="false" selection-start-line="737" selection-start-column="0" selection-end-line="737" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/FrameworkServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="847" column="0" lean-forward="false" selection-start-line="847" selection-start-column="0" selection-end-line="847" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.15/tomcat-embed-websocket-8.5.15-sources.jar!/org/apache/tomcat/websocket/server/WsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.15/tomcat-embed-core-8.5.15-sources.jar!/org/apache/catalina/core/ApplicationFilterChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/access/ExceptionTranslationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/session/SessionManagementFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/savedrequest/RequestCacheAwareFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/FilterChainProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="128" column="17" lean-forward="false" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="903" column="0" lean-forward="false" selection-start-line="903" selection-start-column="0" selection-end-line="903" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        <state relative-caret-position="-171">
+          <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
           <folding>
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#2257#2258#0" expanded="true" />
+            <element signature="e#2313#2314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/ShoppingCentre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="269" column="31" lean-forward="true" selection-start-line="269" selection-start-column="31" selection-end-line="269" selection-end-column="31" />
+          <folding>
+            <marker date="1505062865623" expanded="false" signature="4168:4179" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4197:4203" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="4250:4261" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4290:4296" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="4426:4437" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4464:4470" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="4538:4549" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4596:4602" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="4732:4743" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4770:4776" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="4844:4855" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="4902:4908" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5038:5049" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5076:5082" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5150:5161" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5208:5214" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5357:5368" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5401:5407" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5676:5687" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5706:5712" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5764:5775" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5806:5812" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="5946:5957" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="5986:5992" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6252:6263" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6285:6291" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6349:6360" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6397:6403" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6525:6536" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6559:6565" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6625:6636" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6675:6681" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6801:6812" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6834:6840" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="6898:6909" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="6946:6952" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7047:7058" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7075:7081" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7130:7141" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7168:7174" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7274:7285" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7298:7304" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7344:7355" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7374:7380" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7490:7501" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7525:7531" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7594:7605" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7646:7652" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7761:7772" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7789:7795" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7843:7854" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="7881:7887" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="7998:8009" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="8027:8033" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="8123:8129" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="8240:8251" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="8269:8275" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="8365:8371" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="8460:8471" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="8485:8491" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="8534:8545" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="8566:8572" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="12755:12766" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="12796:12802" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="13070:13081" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="13109:13115" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="13377:13388" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="13418:13424" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="13704:13715" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="13749:13755" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="14041:14052" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="14079:14085" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="14390:14401" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="14425:14431" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="14491:14502" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="14543:14549" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="14755:14766" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="14806:14812" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="15158:15169" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="15190:15196" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="15250:15261" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="15296:15302" ph=" }" />
+            <marker date="1505062865623" expanded="false" signature="15415:15426" ph=" { " />
+            <marker date="1505062865623" expanded="false" signature="15456:15462" ph=" }" />
           </folding>
         </state>
       </provider>

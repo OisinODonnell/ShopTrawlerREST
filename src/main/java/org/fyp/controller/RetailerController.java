@@ -22,7 +22,14 @@ public class RetailerController extends MainController {
         retailerRepo.save(retailer);
         return retailerRepo.findAll();
     }
+    @RequestMapping(value = "/create/default", method=RequestMethod.POST)
+    public Collection<Retailer> createDefault()
+    {
+        Retailer retailer = new Retailer();
 
+        retailerRepo.save(retailer);
+        return retailerRepo.findAll();
+    }
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Retailer> read()
     {
@@ -31,12 +38,20 @@ public class RetailerController extends MainController {
 
     @RequestMapping(value = "/update", method=RequestMethod.PUT)
     public Collection<Retailer> update(@RequestBody Retailer retailer) {
+        // for this app zoneid == retailerid
+        int id = retailer.getRetailerid();
+        if (retailer.getZoneid() == null)
+            retailer.setZoneid( id );
         retailerRepo.save(retailer);
         return retailerRepo.findAll();
     }
     @RequestMapping(value = "/Retailer/update", method=RequestMethod.PUT)
     public Retailer updateRetailer(@RequestBody Retailer retailer) {
-        retailerRepo.save(retailer);
+        // for this app zoneid == retailerid
+        int id = retailer.getRetailerid();
+        if (retailer.getZoneid() == null)
+            retailer.setZoneid( id );
+        retailerRepo.save( retailer );
         return retailerRepo.findByRetailerid(retailer.getRetailerid());
     }
 

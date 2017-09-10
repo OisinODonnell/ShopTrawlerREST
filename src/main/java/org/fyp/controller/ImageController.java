@@ -24,7 +24,6 @@ public class ImageController extends MainController{
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Image> read() {   return imageRepo.findAll();   }
 
-
     @RequestMapping(value = "/update", method=RequestMethod.GET)
     public void update(Image image)
     {
@@ -37,6 +36,5 @@ public class ImageController extends MainController{
     @RequestMapping(value = "/{imageId}", method = RequestMethod.GET)
     public Image getImage(  @PathVariable("imageId") int imageId) throws ParseException {
         return imageRepo.findByImageid( imageId );   }
-
 
 }

@@ -64,6 +64,22 @@ public class Retailer extends BaseEntity {
 
 
     public Retailer() {
+       defaultContentPage1      = "Default Content Page 1";
+       defaultContentPage2      = "Default Content Page 2";
+       defaultContentPage3      = "Default Content Page 3";
+       defaultLoyaltyRewardImage= "Default Loyalty Reward Image";
+       facebookUrl              = "Facebook Url";
+       headerBackgroundImage    = "Header Background Image";
+       logoImageLarge           = "Logo Image Large";
+       logoImageMedium          = "Logo Image Medium";
+       logoImageSmall           = "Logo Image Small";
+       managerid                = null;
+       phone                    = "1234567";
+       shoppingCentreid         = 1;
+       storeName                = "Store Name";
+       twitterUrl               = "Twitter Url";
+       websiteUrl               = "Website Url";
+       zoneid                   = null;
     }
 
     public Retailer(List<String> attributes) {
