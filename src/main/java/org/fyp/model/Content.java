@@ -11,18 +11,24 @@ import java.util.List;
 @Table(name = "content", schema = "shoptrawler")
 public class Content extends BaseEntity {
     private int       contentid;
+    private Timestamp startDate;
     private Timestamp endDate;
     private String    page1;
     private String    page2;
     private String    page3;
     private Integer   retailerid;
-    private Timestamp startDate;
     private boolean   approved;
     @JsonBackReference
     private Retailer  retailersByRetailerid;
 
     public Content() {
-
+        startDate = new Timestamp( System.currentTimeMillis( ) );
+        endDate = new Timestamp( System.currentTimeMillis( ) );
+        page1 = "Page 1";
+        page2 = "Page 2";
+        page3 = "Page 3";
+        retailerid = null;
+        approved   = false;
     }
 
 

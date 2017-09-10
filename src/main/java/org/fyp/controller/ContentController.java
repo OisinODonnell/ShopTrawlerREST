@@ -1,16 +1,15 @@
 package org.fyp.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.fyp.model.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.websocket.server.PathParam;
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+
+
 
 /**
  * Created by oisin on 18/07/2017.
@@ -39,6 +38,42 @@ public class ContentController extends MainController {
         contentRepo.save(content);
         return contentRepo.findByRetailerid(retailerid);
     }
+    @RequestMapping(value = "/create/default/{id}", method=RequestMethod.GET)
+    public Collection<Content> create(@PathVariable ("id") int id) {
+
+        // init dates
+        Timestamp startDate = new Timestamp( System.currentTimeMillis( ) );
+        Timestamp endDate   = new Timestamp( System.currentTimeMillis( ) );
+        Timestamp today = startDate;
+
+        // retrieve list of contents for this retailer sorted by start date
+        List<Content> contents = contentRepo.findAllByRetaileridAndEndDateAfterOrderByStartDate(id, today);
+
+        if (contents.size() == 0) { // no record exists
+            startDate = today;
+
+        } else if (contents.size() == 1) { // only one record exists // start date is set one day after the enddate
+            if (compareDates(startDate, contents.get(0).getStartDate()) >= 0 )
+                startDate = addDate(contents.get(0).getEndDate(),1,"day");
+
+        } else { //multiple records found
+            for(Content content: contents) {
+                if (compareDates(startDate, content.getStartDate()) < 0)
+                    break;
+                startDate = addDate(content.getEndDate(),1,"day");
+            }
+        }
+
+        Content content = new Content(); // sets some default values
+        content.setStartDate( startDate); // add next date which is valid
+        content.setEndDate( addDate(startDate, 1,"day"));
+        content.setRetailerid( id );
+
+        contentRepo.save(content);
+
+        return contentRepo.findAllByRetailerid( id );
+    }
+
 
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Content> read() {

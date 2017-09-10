@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -124,6 +126,36 @@ public abstract class MainController {
 
         return func.call();
     }
+    public Integer compareDates(Timestamp date1, Timestamp date2) {
+
+        String           formatOut = "dd-MMM-yyyy";
+        Calendar         dateA     = Calendar.getInstance();
+        Calendar         dateB     = Calendar.getInstance();
+        SimpleDateFormat df        = new SimpleDateFormat( formatOut);
+
+        int comparison = 0;
+
+        // reset time to enable day comparisons to succeed
+        dateA.setTimeInMillis(date1.getTime());
+        dateA.set(Calendar.HOUR_OF_DAY, 0);
+        dateA.set(Calendar.MINUTE, 0);
+        dateA.set(Calendar.SECOND, 0);
+        dateA.set(Calendar.MILLISECOND, 0);
+        dateB.setTimeInMillis(date2.getTime());
+        dateB.set(Calendar.HOUR_OF_DAY, 0);
+        dateB.set(Calendar.MINUTE, 0);
+        dateB.set(Calendar.SECOND, 0);
+        dateB.set(Calendar.MILLISECOND, 0);
+
+        // not quite right yet, but will do for now.
+        // will not respond well when dates are within same day, at least not what I wat.
+
+        if (dateA.compareTo( dateB )  == 0 ) comparison =  0;
+        if (dateA.compareTo( dateB )  <  0 ) comparison =  -1;
+        if (dateA.compareTo( dateB )  >  0 ) comparison =  1;
+
+        return comparison;
+    }
 
     public Timestamp getTimeStamp() {
         java.util.Date date = new java.util.Date();
@@ -157,7 +189,35 @@ public abstract class MainController {
         return id;
     }
 
+    public Timestamp addDate(Timestamp start , int quantity, String type) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(start);
 
+        switch(type) {
+            case "minute" :
+                cal.add(Calendar.MINUTE, 1);
+                break;
+            case "hour" :
+                cal.add(Calendar.HOUR_OF_DAY, 1);
+                break;
+            case "day":
+                cal.add(Calendar.DATE, 1);
+                break;
+            case "week" :
+                cal.add(Calendar.DATE, 7);
+                break;
+            case "month":
+                cal.add(Calendar.MONTH, 1);
+                break;
+            case "year":
+                cal.add(Calendar.YEAR, 1);
+                break;
+
+        }
+
+        return new Timestamp(cal.getTimeInMillis());
+
+    }
 
 
 }

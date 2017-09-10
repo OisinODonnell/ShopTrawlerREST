@@ -135,11 +135,6 @@ public class LoyaltyRewardController extends MainController {
         calendar.add(Calendar.HOUR, 24);
         Timestamp newDateNextDay = new Timestamp(calendar.getTimeInMillis());
 
-
-
-
-
-
         int total = starts.size() + ends.size() + mixed.size();
 
         if ( total == 0) {
@@ -157,6 +152,41 @@ public class LoyaltyRewardController extends MainController {
         return new ResponseEntity<>(respMap, httpStatus);
     }
 
+    @RequestMapping(value = "/create/default/{id}", method=RequestMethod.GET)
+    public Collection<LoyaltyReward> create(@PathVariable ("id") int id) {
+
+        // init dates
+        Timestamp startDate = new Timestamp( System.currentTimeMillis( ) );
+        Timestamp endDate   = new Timestamp( System.currentTimeMillis( ) );
+        Timestamp today = startDate;
+
+        // retrieve list of loyaltyRewards for this retailer sorted by start date
+        List<LoyaltyReward> loyaltyRewards = loyaltyRewardRepo.findAllByRetaileridAndEndDateAfterOrderByStartDate(id, today);
+
+        if (loyaltyRewards.size() == 0) { // no record exists
+            startDate = today;
+
+        } else if (loyaltyRewards.size() == 1) { // only one record exists // start date is set one day after the enddate
+            if (compareDates(startDate, loyaltyRewards.get(0).getStartDate()) >= 0 )
+                startDate = addDate(loyaltyRewards.get(0).getEndDate(),1,"day");
+
+        } else { //multiple records found
+            for(LoyaltyReward loyaltyReward: loyaltyRewards) {
+                if (compareDates(startDate, loyaltyReward.getStartDate()) < 0)
+                    break;
+                startDate = addDate(loyaltyReward.getEndDate(),1,"day");
+            }
+        }
+
+        LoyaltyReward loyaltyReward = new LoyaltyReward(); // sets some default values
+        loyaltyReward.setStartDate( startDate); // add next date which is valid
+        loyaltyReward.setEndDate( addDate(startDate, 1,"day"));
+        loyaltyReward.setRetailerid( id );
+
+        loyaltyRewardRepo.save(loyaltyReward);
+
+        return loyaltyRewardRepo.findAllByRetailerid( id );
+    }
 
 
 

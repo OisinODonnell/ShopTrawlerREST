@@ -24,6 +24,12 @@ public class LoyaltyReward extends BaseEntity {
     private Retailer  retailersByRetailerid;
 
     public LoyaltyReward( ) {
+        pointsPerVisit = 10;
+        rewardTitle = "Reward Title";
+        rewardImage = "Reward Image";
+        visitTime = 10;
+        approved = false;
+
     }
 
     public LoyaltyReward( List<String> attributes)  {

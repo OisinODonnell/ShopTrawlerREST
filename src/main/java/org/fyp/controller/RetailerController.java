@@ -34,6 +34,11 @@ public class RetailerController extends MainController {
         retailerRepo.save(retailer);
         return retailerRepo.findAll();
     }
+    @RequestMapping(value = "/Retailer/update", method=RequestMethod.PUT)
+    public Retailer updateRetailer(@RequestBody Retailer retailer) {
+        retailerRepo.save(retailer);
+        return retailerRepo.findByRetailerid(retailer.getRetailerid());
+    }
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
     public Collection<Retailer> delete(@PathVariable ("id") Integer id)     {
@@ -42,7 +47,7 @@ public class RetailerController extends MainController {
     }
 
     @RequestMapping(value = {"/{id}"}, method=RequestMethod.GET)
-    public Retailer getUserBy(@PathVariable("id") int id)
+    public Retailer getRetailerBy(@PathVariable("id") int id)
     {
         return retailerRepo.findByRetailerid(id);
     }
