@@ -25,19 +25,20 @@ public class UserPoint extends BaseEntity {
     public UserPoint() {
     }
 
+    public UserPoint(int userid, Integer retailerid, Integer points) {
+        this.userid = userid;
+        this.retailerid = retailerid;
+        this.points = points;
+    }
 
-
-    public UserPoint( List<String> attributes) {
+    public UserPoint(List<String> attributes) {
         this.userid         = toInteger( attributes.get(0));
         this.retailerid     = toInteger( attributes.get(1));
         this.points         = toInteger( attributes.get(2));
     }
 
-    public void add(int points) {
+    public void add(Integer points) {
         this.points += points;
-        if (points > 1000) {
-            // TODO COMPLETE THIS SECTION
-        }
 
     }
 

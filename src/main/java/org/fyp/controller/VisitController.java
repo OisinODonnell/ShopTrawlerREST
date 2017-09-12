@@ -62,7 +62,7 @@ public class VisitController extends MainController {
         // add visit points based on the content of the loyalty reward policy/scheme
 
         int visitTime = getVisitTime(visit);
-        int points = getPointsPerVisit(visit);
+        Integer points = getPointsPerVisit(visit);
         if (duration >= visitTime) {
             UserPoint up = userPointRepo.findByRetaileridAndUserid(visit.getZoneid(), visit.getUserid());
             up.add(points);

@@ -4,7 +4,9 @@ package org.fyp.controller;
  * TODO: Add code to verify email address is correct format
  */
 
+import org.fyp.model.Retailer;
 import org.fyp.model.User;
+import org.fyp.model.UserPoint;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by oisin on 30/03/2017.
@@ -139,13 +142,11 @@ public class LoginController extends MainController {
                 user.setYob(yob);
                 user.setType(userType);
 
-                // TODO: update retailer with new manager details (retailerid)
+                userRepo.save(user);
 
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
                 respMap.put("success","1");
-
-                userRepo.save(user);
 
             } else {
                 respMap.put("message","Password Incorrect: >= 6 and <= 20, at least one number, upper and lowercase character");
@@ -257,10 +258,20 @@ public class LoginController extends MainController {
                 // administrators and Mobile users are automatically enabled.
                 user.setApproved( true );
 
+                userRepo.save(user);
+
+                // add empty user-point records for the new user against each retailer.
+
+                List<Retailer> retailers = retailerRepo.findAll();
+                for(Retailer retailer : retailers) {
+                    UserPoint newUserPoint = new UserPoint(user.getUserid(), retailer.getRetailerid(), 0);
+                    userPointRepo.save(newUserPoint);
+                }
+
                 respMap.put("message","User created successfully");
                 respMap.put("httpStatus",""+httpStatus);
                 respMap.put("success","1");
-                userRepo.save(user);
+
 
             } else {
                 respMap.put("message","Password Incorrect: >= 6 and <= 20, at least one number, upper and lowercase character");
