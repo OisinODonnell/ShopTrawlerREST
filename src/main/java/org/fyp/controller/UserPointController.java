@@ -35,6 +35,29 @@ public class UserPointController extends MainController {
         return userPointRepo.findAll();
     }
 
+    @RequestMapping(value = "/claimReward",method=RequestMethod.PUT)
+    public ResponseEntity<HashMap<String,String>> claimReward(@RequestBody UserPoint userPoint) throws JsonProcessingException {
+
+        if (userPoint.getPoints() >= 1000) {
+            userPoint.setPoints(userPoint.getPoints() - 1000);
+            userPointRepo.save(userPoint);
+            String jsonUserPoint = mapper.writeValueAsString(userPoint);
+
+            userPointRepo.findByRetaileridAndUserid(userPoint.getRetailerid(), userPoint.getUserid());
+            respMap.put("UserPoint",jsonUserPoint);
+
+            respMap.put( "message", "" );
+            respMap.put( "success", "0" );
+            respMap.put( "httpStatus", "" + httpStatus );
+        } else {
+            respMap.put( "message", "Cannot Claim a reward, your loyalty points are less than 1000" );
+            respMap.put( "success", "1" );
+            respMap.put( "httpStatus", "" + httpStatus );
+        }
+
+        return new ResponseEntity<>(respMap, httpStatus);
+    }
+
     @RequestMapping(value = "/delete/{userid}/{retailerid", method=RequestMethod.DELETE)
     public Collection<UserPoint> delete(@PathVariable("userid") Integer userid,
                                         @PathVariable("retailerid") Integer retailerid)    {

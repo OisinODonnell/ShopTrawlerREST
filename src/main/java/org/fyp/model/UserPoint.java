@@ -1,6 +1,7 @@
 package org.fyp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -14,9 +15,11 @@ public class UserPoint extends BaseEntity {
     private int     userid;
     private Integer retailerid;
     private Integer points;
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonIgnore
     private User usersByUserid;
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonIgnore
     private Retailer retailersByRetailerid;
 
     public UserPoint() {
@@ -33,10 +36,10 @@ public class UserPoint extends BaseEntity {
     public void add(int points) {
         this.points += points;
         if (points > 1000) {
-            // do something
+            // TODO COMPLETE THIS SECTION
         }
-    }
 
+    }
 
 
     @Id

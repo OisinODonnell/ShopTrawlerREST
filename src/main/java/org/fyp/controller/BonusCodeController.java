@@ -74,6 +74,15 @@ public class BonusCodeController extends MainController{
             // update users points and bonuscode details.
 
             UserPoint userPoints = userPointRepo.findByRetaileridAndUserid(bc.getRetailerid(), bonusCode.getUserid());
+            if (userPoints == null) {
+                UserPoint up = new UserPoint();
+                up.setPoints(0);
+                up.setRetailerid(bonusCode.getRetailerid());
+                up.setUserid(bonusCode.getUserid());
+                userPointRepo.save(up);
+                userPoints = up;
+            }
+
             int bonus = bc.getValue();
             bc.setUserid(bonusCode.getUserid());
             bc.setDatetime(bonusCode.getDatetime());
