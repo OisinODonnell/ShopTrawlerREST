@@ -5,3 +5,7 @@ zoneId,beaconId,zoneName,retailerId
 2,15,4079,2
 3,18,4073,3
 3,19,4073,3
+4,12,4084,4
+5,15,STAIRS,5
+6,19,LIFT,6
+7,1,TOILETS,7
