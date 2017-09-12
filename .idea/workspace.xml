@@ -4,12 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" line="130" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="Userpoint records added for each retailer when a user is created">
+    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/Loyalty_Rewards.csv" afterPath="$PROJECT_DIR$/target/classes/static/Loyalty_Rewards.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +46,8 @@
       <file leaf-file-name="RetailerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="188">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserPoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="-168">
+              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
               <folding>
                 <element signature="e#250#257#0" expanded="false" />
                 <element signature="method#UserPoint#0;class#UserPoint#0" expanded="false" />
@@ -84,6 +82,16 @@
                 <element signature="e#2750#2760#0" expanded="false" />
                 <element signature="method#setRetailersByRetailerid#0;class#UserPoint#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeaconController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -333,17 +341,17 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/Zones.csv" />
         <option value="$PROJECT_DIR$/src/main/resources/static/Loyalty_Rewards.csv" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" />
       </list>
     </option>
   </component>
@@ -360,11 +368,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1765" />
-    <option name="y" value="4" />
-    <option name="width" value="1740" />
-    <option name="height" value="874" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1911" />
+    <option name="y" value="-9" />
+    <option name="width" value="1458" />
+    <option name="height" value="918" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -693,14 +701,7 @@
       <workItem from="1504986977664" duration="137000" />
       <workItem from="1505031634406" duration="12237000" />
       <workItem from="1505210329095" duration="6377000" />
-      <workItem from="1505238449363" duration="4778000" />
-    </task>
-    <task id="LOCAL-00005" summary="Json back and managed references swapped between Users and ShoppingCentres to all ShoppingCentre object to pick up Users (= administrator) when the object to retrieved from rest.">
-      <created>1501593870886</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1501593870886</updated>
+      <workItem from="1505238449363" duration="6824000" />
     </task>
     <task id="LOCAL-00006" summary="json back referenced changed to reflect how the applications will retrieve data.&#10;angular entities changed to reflect this also.">
       <created>1501600731899</created>
@@ -1038,11 +1039,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505240855744</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Userpoint records added for each retailer when a user is created">
+      <created>1505243961739</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1505243961739</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468985000" />
+    <option name="totallyTimeSpent" value="471031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1054,7 +1062,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1765" y="4" width="1740" height="874" extended-state="0" />
+    <frame x="1911" y="-9" width="1458" height="918" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27309236" sideWeight="0.3628205" order="5" side_tool="true" content_ui="tabs" />
@@ -1065,9 +1074,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0821133" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59090906" sideWeight="0.6371795" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28743315" sideWeight="0.6371795" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3224432" sideWeight="0.48854524" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3224432" sideWeight="0.48854524" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1077,7 +1086,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328877" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28126872" sideWeight="0.46041414" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2421875" sideWeight="0.5395859" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29160637" sideWeight="0.5395859" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1173,7 +1182,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
-          <line>24</line>
+          <line>26</line>
           <properties />
           <option name="timeStamp" value="154" />
         </line-breakpoint>
@@ -1183,11 +1192,17 @@
           <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="174" />
+      <option name="time" value="180" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1204,7 +1219,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/access/ExceptionTranslationFilter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/session/SessionManagementFilter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.java" />
@@ -1488,7 +1502,7 @@
         <state relative-caret-position="243">
           <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1559,14 +1573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1577,8 +1583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/UserPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="-168">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding>
             <element signature="e#250#257#0" expanded="false" />
             <element signature="method#UserPoint#0;class#UserPoint#0" expanded="false" />
@@ -1593,6 +1599,22 @@
             <element signature="e#2750#2760#0" expanded="false" />
             <element signature="method#setRetailersByRetailerid#0;class#UserPoint#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by oisin on 18/07/2017.
@@ -22,16 +23,28 @@ public class RetailerController extends MainController {
         Zone zone = new Zone();
         retailerRepo.save(retailer);
         zoneRepo.save(zone);
+        updateUserPoints(retailer);
         return retailerRepo.findAll();
     }
     @RequestMapping(value = "/create/default", method=RequestMethod.POST)
     public Collection<Retailer> createDefault()
     {
         Retailer retailer = new Retailer();
-
         retailerRepo.save(retailer);
+
+        updateUserPoints(retailer);
         return retailerRepo.findAll();
     }
+
+    private void updateUserPoints(Retailer retailer) {
+        List<User> users = userRepo.findAll();
+        for (User user : users) {
+            UserPoint up = new UserPoint(user.getUserid(), retailer.getRetailerid(), 0);
+            userPointRepo.save(up);
+        }
+
+    }
+
     @RequestMapping(value = {"", "/", "/read"}, method=RequestMethod.GET)
     public Collection<Retailer> read()
     {

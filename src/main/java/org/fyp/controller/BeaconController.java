@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by oisin on 30/07/2017.
@@ -33,13 +34,28 @@ public class BeaconController extends MainController{
         loadData(new Retailer()   	 , util.RETAILERS        );
         loadData(new Content()		 , util.CONTENT          );
         loadData(new Visit()    	 , util.VISITS           );
-        loadData(new UserPoint()     , util.USER_POINTS      );
+//        loadData(new UserPoint()     , util.USER_POINTS      );
         loadData(new Favourite()	 , util.FAVOURITES       );
         loadData(new LoyaltyReward() , util.LOYALTY_REWARDS  );
         loadData(new BonusCode()     , util.BONUS_CODES      );
         loadData(new Rating()        , util.RATINGS          );
 
+        updateUserPoints();
+
         return beaconRepo.findAll();
+    }
+
+    public void updateUserPoints() {
+        List<User> users = userRepo.findAll();
+        List<Retailer> retailers = retailerRepo.findAll();
+
+        for(User user : users) {
+            for (Retailer retailer : retailers) {
+                UserPoint up = new UserPoint(user.getUserid(), retailer.getRetailerid(), 0);
+                userPointRepo.save(up);
+            }
+        }
+
     }
 
     @RequestMapping(value = "/loadData2", method=RequestMethod.GET)
