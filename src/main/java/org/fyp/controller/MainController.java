@@ -48,10 +48,7 @@ public abstract class MainController {
     // eg; String jsonInString = mapper.writeValueAsString(obj);
 
     Gson gson = new Gson();
-
-
     HttpStatus httpStatus = HttpStatus.OK;
-
     Util util = new Util(); // singleton
 
     // response object for building up a response to the user
@@ -168,12 +165,10 @@ public abstract class MainController {
 
     public void uploadFile(String path) {
 
-
         /*
         filename = <fileid>.png
         locate and return file
          */
-
     }
 
     public Integer saveFile(String path, String filename) {

@@ -22,6 +22,7 @@ public class BeaconController extends MainController{
     public Collection<Beacon> loadTestData() throws Exception {
 
         // The order of import is important to ensure data integrity
+        //
         // load some sample data to facilitate some testing
 
         loadData(new User()    		 , util.USERS            );

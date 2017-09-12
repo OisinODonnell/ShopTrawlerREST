@@ -42,14 +42,7 @@ public class LoyaltyRewardController extends MainController {
     @RequestMapping(value = "/create", method= RequestMethod.POST)
     public Collection<LoyaltyReward> create(@RequestBody LoyaltyReward loyaltyReward)
     {
-
-
-
-
         int retailerid = loyaltyReward.getRetailerid();
-
-
-
         loyaltyRewardRepo.save(loyaltyReward);
         return loyaltyRewardRepo.findByRetailerid(retailerid);
     }
@@ -111,40 +104,48 @@ public class LoyaltyRewardController extends MainController {
     @RequestMapping(value = "/CheckDates", method=RequestMethod.PUT)
     public ResponseEntity checkDates(@RequestBody LoyaltyReward loyaltyReward) {
 
-         Timestamp startDate = loyaltyReward.getStartDate();
+        Timestamp startDate = loyaltyReward.getStartDate();
         Timestamp endDate  = loyaltyReward.getEndDate();
         int retailerid =  loyaltyReward.getRetailerid();
 
         List<LoyaltyReward> starts = loyaltyRewardRepo.findByRetaileridAndStartDateBetween( retailerid, startDate, endDate);
         List<LoyaltyReward> ends   = loyaltyRewardRepo.findByRetaileridAndEndDateBetween(retailerid, startDate, endDate);
-        List<LoyaltyReward> mixed  =  loyaltyRewardRepo.findByRetaileridAndStartDateLessThanEqualAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndEndDateGreaterThanEqual(retailerid, startDate, endDate, startDate, endDate);
+        List<LoyaltyReward> mixed  = loyaltyRewardRepo.findByRetaileridAndStartDateLessThanEqualAndStartDateLessThanEqualAndEndDateGreaterThanEqualAndEndDateGreaterThanEqual(retailerid, startDate, endDate, startDate, endDate);
 
+        int adjust = 0;
         Timestamp newStart = startDate;
         if (starts.size() > 0 ) {
+            if (starts.get(0).getLoyaltyRewardid() == loyaltyReward.getLoyaltyRewardid())
+                adjust -= 1;
             newStart = starts.get(0).getEndDate();
         }
         if (ends.size() > 0) {
+            if (ends.get(0).getLoyaltyRewardid() == loyaltyReward.getLoyaltyRewardid())
+                adjust -= 1;
             newStart = ends.get(0).getEndDate();
         }
         if (mixed.size() > 0) {
+            if (mixed.get(0).getLoyaltyRewardid() == loyaltyReward.getLoyaltyRewardid())
+                adjust -= 1;
             newStart = mixed.get(0).getEndDate();
         }
+
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(newStart);
         calendar.add(Calendar.HOUR, 24);
         Timestamp newDateNextDay = new Timestamp(calendar.getTimeInMillis());
 
-        int total = starts.size() + ends.size() + mixed.size();
+        int total = starts.size() + ends.size() + mixed.size()  + adjust;
 
         if ( total == 0) {
-            respMap.put("message","No Content found covering these dates");
+            respMap.put("message","No Loyalty Reward record found covering these dates");
             respMap.put("httpStatus",""+httpStatus);
             respMap.put("success","1");
 
         } else {
             respMap.put( "earliestStartDate",newDateNextDay.toString());
-            respMap.put( "message", "Content record already exists covering all or part of this period" );
+            respMap.put( "message", "Loyalty Reward record already exists covering all or part of this period" );
             respMap.put( "success", "0" );
             respMap.put( "httpStatus", "" + httpStatus );
 
