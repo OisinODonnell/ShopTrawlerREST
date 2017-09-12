@@ -4,12 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/VisitController.java" line="130" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints">
+    <list default="true" id="9a38d52a-c1a2-4b65-9921-dd8d0dd0ceab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" afterPath="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/Zones.csv" afterPath="$PROJECT_DIR$/src/main/resources/static/Zones.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,21 +43,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-              <folding>
-                <element signature="method#loadData#0;class#MainController#0" expanded="false" />
-                <element signature="method#compareDates#0;class#MainController#0" expanded="false" />
-                <element signature="method#saveFile#0;class#MainController#0" expanded="false" />
-                <element signature="method#addDate#0;class#MainController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AgeChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/AgeChart.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,11 +125,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoyaltyRewardController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoyaltyRewardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="66" column="86" lean-forward="true" selection-start-line="66" selection-start-column="86" selection-end-line="66" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RetailerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Zones.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/Zones.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -197,16 +200,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RatingRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/repository/RatingRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -334,7 +327,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/BaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/VisitChart.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Beacon.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/User.java" />
@@ -379,12 +371,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/LoyaltyReward.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/ImageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/model/Retailer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/BeaconController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/ContentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/repository/LoyaltyRewardRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/Zones.csv" />
       </list>
     </option>
   </component>
@@ -402,8 +395,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="286" />
-    <option name="y" value="70" />
+    <option name="x" value="222" />
+    <option name="y" value="222" />
     <option name="width" value="2175" />
     <option name="height" value="1151" />
   </component>
@@ -496,6 +489,21 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fyp" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopTrawlerREST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopTrawlerREST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -736,14 +744,7 @@
       <workItem from="1504960250991" duration="13375000" />
       <workItem from="1504986977664" duration="137000" />
       <workItem from="1505031634406" duration="12237000" />
-      <workItem from="1505210329095" duration="4945000" />
-    </task>
-    <task id="LOCAL-00002" summary="Project Documentation Folder Added">
-      <created>1500722765809</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1500722765809</updated>
+      <workItem from="1505210329095" duration="6313000" />
     </task>
     <task id="LOCAL-00003" summary="Could not get mySql to create a 1:1 relationship.&#10;Even though the relationship could be created in the ERD , Synchronising the ERD with the DB and then reverse engineering back into an ERD , this would still show a 1:M relationship. I found a workaround ... setting the Many attribute to unique enfgorced the 1:1 relationship required (not ideal), however, when the auto genetration of entities with jpa was performed , the relationships were OneToMant and ManyToOne respectively. The database will not allow the many side, I must make sure the code side takes care of this also, otherwise ugly java errors will result.&#10;&#10;Fixed a number of problems attempting to load sample test data into REST. Most self inflicted&#10;&#10;Data was loaded via CSV files.&#10;csv related&#10;- Incorrect number of columns&#10;- Incorrect order of columns&#10;- Too many FK entries for entries in parent table.&#10;- Dates in wrong format, format changed to ciustom format 'YYYY-MM-DD HH:MM'&#10;&#10;Rest related;&#10;- Rest would fail if FK were defined as int instead of Integer. &#10;- Yet the PK must be defined as int.">
       <created>1500762150241</created>
@@ -1081,11 +1082,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505076210224</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Fixed date check in loyalty reward">
+      <created>1505236967052</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1505236967052</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462775000" />
+    <option name="totallyTimeSpent" value="464143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1097,7 +1105,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="286" y="70" width="2175" height="1151" extended-state="0" />
+    <frame x="222" y="222" width="2175" height="1151" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1179,7 +1187,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated delete in each model to use delete/{id}" />
     <MESSAGE value="csv files added to git" />
     <MESSAGE value="BonusCode MOdel and controller updfated to cater for requests for additional codes from the retailer" />
     <MESSAGE value="Visit Reports added" />
@@ -1204,7 +1211,8 @@
     <MESSAGE value="User Updated &#10;endpoint added to retrive retaile users not yet managers" />
     <MESSAGE value="UserPoint updated to accept reset from client/retailer&#10;new endpoint added" />
     <MESSAGE value="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoyaltyReward and Content controllers &#10;added additional endpoints&#10;Add new row with default content ../create/default/{id}&#10;Content and LoyaltyReward Model contructor changed to create default content &#10;&#10;MainController updated to include common date comparison logic&#10;Retailer controller updated to ../Retailer/update&#10;returns a single entity rather than multiple&#10;Repositories changed to reflect the new endpoints" />
+    <MESSAGE value="Fixed date check in loyalty reward" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed date check in loyalty reward" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1223,21 +1231,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
-          <line>22</line>
+          <line>24</line>
           <properties />
           <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="156" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="162" />
+      <option name="time" value="163" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1254,7 +1256,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java" />
@@ -1270,17 +1271,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/FilterChainProxy.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE-sources.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding>
-            <element signature="e#2257#2258#0" expanded="false" />
-            <element signature="e#2313#2314#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/model/ShoppingCentre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1426,6 +1416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1464,6 +1455,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#LoginController#0" expanded="false" />
+            <element signature="e#499#514#0" expanded="false" />
+            <element signature="e#664#740#0" expanded="false" />
+            <element signature="e#991#1015#0" expanded="false" />
+            <marker date="1504867122175" expanded="true" signature="4164:4261" ph="@{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1673,8 +1671,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/LoyaltyRewardController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="66" column="86" lean-forward="true" selection-start-line="66" selection-start-column="86" selection-end-line="66" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/Zones.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/fyp/controller/RetailerController.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
