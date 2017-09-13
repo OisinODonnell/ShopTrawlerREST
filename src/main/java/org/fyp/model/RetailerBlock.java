@@ -69,7 +69,9 @@ public class RetailerBlock {
     public void update( LoyaltyReward loyaltyReward ) {
         if (loyaltyReward != null) {
             this.lrPointsPerVisit = loyaltyReward.getPointsPerVisit();
-            this.lrImage          = loyaltyReward.getRewardImage();
+
+            this.loyaltyRewardImage = loyaltyReward.getRewardImage();
+            this.lrImage            = loyaltyReward.getRewardImage();
             this.lrTitle          = loyaltyReward.getRewardTitle();
             this.lrVisitTime      = loyaltyReward.getVisitTime();
         } else { // set hard coded defaults

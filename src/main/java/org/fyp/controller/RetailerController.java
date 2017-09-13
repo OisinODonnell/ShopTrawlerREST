@@ -72,7 +72,11 @@ public class RetailerController extends MainController {
 
     @RequestMapping(value = "/delete/{id}", method=RequestMethod.DELETE)
     public Collection<Retailer> delete(@PathVariable ("id") Integer id)     {
+
+
+        userPointRepo.deleteAllByRetailerid(id);
         retailerRepo.deleteByRetailerid(id);
+
         return retailerRepo.findAll();
     }
 

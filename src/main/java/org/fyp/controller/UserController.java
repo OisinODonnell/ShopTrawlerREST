@@ -48,6 +48,7 @@ public class UserController extends MainController {
 
         if (userRepo.findByUserid(user.getUserid()) != null) {
             // delete user
+            userPointRepo.deleteAllByUserid(user.getUserid());
             userRepo.delete(user);
             // check user has been deleted
             if (userRepo.findByUserid(user.getUserid()) == null) {
@@ -73,6 +74,7 @@ public class UserController extends MainController {
     public ResponseEntity<HashMap<String,String>> delete(@PathVariable ("email") String email) {
 
         if (userRepo.findByEmailAddress(email) != null) {
+
             // delete user
             userRepo.deleteByEmailAddress(email);
             // check user has been deleted
