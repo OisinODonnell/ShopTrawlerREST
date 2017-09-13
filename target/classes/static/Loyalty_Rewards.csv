@@ -1,4 +1,4 @@
 loyaltyRewardid,retailerid,endDate,pointsPerVisit,rewardImage,rewardTitle,startDate,visitTime,approved
-1,1,2017-10-19 07:35,20,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR1-LoyaltyReward.jpg,DwellReward,2017-08-20 07:35,1,TRUE
-2,2,2017-10-20 02:14,20,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR2-LoyaltyReward.jpg,DwellReward,2017-06-20 02:14,1,FALSE
-3,3,2017-10-22 04:46,5,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR3-LoyaltyReward.jpg,DwellReward,2017-08-20 04:46,1,FALSE
+1,1,2017-10-19 07:35,440,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR1-LoyaltyReward.jpg,DwellReward,2017-08-20 07:35,1,TRUE
+2,2,2017-10-20 02:14,220,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR2-LoyaltyReward.jpg,DwellReward,2017-06-20 02:14,1,FALSE
+3,3,2017-10-22 04:46,330,https://s3-eu-west-1.amazonaws.com/shoptrawler/LRContent/LR3-LoyaltyReward.jpg,DwellReward,2017-08-20 04:46,1,FALSE
